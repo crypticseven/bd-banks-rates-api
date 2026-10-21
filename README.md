@@ -37,7 +37,7 @@ This repository provides:
 ## 🚀 API Endpoints
 
 ### 1. `GET /api/v1/rates/deposits`
-Query deposit yields across all banks with real-time net return simulation.
+Query the repository's static deposit-rate snapshot with net-return estimates. Records are explicitly marked unverified until matched to dated official bank rate sheets.
 
 **Query Parameters:**
 | Parameter | Type | Default | Description |
@@ -72,7 +72,8 @@ curl -X GET "https://api.fardinanik.com/api/v1/rates/deposits?principal=1000000&
       "bank_name": "National Bank Limited",
       "short_code": "NBL",
       "category": "CONVENTIONAL_PCB",
-      "current_rate": 11.50,
+      "current_rate": 0,
+      "data_status": "unverified_static_snapshot",
       "maturity_calculation": {
         "principal": 1000000,
         "grossInterest": 115000,

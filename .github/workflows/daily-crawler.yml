@@ -9,6 +9,8 @@ on:
 jobs:
   crawl-rates:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,8 +29,13 @@ jobs:
         run: |
           python scripts/soc_crawler.py --audit --workers 8 --output crawl_audit_latest.json
 
+      - name: Create audit digest
+        run: sha256sum crawl_audit_latest.json > crawl_audit_latest.json.sha256
+
       - name: Upload Audit Artifact
         uses: actions/upload-artifact@v4
         with:
           name: daily-bank-rates-audit
-          path: crawl_audit_latest.json
+          path: |
+            crawl_audit_latest.json
+            crawl_audit_latest.json.sha256

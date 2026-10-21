@@ -209,8 +209,8 @@ print("Top yield:", data["top_yield_bank"])`;
               <div>
                 <div className="flex items-center justify-between text-xs text-slate-400 font-mono pb-2 border-b border-slate-800">
                   <span className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">200 OK</span>
-                    <span>Response JSON Preview</span>
+                    <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">LOCAL</span>
+                    <span>Estimate Preview (not an HTTP response)</span>
                   </span>
                   <span>{filteredBanks.length} Banks Matched</span>
                 </div>
@@ -434,7 +434,7 @@ print("Top yield:", data["top_yield_bank"])`;
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-400">
             <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
               <div className="text-white font-semibold font-mono text-sm">1. Multi-Threaded Probe</div>
-              <p>Sends concurrent HTTP requests with realistic browser headers and TLS context bypass to withstand commercial bank WAFs.</p>
+              <p>Sends concurrent HTTPS requests with standard browser headers and certificate verification enabled.</p>
             </div>
             <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
               <div className="text-white font-semibold font-mono text-sm">2. Circular PDF Parsing</div>

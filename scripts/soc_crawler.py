@@ -22,13 +22,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import urllib.request
 import urllib.error
 import ssl
+import hashlib
+from urllib.parse import urljoin
 
 try:
     import requests
     from bs4 import BeautifulSoup
     import pymupdf as fitz
 except ImportError as e:
-    print(f"Missing optional package: {e}. Falling back to standard library.")
+    raise SystemExit(
+        "Crawler dependencies are required. Run: pip install -r requirements.txt"
+    ) from e
 
 # Path to the primary dataset
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -85,6 +89,8 @@ def probe_bank_soc(bank, timeout=12):
         "detected_rate_sample": [],
         "latency_ms": None,
         "error": None,
+        "content_sha256": None,
+        "fetched_at": None,
     }
 
     if not url or not url.startswith("http"):
@@ -96,8 +102,6 @@ def probe_bank_soc(bank, timeout=12):
     try:
         req = urllib.request.Request(url, headers=HEADERS)
         ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE  # For banks with intermediate cert issues
 
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as response:
             latency = int((time.time() - start_time) * 1000)
@@ -110,6 +114,8 @@ def probe_bank_soc(bank, timeout=12):
 
             # Read first 1MB of content
             content = response.read(1024 * 1024)
+            result["fetched_at"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+            result["content_sha256"] = hashlib.sha256(content).hexdigest()
 
             if "application/pdf" in content_type:
                 # Direct PDF handling
@@ -136,7 +142,7 @@ def probe_bank_soc(bank, timeout=12):
                         link_text = a.get_text().strip().lower()
                         if href.endswith(".pdf") or "pdf" in href.lower():
                             if any(w in link_text or w in href.lower() for w in ["rate", "interest", "soc", "charge", "deposit", "fdr"]):
-                                full_link = urllib.parse.urljoin(url, href)
+                                full_link = urljoin(url, href)
                                 if full_link not in result["pdf_circulars_found"]:
                                     result["pdf_circulars_found"].append(full_link)
 

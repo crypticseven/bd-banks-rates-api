@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { ALL_61_BANKS, DATASET_PROVENANCE } from "@/lib/bankRatesData";
 
 export async function GET(
   req: NextRequest,
@@ -17,6 +17,7 @@ export async function GET(
       return NextResponse.json(
         {
           status: "not_found",
+          code: "BANK_NOT_FOUND",
           message: `Bank with short code or ID '${code}' not found in 61 scheduled banks.`,
         },
         { status: 404 }
@@ -25,21 +26,22 @@ export async function GET(
 
     return NextResponse.json(
       {
-        status: "success",
-        as_of_date: new Date().toISOString().split("T")[0],
-        bank,
+        status: "unverified",
+        data_status: "unverified_static_snapshot",
+        as_of_date: DATASET_PROVENANCE.effective_date,
+        provenance: DATASET_PROVENANCE,
+        bank: { ...bank, provenance: DATASET_PROVENANCE },
       },
       {
         status: 200,
         headers: {
           "Cache-Control": "public, s-maxage=3600",
-          "Access-Control-Allow-Origin": "*",
         },
       }
     );
   } catch (error) {
     return NextResponse.json(
-      { status: "error", message: "Failed to fetch bank details." },
+      { status: "error", code: "BANK_READ_FAILED", message: "Failed to fetch bank details." },
       { status: 500 }
     );
   }

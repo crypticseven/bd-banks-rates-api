@@ -31,6 +31,17 @@ export interface BankRateRecord {
 
 export const ALL_61_BANKS: BankRateRecord[] = banksData as BankRateRecord[];
 
+export const DATASET_PROVENANCE = {
+  source_type: "repository_static_snapshot",
+  source_url: "https://www.bb.org.bd/en/index.php/links/links/9",
+  effective_date: null,
+  fetched_at: null,
+  source_sha256: null,
+  verification_status: "unverified" as "verified" | "unverified",
+  verification_note:
+    "Rates require verification against each bank's dated official rate sheet before production use.",
+};
+
 /**
  * Calculates maturity value, gross interest, NBR withholding tax, and net return
  * @param principal Initial deposit amount in BDT
@@ -53,6 +64,16 @@ export function calculateFdrMaturity(
   effectiveMonthlyProfit: number;
 } {
   const years = tenureMonths / 12;
+  if (!Number.isFinite(principal) || principal <= 0) {
+    throw new Error("Principal must be a positive finite number.");
+  }
+  if (!Number.isFinite(annualRate) || annualRate < 0) {
+    throw new Error("Annual rate must be a non-negative finite number.");
+  }
+  if (!Number.isInteger(tenureMonths) || tenureMonths <= 0) {
+    throw new Error("Tenure must be a positive integer number of months.");
+  }
+
   const grossInterest = Math.round(principal * (annualRate / 100) * years);
   const taxRate = hasTin ? 0.10 : 0.15; // NBR Tax Code: 10% with TIN, 15% without
   const taxAmount = Math.round(grossInterest * taxRate);

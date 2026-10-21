@@ -1,114 +1,109 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { timingSafeEqual } from "node:crypto";
 import { z } from "zod";
+import { ALL_61_BANKS } from "@/lib/bankRatesData";
+
+export const runtime = "nodejs";
 
 const rateUpdateSchema = z.object({
-  secret_key: z.string().min(16),
   updates: z.array(
     z.object({
-      bank_id: z.string(),
-      fdr_rates: z.record(z.string(), z.number()).optional(),
-      dps_rates: z.record(z.string(), z.number()).optional(),
+      bank_id: z.string().min(1),
+      fdr_rates: z.record(
+        z.enum(["3_months", "6_months", "1_year", "3_years", "5_years"]),
+        z.number().finite().min(0).max(100)
+      ).optional(),
+      dps_rates: z.record(
+        z.enum(["3_years", "5_years", "10_years"]),
+        z.number().finite().min(0).max(100)
+      ).optional(),
       circular_url: z.string().url().optional(),
-      effective_date: z.string().optional(),
-    })
-  ),
-});
+      effective_date: z.string().date().optional(),
+    }).strict()
+  ).min(1).max(61),
+}).strict();
 
-export async function GET(req: NextRequest) {
-  try {
-    const totalBanks = ALL_61_BANKS.length;
-    const conventionalCount = ALL_61_BANKS.filter((b) => b.category === "CONVENTIONAL_PCB").length;
-    const islamicCount = ALL_61_BANKS.filter((b) => b.category === "ISLAMIC").length;
-    const stateOwnedCount = ALL_61_BANKS.filter((b) => b.category === "STATE_OWNED").length;
-    const specializedCount = ALL_61_BANKS.filter((b) => b.category === "SPECIALIZED").length;
-    const foreignCount = ALL_61_BANKS.filter((b) => b.category === "FOREIGN").length;
-
-    return NextResponse.json(
-      {
-        status: "operational",
-        service: "SOC & Deposit Rates Ingestion Pipeline",
-        version: "v1.2.0",
-        as_of_date: new Date().toISOString().split("T")[0],
-        total_banks_tracked: totalBanks,
-        breakdown: {
-          state_owned_socb: stateOwnedCount,
-          specialized_dev: specializedCount,
-          conventional_pcb: conventionalCount,
-          full_islamic_pcb: islamicCount,
-          foreign_commercial_fcb: foreignCount,
-        },
-        crawler_engine: {
-          target_frequency: "Daily automated check at 02:00 BST (UTC+6)",
-          supported_formats: ["HTML Responsive Tables", "PDF Circulars (PyMuPDF parser)"],
-          last_sync_timestamp: new Date().toISOString(),
-        },
-        central_bank_compliance: {
-          regulatory_body: "Bangladesh Bank (Banking Regulation and Policy Department)",
-          reference_bulletin: "Scheduled Banks Weighted Average Deposit Rates",
-          tax_rates: {
-            nbr_withholding_tin: "10%",
-            nbr_withholding_non_tin: "15%",
-          },
+export async function GET() {
+  const requestId = crypto.randomUUID();
+  return NextResponse.json(
+    {
+      status: "degraded",
+      code: "INGESTION_NOT_CONNECTED",
+      service: "SOC & Deposit Rates Ingestion Pipeline",
+      version: "v1.3.0",
+      as_of_date: null,
+      data_status: "unverified_static_snapshot",
+      total_banks_tracked: ALL_61_BANKS.length,
+      crawler_engine: {
+        target_frequency: "Daily automated check at 02:00 BST (UTC+6)",
+        supported_formats: ["HTML Responsive Tables", "PDF Circulars (PyMuPDF parser)"],
+        last_sync_timestamp: null,
+        persistence: "not_configured",
+      },
+      central_bank_compliance: {
+        regulatory_body: "Bangladesh Bank (Banking Regulation and Policy Department)",
+        reference_bulletin: "Scheduled Banks Weighted Average Deposit Rates",
+        tax_rates: {
+          nbr_withholding_tin: "10%",
+          nbr_withholding_non_tin: "15%",
         },
       },
-      {
-        status: 200,
-        headers: {
-          "Cache-Control": "public, s-maxage=1800",
-        },
-      }
-    );
-  } catch (error) {
-    return NextResponse.json(
-      { status: "error", message: "Internal sync telemetry error" },
-      { status: 500 }
-    );
-  }
+    },
+    { status: 503, headers: { "Cache-Control": "no-store", "X-Request-ID": requestId } }
+  );
 }
 
 export async function POST(req: NextRequest) {
+  const requestId = crypto.randomUUID();
   try {
-    const authHeader = req.headers.get("Authorization") || "";
-    const bearerToken = authHeader.replace(/^Bearer\s+/i, "");
-    const expectedSecret = process.env.RATES_SYNC_SECRET || "fardinanik_internal_rates_sync_secret_2026";
+    const expectedSecret = process.env.RATES_SYNC_SECRET;
+    const bearerToken = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
 
-    if (bearerToken !== expectedSecret) {
+    if (!expectedSecret) {
       return NextResponse.json(
-        {
-          status: "unauthorized",
-          message: "Valid administrative Bearer token required for SOC ingestion.",
-        },
-        { status: 401 }
+        { status: "error", code: "SYNC_NOT_CONFIGURED", message: "Sync service is not configured.", request_id: requestId },
+        { status: 503, headers: { "X-Request-ID": requestId } }
       );
     }
 
-    const body = await req.json();
-    const parsed = rateUpdateSchema.safeParse(body);
+    const provided = Buffer.from(bearerToken);
+    const expected = Buffer.from(expectedSecret);
+    if (provided.length !== expected.length || !timingSafeEqual(provided, expected)) {
+      return NextResponse.json(
+        { status: "error", code: "INVALID_SYNC_CREDENTIALS", message: "Authentication required.", request_id: requestId },
+        { status: 401, headers: { "X-Request-ID": requestId } }
+      );
+    }
 
+    const contentLength = Number(req.headers.get("content-length") || 0);
+    if (contentLength > 256 * 1024) {
+      return NextResponse.json(
+        { status: "error", code: "PAYLOAD_TOO_LARGE", message: "Payload exceeds 256 KiB.", request_id: requestId },
+        { status: 413, headers: { "X-Request-ID": requestId } }
+      );
+    }
+
+    const parsed = rateUpdateSchema.safeParse(await req.json());
     if (!parsed.success) {
       return NextResponse.json(
-        { status: "validation_error", errors: parsed.error.format() },
-        { status: 400 }
+        { status: "error", code: "INVALID_SYNC_PAYLOAD", errors: parsed.error.format(), request_id: requestId },
+        { status: 400, headers: { "X-Request-ID": requestId } }
       );
     }
-
-    const { updates } = parsed.data;
 
     return NextResponse.json(
       {
-        status: "success",
-        message: `Successfully staged rate updates for ${updates.length} banks.`,
-        processed_count: updates.length,
-        timestamp: new Date().toISOString(),
-        updated_banks: updates.map((u) => u.bank_id),
+        status: "error",
+        code: "PERSISTENCE_NOT_CONFIGURED",
+        message: "Updates were not accepted because no durable persistence backend is configured.",
+        request_id: requestId,
       },
-      { status: 200 }
+      { status: 503, headers: { "X-Request-ID": requestId } }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { status: "error", message: "Failed to process rate update batch." },
-      { status: 500 }
+      { status: "error", code: "SYNC_REQUEST_FAILED", message: "Failed to process rate update batch.", request_id: requestId },
+      { status: 500, headers: { "X-Request-ID": requestId } }
     );
   }
 }

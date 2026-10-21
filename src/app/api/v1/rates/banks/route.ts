@@ -1,15 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { ALL_61_BANKS, DATASET_PROVENANCE } from "@/lib/bankRatesData";
+import { z } from "zod";
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const category = searchParams.get("category");
-    const shariah = searchParams.get("shariah");
+    const parsed = z.object({
+      category: z.enum(["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"]).default("ALL"),
+      shariah: z.enum(["true", "false"]).optional(),
+    }).safeParse(Object.fromEntries(searchParams.entries()));
+    if (!parsed.success) {
+      return NextResponse.json({ status: "error", code: "INVALID_QUERY", errors: parsed.error.format() }, { status: 400 });
+    }
+    const { category, shariah } = parsed.data;
 
     let banks = [...ALL_61_BANKS];
 
-    if (category && category !== "ALL") {
+    if (category !== "ALL") {
       banks = banks.filter((b) => b.category === category);
     }
 
@@ -32,7 +39,9 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(
       {
-        status: "success",
+        status: "unverified",
+        data_status: "unverified_static_snapshot",
+        provenance: DATASET_PROVENANCE,
         total: directory.length,
         data: directory,
       },
@@ -40,13 +49,12 @@ export async function GET(req: NextRequest) {
         status: 200,
         headers: {
           "Cache-Control": "public, s-maxage=86400",
-          "Access-Control-Allow-Origin": "*",
         },
       }
     );
   } catch (error) {
     return NextResponse.json(
-      { status: "error", message: "Failed to list banks." },
+      { status: "error", code: "BANK_DIRECTORY_READ_FAILED", message: "Failed to list banks." },
       { status: 500 }
     );
   }

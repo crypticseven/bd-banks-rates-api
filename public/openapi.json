@@ -3,7 +3,7 @@
   "info": {
     "title": "Bangladesh 61 Banks Deposit Rate & SOC Aggregator API",
     "version": "1.0.0",
-    "description": "Public REST API providing real-time deposit interest rates (FDR/DPS), Schedule of Charges (SOC), and net return calculations across all 61 Scheduled Commercial Banks in Bangladesh.",
+    "description": "Public REST API exposing a repository static snapshot of deposit rates (FDR/DPS), bank directory data, and estimate calculations across Bangladesh scheduled banks. Responses identify the snapshot as unverified until each value is matched to a dated official source.",
     "contact": {
       "name": "Fardin Ahsan Anik",
       "url": "https://fardinanik.com",
@@ -28,7 +28,7 @@
     "/api/v1/rates/deposits": {
       "get": {
         "summary": "Query deposit rates across all 61 scheduled banks",
-        "description": "Retrieve filtered deposit rates, tenure yields, and simulated maturity values with NBR tax deductions.",
+        "description": "Retrieve filtered snapshot rates and estimate maturity values. This endpoint does not certify that a rate is current; inspect data_status and provenance.",
         "parameters": [
           { "name": "category", "in": "query", "schema": { "type": "string", "enum": ["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"] } },
           { "name": "tenure", "in": "query", "schema": { "type": "string", "enum": ["3_months", "6_months", "1_year", "3_years", "5_years"], "default": "1_year" } },
@@ -40,6 +40,9 @@
         "responses": {
           "200": {
             "description": "Array of bank deposit rates and maturity returns."
+          },
+          "400": {
+            "description": "Invalid or unbounded query parameter."
           }
         }
       }
@@ -74,10 +77,56 @@
         }
       }
     },
+    "/api/v1/rates/products": {
+      "get": {
+        "summary": "Read verified deposit products from PostgreSQL",
+        "parameters": [
+          {
+            "name": "bank_code",
+            "in": "query",
+            "schema": { "type": "string", "maxLength": 10 }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Verified products with circular hashes and effective dates." },
+          "503": { "description": "Database is not configured or unavailable." }
+        }
+      }
+    },
+    "/api/v1/rates/calculate": {
+      "post": {
+        "summary": "Calculate net maturity after TDS and excise duty",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["principal", "annual_rate", "tenure_months", "payment_frequency"],
+                "properties": {
+                  "principal": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000000 },
+                  "annual_rate": { "type": "number", "minimum": 0, "maximum": 100 },
+                  "tenure_months": { "type": "integer", "minimum": 1, "maximum": 600 },
+                  "payment_frequency": {
+                    "type": "string",
+                    "enum": ["MONTHLY", "QUARTERLY", "HALF_YEARLY", "MATURITY"]
+                  },
+                  "has_tin": { "type": "boolean", "default": true }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Gross interest, TDS, excise duty, and net payout." },
+          "400": { "description": "Invalid calculation input." }
+        }
+      }
+    },
     "/api/v1/rates/sync": {
       "get": {
         "summary": "Crawler sync telemetry and health status",
-        "responses": { "200": { "description": "Status telemetry" } }
+        "responses": {         "503": { "description": "Ingestion is unavailable because durable persistence is not configured." } }
       },
       "post": {
         "summary": "Administrative ingestion endpoint to stage rate updates",
