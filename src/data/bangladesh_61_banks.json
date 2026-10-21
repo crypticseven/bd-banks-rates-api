@@ -775,8 +775,8 @@
     "risk_adjusted_yield_score": 8.92,
     "products": [
       {
-        "product_id": "ucb-earn-first-fdr",
-        "product_name": "UCB Earn First Fixed Deposit (Upfront Profit FDR)",
+        "product_id": "ucb-retail-fd",
+        "product_name": "UCB Retail Fixed Deposit (General Term Deposit)",
         "product_type": "FDR",
         "headline_rate": 11.25,
         "tenure_options": [
@@ -790,37 +790,38 @@
         "minimum_amount": 50000,
         "target_segment": "GENERAL_RETAIL",
         "features": [
-          "Highest competitive retail rate at 11.25% p.a.",
-          "Instant loan facility up to 90% of deposit value",
-          "Automated renewal upon maturity",
+          "Official UCB retail term deposit (BDT 50,000 minimum)",
+          "Peak 1-year rate of 11.25% p.a.",
+          "Loan facility up to 90% of deposit value",
           "Instant encashment available through UCB ONE app"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       },
       {
-        "product_id": "ucb-ayma-women-fdr",
-        "product_name": "UCB AYMA High-Yield Women Fixed Deposit",
+        "product_id": "ucb-earning-plus-fd",
+        "product_name": "UCB Earning Plus FD (Periodic Profit FDR)",
         "product_type": "FDR",
-        "headline_rate": 11.5,
+        "headline_rate": 11.0,
         "tenure_options": [
+          "6_months",
           "1_year",
           "3_years"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 100000,
-        "target_segment": "WOMEN",
+        "target_segment": "SENIOR_CITIZEN",
         "features": [
-          "Preferential 25 bps bonus yield for female depositors (11.50%)",
-          "Free AYMA lifestyle privilege card & healthcare discounts",
-          "Zero account maintenance charge for first year"
+          "Monthly or quarterly profit payout to linked account",
+          "Designed for retired individuals and regular income seekers",
+          "Automatic reinvestment of principal upon maturity"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       },
       {
         "product_id": "ucb-superflex-dps",
-        "product_name": "UCB Superflex Deposit Pension Scheme",
+        "product_name": "UCB Super Flex DPS",
         "product_type": "DPS",
         "headline_rate": 11.25,
         "tenure_options": [
@@ -832,36 +833,57 @@
         "minimum_amount": 1000,
         "target_segment": "RETAIL_SAVINGS",
         "features": [
-          "Flexible monthly installments from ৳1,000 to ৳50,000",
-          "11.25% compounding yield",
-          "Auto-debit from UCB savings/current account with zero penalty on 1st grace month"
+          "Official UCB Super Flex monthly savings scheme",
+          "Installments from BDT 1,000 to BDT 50,000/month",
+          "Compounding monthly yield reaching 11.25% p.a."
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
-        "product_id": "ucb-probashi-nrb",
-        "product_name": "UCB Probashi Expatriate High-Growth Scheme",
+        "product_id": "ucb-womens-dps-plus",
+        "product_name": "UCB Women's DPS Plus",
+        "product_type": "DPS",
+        "headline_rate": 11.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "WOMEN",
+        "features": [
+          "Dedicated female financial inclusion scheme on ucb.com.bd",
+          "Preferential bonus yield of 11.50% p.a.",
+          "Complimentary health insurance & lifestyle discount benefits"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ucb-nrb-dps-plus",
+        "product_name": "UCB NRB DPS Plus (Expatriate Savings Scheme)",
         "product_type": "SPECIAL_SCHEME",
         "headline_rate": 11.75,
         "tenure_options": [
           "1_year",
-          "3_years"
+          "3_years",
+          "5_years"
         ],
         "best_tenure": "1_year",
-        "minimum_amount": 100000,
+        "minimum_amount": 5000,
         "target_segment": "NRB_EXPATRIATE",
         "features": [
-          "Special 11.75% rate for inward foreign remittance earners",
-          "2.5% Bangladesh Bank cash incentive eligible on principal remittance",
-          "Free family health insurance rider"
+          "Tailored for Non-Resident Bangladeshis remitting foreign exchange",
+          "Highest rate at 11.75% p.a. + 2.5% central bank remittance cash incentive",
+          "Dual-currency repatriable facility"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       },
       {
-        "product_id": "ucb-islamic-mudarabah-term",
-        "product_name": "UCB Taqwa Mudarabah Term Investment",
+        "product_id": "ucb-taqwa-mudaraba-term",
+        "product_name": "UCB Taqwa Mudaraba Term Deposit",
         "product_type": "FDR",
         "headline_rate": 10.75,
         "tenure_options": [
@@ -874,9 +896,9 @@
         "minimum_amount": 50000,
         "target_segment": "ISLAMIC_SHARIAH",
         "features": [
-          "100% Shariah compliant profit-sharing ratio (ISR)",
-          "Supervised by UCB Shariah Supervisory Committee",
-          "Halal earnings disbursement"
+          "Official UCB Taqwa Islamic Banking Window product",
+          "100% Shariah-compliant profit-sharing ratio",
+          "Audited by UCB Shariah Board"
         ],
         "instant_encashment": true,
         "shariah_compliant": true

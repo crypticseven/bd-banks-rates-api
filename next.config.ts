@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  experimental: {
+    cpus: 2,
+  },
   async headers() {
     return [
       // Standard HTTP Security Headers across all routes

@@ -66,21 +66,21 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
     assert.equal(ucb.stability_tier, "TIER_3_MODERATE");
 
     // Check UCB products
-    const earnFirstFdr = ucb.products.find((p) => p.product_id === "ucb-earn-first-fdr");
-    assert.ok(earnFirstFdr, "UCB Earn First FDR must exist");
-    assert.equal(earnFirstFdr.headline_rate, 11.25, "UCB Earn First FDR rate must be 11.25%");
+    const retailFdr = ucb.products.find((p) => p.product_id === "ucb-retail-fd");
+    assert.ok(retailFdr, "UCB Retail Fixed Deposit must exist");
+    assert.equal(retailFdr.headline_rate, 11.25, "UCB Retail Fixed Deposit rate must be 11.25%");
 
-    const aymaWomen = ucb.products.find((p) => p.product_id === "ucb-ayma-women-fdr");
-    assert.ok(aymaWomen, "UCB AYMA Women FDR must exist");
-    assert.equal(aymaWomen.headline_rate, 11.50, "UCB AYMA Women FDR rate must be 11.50%");
+    const womensDps = ucb.products.find((p) => p.product_id === "ucb-womens-dps-plus");
+    assert.ok(womensDps, "UCB Women's DPS Plus must exist");
+    assert.equal(womensDps.headline_rate, 11.50, "UCB Women's DPS Plus rate must be 11.50%");
 
     const superflexDps = ucb.products.find((p) => p.product_id === "ucb-superflex-dps");
     assert.ok(superflexDps, "UCB Superflex DPS must exist");
     assert.equal(superflexDps.headline_rate, 11.25, "UCB Superflex DPS rate must be 11.25%");
 
-    const probashi = ucb.products.find((p) => p.product_id === "ucb-probashi-nrb");
-    assert.ok(probashi, "UCB Probashi scheme must exist");
-    assert.equal(probashi.headline_rate, 11.75, "UCB Probashi scheme rate must be 11.75%");
+    const probashi = ucb.products.find((p) => p.product_id === "ucb-nrb-dps-plus");
+    assert.ok(probashi, "UCB NRB DPS Plus must exist");
+    assert.equal(probashi.headline_rate, 11.75, "UCB NRB DPS Plus rate must be 11.75%");
   });
 });
 
