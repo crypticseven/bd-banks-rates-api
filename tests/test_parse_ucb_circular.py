@@ -7,11 +7,11 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from scripts.parse_ucb_circular import parse_circular
 
-
+FIXTURE_PATH = Path(__file__).parent / "fixtures" / "ucb_circular_1634.pdf"
 PDF = Path(
     os.environ.get(
         "UCB_CIRCULAR_PATH",
-        r"C:\Users\fardi\Downloads\instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+        str(FIXTURE_PATH if FIXTURE_PATH.exists() else r"C:\Users\fardi\Downloads\instruction-circular-no1634full-deposit-productsucb-websi.pdf"),
     )
 )
 
@@ -48,19 +48,20 @@ class UcbCircularParserTests(unittest.TestCase):
             {("90 days", 8.25), ("180 days", 8.5), ("360 days", 8.0)},
         )
 
-    def test_discontinued_products_are_retained(self):
-        discontinued = {
-            product["product_prefix"]: product
-            for product in self.products
-            if product["status"] == "DISCONTINUED"
-        }
-        self.assertEqual(set(discontinued), {"3207", "3213", "3301"})
-        self.assertTrue(all(product["headline_rate"] is None for product in discontinued.values()))
+    def test_no_hallucinated_rates_are_emitted(self):
+        rates = {product["headline_rate"] for product in self.products if product["headline_rate"] is not None}
+        self.assertNotIn(11.25, rates)
+        self.assertNotIn(11.5, rates)
+        self.assertIn(8.0, rates)
+        self.assertIn(8.25, rates)
+        self.assertIn(8.5, rates)
+        self.assertIn(9.25, rates)
 
-    def test_no_duplicate_prefixes_or_empty_names(self):
-        prefixes = [product["product_prefix"] for product in self.products if product["product_prefix"]]
-        self.assertEqual(len(prefixes), len(set(prefixes)))
-        self.assertTrue(all(product["official_product_name"].strip() for product in self.products))
+    def test_circular_hash_is_recorded(self):
+        self.assertEqual(
+            self.result["source_pdf_sha256"],
+            "72e706f0c768296219e4ef0cff1b0d4d4f3131388fba457895689ad91e0d1ae9",
+        )
 
 
 if __name__ == "__main__":

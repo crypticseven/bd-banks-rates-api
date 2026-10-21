@@ -1,0 +1,452 @@
+{
+  "accessible_count": 17,
+  "broken_count": 44,
+  "accessible": [
+    {
+      "code": "UCB",
+      "name": "United Commercial Bank PLC",
+      "status": 200,
+      "url": "https://www.ucb.com.bd/rates/interest-rates/",
+      "content_type": "text/html; charset=UTF-8",
+      "has_pdf_links": true
+    },
+    {
+      "code": "CITY",
+      "name": "City Bank PLC",
+      "status": 200,
+      "url": "https://www.thecitybank.com/rates-and-charges",
+      "content_type": "text/html",
+      "has_pdf_links": false
+    },
+    {
+      "code": "EBL",
+      "name": "Eastern Bank PLC",
+      "status": 200,
+      "url": "https://www.ebl.com.bd/interest-rates",
+      "content_type": "text/html; charset=UTF-8",
+      "has_pdf_links": true
+    },
+    {
+      "code": "PRIME",
+      "name": "Prime Bank PLC",
+      "status": 200,
+      "url": "https://www.primebank.com.bd/interest-rates",
+      "content_type": "text/html; charset=UTF-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "SEBL",
+      "name": "Southeast Bank PLC",
+      "status": 200,
+      "url": "https://www.southeastbank.com.bd/rates.php",
+      "content_type": "text/html",
+      "has_pdf_links": false
+    },
+    {
+      "code": "TRUST",
+      "name": "Trust Bank Limited",
+      "status": 200,
+      "url": "https://www.tblbd.com/rates",
+      "content_type": "text/html; charset=utf-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "IFIC",
+      "name": "IFIC Bank PLC",
+      "status": 200,
+      "url": "https://www.ificbank.com.bd/rates",
+      "content_type": "text/html",
+      "has_pdf_links": false
+    },
+    {
+      "code": "NRBC",
+      "name": "NRB Commercial Bank PLC",
+      "status": 200,
+      "url": "https://www.nrbcommercialbank.com/rates",
+      "content_type": "text/html",
+      "has_pdf_links": false
+    },
+    {
+      "code": "SHIMANTO",
+      "name": "Shimanto Bank Limited",
+      "status": 200,
+      "url": "https://www.shimantobank.com/rates",
+      "content_type": "text/html; charset=utf-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "BENGAL",
+      "name": "Bengal Commercial Bank Limited",
+      "status": 200,
+      "url": "https://bgcb.com.bd/rates",
+      "content_type": "text/html",
+      "has_pdf_links": false
+    },
+    {
+      "code": "PADMA",
+      "name": "Padma Bank PLC",
+      "status": 200,
+      "url": "https://www.padmabankbd.com/rates",
+      "content_type": "text/html; charset=utf-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "IBBL",
+      "name": "Islami Bank Bangladesh PLC",
+      "status": 200,
+      "url": "https://www.islamibankbd.com/mudaraba-rates",
+      "content_type": "text/html; charset=UTF-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "SJIBL",
+      "name": "Shahjalal Islami Bank PLC",
+      "status": 200,
+      "url": "https://www.sjiblbd.com/rates",
+      "content_type": "text/html",
+      "has_pdf_links": false
+    },
+    {
+      "code": "EXIM",
+      "name": "Export Import Bank of Bangladesh PLC",
+      "status": 200,
+      "url": "https://www.eximbankbd.com/rates",
+      "content_type": "text/html; charset=utf-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "SBL",
+      "name": "Standard Bank PLC (Islamic)",
+      "status": 200,
+      "url": "https://www.standardbankbd.com/rates",
+      "content_type": "text/html; charset=utf-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "ICBISLAMIC",
+      "name": "ICB Islamic Bank Limited",
+      "status": 200,
+      "url": "https://www.icbislamic-bd.com/rates",
+      "content_type": "text/html; charset=utf-8",
+      "has_pdf_links": false
+    },
+    {
+      "code": "CITI",
+      "name": "Citibank N.A. Bangladesh",
+      "status": 200,
+      "url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
+      "content_type": "text/html;charset=utf-8",
+      "has_pdf_links": false
+    }
+  ],
+  "broken": [
+    {
+      "code": "SONALI",
+      "name": "Sonali Bank PLC",
+      "status": "ERR",
+      "url": "https://www.sonalibank.com.bd/interest_rate.php",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "JANATA",
+      "name": "Janata Bank PLC",
+      "status": "ERR",
+      "url": "https://jb.com.bd/schedule-of-charges",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "AGRANI",
+      "name": "Agrani Bank PLC",
+      "status": "ERR",
+      "url": "https://www.agranibank.org/interest_rates.php",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "RUPALI",
+      "name": "Rupali Bank PLC",
+      "status": "ERR",
+      "url": "https://www.rupalibank.com.bd/rates.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "BASIC",
+      "name": "BASIC Bank Limited",
+      "status": "ERR",
+      "url": "https://www.basicbank.com.bd/interest_rate.php",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "code": "BDBL",
+      "name": "Bangladesh Development Bank PLC",
+      "status": "ERR",
+      "url": "https://www.bdbl.com.bd/interest-rates",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-"
+    },
+    {
+      "code": "BKB",
+      "name": "Bangladesh Krishi Bank",
+      "status": "ERR",
+      "url": "https://krishibank.org.bd/interest-rate/",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "code": "RAKUB",
+      "name": "Rajshahi Krishi Unnayan Bank",
+      "status": "ERR",
+      "url": "https://www.rakub.org.bd/interest-rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "PKB",
+      "name": "Probashi Kolyon Bank",
+      "status": "ERR",
+      "url": "https://pkb.gov.bd/interest-rate",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "BRAC",
+      "name": "BRAC Bank PLC",
+      "status": "ERR",
+      "url": "https://www.bracbank.com/en/personal/deposits/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "DBBL",
+      "name": "Dutch-Bangla Bank PLC",
+      "status": "ERR",
+      "url": "https://www.dutchbanglabank.com/rates.html",
+      "error": "HTTP Error 404: "
+    },
+    {
+      "code": "MTB",
+      "name": "Mutual Trust Bank PLC",
+      "status": "ERR",
+      "url": "https://www.mutualtrustbank.com/rates/",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "DHAKA",
+      "name": "Dhaka Bank PLC",
+      "status": "ERR",
+      "url": "https://dhakabankltd.com/rates/",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "PUBALI",
+      "name": "Pubali Bank PLC",
+      "status": "ERR",
+      "url": "https://www.pubalibangla.com/interest_rate.asp",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "code": "MBL",
+      "name": "Mercantile Bank PLC",
+      "status": "ERR",
+      "url": "https://www.mblbd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "NCC",
+      "name": "NCC Bank PLC",
+      "status": "ERR",
+      "url": "https://www.nccbank.com.bd/rates",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unabl"
+    },
+    {
+      "code": "PREMIER",
+      "name": "Premier Bank PLC",
+      "status": "ERR",
+      "url": "https://www.premierbankltd.com/rates",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "JAMUNA",
+      "name": "Jamuna Bank PLC",
+      "status": "ERR",
+      "url": "https://www.jamunabank.com.bd/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "BANKASIA",
+      "name": "Bank Asia PLC",
+      "status": "ERR",
+      "url": "https://www.bankasia-bd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "ONEBANK",
+      "name": "ONE Bank PLC",
+      "status": "ERR",
+      "url": "https://www.onebank.com.bd/rates.php",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "AB",
+      "name": "AB Bank PLC",
+      "status": "ERR",
+      "url": "https://abbl.com/rates",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "UTTARA",
+      "name": "Uttara Bank PLC",
+      "status": "ERR",
+      "url": "https://uttarabank-bd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "NBL",
+      "name": "National Bank Limited",
+      "status": "ERR",
+      "url": "https://www.nblbd.com/rates",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "NRB",
+      "name": "NRB Bank Limited",
+      "status": "ERR",
+      "url": "https://www.nrbbankbd.com/rates",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "MEGHNA",
+      "name": "Meghna Bank PLC",
+      "status": "ERR",
+      "url": "https://www.meghnabank.com.bd/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "MDB",
+      "name": "Midland Bank Limited",
+      "status": "ERR",
+      "url": "https://www.midlandbankbd.net/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "MODHUMOTI",
+      "name": "Modhumoti Bank Limited",
+      "status": "ERR",
+      "url": "https://www.modhumotibank.net/rates",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+    },
+    {
+      "code": "SBAC",
+      "name": "South Bangla Agriculture and Commerce Bank",
+      "status": "ERR",
+      "url": "https://www.sbacbank.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "COMMUNITY",
+      "name": "Community Bank Bangladesh PLC",
+      "status": "ERR",
+      "url": "https://www.communitybankbd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "CITIZENS",
+      "name": "Citizens Bank PLC",
+      "status": "ERR",
+      "url": "https://citizensbankbd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "BCBL",
+      "name": "Bangladesh Commerce Bank Limited",
+      "status": "ERR",
+      "url": "https://www.bcblbd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "AIBL",
+      "name": "Al-Arafah Islami Bank PLC",
+      "status": "ERR",
+      "url": "https://www.aibl.com.bd/profit-rates",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "SIBL",
+      "name": "Social Islami Bank PLC",
+      "status": "ERR",
+      "url": "https://www.siblbd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "FSIBL",
+      "name": "First Security Islami Bank PLC",
+      "status": "ERR",
+      "url": "https://www.fsiblbd.com/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "GIBL",
+      "name": "Global Islami Bank PLC",
+      "status": "ERR",
+      "url": "https://www.globalislamibankbd.com/rates",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unabl"
+    },
+    {
+      "code": "UBL",
+      "name": "Union Bank PLC",
+      "status": "ERR",
+      "url": "https://www.unionbank.com.bd/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "SCB",
+      "name": "Standard Chartered Bank Bangladesh",
+      "status": "ERR",
+      "url": "https://www.sc.com/bd/rates",
+      "error": "HTTP Error 404: OK"
+    },
+    {
+      "code": "HSBC",
+      "name": "HSBC Bangladesh",
+      "status": "ERR",
+      "url": "https://www.hsbc.com.bd/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "CBC",
+      "name": "Commercial Bank of Ceylon PLC",
+      "status": "ERR",
+      "url": "https://www.combank.com.bd/rates",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "code": "WOORI",
+      "name": "Woori Bank Bangladesh",
+      "status": "ERR",
+      "url": "https://bd.wooribank.com/rates",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "code": "ALFALAH",
+      "name": "Bank Alfalah Limited Bangladesh",
+      "status": "ERR",
+      "url": "https://www.bankalfalah.com/bd/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "SBI",
+      "name": "State Bank of India Bangladesh",
+      "status": "ERR",
+      "url": "https://bd.statebank/rates",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "HBL",
+      "name": "Habib Bank Limited Bangladesh",
+      "status": "ERR",
+      "url": "https://www.hbl.com/bangladesh/rates",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "code": "NBP",
+      "name": "National Bank of Pakistan",
+      "status": "ERR",
+      "url": "https://www.nbp.com.pk/bangladesh",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ]
+}
