@@ -157,7 +157,13 @@ export async function POST(req: NextRequest) {
     };
 
     existingStaged.push(stagedBatch);
-    fs.writeFileSync(STAGED_UPDATES_FILE, JSON.stringify(existingStaged, null, 2), "utf-8");
+    try {
+      fs.writeFileSync(STAGED_UPDATES_FILE, JSON.stringify(existingStaged, null, 2), "utf-8");
+    } catch (fsErr: any) {
+      // In serverless environments with read-only root, fallback to /tmp
+      const fallbackFile = path.join("/tmp", "staged_rate_updates.json");
+      fs.writeFileSync(fallbackFile, JSON.stringify(existingStaged, null, 2), "utf-8");
+    }
 
     return NextResponse.json(
       {

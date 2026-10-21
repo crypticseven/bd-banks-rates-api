@@ -1,11 +1,35 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { z } from "zod";
+
+const banksQuerySchema = z.object({
+  category: z
+    .enum(["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"])
+    .optional(),
+  shariah: z.enum(["true", "false"]).optional(),
+});
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const category = searchParams.get("category");
-    const shariah = searchParams.get("shariah");
+    const queryObj: Record<string, string> = {};
+    searchParams.forEach((v, k) => {
+      queryObj[k] = v;
+    });
+
+    const parsed = banksQuerySchema.safeParse(queryObj);
+    if (!parsed.success) {
+      return NextResponse.json(
+        {
+          status: "bad_request",
+          message: "Invalid query parameters.",
+          errors: parsed.error.format(),
+        },
+        { status: 400 }
+      );
+    }
+
+    const { category, shariah } = parsed.data;
 
     let banks = [...ALL_61_BANKS];
 
@@ -13,7 +37,7 @@ export async function GET(req: NextRequest) {
       banks = banks.filter((b) => b.category === category);
     }
 
-    if (shariah !== null && shariah !== undefined) {
+    if (shariah !== undefined) {
       const isShariah = shariah === "true";
       banks = banks.filter((b) => b.is_shariah === isShariah);
     }
@@ -28,6 +52,9 @@ export async function GET(req: NextRequest) {
       instant_encashment: b.instant_encashment,
       headquarters: b.headquarters,
       soc_url: b.soc_url,
+      source_url: b.source_url,
+      effective_date: b.effective_date,
+      verification_status: b.verification_status,
     }));
 
     return NextResponse.json(
