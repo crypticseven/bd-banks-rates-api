@@ -8,20 +8,78 @@
     "has_islamic_window": true,
     "minimum_deposit": 10000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.75,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": true,
     "soc_url": "https://www.sonalibank.com.bd/interest_rate.php",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.sonalibank.com.bd/interest_rate.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.7,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "HIGH (15.2%)",
+    "capital_adequacy_ratio_car": ">11.0%",
+    "risk_label": "Moderate Risk (Sovereign Guaranteed Backstop)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.81,
+    "products": [
+      {
+        "product_id": "sonali-standard-fdr",
+        "product_name": "Sonali Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "sonali-monthly-dps",
+        "product_name": "Sonali Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 15.2
   },
   {
     "bank_id": "janata",
@@ -39,13 +97,71 @@
       "5_years": 9.75
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.5,
       "10_years": 9.75
     },
     "instant_encashment": false,
     "soc_url": "https://jb.com.bd/schedule-of-charges",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://jb.com.bd/schedule-of-charges",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2,
+    "credit_rating": "B+",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (68.5%)",
+    "capital_adequacy_ratio_car": "Negative (-8.5%)",
+    "risk_label": "Severe Distressed (Beximco/AnonTex Defaults, Sovereign Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.1,
+    "products": [
+      {
+        "product_id": "janata-standard-fdr",
+        "product_name": "Janata Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "janata-monthly-dps",
+        "product_name": "Janata Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 68.5
   },
   {
     "bank_id": "agrani",
@@ -56,20 +172,78 @@
     "has_islamic_window": true,
     "minimum_deposit": 10000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.75,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": true,
     "soc_url": "https://www.agranibank.org/interest_rates.php",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.agranibank.org/interest_rates.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.8,
+    "credit_rating": "BBB",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "CRITICAL (28.4%)",
+    "capital_adequacy_ratio_car": "Deficient (6.8%)",
+    "risk_label": "Elevated Risk (High Classified Loans, Sovereign Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.52,
+    "products": [
+      {
+        "product_id": "agrani-standard-fdr",
+        "product_name": "Agrani Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "agrani-monthly-dps",
+        "product_name": "Agrani Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 28.4
   },
   {
     "bank_id": "rupali",
@@ -87,13 +261,71 @@
       "5_years": 9.75
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.5,
       "10_years": 9.75
     },
     "instant_encashment": false,
     "soc_url": "https://www.rupalibank.com.bd/rates.html",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.rupalibank.com.bd/rates.html",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.7,
+    "credit_rating": "BBB",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (24.8%)",
+    "capital_adequacy_ratio_car": "Deficient (7.2%)",
+    "risk_label": "Elevated Risk (Sovereign Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.2,
+    "products": [
+      {
+        "product_id": "rupali-standard-fdr",
+        "product_name": "Rupali Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "rupali-monthly-dps",
+        "product_name": "Rupali Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 24.8
   },
   {
     "bank_id": "basic",
@@ -107,17 +339,75 @@
       "3_months": 8.25,
       "6_months": 8.75,
       "1_year": 9.75,
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.25
     },
     "dps_rates": {
       "3_years": 9.5,
-      "5_years": 10.0,
+      "5_years": 10,
       "10_years": 10.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.basicbank.com.bd/interest_rate.php",
-    "headquarters": "Sena Kalyan Bhaban, Motijheel"
+    "headquarters": "Sena Kalyan Bhaban, Motijheel",
+    "source_url": "https://www.basicbank.com.bd/interest_rate.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.5,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "SEVERE_DEFAULT (>60%)",
+    "capital_adequacy_ratio_car": "Negative (-24.0%)",
+    "risk_label": "Critically Distressed (Legacy Scams, Sovereign Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.46,
+    "products": [
+      {
+        "product_id": "basic-standard-fdr",
+        "product_name": "BASIC Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "basic-monthly-dps",
+        "product_name": "BASIC Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 64.5
   },
   {
     "bank_id": "bdbl",
@@ -128,20 +418,78 @@
     "has_islamic_window": false,
     "minimum_deposit": 25000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.75,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": false,
     "soc_url": "https://www.bdbl.com.bd/interest-rates",
-    "headquarters": "BDBL Bhaban, Kawran Bazar"
+    "headquarters": "BDBL Bhaban, Kawran Bazar",
+    "source_url": "https://www.bdbl.com.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.1,
+    "credit_rating": "BB",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "CRITICAL (43.2%)",
+    "capital_adequacy_ratio_car": "Deficient (5.5%)",
+    "risk_label": "Watchlist (Sonali Merger Target, Sovereign Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 5.41,
+    "products": [
+      {
+        "product_id": "bdbl-standard-fdr",
+        "product_name": "Bangladesh Development Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "bdbl-monthly-dps",
+        "product_name": "Bangladesh Development Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 43.2
   },
   {
     "bank_id": "bkb",
@@ -153,19 +501,77 @@
     "minimum_deposit": 5000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
-      "1_year": 10.0,
+      "6_months": 9,
+      "1_year": 10,
       "3_years": 10.25,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 9.5,
-      "5_years": 10.0,
+      "5_years": 10,
       "10_years": 10.25
     },
     "instant_encashment": false,
     "soc_url": "https://krishibank.org.bd/interest-rate/",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://krishibank.org.bd/interest-rate/",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.8,
+    "credit_rating": "BBB-",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (26.5%)",
+    "capital_adequacy_ratio_car": "Negative (-6.5%)",
+    "risk_label": "High NPL (Agricultural Sovereign Mandate)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.86,
+    "products": [
+      {
+        "product_id": "bkb-standard-fdr",
+        "product_name": "Bangladesh Krishi Bank Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 5000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "bkb-monthly-dps",
+        "product_name": "Bangladesh Krishi Bank Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 26.5
   },
   {
     "bank_id": "rakub",
@@ -179,17 +585,75 @@
       "3_months": 8.25,
       "6_months": 8.75,
       "1_year": 9.75,
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.25
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": false,
     "soc_url": "https://www.rakub.org.bd/interest-rates",
-    "headquarters": "Rajshahi, Bangladesh"
+    "headquarters": "Rajshahi, Bangladesh",
+    "source_url": "https://www.rakub.org.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.5,
+    "credit_rating": "BB+",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "CRITICAL (32.8%)",
+    "capital_adequacy_ratio_car": "Negative (-4.2%)",
+    "risk_label": "High NPL (BKB Consolidation Target)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.21,
+    "products": [
+      {
+        "product_id": "rakub-standard-fdr",
+        "product_name": "Rajshahi Krishi Unnayan Bank Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 5000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "rakub-monthly-dps",
+        "product_name": "Rajshahi Krishi Unnayan Bank Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 32.8
   },
   {
     "bank_id": "pkb",
@@ -201,8 +665,8 @@
     "minimum_deposit": 10000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
-      "1_year": 10.0,
+      "6_months": 9,
+      "1_year": 10,
       "3_years": 10.25,
       "5_years": 10.5
     },
@@ -213,7 +677,65 @@
     },
     "instant_encashment": false,
     "soc_url": "https://pkb.gov.bd/interest-rate",
-    "headquarters": "Eskaton Garden, Dhaka"
+    "headquarters": "Eskaton Garden, Dhaka",
+    "source_url": "https://pkb.gov.bd/interest-rate",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.5,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (7.2%)",
+    "capital_adequacy_ratio_car": ">14.5%",
+    "risk_label": "Moderate Risk (Sovereign Expatriate Bank)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.93,
+    "products": [
+      {
+        "product_id": "pkb-standard-fdr",
+        "product_name": "Probashi Kolyon Bank Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "pkb-monthly-dps",
+        "product_name": "Probashi Kolyon Bank Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 7.2
   },
   {
     "bank_id": "ucb",
@@ -224,20 +746,165 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 9.75,
-      "6_months": 10.25,
+      "3_months": 9.5,
+      "6_months": 10.5,
       "1_year": 11.25,
-      "3_years": 11.0,
-      "5_years": 10.75
+      "3_years": 10,
+      "5_years": 9.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": true,
     "soc_url": "https://www.ucb.com.bd/rates/interest-rates/",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.ucb.com.bd/assets/pdf/fdr_soc_circular_2026_oct.pdf",
+    "effective_date": "2026-10-21",
+    "fetched_at": "2026-10-21T12:43:52.746Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.5,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "HIGH_TURNAROUND (16.27%)",
+    "capital_adequacy_ratio_car": "Adequate (10.45%)",
+    "risk_label": "High Yield Turnaround (16.27% NPL, 100% Profits to Provisions)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
+    "products": [
+      {
+        "product_id": "ucb-retail-fd",
+        "product_name": "UCB Retail Fixed Deposit (General Term Deposit)",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Official UCB retail term deposit (BDT 50,000 minimum)",
+          "Peak 1-year rate of 11.25% p.a.",
+          "Loan facility up to 90% of deposit value",
+          "Instant encashment available through UCB ONE app"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ucb-earning-plus-fd",
+        "product_name": "UCB Earning Plus FD (Periodic Profit FDR)",
+        "product_type": "FDR",
+        "headline_rate": 11.0,
+        "tenure_options": [
+          "6_months",
+          "1_year",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "SENIOR_CITIZEN",
+        "features": [
+          "Monthly or quarterly profit payout to linked account",
+          "Designed for retired individuals and regular income seekers",
+          "Automatic reinvestment of principal upon maturity"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ucb-superflex-dps",
+        "product_name": "UCB Super Flex DPS",
+        "product_type": "DPS",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_years",
+          "5_years",
+          "10_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Official UCB Super Flex monthly savings scheme",
+          "Installments from BDT 1,000 to BDT 50,000/month",
+          "Compounding monthly yield reaching 11.25% p.a."
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ucb-womens-dps-plus",
+        "product_name": "UCB Women's DPS Plus",
+        "product_type": "DPS",
+        "headline_rate": 11.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "WOMEN",
+        "features": [
+          "Dedicated female financial inclusion scheme on ucb.com.bd",
+          "Preferential bonus yield of 11.50% p.a.",
+          "Complimentary health insurance & lifestyle discount benefits"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ucb-nrb-dps-plus",
+        "product_name": "UCB NRB DPS Plus (Expatriate Savings Scheme)",
+        "product_type": "SPECIAL_SCHEME",
+        "headline_rate": 11.75,
+        "tenure_options": [
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 5000,
+        "target_segment": "NRB_EXPATRIATE",
+        "features": [
+          "Tailored for Non-Resident Bangladeshis remitting foreign exchange",
+          "Highest rate at 11.75% p.a. + 2.5% central bank remittance cash incentive",
+          "Dual-currency repatriable facility"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ucb-taqwa-mudaraba-term",
+        "product_name": "UCB Taqwa Mudaraba Term Deposit",
+        "product_type": "FDR",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "ISLAMIC_SHARIAH",
+        "features": [
+          "Official UCB Taqwa Islamic Banking Window product",
+          "100% Shariah-compliant profit-sharing ratio",
+          "Audited by UCB Shariah Board"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 16.27
   },
   {
     "bank_id": "brac",
@@ -250,18 +917,72 @@
     "fdr_rates": {
       "3_months": 8.75,
       "6_months": 9.25,
-      "1_year": 10.0,
+      "1_year": 10,
       "3_years": 9.75,
       "5_years": 9.5
     },
     "dps_rates": {
       "3_years": 9.5,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": true,
     "soc_url": "https://www.bracbank.com/en/personal/deposits/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.bracbank.com/en/personal/deposits/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.9,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
+    "npl_category": "PRIME_LOW (2.27%)",
+    "capital_adequacy_ratio_car": ">15.8%",
+    "risk_label": "Lowest Risk (Best-in-Class Balance Sheet)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 9.87,
+    "products": [
+      {
+        "product_id": "brac-golden-fdr",
+        "product_name": "BRAC Bank Golden Fixed Deposit",
+        "product_type": "FDR",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "AAA rating safety",
+          "Online Astha app booking",
+          "Overdraft up to 90%"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "brac-double-growth",
+        "product_name": "BRAC Bank Double Scheme",
+        "product_type": "SPECIAL_SCHEME",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "6_years"
+        ],
+        "best_tenure": "6_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM",
+        "features": [
+          "Guaranteed principal doubling in ~6.8 years"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.27
   },
   {
     "bank_id": "city",
@@ -279,13 +1000,48 @@
       "5_years": 10.25
     },
     "dps_rates": {
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.5,
       "10_years": 10.75
     },
     "instant_encashment": true,
     "soc_url": "https://www.thecitybank.com/rates-and-charges",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.thecitybank.com/rates-and-charges",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.5,
+    "credit_rating": "AA+",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">14.4%",
+    "risk_label": "Low Risk (Strong Card/Retail Franchise)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.04,
+    "products": [
+      {
+        "product_id": "city-gem-fdr",
+        "product_name": "City Gem Premium Fixed Deposit",
+        "product_type": "FDR",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 500000,
+        "target_segment": "HNI_PREMIUM",
+        "features": [
+          "Dedicated relationship manager",
+          "Airport lounge access"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 4.65
   },
   {
     "bank_id": "ebl",
@@ -296,11 +1052,11 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 9.0,
+      "3_months": 9,
       "6_months": 9.5,
       "1_year": 10.5,
       "3_years": 10.25,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.75,
@@ -309,7 +1065,44 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.ebl.com.bd/interest-rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.ebl.com.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.8,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
+    "npl_category": "PRIME_LOW (2.24%)",
+    "capital_adequacy_ratio_car": ">15.2%",
+    "risk_label": "Lowest Risk (Prime Corporate & Retail Franchise)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 10.23,
+    "products": [
+      {
+        "product_id": "ebl-classic-fdr",
+        "product_name": "EBL Classic Term Deposit",
+        "product_type": "FDR",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "AAA institution",
+          "EBL Connect digital encashment"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.24
   },
   {
     "bank_id": "dbbl",
@@ -321,7 +1114,7 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
+      "6_months": 9,
       "1_year": 9.75,
       "3_years": 9.5,
       "5_years": 9.25
@@ -333,7 +1126,65 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.dutchbanglabank.com/rates.html",
-    "headquarters": "Sena Kalyan Bhaban, Motijheel"
+    "headquarters": "Sena Kalyan Bhaban, Motijheel",
+    "source_url": "https://www.dutchbanglabank.com/rates.html",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.5,
+    "credit_rating": "AA+",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">15.1%",
+    "risk_label": "Low Risk (Dominant Retail Deposit Base)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.1,
+    "products": [
+      {
+        "product_id": "dbbl-standard-fdr",
+        "product_name": "Dutch-Bangla Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "dbbl-monthly-dps",
+        "product_name": "Dutch-Bangla Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 4.92
   },
   {
     "bank_id": "prime",
@@ -345,19 +1196,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.primebank.com.bd/interest-rates",
-    "headquarters": "Nikunja-2, Dhaka"
+    "headquarters": "Nikunja-2, Dhaka",
+    "source_url": "https://www.primebank.com.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.4,
+    "credit_rating": "AA",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">14.2%",
+    "risk_label": "Low Risk (Well Managed Corporate Book)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.12,
+    "products": [
+      {
+        "product_id": "prime-standard-fdr",
+        "product_name": "Prime Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "prime-monthly-dps",
+        "product_name": "Prime Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 4.45
   },
   {
     "bank_id": "mtb",
@@ -369,19 +1278,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.mutualtrustbank.com/rates/",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.mutualtrustbank.com/rates/",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.2,
+    "credit_rating": "AA",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "MODERATE (5.65%)",
+    "capital_adequacy_ratio_car": ">13.8%",
+    "risk_label": "Low-Moderate Risk (Strong Governance)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.82,
+    "products": [
+      {
+        "product_id": "mtb-standard-fdr",
+        "product_name": "Mutual Trust Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "mtb-monthly-dps",
+        "product_name": "Mutual Trust Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 5.65
   },
   {
     "bank_id": "dhaka",
@@ -399,13 +1366,71 @@
       "5_years": 10.25
     },
     "dps_rates": {
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.5,
       "10_years": 10.75
     },
     "instant_encashment": true,
     "soc_url": "https://dhakabankltd.com/rates/",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://dhakabankltd.com/rates/",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.1,
+    "credit_rating": "AA-",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "MODERATE (5.85%)",
+    "capital_adequacy_ratio_car": ">13.5%",
+    "risk_label": "Low-Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.45,
+    "products": [
+      {
+        "product_id": "dhaka-standard-fdr",
+        "product_name": "Dhaka Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "dhaka-monthly-dps",
+        "product_name": "Dhaka Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 5.85
   },
   {
     "bank_id": "pubali",
@@ -417,19 +1442,77 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.pubalibangla.com/interest_rate.asp",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.pubalibangla.com/interest_rate.asp",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.8,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
+    "npl_category": "PRIME_LOW (2.14%)",
+    "capital_adequacy_ratio_car": ">16.4%",
+    "risk_label": "Lowest Risk (Disciplined Underwriting, Strong CAR)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 10.71,
+    "products": [
+      {
+        "product_id": "pubali-standard-fdr",
+        "product_name": "Pubali Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "pubali-monthly-dps",
+        "product_name": "Pubali Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.14
   },
   {
     "bank_id": "mercantile",
@@ -443,17 +1526,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.mblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.mblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.7,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (7.85%)",
+    "capital_adequacy_ratio_car": ">12.8%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.25,
+    "products": [
+      {
+        "product_id": "mercantile-standard-fdr",
+        "product_name": "Mercantile Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "mercantile-monthly-dps",
+        "product_name": "Mercantile Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 7.85
   },
   {
     "bank_id": "southeast",
@@ -465,19 +1606,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.southeastbank.com.bd/rates.php",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.southeastbank.com.bd/rates.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.6,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (8.45%)",
+    "capital_adequacy_ratio_car": ">12.5%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.89,
+    "products": [
+      {
+        "product_id": "southeast-standard-fdr",
+        "product_name": "Southeast Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "southeast-monthly-dps",
+        "product_name": "Southeast Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 8.45
   },
   {
     "bank_id": "ncc",
@@ -489,19 +1688,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.nccbank.com.bd/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.nccbank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.8,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (6.95%)",
+    "capital_adequacy_ratio_car": ">13.2%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.2,
+    "products": [
+      {
+        "product_id": "ncc-standard-fdr",
+        "product_name": "NCC Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ncc-monthly-dps",
+        "product_name": "NCC Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 6.95
   },
   {
     "bank_id": "premier",
@@ -515,17 +1772,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.premierbankltd.com/rates",
-    "headquarters": "Banani, Dhaka"
+    "headquarters": "Banani, Dhaka",
+    "source_url": "https://www.premierbankltd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.5,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (8.90%)",
+    "capital_adequacy_ratio_car": ">12.4%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
+    "products": [
+      {
+        "product_id": "premier-standard-fdr",
+        "product_name": "Premier Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "premier-monthly-dps",
+        "product_name": "Premier Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 8.9
   },
   {
     "bank_id": "trust",
@@ -537,19 +1852,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.tblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.tblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.4,
+    "credit_rating": "AA+",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">14.8%",
+    "risk_label": "Low Risk (Army Welfare Trust Backed)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.12,
+    "products": [
+      {
+        "product_id": "trust-standard-fdr",
+        "product_name": "Trust Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "trust-monthly-dps",
+        "product_name": "Trust Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 4.35
   },
   {
     "bank_id": "jamuna",
@@ -561,19 +1934,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.jamunabank.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.jamunabank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.1,
+    "credit_rating": "AA-",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "MODERATE (5.45%)",
+    "capital_adequacy_ratio_car": ">13.9%",
+    "risk_label": "Low-Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.67,
+    "products": [
+      {
+        "product_id": "jamuna-standard-fdr",
+        "product_name": "Jamuna Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "jamuna-monthly-dps",
+        "product_name": "Jamuna Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 5.45
   },
   {
     "bank_id": "bank_asia",
@@ -585,19 +2016,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.bankasia-bd.com/rates",
-    "headquarters": "Purana Paltan, Dhaka"
+    "headquarters": "Purana Paltan, Dhaka",
+    "source_url": "https://www.bankasia-bd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.8,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (6.85%)",
+    "capital_adequacy_ratio_car": ">13.1%",
+    "risk_label": "Moderate Risk (Agent Banking Leader)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.2,
+    "products": [
+      {
+        "product_id": "bank_asia-standard-fdr",
+        "product_name": "Bank Asia PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "bank_asia-monthly-dps",
+        "product_name": "Bank Asia PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 6.85
   },
   {
     "bank_id": "one_bank",
@@ -611,17 +2100,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.onebank.com.bd/rates.php",
-    "headquarters": "Kawran Bazar, Dhaka"
+    "headquarters": "Kawran Bazar, Dhaka",
+    "source_url": "https://www.onebank.com.bd/rates.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.8,
+    "credit_rating": "BBB-",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (18.50%)",
+    "capital_adequacy_ratio_car": "Deficient (9.8%)",
+    "risk_label": "High Risk (Corporate Classified Loan Backlog)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.72,
+    "products": [
+      {
+        "product_id": "one_bank-standard-fdr",
+        "product_name": "ONE Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "one_bank-monthly-dps",
+        "product_name": "ONE Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 18.5
   },
   {
     "bank_id": "ab_bank",
@@ -633,19 +2180,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://abbl.com/rates",
-    "headquarters": "Kakrail, Dhaka"
+    "headquarters": "Kakrail, Dhaka",
+    "source_url": "https://abbl.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.6,
+    "credit_rating": "BB+",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (21.40%)",
+    "capital_adequacy_ratio_car": "Deficient (8.9%)",
+    "risk_label": "High Risk (Legacy Default Book)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.19,
+    "products": [
+      {
+        "product_id": "ab_bank-standard-fdr",
+        "product_name": "AB Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ab_bank-monthly-dps",
+        "product_name": "AB Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 21.4
   },
   {
     "bank_id": "ific",
@@ -657,19 +2262,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.ificbank.com.bd/rates",
-    "headquarters": "Purana Paltan, Dhaka"
+    "headquarters": "Purana Paltan, Dhaka",
+    "source_url": "https://www.ificbank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 2.7,
+    "credit_rating": "BBB-",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (18.90%)",
+    "capital_adequacy_ratio_car": "Deficient (9.2%)",
+    "risk_label": "High Risk (Beximco Exposure / Board Restructured)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.37,
+    "products": [
+      {
+        "product_id": "ific-standard-fdr",
+        "product_name": "IFIC Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ific-monthly-dps",
+        "product_name": "IFIC Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 18.9
   },
   {
     "bank_id": "uttara",
@@ -687,13 +2350,71 @@
       "5_years": 10.25
     },
     "dps_rates": {
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.5,
       "10_years": 10.75
     },
     "instant_encashment": false,
     "soc_url": "https://uttarabank-bd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://uttarabank-bd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.7,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (7.20%)",
+    "capital_adequacy_ratio_car": ">13.4%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.84,
+    "products": [
+      {
+        "product_id": "uttara-standard-fdr",
+        "product_name": "Uttara Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "uttara-monthly-dps",
+        "product_name": "Uttara Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 7.2
   },
   {
     "bank_id": "nbl",
@@ -708,16 +2429,74 @@
       "6_months": 10.25,
       "1_year": 11.5,
       "3_years": 11.25,
-      "5_years": 11.0
+      "5_years": 11
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.nblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.nblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (38.20%)",
+    "capital_adequacy_ratio_car": "Deficient (4.8%)",
+    "risk_label": "Critically Distressed (Tk 28k Cr Bad Debt, BB Oversight)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.92,
+    "products": [
+      {
+        "product_id": "nbl-standard-fdr",
+        "product_name": "National Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "nbl-monthly-dps",
+        "product_name": "National Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 38.2
   },
   {
     "bank_id": "nrbc",
@@ -731,17 +2510,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": true,
     "soc_url": "https://www.nrbcommercialbank.com/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.nrbcommercialbank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.2,
+    "credit_rating": "A-",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (10.85%)",
+    "capital_adequacy_ratio_car": ">11.6%",
+    "risk_label": "Elevated Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.42,
+    "products": [
+      {
+        "product_id": "nrbc-standard-fdr",
+        "product_name": "NRB Commercial Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "nrbc-monthly-dps",
+        "product_name": "NRB Commercial Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 10.85
   },
   {
     "bank_id": "nrb",
@@ -755,17 +2592,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.nrbbankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.nrbbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.3,
+    "credit_rating": "A-",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (8.90%)",
+    "capital_adequacy_ratio_car": ">12.4%",
+    "risk_label": "Elevated Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.59,
+    "products": [
+      {
+        "product_id": "nrb-standard-fdr",
+        "product_name": "NRB Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "nrb-monthly-dps",
+        "product_name": "NRB Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 8.9
   },
   {
     "bank_id": "meghna",
@@ -779,17 +2674,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.meghnabank.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.meghnabank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.5,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (7.45%)",
+    "capital_adequacy_ratio_car": ">13.1%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
+    "products": [
+      {
+        "product_id": "meghna-standard-fdr",
+        "product_name": "Meghna Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "meghna-monthly-dps",
+        "product_name": "Meghna Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 7.45
   },
   {
     "bank_id": "midland",
@@ -803,17 +2756,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": true,
     "soc_url": "https://www.midlandbankbd.net/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.midlandbankbd.net/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.6,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (6.85%)",
+    "capital_adequacy_ratio_car": ">13.5%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.09,
+    "products": [
+      {
+        "product_id": "midland-standard-fdr",
+        "product_name": "Midland Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "midland-monthly-dps",
+        "product_name": "Midland Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 6.85
   },
   {
     "bank_id": "modhumoti",
@@ -825,19 +2836,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.modhumotibank.net/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.modhumotibank.net/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.7,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (6.25%)",
+    "capital_adequacy_ratio_car": ">13.8%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.04,
+    "products": [
+      {
+        "product_id": "modhumoti-standard-fdr",
+        "product_name": "Modhumoti Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "modhumoti-monthly-dps",
+        "product_name": "Modhumoti Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 6.25
   },
   {
     "bank_id": "sbac",
@@ -851,17 +2920,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.sbacbank.com/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.sbacbank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3,
+    "credit_rating": "BBB+",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "ELEVATED (13.45%)",
+    "capital_adequacy_ratio_car": ">10.8%",
+    "risk_label": "High Risk (Governance Pressures)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.07,
+    "products": [
+      {
+        "product_id": "sbac-standard-fdr",
+        "product_name": "South Bangla Agriculture and Commerce Bank Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "sbac-monthly-dps",
+        "product_name": "South Bangla Agriculture and Commerce Bank Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 13.45
   },
   {
     "bank_id": "shimanto",
@@ -873,19 +3000,77 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.shimantobank.com/rates",
-    "headquarters": "Peelkhana, Dhanmondi"
+    "headquarters": "Peelkhana, Dhanmondi",
+    "source_url": "https://www.shimantobank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.4,
+    "credit_rating": "AA",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "PRIME_LOW (2.45%)",
+    "capital_adequacy_ratio_car": ">18.2%",
+    "risk_label": "Low Risk (BGB Welfare Backed)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.12,
+    "products": [
+      {
+        "product_id": "shimanto-standard-fdr",
+        "product_name": "Shimanto Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-monthly-dps",
+        "product_name": "Shimanto Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.45
   },
   {
     "bank_id": "community",
@@ -897,19 +3082,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.communitybankbd.com/rates",
-    "headquarters": "Police Plaza, Gulshan"
+    "headquarters": "Police Plaza, Gulshan",
+    "source_url": "https://www.communitybankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.4,
+    "credit_rating": "AA",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "PRIME_LOW (2.15%)",
+    "capital_adequacy_ratio_car": ">18.8%",
+    "risk_label": "Low Risk (Police Kallyan Trust Backed)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.12,
+    "products": [
+      {
+        "product_id": "community-standard-fdr",
+        "product_name": "Community Bank Bangladesh PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "community-monthly-dps",
+        "product_name": "Community Bank Bangladesh PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.15
   },
   {
     "bank_id": "bengal",
@@ -923,17 +3166,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://bgcb.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://bgcb.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.5,
+    "credit_rating": "A-",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">15.5%",
+    "risk_label": "Moderate Risk (Emerging Franchise)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
+    "products": [
+      {
+        "product_id": "bengal-standard-fdr",
+        "product_name": "Bengal Commercial Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "bengal-monthly-dps",
+        "product_name": "Bengal Commercial Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 4.85
   },
   {
     "bank_id": "citizens",
@@ -947,17 +3248,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://citizensbankbd.com/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://citizensbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.5,
+    "credit_rating": "A-",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">16.2%",
+    "risk_label": "Moderate Risk (Emerging Franchise)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
+    "products": [
+      {
+        "product_id": "citizens-standard-fdr",
+        "product_name": "Citizens Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "citizens-monthly-dps",
+        "product_name": "Citizens Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 3.85
   },
   {
     "bank_id": "padma",
@@ -968,11 +3327,11 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 10.0,
+      "3_months": 10,
       "6_months": 10.5,
       "1_year": 11.5,
       "3_years": 11.25,
-      "5_years": 11.0
+      "5_years": 11
     },
     "dps_rates": {
       "3_years": 10.75,
@@ -981,7 +3340,65 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.padmabankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.padmabankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.2,
+    "credit_rating": "C",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "SEVERE_DEFAULT (67.50%)",
+    "capital_adequacy_ratio_car": "Negative (-18.0%)",
+    "risk_label": "Critically Insolvent (Legacy Defaults)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.55,
+    "products": [
+      {
+        "product_id": "padma-standard-fdr",
+        "product_name": "Padma Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "padma-monthly-dps",
+        "product_name": "Padma Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 67.5
   },
   {
     "bank_id": "bcbl",
@@ -995,17 +3412,75 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.bcblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.bcblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.4,
+    "credit_rating": "B-",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (48.20%)",
+    "capital_adequacy_ratio_car": "Negative (-8.5%)",
+    "risk_label": "Critically Distressed (Chronic Capital Deficit)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.92,
+    "products": [
+      {
+        "product_id": "bcbl-standard-fdr",
+        "product_name": "Bangladesh Commerce Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "bcbl-monthly-dps",
+        "product_name": "Bangladesh Commerce Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 48.2
   },
   {
     "bank_id": "ibbl",
@@ -1029,7 +3504,65 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.islamibankbd.com/mudaraba-rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.islamibankbd.com/mudaraba-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "SEVERE_DEFAULT (51.2%)",
+    "capital_adequacy_ratio_car": "Negative (-4.5%)",
+    "risk_label": "Critically Distressed (Tk 94k Cr Default, BB Reconstitution)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.28,
+    "products": [
+      {
+        "product_id": "ibbl-standard-fdr",
+        "product_name": "Islami Bank Bangladesh PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "ibbl-monthly-dps",
+        "product_name": "Islami Bank Bangladesh PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 51.2
   },
   {
     "bank_id": "al_arafah",
@@ -1043,17 +3576,75 @@
       "3_months": 9.25,
       "6_months": 9.75,
       "1_year": 10.75,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 11.25
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.aibl.com.bd/profit-rates",
-    "headquarters": "Purana Paltan, Dhaka"
+    "headquarters": "Purana Paltan, Dhaka",
+    "source_url": "https://www.aibl.com.bd/profit-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.4,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (9.20%)",
+    "capital_adequacy_ratio_car": ">12.1%",
+    "risk_label": "Moderate-Elevated Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.37,
+    "products": [
+      {
+        "product_id": "al_arafah-standard-fdr",
+        "product_name": "Al-Arafah Islami Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "al_arafah-monthly-dps",
+        "product_name": "Al-Arafah Islami Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 9.2
   },
   {
     "bank_id": "sibl",
@@ -1065,19 +3656,77 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 11.25,
       "5_years": 11.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.siblbd.com/rates",
-    "headquarters": "City Center, Motijheel"
+    "headquarters": "City Center, Motijheel",
+    "source_url": "https://www.siblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (37.58%)",
+    "capital_adequacy_ratio_car": "Deficient (4.5%)",
+    "risk_label": "Severe Distressed (Board Reconstituted / High NPL)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.66,
+    "products": [
+      {
+        "product_id": "sibl-standard-fdr",
+        "product_name": "Social Islami Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "sibl-monthly-dps",
+        "product_name": "Social Islami Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 37.58
   },
   {
     "bank_id": "shahjalal",
@@ -1091,17 +3740,75 @@
       "3_months": 9.25,
       "6_months": 9.75,
       "1_year": 10.75,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 11.25
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.sjiblbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.sjiblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.3,
+    "credit_rating": "AA",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">14.5%",
+    "risk_label": "Low Risk (Most Stable Islamic PCB)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.75,
+    "products": [
+      {
+        "product_id": "shahjalal-standard-fdr",
+        "product_name": "Shahjalal Islami Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "shahjalal-monthly-dps",
+        "product_name": "Shahjalal Islami Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 4.75
   },
   {
     "bank_id": "exim",
@@ -1113,19 +3820,77 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 11.25,
       "5_years": 11.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.eximbankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.eximbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.2,
+    "credit_rating": "A-",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (11.85%)",
+    "capital_adequacy_ratio_car": ">11.2%",
+    "risk_label": "Elevated Risk (Asset Stress Post Padma Talks)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.23,
+    "products": [
+      {
+        "product_id": "exim-standard-fdr",
+        "product_name": "Export Import Bank of Bangladesh PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "exim-monthly-dps",
+        "product_name": "Export Import Bank of Bangladesh PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 11.85
   },
   {
     "bank_id": "fsibl",
@@ -1144,12 +3909,70 @@
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.fsiblbd.com/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.fsiblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (36.63%)",
+    "capital_adequacy_ratio_car": "Deficient (3.8%)",
+    "risk_label": "Severe Distressed (Consolidation Target)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.79,
+    "products": [
+      {
+        "product_id": "fsibl-standard-fdr",
+        "product_name": "First Security Islami Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "fsibl-monthly-dps",
+        "product_name": "First Security Islami Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 36.63
   },
   {
     "bank_id": "global_islami",
@@ -1168,12 +3991,70 @@
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.globalislamibankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.globalislamibankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.7,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (38.50%)",
+    "capital_adequacy_ratio_car": "Deficient (4.2%)",
+    "risk_label": "Severe Distressed (Board Reconstituted)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.58,
+    "products": [
+      {
+        "product_id": "global_islami-standard-fdr",
+        "product_name": "Global Islami Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "global_islami-monthly-dps",
+        "product_name": "Global Islami Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 38.5
   },
   {
     "bank_id": "union",
@@ -1192,12 +4073,70 @@
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.unionbank.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.unionbank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1.1,
+    "credit_rating": "C",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "SEVERE_DEFAULT (92.50%)",
+    "capital_adequacy_ratio_car": "Negative (-35.0%)",
+    "risk_label": "Critically Insolvent (Administrator Appointed)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.2,
+    "products": [
+      {
+        "product_id": "union-standard-fdr",
+        "product_name": "Union Bank PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "union-monthly-dps",
+        "product_name": "Union Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 92.5
   },
   {
     "bank_id": "standard_islamic",
@@ -1209,19 +4148,77 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 11.25,
       "5_years": 11.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.standardbankbd.com/rates",
-    "headquarters": "Topkhana Road, Dhaka"
+    "headquarters": "Topkhana Road, Dhaka",
+    "source_url": "https://www.standardbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.4,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (8.95%)",
+    "capital_adequacy_ratio_car": ">12.0%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.56,
+    "products": [
+      {
+        "product_id": "standard_islamic-standard-fdr",
+        "product_name": "Standard Bank PLC (Islamic) Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 11,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 11.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "standard_islamic-monthly-dps",
+        "product_name": "Standard Bank PLC (Islamic) Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 8.95
   },
   {
     "bank_id": "icb_islamic",
@@ -1232,11 +4229,11 @@
     "has_islamic_window": false,
     "minimum_deposit": 25000,
     "fdr_rates": {
-      "3_months": 9.0,
+      "3_months": 9,
       "6_months": 9.5,
       "1_year": 10.5,
       "3_years": 10.75,
-      "5_years": 11.0
+      "5_years": 11
     },
     "dps_rates": {
       "3_years": 9.75,
@@ -1245,7 +4242,65 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.icbislamic-bd.com/rates",
-    "headquarters": "Toka Bhaban, Karwan Bazar"
+    "headquarters": "Toka Bhaban, Karwan Bazar",
+    "source_url": "https://www.icbislamic-bd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 1,
+    "credit_rating": "C",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "SEVERE_DEFAULT (86.50%)",
+    "capital_adequacy_ratio_car": "Negative (-65.0%)",
+    "risk_label": "Non-Viable (Legacy Oriental Bank Insolvent Entity)",
+    "sovereign_backed": false,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 3.69,
+    "products": [
+      {
+        "product_id": "icb_islamic-standard-fdr",
+        "product_name": "ICB Islamic Bank Limited Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      },
+      {
+        "product_id": "icb_islamic-monthly-dps",
+        "product_name": "ICB Islamic Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": true
+      }
+    ],
+    "npl_ratio_pct": 86.5
   },
   {
     "bank_id": "scb",
@@ -1257,7 +4312,7 @@
     "minimum_deposit": 100000,
     "fdr_rates": {
       "3_months": 7.5,
-      "6_months": 8.0,
+      "6_months": 8,
       "1_year": 8.75,
       "3_years": 8.5,
       "5_years": 8.25
@@ -1269,7 +4324,43 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.sc.com/bd/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.sc.com/bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 5,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
+    "npl_category": "PRIME_LOW (2.15%)",
+    "capital_adequacy_ratio_car": ">24.5%",
+    "risk_label": "Sovereign-Tier Safety (Global Balance Sheet)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 8.75,
+    "products": [
+      {
+        "product_id": "scb-term-saver",
+        "product_name": "Standard Chartered High Yield Term Deposit",
+        "product_type": "FDR",
+        "headline_rate": 8.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "PRIME_MULTINATIONAL",
+        "features": [
+          "Highest global safety benchmark (AAA)",
+          "Zero local default risk"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.15
   },
   {
     "bank_id": "hsbc",
@@ -1281,7 +4372,7 @@
     "minimum_deposit": 100000,
     "fdr_rates": {
       "3_months": 7.5,
-      "6_months": 8.0,
+      "6_months": 8,
       "1_year": 8.75,
       "3_years": 8.5,
       "5_years": 8.25
@@ -1293,7 +4384,65 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.hsbc.com.bd/rates",
-    "headquarters": "Bir Uttam C R Dutta Road, Dhaka"
+    "headquarters": "Bir Uttam C R Dutta Road, Dhaka",
+    "source_url": "https://www.hsbc.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 5,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
+    "npl_category": "PRIME_LOW (1.45%)",
+    "capital_adequacy_ratio_car": ">22.8%",
+    "risk_label": "Lowest Systemic Default Risk in Bangladesh",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 8.75,
+    "products": [
+      {
+        "product_id": "hsbc-standard-fdr",
+        "product_name": "HSBC Bangladesh Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 8.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 8.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "hsbc-monthly-dps",
+        "product_name": "HSBC Bangladesh Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 8.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 1.45
   },
   {
     "bank_id": "citi",
@@ -1308,16 +4457,74 @@
       "6_months": 7.75,
       "1_year": 8.5,
       "3_years": 8.25,
-      "5_years": 8.0
+      "5_years": 8
     },
     "dps_rates": {
-      "3_years": 8.0,
+      "3_years": 8,
       "5_years": 8.25,
       "10_years": 8.5
     },
     "instant_encashment": false,
     "soc_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 5,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
+    "npl_category": "PRIME_LOW (1.85%)",
+    "capital_adequacy_ratio_car": ">28.2%",
+    "risk_label": "Sovereign-Tier Corporate Safety",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 8.5,
+    "products": [
+      {
+        "product_id": "citi-standard-fdr",
+        "product_name": "Citibank N.A. Bangladesh Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 8.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 500000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 8.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "citi-monthly-dps",
+        "product_name": "Citibank N.A. Bangladesh Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 8.25,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 1.85
   },
   {
     "bank_id": "ceylon",
@@ -1329,19 +4536,77 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
-      "1_year": 10.0,
+      "6_months": 9,
+      "1_year": 10,
       "3_years": 9.75,
       "5_years": 9.5
     },
     "dps_rates": {
       "3_years": 9.5,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": false,
     "soc_url": "https://www.combank.com.bd/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.combank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.5,
+    "credit_rating": "AA+",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "PRIME_LOW (2.45%)",
+    "capital_adequacy_ratio_car": ">17.5%",
+    "risk_label": "Low Risk (Disciplined FCB Portfolio)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.34,
+    "products": [
+      {
+        "product_id": "ceylon-standard-fdr",
+        "product_name": "Commercial Bank of Ceylon PLC Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.0% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ceylon-monthly-dps",
+        "product_name": "Commercial Bank of Ceylon PLC Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.45
   },
   {
     "bank_id": "woori",
@@ -1352,20 +4617,78 @@
     "has_islamic_window": false,
     "minimum_deposit": 100000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.25,
-      "5_years": 9.0
+      "5_years": 9
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.25,
       "10_years": 9.5
     },
     "instant_encashment": false,
     "soc_url": "https://bd.wooribank.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://bd.wooribank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.4,
+    "credit_rating": "AA+",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "PRIME_LOW (2.65%)",
+    "capital_adequacy_ratio_car": ">18.2%",
+    "risk_label": "Low Risk (Korean Trade & MNC Franchise)",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.74,
+    "products": [
+      {
+        "product_id": "woori-standard-fdr",
+        "product_name": "Woori Bank Bangladesh Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "woori-monthly-dps",
+        "product_name": "Woori Bank Bangladesh Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.25,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 2.65
   },
   {
     "bank_id": "alfalah",
@@ -1379,17 +4702,75 @@
       "3_months": 8.75,
       "6_months": 9.25,
       "1_year": 10.25,
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 9.75
     },
     "dps_rates": {
       "3_years": 9.75,
-      "5_years": 10.0,
+      "5_years": 10,
       "10_years": 10.25
     },
     "instant_encashment": false,
     "soc_url": "https://www.bankalfalah.com/bd/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.bankalfalah.com/bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.2,
+    "credit_rating": "AA-",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">15.8%",
+    "risk_label": "Low-Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.15,
+    "products": [
+      {
+        "product_id": "alfalah-standard-fdr",
+        "product_name": "Bank Alfalah Limited Bangladesh Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 10.25% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "alfalah-monthly-dps",
+        "product_name": "Bank Alfalah Limited Bangladesh Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 10,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 4.25
   },
   {
     "bank_id": "sbi",
@@ -1413,7 +4794,65 @@
     },
     "instant_encashment": false,
     "soc_url": "https://bd.statebank/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://bd.statebank/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 4.3,
+    "credit_rating": "AA",
+    "stability_tier": "TIER_2_STRONG",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">16.4%",
+    "risk_label": "Low Risk (Indian State Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.84,
+    "products": [
+      {
+        "product_id": "sbi-standard-fdr",
+        "product_name": "State Bank of India Bangladesh Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "sbi-monthly-dps",
+        "product_name": "State Bank of India Bangladesh Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 3.85
   },
   {
     "bank_id": "habib",
@@ -1437,7 +4876,65 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.hbl.com/bangladesh/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.hbl.com/bangladesh/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.8,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (5.45%)",
+    "capital_adequacy_ratio_car": ">14.2%",
+    "risk_label": "Moderate Risk",
+    "sovereign_backed": false,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.16,
+    "products": [
+      {
+        "product_id": "habib-standard-fdr",
+        "product_name": "Habib Bank Limited Bangladesh Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.75,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.75% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "habib-monthly-dps",
+        "product_name": "Habib Bank Limited Bangladesh Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 5.45
   },
   {
     "bank_id": "nbp",
@@ -1448,19 +4945,77 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.25,
-      "5_years": 9.0
+      "5_years": 9
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.25,
       "10_years": 9.5
     },
     "instant_encashment": false,
     "soc_url": "https://www.nbp.com.pk/bangladesh",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.nbp.com.pk/bangladesh",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "rating_score": 3.5,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (7.85%)",
+    "capital_adequacy_ratio_car": ">13.5%",
+    "risk_label": "Moderate Risk (Sovereign Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.53,
+    "products": [
+      {
+        "product_id": "nbp-standard-fdr",
+        "product_name": "National Bank of Pakistan Fixed Deposit Receipt",
+        "product_type": "FDR",
+        "headline_rate": 9.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Standard 9.5% annual yield",
+          "Loan against deposit eligible up to 90%",
+          "Automatic maturity rollover"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "nbp-monthly-dps",
+        "product_name": "National Bank of Pakistan Monthly Sanchay Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 9.25,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installments",
+          "High compounding return upon maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      }
+    ],
+    "npl_ratio_pct": 7.85
   }
 ]

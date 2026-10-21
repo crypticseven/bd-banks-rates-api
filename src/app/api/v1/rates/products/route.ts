@@ -1,63 +1,127 @@
 import { NextRequest, NextResponse } from "next/server";
-import { and, eq } from "drizzle-orm";
-import { getDatabase } from "@/lib/db/client";
-import { depositProducts, treasuryCirculars } from "@/lib/db/schema";
+import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
+import { z } from "zod";
 
-export const runtime = "nodejs";
+const productsQuerySchema = z.object({
+  bank: z.string().trim().max(20).optional(),
+  type: z.enum(["FDR", "DPS", "SPECIAL_SCHEME"]).optional(),
+  segment: z
+    .enum([
+      "GENERAL_RETAIL",
+      "WOMEN",
+      "SENIOR_CITIZEN",
+      "NRB_EXPATRIATE",
+      "RETAIL_SAVINGS",
+      "ISLAMIC_SHARIAH",
+      "HNI_PREMIUM",
+      "LONG_TERM",
+    ])
+    .optional(),
+  min_rate: z.coerce.number().min(0).max(30).optional(),
+  instant_encashment: z.enum(["true", "false"]).optional(),
+  shariah: z.enum(["true", "false"]).optional(),
+  q: z.string().trim().max(100).optional(),
+});
 
 export async function GET(req: NextRequest) {
-  const requestId = crypto.randomUUID();
   try {
-    const database = getDatabase();
     const { searchParams } = new URL(req.url);
-    const bankCode = searchParams.get("bank_code")?.trim().toUpperCase();
-    const conditions = [
-      eq(depositProducts.status, "ACTIVE"),
-      eq(treasuryCirculars.status, "VERIFIED"),
-    ];
-    if (bankCode) conditions.push(eq(depositProducts.bankCode, bankCode));
+    const queryObj: Record<string, string> = {};
+    searchParams.forEach((v, k) => {
+      queryObj[k] = v;
+    });
 
-    const products = await database
-      .select({
-        id: depositProducts.id,
-        bank_code: depositProducts.bankCode,
-        official_product_name: depositProducts.officialProductName,
-        product_prefix: depositProducts.productPrefix,
-        product_type: depositProducts.productType,
-        tenure_months: depositProducts.tenureMonths,
-        tenure_display: depositProducts.tenureDisplay,
-        headline_rate: depositProducts.headlineRate,
-        compounding_frequency: depositProducts.compoundingFrequency,
-        status: depositProducts.status,
-        source_pdf_sha256: treasuryCirculars.sha256Hash,
-        effective_date: treasuryCirculars.effectiveDate,
-        fetched_timestamp_utc: treasuryCirculars.fetchedAt,
-      })
-      .from(depositProducts)
-      .innerJoin(treasuryCirculars, eq(depositProducts.circularId, treasuryCirculars.id))
-      .where(and(...conditions));
+    const parsed = productsQuerySchema.safeParse(queryObj);
+    if (!parsed.success) {
+      return NextResponse.json(
+        {
+          status: "bad_request",
+          message: "Invalid query parameters.",
+          errors: parsed.error.format(),
+        },
+        { status: 400 }
+      );
+    }
+
+    const { bank, type, segment, min_rate, instant_encashment, shariah, q } = parsed.data;
+
+    // Flatten all products across banks with parent bank context
+    let flattenedProducts: any[] = [];
+    for (const b of getActiveBanksServer()) {
+      if (bank && b.short_code.toUpperCase() !== bank.toUpperCase() && b.bank_id.toUpperCase() !== bank.toUpperCase()) {
+        continue;
+      }
+
+      for (const p of b.products || []) {
+        flattenedProducts.push({
+          ...p,
+          bank_name: b.bank_name,
+          short_code: b.short_code,
+          category: b.category,
+          bank_rating_score: b.rating_score,
+          bank_credit_rating: b.credit_rating,
+          bank_stability_tier: b.stability_tier,
+          soc_url: b.soc_url,
+        });
+      }
+    }
+
+    // Apply product filters
+    if (type) {
+      flattenedProducts = flattenedProducts.filter((p) => p.product_type === type);
+    }
+
+    if (segment) {
+      flattenedProducts = flattenedProducts.filter((p) => p.target_segment === segment);
+    }
+
+    if (min_rate !== undefined) {
+      flattenedProducts = flattenedProducts.filter((p) => p.headline_rate >= min_rate);
+    }
+
+    if (instant_encashment !== undefined) {
+      const boolVal = instant_encashment === "true";
+      flattenedProducts = flattenedProducts.filter((p) => p.instant_encashment === boolVal);
+    }
+
+    if (shariah !== undefined) {
+      const boolVal = shariah === "true";
+      flattenedProducts = flattenedProducts.filter((p) => p.shariah_compliant === boolVal);
+    }
+
+    if (q && q.trim().length > 0) {
+      const search = q.toLowerCase().trim();
+      flattenedProducts = flattenedProducts.filter(
+        (p) =>
+          p.product_name.toLowerCase().includes(search) ||
+          p.bank_name.toLowerCase().includes(search) ||
+          p.short_code.toLowerCase().includes(search) ||
+          p.features.some((f: string) => f.toLowerCase().includes(search))
+      );
+    }
+
+    // Sort by headline rate descending
+    flattenedProducts.sort((a, b) => b.headline_rate - a.headline_rate);
 
     return NextResponse.json(
       {
         status: "success",
-        data_status: "verified_database_records",
-        total: products.length,
-        data: products,
-        request_id: requestId,
+        total_products: flattenedProducts.length,
+        top_product: flattenedProducts[0] || null,
+        data: flattenedProducts,
       },
-      { headers: { "Cache-Control": "public, s-maxage=900", "X-Request-ID": requestId } }
+      {
+        status: 200,
+        headers: {
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
   } catch (error) {
-    const message =
-      error instanceof Error && error.message === "DATABASE_URL is not configured."
-        ? "Dynamic product storage is not configured."
-        : "Failed to read verified products.";
-    const code = message.includes("not configured")
-      ? "DATABASE_NOT_CONFIGURED"
-      : "PRODUCT_READ_FAILED";
     return NextResponse.json(
-      { status: "error", code, message, request_id: requestId },
-      { status: 503, headers: { "Cache-Control": "no-store", "X-Request-ID": requestId } }
+      { status: "error", message: "Failed to query products." },
+      { status: 500 }
     );
   }
 }

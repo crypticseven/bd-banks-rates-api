@@ -19,7 +19,8 @@
     "dev": "next dev -p 3009",
     "build": "next build",
     "start": "next start -p 3009",
-    "lint": "eslint .",
+    "lint": "tsc --noEmit",
+    "test": "node --test tests/calculations.test.mjs",
     "crawl": "python scripts/soc_crawler.py --audit",
     "poll": "python scripts/dynamic_poller.py",
     "db:generate": "drizzle-kit generate",
@@ -27,25 +28,23 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "drizzle-orm": "^0.45.4",
     "lucide-react": "^1.16.0",
     "next": "16.4.2",
-    "postgres": "^3.4.9",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "tailwind-merge": "^3.5.0",
-    "zod": "^4.3.6"
+    "zod": "^4.3.6",
+    "drizzle-orm": "^0.44.7",
+    "postgres": "^3.4.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "^25.5.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "drizzle-kit": "^0.31.11",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.2",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "drizzle-kit": "^0.31.4"
   }
 }

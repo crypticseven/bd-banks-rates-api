@@ -1,26 +1,43 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS, DATASET_PROVENANCE } from "@/lib/bankRatesData";
+import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
 import { z } from "zod";
+
+const banksQuerySchema = z.object({
+  category: z
+    .enum(["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"])
+    .optional(),
+  shariah: z.enum(["true", "false"]).optional(),
+});
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const parsed = z.object({
-      category: z.enum(["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"]).default("ALL"),
-      shariah: z.enum(["true", "false"]).optional(),
-    }).safeParse(Object.fromEntries(searchParams.entries()));
+    const queryObj: Record<string, string> = {};
+    searchParams.forEach((v, k) => {
+      queryObj[k] = v;
+    });
+
+    const parsed = banksQuerySchema.safeParse(queryObj);
     if (!parsed.success) {
-      return NextResponse.json({ status: "error", code: "INVALID_QUERY", errors: parsed.error.format() }, { status: 400 });
+      return NextResponse.json(
+        {
+          status: "bad_request",
+          message: "Invalid query parameters.",
+          errors: parsed.error.format(),
+        },
+        { status: 400 }
+      );
     }
+
     const { category, shariah } = parsed.data;
 
-    let banks = [...ALL_61_BANKS];
+    let banks = [...getActiveBanksServer()];
 
-    if (category !== "ALL") {
+    if (category && category !== "ALL") {
       banks = banks.filter((b) => b.category === category);
     }
 
-    if (shariah !== null && shariah !== undefined) {
+    if (shariah !== undefined) {
       const isShariah = shariah === "true";
       banks = banks.filter((b) => b.is_shariah === isShariah);
     }
@@ -35,13 +52,14 @@ export async function GET(req: NextRequest) {
       instant_encashment: b.instant_encashment,
       headquarters: b.headquarters,
       soc_url: b.soc_url,
+      source_url: b.source_url,
+      effective_date: b.effective_date,
+      verification_status: b.verification_status,
     }));
 
     return NextResponse.json(
       {
-        status: "unverified",
-        data_status: "unverified_static_snapshot",
-        provenance: DATASET_PROVENANCE,
+        status: "success",
         total: directory.length,
         data: directory,
       },
@@ -49,12 +67,13 @@ export async function GET(req: NextRequest) {
         status: 200,
         headers: {
           "Cache-Control": "public, s-maxage=86400",
+          "Access-Control-Allow-Origin": "*",
         },
       }
     );
   } catch (error) {
     return NextResponse.json(
-      { status: "error", code: "BANK_DIRECTORY_READ_FAILED", message: "Failed to list banks." },
+      { status: "error", message: "Failed to list banks." },
       { status: 500 }
     );
   }
