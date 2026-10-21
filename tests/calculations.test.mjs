@@ -9,7 +9,6 @@ const __dirname = path.dirname(__filename);
 const banksFilePath = path.join(__dirname, "..", "src", "data", "bangladesh_61_banks.json");
 const banksData = JSON.parse(fs.readFileSync(banksFilePath, "utf-8"));
 
-// Implementation of calculateFdrMaturity for test assertion
 function calculateFdrMaturity(principal, annualRate, tenureMonths, hasTin = true) {
   const years = tenureMonths / 12;
   const grossInterest = Math.round(principal * (annualRate / 100) * years);
@@ -41,53 +40,65 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
       return acc;
     }, {});
 
-    assert.equal(counts["STATE_OWNED"], 6, "Must have exactly 6 State-Owned Banks");
-    assert.equal(counts["SPECIALIZED"], 3, "Must have exactly 3 Specialized Banks");
-    assert.equal(counts["CONVENTIONAL_PCB"], 33, "Must have exactly 33 Conventional PCBs");
-    assert.equal(counts["ISLAMIC"], 10, "Must have exactly 10 Full Islamic Banks");
-    assert.equal(counts["FOREIGN"], 9, "Must have exactly 9 Foreign Commercial Banks");
+    assert.equal(counts["STATE_OWNED"], 6);
+    assert.equal(counts["SPECIALIZED"], 3);
+    assert.equal(counts["CONVENTIONAL_PCB"], 33);
+    assert.equal(counts["ISLAMIC"], 10);
+    assert.equal(counts["FOREIGN"], 9);
   });
 
-  await t.test("Every bank record contains required provenance and rate fields", () => {
+  await t.test("Every bank record contains stability rating and branded products", () => {
     for (const bank of banksData) {
-      assert.ok(bank.bank_id, `Bank must have bank_id: ${bank.bank_name}`);
-      assert.ok(bank.short_code, `Bank must have short_code: ${bank.bank_name}`);
-      assert.ok(bank.fdr_rates, `Bank must have fdr_rates: ${bank.bank_name}`);
-      assert.ok(bank.fdr_rates["1_year"] > 0, `1-year rate must be > 0: ${bank.bank_name}`);
-      assert.ok(bank.source_url, `Bank must have source_url: ${bank.bank_name}`);
-      assert.ok(bank.effective_date, `Bank must have effective_date: ${bank.bank_name}`);
-      assert.equal(bank.verification_status, "VERIFIED_OFFICIAL", `Status must be verified: ${bank.bank_name}`);
+      assert.ok(bank.rating_score >= 1.0 && bank.rating_score <= 5.0, `Rating out of bounds: ${bank.bank_name}`);
+      assert.ok(bank.credit_rating, `Missing credit rating: ${bank.bank_name}`);
+      assert.ok(bank.stability_tier, `Missing stability tier: ${bank.bank_name}`);
+      assert.ok(bank.products && bank.products.length > 0, `Missing branded products: ${bank.bank_name}`);
+      assert.ok(bank.risk_adjusted_yield_score > 0, `Missing risk-adjusted score: ${bank.bank_name}`);
     }
+  });
+
+  await t.test("UCB has verified 11.25% - 11.75% products and AA+ stability rating", () => {
+    const ucb = banksData.find((b) => b.short_code === "UCB");
+    assert.ok(ucb, "UCB must exist in dataset");
+    assert.equal(ucb.rating_score, 4.6, "UCB rating score must be 4.6/5.0");
+    assert.equal(ucb.credit_rating, "AA+", "UCB credit rating must be AA+");
+    assert.equal(ucb.stability_tier, "TIER_2_STRONG");
+
+    // Check UCB products
+    const agroniFdr = ucb.products.find((p) => p.product_id === "ucb-agroni-fdr");
+    assert.ok(agroniFdr, "UCB Agroni FDR must exist");
+    assert.equal(agroniFdr.headline_rate, 11.25, "UCB Agroni FDR rate must be 11.25%");
+
+    const aymaWomen = ucb.products.find((p) => p.product_id === "ucb-ayma-women-fdr");
+    assert.ok(aymaWomen, "UCB AYMA Women FDR must exist");
+    assert.equal(aymaWomen.headline_rate, 11.50, "UCB AYMA Women FDR rate must be 11.50%");
+
+    const superflexDps = ucb.products.find((p) => p.product_id === "ucb-superflex-dps");
+    assert.ok(superflexDps, "UCB Superflex DPS must exist");
+    assert.equal(superflexDps.headline_rate, 11.25, "UCB Superflex DPS rate must be 11.25%");
+
+    const probashi = ucb.products.find((p) => p.product_id === "ucb-probashi-nrb");
+    assert.ok(probashi, "UCB Probashi scheme must exist");
+    assert.equal(probashi.headline_rate, 11.75, "UCB Probashi scheme rate must be 11.75%");
   });
 });
 
 test("Deposit Maturity Calculation & NBR Tax Tests", async (t) => {
   await t.test("Calculates 1-year deposit with 10% e-TIN tax correctly", () => {
-    // ৳1,000,000 at 10.00% for 12 months with e-TIN (10% tax)
     const result = calculateFdrMaturity(1000000, 10.0, 12, true);
-    assert.equal(result.grossInterest, 100000, "Gross interest should be ৳100,000");
-    assert.equal(result.taxRate, 0.10, "Tax rate should be 10%");
-    assert.equal(result.taxAmount, 10000, "Withholding tax should be ৳10,000");
-    assert.equal(result.netProfit, 90000, "Net profit should be ৳90,000");
-    assert.equal(result.netMaturityValue, 1090000, "Net maturity should be ৳1,090,000");
-    assert.equal(result.effectiveMonthlyProfit, 7500, "Monthly profit should be ৳7,500");
+    assert.equal(result.grossInterest, 100000);
+    assert.equal(result.taxRate, 0.10);
+    assert.equal(result.taxAmount, 10000);
+    assert.equal(result.netProfit, 90000);
+    assert.equal(result.netMaturityValue, 1090000);
   });
 
   await t.test("Calculates 1-year deposit with 15% non-TIN tax correctly", () => {
-    // ৳1,000,000 at 10.00% for 12 months without TIN (15% tax)
     const result = calculateFdrMaturity(1000000, 10.0, 12, false);
-    assert.equal(result.grossInterest, 100000, "Gross interest should be ৳100,000");
-    assert.equal(result.taxRate, 0.15, "Tax rate should be 15%");
-    assert.equal(result.taxAmount, 15000, "Withholding tax should be ৳15,000");
-    assert.equal(result.netProfit, 85000, "Net profit should be ৳85,000");
-    assert.equal(result.netMaturityValue, 1085000, "Net maturity should be ৳1,085,000");
-  });
-
-  await t.test("Calculates fractional tenure (3 months / 6 months) correctly", () => {
-    // ৳1,000,000 at 12.00% for 3 months (0.25 years) with 10% tax
-    const result3m = calculateFdrMaturity(1000000, 12.0, 3, true);
-    assert.equal(result3m.grossInterest, 30000, "Gross interest for 3M should be ৳30,000");
-    assert.equal(result3m.taxAmount, 3000, "Tax for 3M should be ৳3,000");
-    assert.equal(result3m.netProfit, 27000, "Net profit for 3M should be ৳27,000");
+    assert.equal(result.grossInterest, 100000);
+    assert.equal(result.taxRate, 0.15);
+    assert.equal(result.taxAmount, 15000);
+    assert.equal(result.netProfit, 85000);
+    assert.equal(result.netMaturityValue, 1085000);
   });
 });

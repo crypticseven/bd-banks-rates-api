@@ -133,6 +133,36 @@
         }
       }
     },
+    "/api/v1/rates/products": {
+      "get": {
+        "summary": "Search branded deposit products across all 61 banks",
+        "description": "Granular product-level query including UCB Agroni FDR, UCB AYMA Women FDR, UCB Superflex DPS, BRAC Double Scheme, etc.",
+        "parameters": [
+          { "name": "bank", "in": "query", "schema": { "type": "string", "example": "UCB" } },
+          { "name": "type", "in": "query", "schema": { "type": "string", "enum": ["FDR", "DPS", "SPECIAL_SCHEME"] } },
+          { "name": "segment", "in": "query", "schema": { "type": "string", "enum": ["GENERAL_RETAIL", "WOMEN", "SENIOR_CITIZEN", "NRB_EXPATRIATE", "RETAIL_SAVINGS", "ISLAMIC_SHARIAH", "HNI_PREMIUM", "LONG_TERM"] } },
+          { "name": "min_rate", "in": "query", "schema": { "type": "number", "example": 11.0 } },
+          { "name": "q", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "List of matching branded deposit products" }
+        }
+      }
+    },
+    "/api/v1/rates/ratings": {
+      "get": {
+        "summary": "Financial stability, credit ratings, and reputation ranking",
+        "description": "5-star rating scale, CRAB/CRISL credit ratings, NPL categories, and risk-adjusted yield recommendations.",
+        "parameters": [
+          { "name": "tier", "in": "query", "schema": { "type": "string", "enum": ["TIER_1_PRIME", "TIER_2_STRONG", "TIER_3_MODERATE", "TIER_4_WATCHLIST", "TIER_5_DISTRESSED"] } },
+          { "name": "min_score", "in": "query", "schema": { "type": "number", "minimum": 1, "maximum": 5 } },
+          { "name": "sovereign_only", "in": "query", "schema": { "type": "string", "enum": ["true", "false"] } }
+        ],
+        "responses": {
+          "200": { "description": "Market intelligence report and institution ratings" }
+        }
+      }
+    },
     "/api/v1/rates/banks/{code}": {
       "get": {
         "summary": "Get details of a specific bank by short code",

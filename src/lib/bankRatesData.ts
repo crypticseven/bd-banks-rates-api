@@ -14,6 +14,20 @@ export interface DpsRates {
   "10_years"?: number;
 }
 
+export interface BankProduct {
+  product_id: string;
+  product_name: string;
+  product_type: "FDR" | "DPS" | "SPECIAL_SCHEME";
+  headline_rate: number;
+  tenure_options: string[];
+  best_tenure: string;
+  minimum_amount: number;
+  target_segment: "GENERAL_RETAIL" | "WOMEN" | "SENIOR_CITIZEN" | "NRB_EXPATRIATE" | "RETAIL_SAVINGS" | "ISLAMIC_SHARIAH" | "HNI_PREMIUM" | "LONG_TERM";
+  features: string[];
+  instant_encashment: boolean;
+  shariah_compliant: boolean;
+}
+
 export interface BankRateRecord {
   bank_id: string;
   bank_name: string;
@@ -31,16 +45,22 @@ export interface BankRateRecord {
   effective_date: string;
   fetched_at: string;
   verification_status: "VERIFIED_OFFICIAL" | "CIRCULAR_PENDING";
+  rating_score: number;
+  credit_rating: string;
+  stability_tier: "TIER_1_PRIME" | "TIER_2_STRONG" | "TIER_3_MODERATE" | "TIER_4_WATCHLIST" | "TIER_5_DISTRESSED";
+  npl_category: string;
+  capital_adequacy_ratio_car: string;
+  risk_label: string;
+  sovereign_backed: boolean;
+  rating_agency: string;
+  risk_adjusted_yield_score: number;
+  products: BankProduct[];
 }
 
 export const ALL_61_BANKS: BankRateRecord[] = banksData as BankRateRecord[];
 
 /**
  * Calculates maturity value, gross interest, NBR withholding tax, and net return
- * @param principal Initial deposit amount in BDT
- * @param annualRate Annual interest/profit rate percentage (e.g. 10.5)
- * @param tenureMonths Deposit duration in months (3, 6, 12, 36, 60)
- * @param hasTin Whether the depositor has a valid e-TIN (10% tax) or no TIN (15% tax)
  */
 export function calculateFdrMaturity(
   principal: number,
@@ -76,7 +96,7 @@ export function calculateFdrMaturity(
 }
 
 /**
- * Filter, search, and sort all 61 banks
+ * Filter, search, and sort all 61 banks with rating & risk-adjusted options
  */
 export function filterBanks({
   category,
@@ -84,12 +104,16 @@ export function filterBanks({
   instantEncashmentOnly,
   searchQuery,
   sortByTenure = "1_year",
+  minRating,
+  sortBy = "yield",
 }: {
   category?: string;
   isShariah?: boolean;
   instantEncashmentOnly?: boolean;
   searchQuery?: string;
   sortByTenure?: "3_months" | "6_months" | "1_year" | "3_years" | "5_years";
+  minRating?: number;
+  sortBy?: "yield" | "risk_adjusted" | "rating";
 }): BankRateRecord[] {
   let list = [...ALL_61_BANKS];
 
@@ -105,22 +129,37 @@ export function filterBanks({
     list = list.filter((b) => b.instant_encashment);
   }
 
+  if (minRating && minRating > 0) {
+    list = list.filter((b) => b.rating_score >= minRating);
+  }
+
   if (searchQuery && searchQuery.trim().length > 0) {
     const q = searchQuery.toLowerCase().trim();
     list = list.filter(
       (b) =>
         b.bank_name.toLowerCase().includes(q) ||
         b.short_code.toLowerCase().includes(q) ||
-        b.headquarters.toLowerCase().includes(q)
+        b.headquarters.toLowerCase().includes(q) ||
+        b.credit_rating.toLowerCase().includes(q) ||
+        b.products.some((p) => p.product_name.toLowerCase().includes(q))
     );
   }
 
-  // Sort by highest rate for selected tenure
-  list.sort((a, b) => {
-    const rateA = a.fdr_rates[sortByTenure] || 0;
-    const rateB = b.fdr_rates[sortByTenure] || 0;
-    return rateB - rateA;
-  });
+  // Sorting
+  if (sortBy === "risk_adjusted") {
+    // Balances yield against credit safety
+    list.sort((a, b) => (b.risk_adjusted_yield_score || 0) - (a.risk_adjusted_yield_score || 0));
+  } else if (sortBy === "rating") {
+    // Pure stability rating (5.0 to 1.0)
+    list.sort((a, b) => b.rating_score - a.rating_score);
+  } else {
+    // Standard yield for tenure
+    list.sort((a, b) => {
+      const rateA = a.fdr_rates[sortByTenure] || 0;
+      const rateB = b.fdr_rates[sortByTenure] || 0;
+      return rateB - rateA;
+    });
+  }
 
   return list;
 }

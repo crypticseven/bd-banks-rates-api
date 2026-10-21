@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { ALL_61_BANKS, filterBanks, calculateFdrMaturity, BankRateRecord } from "@/lib/bankRatesData";
+import { ALL_61_BANKS, filterBanks, calculateFdrMaturity, BankRateRecord, BankProduct } from "@/lib/bankRatesData";
 import {
   Search,
   ExternalLink,
@@ -18,9 +18,16 @@ import {
   Inbox,
   Clock,
   Sparkles,
+  Star,
+  ShieldCheck,
+  ShieldAlert,
+  ChevronDown,
+  ChevronUp,
+  Tag,
+  Key,
 } from "lucide-react";
 
-type EndpointTab = "deposits" | "banks" | "benchmarks";
+type EndpointTab = "deposits" | "products" | "ratings" | "banks" | "benchmarks";
 type RequestStatus = "idle" | "loading" | "success" | "error";
 
 export default function ApiLandingPage() {
@@ -32,7 +39,12 @@ export default function ApiLandingPage() {
   const [hasTin, setHasTin] = useState<boolean>(true);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
-  // P1-5 & P3-2: Real API execution states
+  // Sorting mode: 'yield' | 'risk_adjusted' | 'rating'
+  const [sortMode, setSortMode] = useState<"yield" | "risk_adjusted" | "rating">("risk_adjusted");
+  const [selectedBankForModal, setSelectedBankForModal] = useState<BankRateRecord | null>(null);
+  const [privateApiKey, setPrivateApiKey] = useState<string>("");
+
+  // Real API execution states
   const [activeTab, setActiveTab] = useState<EndpointTab>("deposits");
   const [apiResponse, setApiResponse] = useState<any>(null);
   const [apiStatus, setApiStatus] = useState<RequestStatus>("idle");
@@ -56,24 +68,36 @@ export default function ApiLandingPage() {
     "5_years": 60,
   }[selectedTenure];
 
-  // Dynamic API URL for the playground based on active tab and filters
+  // Dynamic API URL for the playground
   const currentEndpointUrl = useMemo(() => {
+    if (activeTab === "products") {
+      const p = new URLSearchParams();
+      if (searchQuery.trim()) p.append("q", searchQuery.trim());
+      if (shariahOnly) p.append("shariah", "true");
+      return `/api/v1/rates/products${p.toString() ? `?${p.toString()}` : ""}`;
+    }
+    if (activeTab === "ratings") {
+      return `/api/v1/rates/ratings`;
+    }
     if (activeTab === "banks") {
       return `/api/v1/rates/banks${selectedCategory !== "ALL" ? `?category=${selectedCategory}` : ""}`;
     }
     if (activeTab === "benchmarks") {
       return `/api/v1/rates/benchmarks`;
     }
+
     const params = new URLSearchParams({
       principal: depositAmount.toString(),
       tenure: selectedTenure,
       category: selectedCategory,
       has_tin: hasTin ? "true" : "false",
+      sort_by: sortMode,
     });
     if (searchQuery.trim()) params.append("q", searchQuery.trim());
     if (shariahOnly !== undefined) params.append("shariah", shariahOnly ? "true" : "false");
+    if (privateApiKey.trim()) params.append("api_key", privateApiKey.trim());
     return `/api/v1/rates/deposits?${params.toString()}`;
-  }, [activeTab, depositAmount, selectedTenure, selectedCategory, hasTin, searchQuery, shariahOnly]);
+  }, [activeTab, depositAmount, selectedTenure, selectedCategory, hasTin, sortMode, searchQuery, shariahOnly, privateApiKey]);
 
   // Execute real fetch against Next.js API
   const executeApiQuery = useCallback(async (url: string) => {
@@ -82,7 +106,12 @@ export default function ApiLandingPage() {
     const startTime = performance.now();
 
     try {
-      const res = await fetch(url);
+      const headers: Record<string, string> = { Accept: "application/json" };
+      if (privateApiKey.trim()) {
+        headers["x-api-key"] = privateApiKey.trim();
+      }
+
+      const res = await fetch(url, { headers });
       const latency = Math.round(performance.now() - startTime);
       setApiLatency(latency);
       setApiStatusCode(res.status);
@@ -102,9 +131,8 @@ export default function ApiLandingPage() {
       setApiError(err.message || "Network request failed");
       setApiResponse({ error: err.message || "Failed to connect to API" });
     }
-  }, []);
+  }, [privateApiKey]);
 
-  // Fetch when tab or primary parameters change
   useEffect(() => {
     const timer = setTimeout(() => {
       executeApiQuery(currentEndpointUrl);
@@ -119,8 +147,9 @@ export default function ApiLandingPage() {
       isShariah: shariahOnly,
       searchQuery,
       sortByTenure: selectedTenure,
+      sortBy: sortMode,
     });
-  }, [selectedCategory, shariahOnly, searchQuery, selectedTenure]);
+  }, [selectedCategory, shariahOnly, searchQuery, selectedTenure, sortMode]);
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
@@ -129,14 +158,15 @@ export default function ApiLandingPage() {
   };
 
   const sampleCurl = `curl -X GET "https://api.fardinanik.com${currentEndpointUrl}" \\
-  -H "Accept: application/json"`;
+  -H "Accept: application/json"${privateApiKey ? ` \\\n  -H "x-api-key: ${privateApiKey}"` : ""}`;
 
   const samplePython = `import requests
 
 url = "https://api.fardinanik.com${currentEndpointUrl}"
-response = requests.get(url)
+headers = {"Accept": "application/json"${privateApiKey ? `, "x-api-key": "${privateApiKey}"` : ""}}
+response = requests.get(url, headers=headers)
 data = response.json()
-print("Response status:", response.status_code)`;
+print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-400">
@@ -147,9 +177,9 @@ print("Response status:", response.status_code)`;
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="font-mono text-emerald-400 font-semibold">ALL 61 BANGLADESH SCHEDULED BANKS INDEXED</span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Central Bank Policy Repo: <strong className="text-slate-200">8.50%</strong></span>
+            <span className="text-slate-400">Policy Repo: <strong className="text-slate-200">8.50%</strong></span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">NBR Withholding Tax: <strong className="text-slate-200">10% / 15%</strong></span>
+            <span className="text-slate-400">Highest Safe Yield: <strong className="text-emerald-400">UCB (11.25% - 11.75% @ AA+)</strong></span>
           </div>
           <div className="flex items-center gap-4 text-slate-400 font-mono">
             <a href="https://github.com/crypticseven/bd-banks-rates-api" target="_blank" rel="noreferrer" className="hover:text-white flex items-center gap-1 transition">
@@ -167,13 +197,13 @@ print("Response status:", response.status_code)`;
       <header className="border-b border-slate-800 bg-radial from-slate-900 via-slate-950 to-slate-950 py-16 px-4">
         <div className="max-w-7xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-950/30 text-emerald-400 text-xs font-mono font-medium">
-            <Database className="w-3.5 h-3.5" /> Open-Source FinTech Data Infrastructure
+            <Sparkles className="w-3.5 h-3.5" /> Granular Product Schemes & 5-Star Stability Ratings
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-4xl mx-auto">
-            Bangladesh 61 Banks Deposit Rate & SOC Aggregator API
+            Bangladesh 61 Banks Deposit Rate, SOC & Product Intelligence API
           </h1>
           <p className="text-slate-400 max-w-3xl mx-auto text-base sm:text-lg">
-            High-performance public REST API and automated PyMuPDF crawler aggregating Fixed Deposit (FDR) yields, DPS rates, and Schedule of Charges across all 61 Scheduled Commercial Banks in Bangladesh.
+            High-performance public & private REST API tracking deposit yields (FDR/DPS), specific branded products, Schedule of Charges, and Bangladesh Bank regulatory stability ratings across all 61 Scheduled Commercial Banks.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-4">
@@ -187,7 +217,7 @@ print("Response status:", response.status_code)`;
               href="#table"
               className="px-6 py-2.5 rounded-lg border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 font-medium text-sm transition flex items-center gap-2"
             >
-              <Landmark className="w-4 h-4" /> View 61 Banks Table
+              <Landmark className="w-4 h-4" /> View 61 Banks & Products Table
             </a>
           </div>
         </div>
@@ -196,6 +226,60 @@ print("Response status:", response.status_code)`;
       {/* Main Content Area */}
       <main className="max-w-7xl mx-auto px-4 py-12 space-y-16">
         
+        {/* Market Intelligence Callout: Safe Yield vs Watchlist Yield */}
+        <section className="bg-gradient-to-r from-emerald-950/40 via-slate-900 to-amber-950/30 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4" /> Market Intelligence & Stability Insight
+              </span>
+              <h2 className="text-xl font-bold text-white mt-1">
+                Highest Yield vs. Depositor Safety Index
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 bg-slate-950/80 border border-slate-800 px-3 py-1.5 rounded-lg text-xs font-mono">
+              <Key className="w-3.5 h-3.5 text-amber-400" />
+              <input
+                type="password"
+                placeholder="Private API Key (Optional)..."
+                value={privateApiKey}
+                onChange={(e) => setPrivateApiKey(e.target.value)}
+                className="bg-transparent border-none outline-none text-slate-200 w-44 placeholder-slate-600"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+            {/* Safe Sweetspot */}
+            <div className="border border-emerald-500/30 bg-emerald-950/20 rounded-xl p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold font-mono">
+                  ★ RECOMMENDED SWEETSPOT
+                </span>
+                <span className="text-emerald-400 font-mono font-bold text-sm">4.6 / 5.0 (AA+)</span>
+              </div>
+              <h3 className="text-base font-bold text-white">United Commercial Bank PLC (UCB)</h3>
+              <p className="text-slate-300">
+                Offers <strong>11.25%</strong> on retail FDR and up to <strong>11.75%</strong> on specialized expatriate/women products. Supported by low NPLs, robust corporate governance, and nationwide digital infrastructure (UCB ONE).
+              </p>
+            </div>
+
+            {/* Watchlist Yield Warning */}
+            <div className="border border-amber-500/30 bg-amber-950/20 rounded-xl p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold font-mono">
+                  ⚠ NOMINAL HIGH-YIELD WATCHLIST
+                </span>
+                <span className="text-amber-400 font-mono font-bold text-sm">2.2 / 5.0 (BB)</span>
+              </div>
+              <h3 className="text-base font-bold text-white">National Bank Limited (NBL)</h3>
+              <p className="text-slate-300">
+                Offers nominal <strong>11.50%</strong> interest rate. However, institution is undergoing regulatory board restructuring with high NPLs (&gt;25%). Depositors should weigh yield against liquidity risk.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Interactive API Playground & Documentation */}
         <section id="playground" className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -210,30 +294,17 @@ print("Response status:", response.status_code)`;
             
             {/* Endpoint Tabs */}
             <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setActiveTab("deposits")}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition ${
-                  activeTab === "deposits" ? "bg-emerald-500 text-slate-950 font-bold" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                }`}
-              >
-                GET /rates/deposits
-              </button>
-              <button
-                onClick={() => setActiveTab("banks")}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition ${
-                  activeTab === "banks" ? "bg-emerald-500 text-slate-950 font-bold" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                }`}
-              >
-                GET /rates/banks
-              </button>
-              <button
-                onClick={() => setActiveTab("benchmarks")}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition ${
-                  activeTab === "benchmarks" ? "bg-emerald-500 text-slate-950 font-bold" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                }`}
-              >
-                GET /rates/benchmarks
-              </button>
+              {(["deposits", "products", "ratings", "banks", "benchmarks"] as const).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition ${
+                    activeTab === tab ? "bg-emerald-500 text-slate-950 font-bold" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                  }`}
+                >
+                  GET /rates/{tab}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -288,10 +359,9 @@ print("Response status:", response.status_code)`;
               </div>
             </div>
 
-            {/* Right: Live Response Display with 5 Mandatory States */}
+            {/* Right: Live Response Display */}
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 flex flex-col justify-between">
               <div>
-                {/* Header with real status & latency */}
                 <div className="flex items-center justify-between text-xs text-slate-400 font-mono pb-2 border-b border-slate-800">
                   <div className="flex items-center gap-2">
                     {apiStatus === "loading" ? (
@@ -301,7 +371,7 @@ print("Response status:", response.status_code)`;
                     ) : (
                       <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">HTTP {apiStatusCode} OK</span>
                     )}
-                    <span>Live Response</span>
+                    <span>Live Output</span>
                   </div>
                   {apiLatency > 0 && (
                     <span className="flex items-center gap-1 text-slate-400">
@@ -311,19 +381,15 @@ print("Response status:", response.status_code)`;
                   )}
                 </div>
 
-                {/* Body: State-Driven View */}
                 {apiStatus === "loading" ? (
-                  /* 1. Loading State */
                   <div className="mt-4 p-8 border border-slate-800/80 rounded-lg bg-slate-950 flex flex-col items-center justify-center space-y-3 min-h-[220px]">
                     <RefreshCw className="w-7 h-7 text-emerald-400 animate-spin" />
                     <p className="text-xs font-mono text-slate-400">Executing edge API query...</p>
                   </div>
                 ) : apiStatus === "error" ? (
-                  /* 2. Error State */
                   <div className="mt-4 p-6 border border-rose-800/40 rounded-lg bg-rose-950/20 space-y-3">
                     <div className="flex items-center gap-2 text-rose-400 text-sm font-semibold">
-                      <AlertCircle className="w-4 h-4" />
-                      Request Failed
+                      <AlertCircle className="w-4 h-4" /> Request Failed
                     </div>
                     <p className="text-xs font-mono text-rose-300">{apiError}</p>
                     <button
@@ -334,7 +400,6 @@ print("Response status:", response.status_code)`;
                     </button>
                   </div>
                 ) : (
-                  /* 3. Success / Output View */
                   <pre className="mt-3 bg-slate-950 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-slate-300 overflow-y-auto max-h-80 tabular-nums">
                     {JSON.stringify(apiResponse, null, 2)}
                   </pre>
@@ -361,14 +426,14 @@ print("Response status:", response.status_code)`;
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <Landmark className="w-6 h-6 text-emerald-400" /> 61 Scheduled Banks Deposit Rate Explorer
+                <Landmark className="w-6 h-6 text-emerald-400" /> 61 Scheduled Banks Deposit Rate & Stability Explorer
               </h2>
               <p className="text-sm text-slate-400">
-                Interactive calculator with statutory NBR withholding tax deduction (10% with e-TIN, 15% without).
+                Interactive calculator with financial stability star ratings and specific branded products.
               </p>
             </div>
 
-            {/* Quick Controls: Principal up to 100 Billion without overflow */}
+            {/* Quick Controls */}
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs">
                 <Calculator className="w-4 h-4 text-emerald-400" />
@@ -400,18 +465,47 @@ print("Response status:", response.status_code)`;
             </div>
           </div>
 
-          {/* Filters Bar */}
+          {/* Filters Bar & Smart Sorting */}
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4">
             {/* Search */}
             <div className="relative min-w-[240px] flex-1">
               <Search className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
               <input
                 type="text"
-                placeholder="Search bank name or short code (e.g. UCB, BRAC, Sonali)..."
+                placeholder="Search bank name, code, or product (e.g. UCB, Agroni, Astha)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
               />
+            </div>
+
+            {/* Smart Ranking Mode Switcher */}
+            <div className="flex items-center gap-1 bg-slate-950 border border-slate-800 rounded-lg p-1 text-xs">
+              <span className="px-2 text-slate-500 text-[11px] font-mono">SORT:</span>
+              <button
+                onClick={() => setSortMode("risk_adjusted")}
+                className={`px-2.5 py-1 rounded transition font-medium ${
+                  sortMode === "risk_adjusted" ? "bg-emerald-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"
+                }`}
+              >
+                Risk-Adjusted (Safe High-Yield)
+              </button>
+              <button
+                onClick={() => setSortMode("yield")}
+                className={`px-2.5 py-1 rounded transition font-medium ${
+                  sortMode === "yield" ? "bg-emerald-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"
+                }`}
+              >
+                Nominal Yield
+              </button>
+              <button
+                onClick={() => setSortMode("rating")}
+                className={`px-2.5 py-1 rounded transition font-medium ${
+                  sortMode === "rating" ? "bg-emerald-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"
+                }`}
+              >
+                Stability ★ Rating
+              </button>
             </div>
 
             {/* Tenure Selector */}
@@ -444,10 +538,9 @@ print("Response status:", response.status_code)`;
             </select>
           </div>
 
-          {/* Table Container with Empty State & Tabular Numeral Overflow Handling */}
+          {/* Table Container */}
           <div className="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/60 shadow-xl">
             {filteredBanks.length === 0 ? (
-              /* 4. Empty State */
               <div className="p-12 text-center space-y-3">
                 <Inbox className="w-10 h-10 text-slate-600 mx-auto" />
                 <p className="text-slate-300 text-sm font-semibold">No Banks Match Your Criteria</p>
@@ -466,24 +559,34 @@ print("Response status:", response.status_code)`;
                 </button>
               </div>
             ) : (
-              /* 5. Overflow & Tabular Numbers View */
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
                     <tr className="bg-slate-950/80 border-b border-slate-800 text-slate-400 font-mono uppercase tracking-wider">
                       <th className="py-3 px-4">#</th>
-                      <th className="py-3 px-4">Bank Name</th>
-                      <th className="py-3 px-4">Category</th>
+                      <th className="py-3 px-4">Bank Name & Stability Rating</th>
+                      <th className="py-3 px-4">Credit Tier</th>
                       <th className="py-3 px-4 text-right">Yield ({tenureLabels[selectedTenure]})</th>
-                      <th className="py-3 px-4 text-right">Est. Gross Interest</th>
+                      <th className="py-3 px-4 text-right">Est. Gross</th>
                       <th className="py-3 px-4 text-right">Net Return ({hasTin ? "10%" : "15%"} Tax)</th>
-                      <th className="py-3 px-4 text-center">Schedule of Charges</th>
+                      <th className="py-3 px-4 text-center">Branded Products</th>
+                      <th className="py-3 px-4 text-center">Official SOC</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-800/60">
                     {filteredBanks.map((bank, index) => {
                       const rate = bank.fdr_rates[selectedTenure] || 0;
                       const calc = calculateFdrMaturity(depositAmount, rate, tenureMonths, hasTin);
+
+                      // Rating color formatting
+                      const scoreColor =
+                        bank.rating_score >= 4.5
+                          ? "text-emerald-400"
+                          : bank.rating_score >= 3.5
+                          ? "text-blue-400"
+                          : bank.rating_score >= 2.5
+                          ? "text-amber-400"
+                          : "text-rose-400";
 
                       return (
                         <tr key={bank.bank_id} className="hover:bg-slate-800/40 transition">
@@ -500,19 +603,21 @@ print("Response status:", response.status_code)`;
                                 </span>
                               )}
                             </div>
-                            <div className="text-[11px] text-slate-500 flex items-center gap-2 mt-0.5">
-                              <span>HQ: {bank.headquarters}</span>
-                              {bank.instant_encashment && (
-                                <>
-                                  <span>•</span>
-                                  <span className="text-blue-400">Instant Encashment</span>
-                                </>
-                              )}
+                            <div className="text-[11px] flex items-center gap-2 mt-1">
+                              <span className={`font-mono font-bold flex items-center gap-0.5 ${scoreColor}`}>
+                                <Star className="w-3 h-3 fill-current" />
+                                {bank.rating_score.toFixed(1)} / 5.0
+                              </span>
+                              <span className="text-slate-500">•</span>
+                              <span className="text-slate-400">{bank.risk_label}</span>
                             </div>
                           </td>
-                          <td className="py-3 px-4">
-                            <span className="text-slate-400 font-mono text-[11px]">
-                              {bank.category.replace("_", " ")}
+                          <td className="py-3 px-4 font-mono">
+                            <span className="px-2 py-0.5 rounded text-[11px] bg-slate-800 text-slate-300 font-bold">
+                              {bank.credit_rating}
+                            </span>
+                            <span className="block text-[10px] text-slate-500 mt-0.5">
+                              NPL: {bank.npl_category}
                             </span>
                           </td>
                           <td className="py-3 px-4 text-right">
@@ -528,6 +633,15 @@ print("Response status:", response.status_code)`;
                             <span className="block text-[10px] text-slate-500 font-normal">
                               Total: ৳{calc.netMaturityValue.toLocaleString("en-US")}
                             </span>
+                          </td>
+                          <td className="py-3 px-4 text-center">
+                            <button
+                              onClick={() => setSelectedBankForModal(bank)}
+                              className="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-emerald-300 font-mono text-[11px] transition inline-flex items-center gap-1"
+                            >
+                              <Tag className="w-3 h-3" />
+                              <span>{bank.products?.length || 0} Products</span>
+                            </button>
                           </td>
                           <td className="py-3 px-4 text-center">
                             {bank.soc_url ? (
@@ -554,32 +668,62 @@ print("Response status:", response.status_code)`;
           </div>
         </section>
 
-        {/* PyMuPDF SOC Crawler Architecture */}
-        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 space-y-6">
-          <div className="max-w-3xl">
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <Layers className="w-5 h-5 text-emerald-400" /> Automated PyMuPDF & BeautifulSoup Crawler Engine
-            </h2>
-            <p className="text-sm text-slate-400 mt-1">
-              How the standalone engine keeps rate schedules updated across all 61 banks with strict TLS and provenance tracking.
-            </p>
-          </div>
+        {/* Branded Products Modal */}
+        {selectedBankForModal && (
+          <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl">
+              <div className="flex items-start justify-between border-b border-slate-800 pb-3">
+                <div>
+                  <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                    <span>{selectedBankForModal.bank_name}</span>
+                    <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold">
+                      {selectedBankForModal.credit_rating} (★ {selectedBankForModal.rating_score})
+                    </span>
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Official Branded Deposit Products & Schemes ({selectedBankForModal.products?.length || 0} schemes)
+                  </p>
+                </div>
+                <button
+                  onClick={() => setSelectedBankForModal(null)}
+                  className="text-slate-400 hover:text-white text-sm font-mono px-2 py-1"
+                >
+                  ✕ Close
+                </button>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-400">
-            <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
-              <div className="text-white font-semibold font-mono text-sm">1. Strict TLS Verification</div>
-              <p>Performs secure HTTPS requests with full certificate validation, preventing Man-in-the-Middle injection of rate circulars.</p>
-            </div>
-            <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
-              <div className="text-white font-semibold font-mono text-sm">2. PyMuPDF Circular Parsing</div>
-              <p>Extracts tabular yields directly from monthly PDF deposit circulars, matching tenures (3M, 6M, 1Y, 3Y, 5Y) via regex.</p>
-            </div>
-            <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
-              <div className="text-white font-semibold font-mono text-sm">3. Provenance & Staging</div>
-              <p>Persists update records with source URL, effective date, and verification status for reviewed deployment.</p>
+              <div className="space-y-3">
+                {selectedBankForModal.products?.map((prod) => (
+                  <div key={prod.product_id} className="border border-slate-800 rounded-xl p-4 bg-slate-950/60 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-white text-sm">{prod.product_name}</span>
+                      <span className="font-mono text-emerald-400 font-bold text-base">
+                        {prod.headline_rate.toFixed(2)}%
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-400 font-mono">
+                      <span className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">{prod.product_type}</span>
+                      <span>Min: ৳{prod.minimum_amount.toLocaleString("en-US")}</span>
+                      <span>•</span>
+                      <span className="text-blue-400">{prod.target_segment.replace("_", " ")}</span>
+                      {prod.instant_encashment && (
+                        <>
+                          <span>•</span>
+                          <span className="text-emerald-400">Instant Encashment</span>
+                        </>
+                      )}
+                    </div>
+                    <ul className="text-xs text-slate-400 list-disc list-inside space-y-1 pt-1">
+                      {prod.features.map((f, i) => (
+                        <li key={i}>{f}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
+        )}
       </main>
 
       {/* Footer */}
