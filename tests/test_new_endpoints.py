@@ -13,11 +13,16 @@ def test():
     resp2 = urllib.request.urlopen("http://localhost:3009/api/v1/rates/ratings")
     data2 = json.load(resp2)
     sweetspot = data2["market_intelligence"]["safest_highest_yield_sweetspot"]
-    print(f"Sweetspot: {sweetspot['bank_name']} ({sweetspot['short_code']}) -> {sweetspot['rate_1_year']}% (Rating: {sweetspot['rating_score']}/5.0 {sweetspot['credit_rating']})")
+    print(f"Sweetspot: {sweetspot['bank_name']} ({sweetspot['short_code']}) -> {sweetspot['rate_1_year']}% (Rating: {sweetspot['rating_score']}/5.0 {sweetspot['credit_rating']}, NPL: {sweetspot['npl_ratio_pct']}%)")
     print(f"Verdict: {sweetspot['verdict']}")
 
+    turnaround = data2["market_intelligence"].get("turnaround_high_yield_opportunity")
+    if turnaround:
+        print(f"Turnaround: {turnaround['bank_name']} ({turnaround['short_code']}) -> {turnaround['rate_1_year']}% (Rating: {turnaround['rating_score']}/5.0 {turnaround['credit_rating']}, NPL: {turnaround['npl_ratio_pct']}%)")
+        print(f"Turnaround Verdict: {turnaround['verdict']}")
+
     alert = data2["market_intelligence"]["nominal_highest_yield_alert"]
-    print(f"Watchlist Alert: {alert['bank_name']} ({alert['short_code']}) -> {alert['rate_1_year']}% (Rating: {alert['rating_score']}/5.0)")
+    print(f"Watchlist Alert: {alert['bank_name']} ({alert['short_code']}) -> {alert['rate_1_year']}% (Rating: {alert['rating_score']}/5.0, NPL: {alert['npl_ratio_pct']}%)")
     print(f"Warning: {alert['warning']}")
 
     print("\n=== 3. TEST RISK-ADJUSTED DEPOSITS SORTING ===")

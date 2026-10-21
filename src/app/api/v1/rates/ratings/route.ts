@@ -33,6 +33,7 @@ export async function GET(req: NextRequest) {
       rating_score: b.rating_score,
       credit_rating: b.credit_rating,
       stability_tier: b.stability_tier,
+      npl_ratio_pct: b.npl_ratio_pct,
       npl_category: b.npl_category,
       capital_adequacy_ratio_car: b.capital_adequacy_ratio_car,
       risk_label: b.risk_label,
@@ -58,7 +59,8 @@ export async function GET(req: NextRequest) {
     list.sort((a, b) => b.rating_score - a.rating_score);
 
     // Identify top recommendations
-    const primeRecommendation = list.find((b) => b.stability_tier === "TIER_2_STRONG" && b.rate_1_year >= 11.0) || list[0];
+    const primeRecommendation = list.find((b) => (b.stability_tier === "TIER_1_PRIME" || b.stability_tier === "TIER_2_STRONG") && b.rate_1_year >= 11.0) || list[0];
+    const ucbRecord = list.find((b) => b.short_code === "UCB");
     const highestYieldOverall = [...list].sort((a, b) => b.rate_1_year - a.rate_1_year)[0];
 
     return NextResponse.json(
@@ -73,8 +75,19 @@ export async function GET(req: NextRequest) {
             rating_score: primeRecommendation.rating_score,
             credit_rating: primeRecommendation.credit_rating,
             rate_1_year: primeRecommendation.rate_1_year,
-            verdict: "Highest yield among prime/strong financial institutions (AA+ rated). Optimal balance of return and depositor safety.",
+            npl_ratio_pct: primeRecommendation.npl_ratio_pct,
+            verdict: `Highest yield among prime/strong financial institutions (${primeRecommendation.credit_rating} rated, NPL ${primeRecommendation.npl_ratio_pct}%). Optimal balance of return and depositor safety.`,
           },
+          turnaround_high_yield_opportunity: ucbRecord ? {
+            bank_name: ucbRecord.bank_name,
+            short_code: ucbRecord.short_code,
+            rate_1_year: ucbRecord.rate_1_year,
+            npl_ratio_pct: ucbRecord.npl_ratio_pct,
+            rating_score: ucbRecord.rating_score,
+            credit_rating: ucbRecord.credit_rating,
+            stability_tier: ucbRecord.stability_tier,
+            verdict: "High-yield turnaround candidate (11.25% - 11.75%). NPL stood at 16.27% following comprehensive 2024-2026 Asset Quality Review. 100% of operating profits allocated to provisioning under 5-year recovery plan.",
+          } : undefined,
           nominal_highest_yield_alert: {
             bank_name: highestYieldOverall.bank_name,
             short_code: highestYieldOverall.short_code,
@@ -82,8 +95,9 @@ export async function GET(req: NextRequest) {
             rating_score: highestYieldOverall.rating_score,
             stability_tier: highestYieldOverall.stability_tier,
             npl_category: highestYieldOverall.npl_category,
+            npl_ratio_pct: highestYieldOverall.npl_ratio_pct,
             warning: highestYieldOverall.rating_score < 3.0
-              ? "Elevated NPL / watchlist status. High nominal interest reflects liquidity requirements rather than prime balance sheet strength."
+              ? `Elevated NPL (${highestYieldOverall.npl_ratio_pct}%) / watchlist status. High nominal interest reflects liquidity requirements rather than prime balance sheet strength.`
               : "Acceptable financial standing.",
           },
         },

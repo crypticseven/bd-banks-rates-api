@@ -179,7 +179,9 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <span className="text-slate-500">•</span>
             <span className="text-slate-400">Policy Repo: <strong className="text-slate-200">8.50%</strong></span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Highest Safe Yield: <strong className="text-emerald-400">UCB (11.25% - 11.75% @ AA+)</strong></span>
+            <span className="text-slate-400">Prime High Yield: <strong className="text-emerald-400">Pubali / Trust (11.00% @ AAA/AA+)</strong></span>
+            <span className="text-slate-500">•</span>
+            <span className="text-slate-400">Turnaround Yield: <strong className="text-cyan-400">UCB (11.25% - 11.75% @ 16.27% NPL)</strong></span>
           </div>
           <div className="flex items-center gap-4 text-slate-400 font-mono">
             <a href="https://github.com/crypticseven/bd-banks-rates-api" target="_blank" rel="noreferrer" className="hover:text-white flex items-center gap-1 transition">
@@ -249,18 +251,32 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-            {/* Safe Sweetspot */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            {/* Prime Sweetspot */}
             <div className="border border-emerald-500/30 bg-emerald-950/20 rounded-xl p-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold font-mono">
-                  ★ RECOMMENDED SWEETSPOT
+                  ★ PRIME SWEETSPOT
                 </span>
-                <span className="text-emerald-400 font-mono font-bold text-sm">4.6 / 5.0 (AA+)</span>
+                <span className="text-emerald-400 font-mono font-bold text-xs">4.8★ AAA (NPL 2.14%)</span>
               </div>
-              <h3 className="text-base font-bold text-white">United Commercial Bank PLC (UCB)</h3>
-              <p className="text-slate-300">
-                Offers <strong>11.25%</strong> on retail FDR and up to <strong>11.75%</strong> on specialized expatriate/women products. Supported by low NPLs, robust corporate governance, and nationwide digital infrastructure (UCB ONE).
+              <h3 className="text-sm font-bold text-white">Pubali Bank PLC / Trust Bank</h3>
+              <p className="text-slate-300 text-[11px] leading-relaxed">
+                Offers <strong>11.00%</strong> with verified prime balance sheet quality. Pubali holds a <strong>2.14% NPL</strong> ratio and &gt;16.4% CAR, while Trust holds 4.35% NPL with Army Welfare Trust backing. Optimal depositor safety.
+              </p>
+            </div>
+
+            {/* Turnaround High-Yield */}
+            <div className="border border-cyan-500/30 bg-cyan-950/20 rounded-xl p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold font-mono">
+                  ⚡ HIGH-YIELD TURNAROUND
+                </span>
+                <span className="text-cyan-400 font-mono font-bold text-xs">3.5★ A (NPL 16.27%)</span>
+              </div>
+              <h3 className="text-sm font-bold text-white">United Commercial Bank PLC (UCB)</h3>
+              <p className="text-slate-300 text-[11px] leading-relaxed">
+                Offers <strong>11.25% - 11.75%</strong> on Agroni/AYMA/Probashi schemes. NPL stood at <strong>16.27%</strong> in Q2 2026. Board allocated 100% of profits to provisions under a 5-year turnaround. Higher yield compensates for balance sheet transition.
               </p>
             </div>
 
@@ -268,13 +284,13 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <div className="border border-amber-500/30 bg-amber-950/20 rounded-xl p-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold font-mono">
-                  ⚠ NOMINAL HIGH-YIELD WATCHLIST
+                  ⚠ DISTRESSED WATCHLIST
                 </span>
-                <span className="text-amber-400 font-mono font-bold text-sm">2.2 / 5.0 (BB)</span>
+                <span className="text-amber-400 font-mono font-bold text-xs">1.8★ B (NPL 38.20%)</span>
               </div>
-              <h3 className="text-base font-bold text-white">National Bank Limited (NBL)</h3>
-              <p className="text-slate-300">
-                Offers nominal <strong>11.50%</strong> interest rate. However, institution is undergoing regulatory board restructuring with high NPLs (&gt;25%). Depositors should weigh yield against liquidity risk.
+              <h3 className="text-sm font-bold text-white">National Bank Limited (NBL)</h3>
+              <p className="text-slate-300 text-[11px] leading-relaxed">
+                Offers nominal <strong>11.50%</strong> interest rate. Carries <strong>Tk 28,276 crore</strong> classified loans (38.20% NPL) and capital deficits. High rates reflect acute liquidity requirements rather than stability.
               </p>
             </div>
           </div>
@@ -680,8 +696,8 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
                       {selectedBankForModal.credit_rating} (★ {selectedBankForModal.rating_score})
                     </span>
                   </h3>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    Official Branded Deposit Products & Schemes ({selectedBankForModal.products?.length || 0} schemes)
+                  <p className="text-xs text-slate-400 mt-0.5 font-mono">
+                    Rating: {selectedBankForModal.credit_rating} ({selectedBankForModal.rating_score}★) &bull; NPL Ratio: {selectedBankForModal.npl_ratio_pct ? `${selectedBankForModal.npl_ratio_pct}%` : selectedBankForModal.npl_category} &bull; CAR: {selectedBankForModal.capital_adequacy_ratio_car}
                   </p>
                 </div>
                 <button

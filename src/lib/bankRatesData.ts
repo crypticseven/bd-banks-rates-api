@@ -48,6 +48,7 @@ export interface BankRateRecord {
   rating_score: number;
   credit_rating: string;
   stability_tier: "TIER_1_PRIME" | "TIER_2_STRONG" | "TIER_3_MODERATE" | "TIER_4_WATCHLIST" | "TIER_5_DISTRESSED";
+  npl_ratio_pct: number;
   npl_category: string;
   capital_adequacy_ratio_car: string;
   risk_label: string;

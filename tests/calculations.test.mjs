@@ -57,12 +57,13 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
     }
   });
 
-  await t.test("UCB has verified 11.25% - 11.75% products and AA+ stability rating", () => {
+  await t.test("UCB has verified 11.25% - 11.75% products and audited 16.27% NPL turnaround rating", () => {
     const ucb = banksData.find((b) => b.short_code === "UCB");
     assert.ok(ucb, "UCB must exist in dataset");
-    assert.equal(ucb.rating_score, 4.6, "UCB rating score must be 4.6/5.0");
-    assert.equal(ucb.credit_rating, "AA+", "UCB credit rating must be AA+");
-    assert.equal(ucb.stability_tier, "TIER_2_STRONG");
+    assert.equal(ucb.npl_ratio_pct, 16.27, "UCB NPL ratio must be 16.27%");
+    assert.equal(ucb.rating_score, 3.5, "UCB audited turnaround score must be 3.5/5.0");
+    assert.equal(ucb.credit_rating, "A", "UCB credit rating must be A");
+    assert.equal(ucb.stability_tier, "TIER_3_MODERATE");
 
     // Check UCB products
     const agroniFdr = ucb.products.find((p) => p.product_id === "ucb-agroni-fdr");

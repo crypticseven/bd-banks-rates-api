@@ -26,15 +26,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.8,
+    "rating_score": 3.7,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "HIGH (15.0%)",
+    "npl_category": "HIGH (15.2%)",
     "capital_adequacy_ratio_car": ">11.0%",
-    "risk_label": "Sovereign 100% Guaranteed Deposit",
+    "risk_label": "Moderate Risk (Sovereign Guaranteed Backstop)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.95,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.81,
     "products": [
       {
         "product_id": "sonali-standard-fdr",
@@ -78,7 +78,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 15.2
   },
   {
     "bank_id": "janata",
@@ -107,15 +108,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.8,
-    "credit_rating": "BBB",
-    "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>30.0%)",
-    "capital_adequacy_ratio_car": "<7.0%",
-    "risk_label": "Sovereign 100% Guaranteed Deposit",
+    "rating_score": 2,
+    "credit_rating": "B+",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (68.5%)",
+    "capital_adequacy_ratio_car": "Negative (-8.5%)",
+    "risk_label": "Severe Distressed (Beximco/AnonTex Defaults, Sovereign Backed)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 6.35,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.1,
     "products": [
       {
         "product_id": "janata-standard-fdr",
@@ -159,7 +160,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 68.5
   },
   {
     "bank_id": "agrani",
@@ -188,15 +190,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.4,
-    "credit_rating": "A",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "VERY_HIGH (>22.0%)",
-    "capital_adequacy_ratio_car": "<9.0%",
-    "risk_label": "Sovereign 100% Guaranteed Deposit",
+    "rating_score": 2.8,
+    "credit_rating": "BBB",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "CRITICAL (28.4%)",
+    "capital_adequacy_ratio_car": "Deficient (6.8%)",
+    "risk_label": "Elevated Risk (High Classified Loans, Sovereign Backed)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.39,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.52,
     "products": [
       {
         "product_id": "agrani-standard-fdr",
@@ -240,7 +242,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 28.4
   },
   {
     "bank_id": "rupali",
@@ -269,15 +272,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.9,
+    "rating_score": 2.7,
     "credit_rating": "BBB",
     "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>21.0%)",
-    "capital_adequacy_ratio_car": "<8.5%",
-    "risk_label": "Sovereign 100% Guaranteed Deposit",
+    "npl_category": "HIGH (24.8%)",
+    "capital_adequacy_ratio_car": "Deficient (7.2%)",
+    "risk_label": "Elevated Risk (Sovereign Backed)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 6.49,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.2,
     "products": [
       {
         "product_id": "rupali-standard-fdr",
@@ -321,7 +324,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 24.8
   },
   {
     "bank_id": "basic",
@@ -350,15 +354,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 1.7,
+    "rating_score": 1.5,
     "credit_rating": "B",
     "stability_tier": "TIER_5_DISTRESSED",
-    "npl_category": "VERY_HIGH (>58.0%)",
-    "capital_adequacy_ratio_car": "Negative",
-    "risk_label": "Sovereign 100% Guaranteed Deposit",
+    "npl_category": "SEVERE_DEFAULT (>60%)",
+    "capital_adequacy_ratio_car": "Negative (-24.0%)",
+    "risk_label": "Critically Distressed (Legacy Scams, Sovereign Backed)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 4.84,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.46,
     "products": [
       {
         "product_id": "basic-standard-fdr",
@@ -402,7 +406,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 64.5
   },
   {
     "bank_id": "bdbl",
@@ -431,15 +436,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.4,
+    "rating_score": 2.1,
     "credit_rating": "BB",
     "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>35.0%)",
-    "capital_adequacy_ratio_car": "<8.0%",
-    "risk_label": "Sovereign 100% Guaranteed Deposit",
+    "npl_category": "CRITICAL (43.2%)",
+    "capital_adequacy_ratio_car": "Deficient (5.5%)",
+    "risk_label": "Watchlist (Sonali Merger Target, Sovereign Backed)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 5.9,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 5.41,
     "products": [
       {
         "product_id": "bdbl-standard-fdr",
@@ -483,7 +488,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 43.2
   },
   {
     "bank_id": "bkb",
@@ -512,15 +518,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.3,
-    "credit_rating": "A",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "VERY_HIGH (>20.0%)",
-    "capital_adequacy_ratio_car": "<8.5%",
-    "risk_label": "Sovereign Statutory Agriculture",
+    "rating_score": 2.8,
+    "credit_rating": "BBB-",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (26.5%)",
+    "capital_adequacy_ratio_car": "Negative (-6.5%)",
+    "risk_label": "High NPL (Agricultural Sovereign Mandate)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.63,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.86,
     "products": [
       {
         "product_id": "bkb-standard-fdr",
@@ -564,7 +570,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 26.5
   },
   {
     "bank_id": "rakub",
@@ -593,15 +600,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.2,
-    "credit_rating": "A-",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "VERY_HIGH (>23.0%)",
-    "capital_adequacy_ratio_car": "<8.0%",
-    "risk_label": "Sovereign Statutory Agriculture",
+    "rating_score": 2.5,
+    "credit_rating": "BB+",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "CRITICAL (32.8%)",
+    "capital_adequacy_ratio_car": "Negative (-4.2%)",
+    "risk_label": "High NPL (BKB Consolidation Target)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.29,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 6.21,
     "products": [
       {
         "product_id": "rakub-standard-fdr",
@@ -645,7 +652,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 32.8
   },
   {
     "bank_id": "pkb",
@@ -674,15 +682,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.4,
+    "rating_score": 3.5,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6.5%)",
-    "capital_adequacy_ratio_car": ">14.0%",
-    "risk_label": "Sovereign Statutory Expatriate",
+    "npl_category": "MODERATE (7.2%)",
+    "capital_adequacy_ratio_car": ">14.5%",
+    "risk_label": "Moderate Risk (Sovereign Expatriate Bank)",
     "sovereign_backed": true,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.78,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.93,
     "products": [
       {
         "product_id": "pkb-standard-fdr",
@@ -726,7 +734,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 7.2
   },
   {
     "bank_id": "ucb",
@@ -751,19 +760,19 @@
     "instant_encashment": true,
     "soc_url": "https://www.ucb.com.bd/rates/interest-rates/",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.ucb.com.bd/rates/interest-rates/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+    "source_url": "https://www.ucb.com.bd/assets/pdf/fdr_soc_circular_2026_oct.pdf",
     "effective_date": "2026-10-21",
-    "fetched_at": "2026-10-21T12:29:27.189Z",
+    "fetched_at": "2026-10-21T12:43:52.746Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.6,
-    "credit_rating": "AA+",
-    "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<4.5%)",
-    "capital_adequacy_ratio_car": ">14.5%",
-    "risk_label": "Low Risk (Strong Franchise)",
+    "rating_score": 3.5,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "HIGH_TURNAROUND (16.27%)",
+    "capital_adequacy_ratio_car": "Adequate (10.45%)",
+    "risk_label": "High Yield Turnaround (16.27% NPL, 100% Profits to Provisions)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 10.66,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
     "products": [
       {
         "product_id": "ucb-agroni-fdr",
@@ -872,7 +881,8 @@
         "instant_encashment": true,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 16.27
   },
   {
     "bank_id": "brac",
@@ -901,15 +911,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.8,
+    "rating_score": 4.9,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
-    "npl_category": "LOW (<3.5%)",
-    "capital_adequacy_ratio_car": ">15.5%",
-    "risk_label": "Ultra-Low Risk (Prime)",
+    "npl_category": "PRIME_LOW (2.27%)",
+    "capital_adequacy_ratio_car": ">15.8%",
+    "risk_label": "Lowest Risk (Best-in-Class Balance Sheet)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.74,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 9.87,
     "products": [
       {
         "product_id": "brac-golden-fdr",
@@ -949,7 +959,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.27
   },
   {
     "bank_id": "city",
@@ -981,11 +992,11 @@
     "rating_score": 4.5,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<4.2%)",
-    "capital_adequacy_ratio_car": ">14.8%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">14.4%",
+    "risk_label": "Low Risk (Strong Card/Retail Franchise)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 10.04,
     "products": [
       {
@@ -1007,7 +1018,8 @@
         "instant_encashment": true,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 4.65
   },
   {
     "bank_id": "ebl",
@@ -1036,15 +1048,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.7,
+    "rating_score": 4.8,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
-    "npl_category": "LOW (<3.8%)",
-    "capital_adequacy_ratio_car": ">15.0%",
-    "risk_label": "Ultra-Low Risk (Prime)",
+    "npl_category": "PRIME_LOW (2.24%)",
+    "capital_adequacy_ratio_car": ">15.2%",
+    "risk_label": "Lowest Risk (Prime Corporate & Retail Franchise)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 10.09,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 10.23,
     "products": [
       {
         "product_id": "ebl-classic-fdr",
@@ -1067,7 +1079,8 @@
         "instant_encashment": true,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.24
   },
   {
     "bank_id": "dbbl",
@@ -1096,15 +1109,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.4,
+    "rating_score": 4.5,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<4.8%)",
-    "capital_adequacy_ratio_car": ">15.2%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">15.1%",
+    "risk_label": "Low Risk (Dominant Retail Deposit Base)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.97,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.1,
     "products": [
       {
         "product_id": "dbbl-standard-fdr",
@@ -1148,7 +1161,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 4.92
   },
   {
     "bank_id": "prime",
@@ -1177,15 +1191,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.3,
+    "rating_score": 4.4,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (4.9%)",
+    "npl_category": "HEALTHY (<5.0%)",
     "capital_adequacy_ratio_car": ">14.2%",
-    "risk_label": "Low Risk (Strong)",
+    "risk_label": "Low Risk (Well Managed Corporate Book)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.97,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.12,
     "products": [
       {
         "product_id": "prime-standard-fdr",
@@ -1229,7 +1243,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 4.45
   },
   {
     "bank_id": "mtb",
@@ -1258,15 +1273,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.3,
+    "rating_score": 4.2,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (5.2%)",
-    "capital_adequacy_ratio_car": ">14.0%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "MODERATE (5.65%)",
+    "capital_adequacy_ratio_car": ">13.8%",
+    "risk_label": "Low-Moderate Risk (Strong Governance)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.97,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.82,
     "products": [
       {
         "product_id": "mtb-standard-fdr",
@@ -1310,7 +1325,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 5.65
   },
   {
     "bank_id": "dhaka",
@@ -1342,11 +1358,11 @@
     "rating_score": 4.1,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (5.8%)",
+    "npl_category": "MODERATE (5.85%)",
     "capital_adequacy_ratio_car": ">13.5%",
-    "risk_label": "Low Risk (Strong)",
+    "risk_label": "Low-Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 9.45,
     "products": [
       {
@@ -1391,7 +1407,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 5.85
   },
   {
     "bank_id": "pubali",
@@ -1420,15 +1437,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.5,
-    "credit_rating": "AA+",
-    "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<3.0%)",
-    "capital_adequacy_ratio_car": ">16.0%",
-    "risk_label": "Low Risk (Strong)",
+    "rating_score": 4.8,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
+    "npl_category": "PRIME_LOW (2.14%)",
+    "capital_adequacy_ratio_car": ">16.4%",
+    "risk_label": "Lowest Risk (Disciplined Underwriting, Strong CAR)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 10.27,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 10.71,
     "products": [
       {
         "product_id": "pubali-standard-fdr",
@@ -1472,7 +1489,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.14
   },
   {
     "bank_id": "mercantile",
@@ -1501,15 +1519,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4,
-    "credit_rating": "AA-",
-    "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (6.1%)",
-    "capital_adequacy_ratio_car": ">13.1%",
+    "rating_score": 3.7,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (7.85%)",
+    "capital_adequacy_ratio_car": ">12.8%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.73,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.25,
     "products": [
       {
         "product_id": "mercantile-standard-fdr",
@@ -1553,7 +1571,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 7.85
   },
   {
     "bank_id": "southeast",
@@ -1582,15 +1601,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4,
-    "credit_rating": "AA-",
-    "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (6.2%)",
-    "capital_adequacy_ratio_car": ">13.2%",
+    "rating_score": 3.6,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (8.45%)",
+    "capital_adequacy_ratio_car": ">12.5%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.51,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.89,
     "products": [
       {
         "product_id": "southeast-standard-fdr",
@@ -1634,7 +1653,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 8.45
   },
   {
     "bank_id": "ncc",
@@ -1663,15 +1683,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4,
-    "credit_rating": "AA-",
-    "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (5.9%)",
-    "capital_adequacy_ratio_car": ">13.5%",
+    "rating_score": 3.8,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (6.95%)",
+    "capital_adequacy_ratio_car": ">13.2%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.51,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.2,
     "products": [
       {
         "product_id": "ncc-standard-fdr",
@@ -1715,7 +1735,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 6.95
   },
   {
     "bank_id": "premier",
@@ -1744,15 +1765,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4,
-    "credit_rating": "AA-",
-    "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (6.5%)",
-    "capital_adequacy_ratio_car": ">13.0%",
+    "rating_score": 3.5,
+    "credit_rating": "A",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "ELEVATED (8.90%)",
+    "capital_adequacy_ratio_car": ">12.4%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.73,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
     "products": [
       {
         "product_id": "premier-standard-fdr",
@@ -1796,7 +1817,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 8.9
   },
   {
     "bank_id": "trust",
@@ -1828,11 +1850,11 @@
     "rating_score": 4.4,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<4.0%)",
-    "capital_adequacy_ratio_car": ">15.0%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">14.8%",
+    "risk_label": "Low Risk (Army Welfare Trust Backed)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 10.12,
     "products": [
       {
@@ -1877,7 +1899,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 4.35
   },
   {
     "bank_id": "jamuna",
@@ -1909,11 +1932,11 @@
     "rating_score": 4.1,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (5.5%)",
-    "capital_adequacy_ratio_car": ">13.8%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "MODERATE (5.45%)",
+    "capital_adequacy_ratio_car": ">13.9%",
+    "risk_label": "Low-Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 9.67,
     "products": [
       {
@@ -1958,7 +1981,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 5.45
   },
   {
     "bank_id": "bank_asia",
@@ -1987,15 +2011,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.5,
-    "credit_rating": "A",
+    "rating_score": 3.8,
+    "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6-8%)",
-    "capital_adequacy_ratio_car": ">12.5%",
-    "risk_label": "Moderate Risk",
+    "npl_category": "MODERATE (6.85%)",
+    "capital_adequacy_ratio_car": ">13.1%",
+    "risk_label": "Moderate Risk (Agent Banking Leader)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.72,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.2,
     "products": [
       {
         "product_id": "bank_asia-standard-fdr",
@@ -2039,7 +2063,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 6.85
   },
   {
     "bank_id": "one_bank",
@@ -2068,15 +2093,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.5,
-    "credit_rating": "A",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6-8%)",
-    "capital_adequacy_ratio_car": ">12.5%",
-    "risk_label": "Moderate Risk",
+    "rating_score": 2.8,
+    "credit_rating": "BBB-",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (18.50%)",
+    "capital_adequacy_ratio_car": "Deficient (9.8%)",
+    "risk_label": "High Risk (Corporate Classified Loan Backlog)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.92,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.72,
     "products": [
       {
         "product_id": "one_bank-standard-fdr",
@@ -2120,7 +2145,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 18.5
   },
   {
     "bank_id": "ab_bank",
@@ -2149,15 +2175,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.5,
-    "credit_rating": "A",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6-8%)",
-    "capital_adequacy_ratio_car": ">12.5%",
-    "risk_label": "Moderate Risk",
+    "rating_score": 2.6,
+    "credit_rating": "BB+",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (21.40%)",
+    "capital_adequacy_ratio_car": "Deficient (8.9%)",
+    "risk_label": "High Risk (Legacy Default Book)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.72,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.19,
     "products": [
       {
         "product_id": "ab_bank-standard-fdr",
@@ -2201,7 +2227,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 21.4
   },
   {
     "bank_id": "ific",
@@ -2230,15 +2257,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.2,
-    "credit_rating": "A-",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "HIGH (11.0%)",
-    "capital_adequacy_ratio_car": ">11.5%",
-    "risk_label": "Moderate-High Risk",
+    "rating_score": 2.7,
+    "credit_rating": "BBB-",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "HIGH (18.90%)",
+    "capital_adequacy_ratio_car": "Deficient (9.2%)",
+    "risk_label": "High Risk (Beximco Exposure / Board Restructured)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.23,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 7.37,
     "products": [
       {
         "product_id": "ific-standard-fdr",
@@ -2282,7 +2309,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 18.9
   },
   {
     "bank_id": "uttara",
@@ -2311,15 +2339,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.9,
-    "credit_rating": "AA-",
-    "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (6.8%)",
-    "capital_adequacy_ratio_car": ">12.8%",
+    "rating_score": 3.7,
+    "credit_rating": "A+",
+    "stability_tier": "TIER_3_MODERATE",
+    "npl_category": "MODERATE (7.20%)",
+    "capital_adequacy_ratio_car": ">13.4%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.15,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.84,
     "products": [
       {
         "product_id": "uttara-standard-fdr",
@@ -2363,7 +2391,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 7.2
   },
   {
     "bank_id": "nbl",
@@ -2392,15 +2421,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.2,
-    "credit_rating": "BB",
-    "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>28.0%)",
-    "capital_adequacy_ratio_car": "<9.5%",
-    "risk_label": "High Risk (Restructured Board / Watchlist)",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (38.20%)",
+    "capital_adequacy_ratio_car": "Deficient (4.8%)",
+    "risk_label": "Critically Distressed (Tk 28k Cr Bad Debt, BB Oversight)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 6.74,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.92,
     "products": [
       {
         "product_id": "nbl-standard-fdr",
@@ -2444,7 +2473,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 38.2
   },
   {
     "bank_id": "nrbc",
@@ -2473,15 +2503,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.4,
-    "credit_rating": "A",
+    "rating_score": 3.2,
+    "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "HIGH (8.5%)",
-    "capital_adequacy_ratio_car": ">12.0%",
-    "risk_label": "Moderate Risk",
+    "npl_category": "ELEVATED (10.85%)",
+    "capital_adequacy_ratio_car": ">11.6%",
+    "risk_label": "Elevated Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.76,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.42,
     "products": [
       {
         "product_id": "nrbc-standard-fdr",
@@ -2525,7 +2555,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 10.85
   },
   {
     "bank_id": "nrb",
@@ -2554,15 +2585,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.5,
-    "credit_rating": "A",
+    "rating_score": 3.3,
+    "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (7.5%)",
-    "capital_adequacy_ratio_car": ">12.5%",
-    "risk_label": "Moderate Risk",
+    "npl_category": "ELEVATED (8.90%)",
+    "capital_adequacy_ratio_car": ">12.4%",
+    "risk_label": "Elevated Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.92,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.59,
     "products": [
       {
         "product_id": "nrb-standard-fdr",
@@ -2606,7 +2637,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 8.9
   },
   {
     "bank_id": "meghna",
@@ -2635,15 +2667,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.7,
-    "credit_rating": "A+",
+    "rating_score": 3.5,
+    "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6.0%)",
-    "capital_adequacy_ratio_car": ">13.8%",
+    "npl_category": "MODERATE (7.45%)",
+    "capital_adequacy_ratio_car": ">13.1%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.25,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
     "products": [
       {
         "product_id": "meghna-standard-fdr",
@@ -2687,7 +2719,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 7.45
   },
   {
     "bank_id": "midland",
@@ -2716,15 +2749,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.7,
-    "credit_rating": "A+",
+    "rating_score": 3.6,
+    "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (5.8%)",
-    "capital_adequacy_ratio_car": ">14.0%",
+    "npl_category": "MODERATE (6.85%)",
+    "capital_adequacy_ratio_car": ">13.5%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.25,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.09,
     "products": [
       {
         "product_id": "midland-standard-fdr",
@@ -2768,7 +2801,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 6.85
   },
   {
     "bank_id": "modhumoti",
@@ -2797,15 +2831,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.8,
+    "rating_score": 3.7,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (5.2%)",
-    "capital_adequacy_ratio_car": ">14.5%",
+    "npl_category": "MODERATE (6.25%)",
+    "capital_adequacy_ratio_car": ">13.8%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.2,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.04,
     "products": [
       {
         "product_id": "modhumoti-standard-fdr",
@@ -2849,7 +2883,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 6.25
   },
   {
     "bank_id": "sbac",
@@ -2878,15 +2913,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.4,
-    "credit_rating": "A",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "HIGH (9.0%)",
-    "capital_adequacy_ratio_car": ">12.0%",
-    "risk_label": "Moderate Risk",
+    "rating_score": 3,
+    "credit_rating": "BBB+",
+    "stability_tier": "TIER_4_WATCHLIST",
+    "npl_category": "ELEVATED (13.45%)",
+    "capital_adequacy_ratio_car": ">10.8%",
+    "risk_label": "High Risk (Governance Pressures)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.76,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.07,
     "products": [
       {
         "product_id": "sbac-standard-fdr",
@@ -2930,7 +2965,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 13.45
   },
   {
     "bank_id": "shimanto",
@@ -2959,15 +2995,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.2,
+    "rating_score": 4.4,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<2.5%)",
-    "capital_adequacy_ratio_car": ">18.0%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "PRIME_LOW (2.45%)",
+    "capital_adequacy_ratio_car": ">18.2%",
+    "risk_label": "Low Risk (BGB Welfare Backed)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.82,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.12,
     "products": [
       {
         "product_id": "shimanto-standard-fdr",
@@ -3011,7 +3047,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.45
   },
   {
     "bank_id": "community",
@@ -3040,15 +3077,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.2,
+    "rating_score": 4.4,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<2.0%)",
-    "capital_adequacy_ratio_car": ">19.0%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "PRIME_LOW (2.15%)",
+    "capital_adequacy_ratio_car": ">18.8%",
+    "risk_label": "Low Risk (Police Kallyan Trust Backed)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.82,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 10.12,
     "products": [
       {
         "product_id": "community-standard-fdr",
@@ -3092,7 +3129,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.15
   },
   {
     "bank_id": "bengal",
@@ -3121,15 +3159,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.4,
-    "credit_rating": "A",
+    "rating_score": 3.5,
+    "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "LOW (<3.0%)",
-    "capital_adequacy_ratio_car": ">16.0%",
-    "risk_label": "Moderate Risk (New Bank)",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">15.5%",
+    "risk_label": "Moderate Risk (Emerging Franchise)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.76,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
     "products": [
       {
         "product_id": "bengal-standard-fdr",
@@ -3173,7 +3211,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 4.85
   },
   {
     "bank_id": "citizens",
@@ -3202,15 +3241,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.3,
-    "credit_rating": "A",
+    "rating_score": 3.5,
+    "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "LOW (<2.5%)",
-    "capital_adequacy_ratio_car": ">17.0%",
-    "risk_label": "Moderate Risk (New Bank)",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">16.2%",
+    "risk_label": "Moderate Risk (Emerging Franchise)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.59,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.92,
     "products": [
       {
         "product_id": "citizens-standard-fdr",
@@ -3254,7 +3293,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 3.85
   },
   {
     "bank_id": "padma",
@@ -3283,15 +3323,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 1.8,
-    "credit_rating": "B",
+    "rating_score": 1.2,
+    "credit_rating": "C",
     "stability_tier": "TIER_5_DISTRESSED",
-    "npl_category": "VERY_HIGH (>60.0%)",
-    "capital_adequacy_ratio_car": "<5.0%",
-    "risk_label": "Distressed (Merger Underway)",
+    "npl_category": "SEVERE_DEFAULT (67.50%)",
+    "capital_adequacy_ratio_car": "Negative (-18.0%)",
+    "risk_label": "Critically Insolvent (Legacy Defaults)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 5.92,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.55,
     "products": [
       {
         "product_id": "padma-standard-fdr",
@@ -3335,7 +3375,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 67.5
   },
   {
     "bank_id": "bcbl",
@@ -3364,15 +3405,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 1.9,
-    "credit_rating": "B",
+    "rating_score": 1.4,
+    "credit_rating": "B-",
     "stability_tier": "TIER_5_DISTRESSED",
-    "npl_category": "VERY_HIGH (>45.0%)",
-    "capital_adequacy_ratio_car": "<6.0%",
-    "risk_label": "Distressed (BB Observer)",
+    "npl_category": "CRITICAL (48.20%)",
+    "capital_adequacy_ratio_car": "Negative (-8.5%)",
+    "risk_label": "Critically Distressed (Chronic Capital Deficit)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 6,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.92,
     "products": [
       {
         "product_id": "bcbl-standard-fdr",
@@ -3416,7 +3457,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 48.2
   },
   {
     "bank_id": "ibbl",
@@ -3445,15 +3487,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.4,
-    "credit_rating": "A-",
-    "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "HIGH (12.0%)",
-    "capital_adequacy_ratio_car": ">11.0%",
-    "risk_label": "Moderate Risk (Restructured Board)",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "SEVERE_DEFAULT (51.2%)",
+    "capital_adequacy_ratio_car": "Negative (-4.5%)",
+    "risk_label": "Critically Distressed (Tk 94k Cr Default, BB Reconstitution)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.98,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.28,
     "products": [
       {
         "product_id": "ibbl-standard-fdr",
@@ -3497,7 +3539,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 51.2
   },
   {
     "bank_id": "al_arafah",
@@ -3526,15 +3569,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.5,
+    "rating_score": 3.4,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6-8%)",
-    "capital_adequacy_ratio_car": ">12.5%",
-    "risk_label": "Moderate Risk",
+    "npl_category": "ELEVATED (9.20%)",
+    "capital_adequacy_ratio_car": ">12.1%",
+    "risk_label": "Moderate-Elevated Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.53,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.37,
     "products": [
       {
         "product_id": "al_arafah-standard-fdr",
@@ -3578,7 +3621,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 9.2
   },
   {
     "bank_id": "sibl",
@@ -3607,15 +3651,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.6,
-    "credit_rating": "BBB",
-    "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>18.0%)",
-    "capital_adequacy_ratio_car": "<10.0%",
-    "risk_label": "High Risk (Restructured Board)",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (37.58%)",
+    "capital_adequacy_ratio_car": "Deficient (4.5%)",
+    "risk_label": "Severe Distressed (Board Reconstituted / High NPL)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.19,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.66,
     "products": [
       {
         "product_id": "sibl-standard-fdr",
@@ -3659,7 +3703,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 37.58
   },
   {
     "bank_id": "shahjalal",
@@ -3688,15 +3733,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.2,
+    "rating_score": 4.3,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<4.8%)",
+    "npl_category": "HEALTHY (<5.0%)",
     "capital_adequacy_ratio_car": ">14.5%",
-    "risk_label": "Low Risk (Sound Islamic)",
+    "risk_label": "Low Risk (Most Stable Islamic PCB)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.6,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.75,
     "products": [
       {
         "product_id": "shahjalal-standard-fdr",
@@ -3740,7 +3785,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 4.75
   },
   {
     "bank_id": "exim",
@@ -3769,15 +3815,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.5,
-    "credit_rating": "A",
+    "rating_score": 3.2,
+    "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "HIGH (8.5%)",
-    "capital_adequacy_ratio_car": ">12.2%",
-    "risk_label": "Moderate Risk",
+    "npl_category": "ELEVATED (11.85%)",
+    "capital_adequacy_ratio_car": ">11.2%",
+    "risk_label": "Elevated Risk (Asset Stress Post Padma Talks)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.72,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.23,
     "products": [
       {
         "product_id": "exim-standard-fdr",
@@ -3821,7 +3867,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 11.85
   },
   {
     "bank_id": "fsibl",
@@ -3850,15 +3897,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.5,
-    "credit_rating": "BBB",
-    "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>20.0%)",
-    "capital_adequacy_ratio_car": "<9.5%",
-    "risk_label": "High Risk (Restructured Board)",
+    "rating_score": 1.8,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (36.63%)",
+    "capital_adequacy_ratio_car": "Deficient (3.8%)",
+    "risk_label": "Severe Distressed (Consolidation Target)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 7.17,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.79,
     "products": [
       {
         "product_id": "fsibl-standard-fdr",
@@ -3902,7 +3949,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 36.63
   },
   {
     "bank_id": "global_islami",
@@ -3931,15 +3979,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.3,
-    "credit_rating": "BB",
-    "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>22.0%)",
-    "capital_adequacy_ratio_car": "<9.0%",
-    "risk_label": "High Risk (Restructured Board)",
+    "rating_score": 1.7,
+    "credit_rating": "B",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "CRITICAL (38.50%)",
+    "capital_adequacy_ratio_car": "Deficient (4.2%)",
+    "risk_label": "Severe Distressed (Board Reconstituted)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 6.79,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 5.58,
     "products": [
       {
         "product_id": "global_islami-standard-fdr",
@@ -3983,7 +4031,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 38.5
   },
   {
     "bank_id": "union",
@@ -4012,15 +4061,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 2.3,
-    "credit_rating": "BB",
-    "stability_tier": "TIER_4_WATCHLIST",
-    "npl_category": "VERY_HIGH (>24.0%)",
-    "capital_adequacy_ratio_car": "<9.0%",
-    "risk_label": "High Risk (Restructured Board)",
+    "rating_score": 1.1,
+    "credit_rating": "C",
+    "stability_tier": "TIER_5_DISTRESSED",
+    "npl_category": "SEVERE_DEFAULT (92.50%)",
+    "capital_adequacy_ratio_car": "Negative (-35.0%)",
+    "risk_label": "Critically Insolvent (Administrator Appointed)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 6.79,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 4.2,
     "products": [
       {
         "product_id": "union-standard-fdr",
@@ -4064,7 +4113,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 92.5
   },
   {
     "bank_id": "standard_islamic",
@@ -4093,15 +4143,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 3.5,
+    "rating_score": 3.4,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6-8%)",
-    "capital_adequacy_ratio_car": ">12.5%",
+    "npl_category": "ELEVATED (8.95%)",
+    "capital_adequacy_ratio_car": ">12.0%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.72,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.56,
     "products": [
       {
         "product_id": "standard_islamic-standard-fdr",
@@ -4145,7 +4195,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 8.95
   },
   {
     "bank_id": "icb_islamic",
@@ -4174,15 +4225,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 1.2,
+    "rating_score": 1,
     "credit_rating": "C",
     "stability_tier": "TIER_5_DISTRESSED",
-    "npl_category": "VERY_HIGH (>80.0%)",
-    "capital_adequacy_ratio_car": "Negative",
-    "risk_label": "Severe Distress",
+    "npl_category": "SEVERE_DEFAULT (86.50%)",
+    "capital_adequacy_ratio_car": "Negative (-65.0%)",
+    "risk_label": "Non-Viable (Legacy Oriental Bank Insolvent Entity)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 4.15,
+    "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
+    "risk_adjusted_yield_score": 3.69,
     "products": [
       {
         "product_id": "icb_islamic-standard-fdr",
@@ -4226,7 +4277,8 @@
         "instant_encashment": false,
         "shariah_compliant": true
       }
-    ]
+    ],
+    "npl_ratio_pct": 86.5
   },
   {
     "bank_id": "scb",
@@ -4255,15 +4307,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.9,
+    "rating_score": 5,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
-    "npl_category": "LOW (<2%)",
-    "capital_adequacy_ratio_car": ">22.0%",
-    "risk_label": "Ultra-Low Risk (Prime)",
+    "npl_category": "PRIME_LOW (2.15%)",
+    "capital_adequacy_ratio_car": ">24.5%",
+    "risk_label": "Sovereign-Tier Safety (Global Balance Sheet)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.64,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 8.75,
     "products": [
       {
         "product_id": "scb-term-saver",
@@ -4285,7 +4337,8 @@
         "instant_encashment": true,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.15
   },
   {
     "bank_id": "hsbc",
@@ -4314,15 +4367,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.8,
+    "rating_score": 5,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
-    "npl_category": "LOW (<2%)",
-    "capital_adequacy_ratio_car": ">20.0%",
-    "risk_label": "Ultra-Low Risk (Prime)",
+    "npl_category": "PRIME_LOW (1.45%)",
+    "capital_adequacy_ratio_car": ">22.8%",
+    "risk_label": "Lowest Systemic Default Risk in Bangladesh",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.52,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 8.75,
     "products": [
       {
         "product_id": "hsbc-standard-fdr",
@@ -4366,7 +4419,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 1.45
   },
   {
     "bank_id": "citi",
@@ -4395,15 +4449,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.8,
+    "rating_score": 5,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
-    "npl_category": "LOW (<1.5%)",
-    "capital_adequacy_ratio_car": ">25.0%",
-    "risk_label": "Ultra-Low Risk (Prime)",
+    "npl_category": "PRIME_LOW (1.85%)",
+    "capital_adequacy_ratio_car": ">28.2%",
+    "risk_label": "Sovereign-Tier Corporate Safety",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.28,
+    "rating_agency": "CRAB / CRISL (AAA Tier)",
+    "risk_adjusted_yield_score": 8.5,
     "products": [
       {
         "product_id": "citi-standard-fdr",
@@ -4447,7 +4501,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 1.85
   },
   {
     "bank_id": "ceylon",
@@ -4476,15 +4531,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.4,
+    "rating_score": 4.5,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<4%)",
-    "capital_adequacy_ratio_car": ">16.0%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "PRIME_LOW (2.45%)",
+    "capital_adequacy_ratio_car": ">17.5%",
+    "risk_label": "Low Risk (Disciplined FCB Portfolio)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 9.2,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 9.34,
     "products": [
       {
         "product_id": "ceylon-standard-fdr",
@@ -4528,7 +4583,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.45
   },
   {
     "bank_id": "woori",
@@ -4557,15 +4613,15 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.2,
-    "credit_rating": "AA",
+    "rating_score": 4.4,
+    "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<3.5%)",
-    "capital_adequacy_ratio_car": ">17.0%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "PRIME_LOW (2.65%)",
+    "capital_adequacy_ratio_car": ">18.2%",
+    "risk_label": "Low Risk (Korean Trade & MNC Franchise)",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 8.48,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
+    "risk_adjusted_yield_score": 8.74,
     "products": [
       {
         "product_id": "woori-standard-fdr",
@@ -4609,7 +4665,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 2.65
   },
   {
     "bank_id": "alfalah",
@@ -4639,13 +4696,13 @@
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.2,
-    "credit_rating": "AA",
+    "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "MODERATE (5%)",
-    "capital_adequacy_ratio_car": ">15.0%",
-    "risk_label": "Low Risk (Strong)",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">15.8%",
+    "risk_label": "Low-Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 9.15,
     "products": [
       {
@@ -4690,7 +4747,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 4.25
   },
   {
     "bank_id": "sbi",
@@ -4722,11 +4780,11 @@
     "rating_score": 4.3,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
-    "npl_category": "LOW (<4.5%)",
-    "capital_adequacy_ratio_car": ">15.0%",
-    "risk_label": "Low Risk (Strong)",
-    "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "npl_category": "HEALTHY (<5.0%)",
+    "capital_adequacy_ratio_car": ">16.4%",
+    "risk_label": "Low Risk (Indian State Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 8.84,
     "products": [
       {
@@ -4771,7 +4829,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 3.85
   },
   {
     "bank_id": "habib",
@@ -4803,11 +4862,11 @@
     "rating_score": 3.8,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (6%)",
-    "capital_adequacy_ratio_car": ">13.0%",
+    "npl_category": "MODERATE (5.45%)",
+    "capital_adequacy_ratio_car": ">14.2%",
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 8.16,
     "products": [
       {
@@ -4852,7 +4911,8 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 5.45
   },
   {
     "bank_id": "nbp",
@@ -4884,11 +4944,11 @@
     "rating_score": 3.5,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
-    "npl_category": "MODERATE (8%)",
-    "capital_adequacy_ratio_car": ">12.5%",
-    "risk_label": "Moderate Risk",
-    "sovereign_backed": false,
-    "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
+    "npl_category": "MODERATE (7.85%)",
+    "capital_adequacy_ratio_car": ">13.5%",
+    "risk_label": "Moderate Risk (Sovereign Backed)",
+    "sovereign_backed": true,
+    "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 7.53,
     "products": [
       {
@@ -4933,6 +4993,7 @@
         "instant_encashment": false,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "npl_ratio_pct": 7.85
   }
 ]
