@@ -1,0 +1,89 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Bangladesh 61 Banks Deposit Rate & SOC Aggregator API",
+    "version": "1.0.0",
+    "description": "Public REST API providing real-time deposit interest rates (FDR/DPS), Schedule of Charges (SOC), and net return calculations across all 61 Scheduled Commercial Banks in Bangladesh.",
+    "contact": {
+      "name": "Fardin Ahsan Anik",
+      "url": "https://fardinanik.com",
+      "email": "fardinahsananik@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.fardinanik.com",
+      "description": "Production Edge CDN"
+    },
+    {
+      "url": "http://localhost:3009",
+      "description": "Local Development Server"
+    }
+  ],
+  "paths": {
+    "/api/v1/rates/deposits": {
+      "get": {
+        "summary": "Query deposit rates across all 61 scheduled banks",
+        "description": "Retrieve filtered deposit rates, tenure yields, and simulated maturity values with NBR tax deductions.",
+        "parameters": [
+          { "name": "category", "in": "query", "schema": { "type": "string", "enum": ["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"] } },
+          { "name": "tenure", "in": "query", "schema": { "type": "string", "enum": ["3_months", "6_months", "1_year", "3_years", "5_years"], "default": "1_year" } },
+          { "name": "shariah", "in": "query", "schema": { "type": "boolean" } },
+          { "name": "principal", "in": "query", "schema": { "type": "number", "example": 500000 } },
+          { "name": "has_tin", "in": "query", "schema": { "type": "boolean", "default": true } },
+          { "name": "q", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of bank deposit rates and maturity returns."
+          }
+        }
+      }
+    },
+    "/api/v1/rates/banks": {
+      "get": {
+        "summary": "Directory of all 61 scheduled banks",
+        "responses": {
+          "200": {
+            "description": "List of bank profiles, headquarters, and SOC URLs."
+          }
+        }
+      }
+    },
+    "/api/v1/rates/banks/{code}": {
+      "get": {
+        "summary": "Get details of a specific bank by short code",
+        "parameters": [
+          { "name": "code", "in": "path", "required": true, "schema": { "type": "string", "example": "UCB" } }
+        ],
+        "responses": {
+          "200": { "description": "Bank details" },
+          "404": { "description": "Bank not found" }
+        }
+      }
+    },
+    "/api/v1/rates/benchmarks": {
+      "get": {
+        "summary": "Central bank policy rates and NBR withholding tax regime",
+        "responses": {
+          "200": { "description": "Policy repo rate, SLF, SDF, CRR, SLR, and tax tiers." }
+        }
+      }
+    },
+    "/api/v1/rates/sync": {
+      "get": {
+        "summary": "Crawler sync telemetry and health status",
+        "responses": { "200": { "description": "Status telemetry" } }
+      },
+      "post": {
+        "summary": "Administrative ingestion endpoint to stage rate updates",
+        "security": [{ "BearerAuth": [] }],
+        "responses": { "200": { "description": "Update receipt" } }
+      }
+    }
+  }
+}

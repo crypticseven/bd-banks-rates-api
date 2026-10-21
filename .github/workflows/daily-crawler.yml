@@ -1,0 +1,34 @@
+name: Daily Bank SOC & Rates Crawler
+
+on:
+  schedule:
+    # Runs at 20:00 UTC (02:00 BST Bangladesh Standard Time) every day
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+jobs:
+  crawl-rates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Execute PyMuPDF SOC Crawler Audit
+        run: |
+          python scripts/soc_crawler.py --audit --workers 8 --output crawl_audit_latest.json
+
+      - name: Upload Audit Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-bank-rates-audit
+          path: crawl_audit_latest.json

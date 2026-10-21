@@ -1,0 +1,1466 @@
+[
+  {
+    "bank_id": "sonali",
+    "bank_name": "Sonali Bank PLC",
+    "short_code": "SONALI",
+    "category": "STATE_OWNED",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 10000,
+    "fdr_rates": {
+      "3_months": 8.0,
+      "6_months": 8.5,
+      "1_year": 9.5,
+      "3_years": 9.75,
+      "5_years": 10.0
+    },
+    "dps_rates": {
+      "3_years": 9.25,
+      "5_years": 9.75,
+      "10_years": 10.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.sonalibank.com.bd/interest_rate.php",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "janata",
+    "bank_name": "Janata Bank PLC",
+    "short_code": "JANATA",
+    "category": "STATE_OWNED",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 10000,
+    "fdr_rates": {
+      "3_months": 7.75,
+      "6_months": 8.25,
+      "1_year": 9.25,
+      "3_years": 9.5,
+      "5_years": 9.75
+    },
+    "dps_rates": {
+      "3_years": 9.0,
+      "5_years": 9.5,
+      "10_years": 9.75
+    },
+    "instant_encashment": false,
+    "soc_url": "https://jb.com.bd/schedule-of-charges",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "agrani",
+    "bank_name": "Agrani Bank PLC",
+    "short_code": "AGRANI",
+    "category": "STATE_OWNED",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 10000,
+    "fdr_rates": {
+      "3_months": 8.0,
+      "6_months": 8.5,
+      "1_year": 9.5,
+      "3_years": 9.75,
+      "5_years": 10.0
+    },
+    "dps_rates": {
+      "3_years": 9.25,
+      "5_years": 9.75,
+      "10_years": 10.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.agranibank.org/interest_rates.php",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "rupali",
+    "bank_name": "Rupali Bank PLC",
+    "short_code": "RUPALI",
+    "category": "STATE_OWNED",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 10000,
+    "fdr_rates": {
+      "3_months": 7.75,
+      "6_months": 8.25,
+      "1_year": 9.25,
+      "3_years": 9.5,
+      "5_years": 9.75
+    },
+    "dps_rates": {
+      "3_years": 9.0,
+      "5_years": 9.5,
+      "10_years": 9.75
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.rupalibank.com.bd/rates.html",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "basic",
+    "bank_name": "BASIC Bank Limited",
+    "short_code": "BASIC",
+    "category": "STATE_OWNED",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 8.25,
+      "6_months": 8.75,
+      "1_year": 9.75,
+      "3_years": 10.0,
+      "5_years": 10.25
+    },
+    "dps_rates": {
+      "3_years": 9.5,
+      "5_years": 10.0,
+      "10_years": 10.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.basicbank.com.bd/interest_rate.php",
+    "headquarters": "Sena Kalyan Bhaban, Motijheel"
+  },
+  {
+    "bank_id": "bdbl",
+    "bank_name": "Bangladesh Development Bank PLC",
+    "short_code": "BDBL",
+    "category": "STATE_OWNED",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 8.0,
+      "6_months": 8.5,
+      "1_year": 9.5,
+      "3_years": 9.75,
+      "5_years": 10.0
+    },
+    "dps_rates": {
+      "3_years": 9.25,
+      "5_years": 9.75,
+      "10_years": 10.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.bdbl.com.bd/interest-rates",
+    "headquarters": "BDBL Bhaban, Kawran Bazar"
+  },
+  {
+    "bank_id": "bkb",
+    "bank_name": "Bangladesh Krishi Bank",
+    "short_code": "BKB",
+    "category": "SPECIALIZED",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 5000,
+    "fdr_rates": {
+      "3_months": 8.5,
+      "6_months": 9.0,
+      "1_year": 10.0,
+      "3_years": 10.25,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 9.5,
+      "5_years": 10.0,
+      "10_years": 10.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://krishibank.org.bd/interest-rate/",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "rakub",
+    "bank_name": "Rajshahi Krishi Unnayan Bank",
+    "short_code": "RAKUB",
+    "category": "SPECIALIZED",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 5000,
+    "fdr_rates": {
+      "3_months": 8.25,
+      "6_months": 8.75,
+      "1_year": 9.75,
+      "3_years": 10.0,
+      "5_years": 10.25
+    },
+    "dps_rates": {
+      "3_years": 9.25,
+      "5_years": 9.75,
+      "10_years": 10.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.rakub.org.bd/interest-rates",
+    "headquarters": "Rajshahi, Bangladesh"
+  },
+  {
+    "bank_id": "pkb",
+    "bank_name": "Probashi Kolyon Bank",
+    "short_code": "PKB",
+    "category": "SPECIALIZED",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 10000,
+    "fdr_rates": {
+      "3_months": 8.5,
+      "6_months": 9.0,
+      "1_year": 10.0,
+      "3_years": 10.25,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 9.75,
+      "5_years": 10.25,
+      "10_years": 10.5
+    },
+    "instant_encashment": false,
+    "soc_url": "https://pkb.gov.bd/interest-rate",
+    "headquarters": "Eskaton Garden, Dhaka"
+  },
+  {
+    "bank_id": "ucb",
+    "bank_name": "United Commercial Bank PLC",
+    "short_code": "UCB",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.ucb.com.bd/rates/interest-rates/",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "brac",
+    "bank_name": "BRAC Bank PLC",
+    "short_code": "BRAC",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 8.75,
+      "6_months": 9.25,
+      "1_year": 10.0,
+      "3_years": 9.75,
+      "5_years": 9.5
+    },
+    "dps_rates": {
+      "3_years": 9.5,
+      "5_years": 9.75,
+      "10_years": 10.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.bracbank.com/en/personal/deposits/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "city",
+    "bank_name": "City Bank PLC",
+    "short_code": "CITY",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.25,
+      "6_months": 9.75,
+      "1_year": 10.75,
+      "3_years": 10.5,
+      "5_years": 10.25
+    },
+    "dps_rates": {
+      "3_years": 10.0,
+      "5_years": 10.5,
+      "10_years": 10.75
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.thecitybank.com/rates-and-charges",
+    "headquarters": "Gulshan-2, Dhaka"
+  },
+  {
+    "bank_id": "ebl",
+    "bank_name": "Eastern Bank PLC",
+    "short_code": "EBL",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.0,
+      "6_months": 9.5,
+      "1_year": 10.5,
+      "3_years": 10.25,
+      "5_years": 10.0
+    },
+    "dps_rates": {
+      "3_years": 9.75,
+      "5_years": 10.25,
+      "10_years": 10.5
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.ebl.com.bd/interest-rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "dbbl",
+    "bank_name": "Dutch-Bangla Bank PLC",
+    "short_code": "DBBL",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 8.5,
+      "6_months": 9.0,
+      "1_year": 9.75,
+      "3_years": 9.5,
+      "5_years": 9.25
+    },
+    "dps_rates": {
+      "3_years": 9.25,
+      "5_years": 9.5,
+      "10_years": 9.75
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.dutchbanglabank.com/rates.html",
+    "headquarters": "Sena Kalyan Bhaban, Motijheel"
+  },
+  {
+    "bank_id": "prime",
+    "bank_name": "Prime Bank PLC",
+    "short_code": "PRIME",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.primebank.com.bd/interest-rates",
+    "headquarters": "Nikunja-2, Dhaka"
+  },
+  {
+    "bank_id": "mtb",
+    "bank_name": "Mutual Trust Bank PLC",
+    "short_code": "MTB",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.mutualtrustbank.com/rates/",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "dhaka",
+    "bank_name": "Dhaka Bank PLC",
+    "short_code": "DHAKA",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.25,
+      "6_months": 9.75,
+      "1_year": 10.75,
+      "3_years": 10.5,
+      "5_years": 10.25
+    },
+    "dps_rates": {
+      "3_years": 10.0,
+      "5_years": 10.5,
+      "10_years": 10.75
+    },
+    "instant_encashment": true,
+    "soc_url": "https://dhakabankltd.com/rates/",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "pubali",
+    "bank_name": "Pubali Bank PLC",
+    "short_code": "PUBALI",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.pubalibangla.com/interest_rate.asp",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "mercantile",
+    "bank_name": "Mercantile Bank PLC",
+    "short_code": "MBL",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.mblbd.com/rates",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "southeast",
+    "bank_name": "Southeast Bank PLC",
+    "short_code": "SEBL",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.southeastbank.com.bd/rates.php",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "ncc",
+    "bank_name": "NCC Bank PLC",
+    "short_code": "NCC",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.nccbank.com.bd/rates",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "premier",
+    "bank_name": "Premier Bank PLC",
+    "short_code": "PREMIER",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.premierbankltd.com/rates",
+    "headquarters": "Banani, Dhaka"
+  },
+  {
+    "bank_id": "trust",
+    "bank_name": "Trust Bank Limited",
+    "short_code": "TRUST",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.tblbd.com/rates",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "jamuna",
+    "bank_name": "Jamuna Bank PLC",
+    "short_code": "JAMUNA",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.jamunabank.com.bd/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "bank_asia",
+    "bank_name": "Bank Asia PLC",
+    "short_code": "BANKASIA",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.bankasia-bd.com/rates",
+    "headquarters": "Purana Paltan, Dhaka"
+  },
+  {
+    "bank_id": "one_bank",
+    "bank_name": "ONE Bank PLC",
+    "short_code": "ONEBANK",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.onebank.com.bd/rates.php",
+    "headquarters": "Kawran Bazar, Dhaka"
+  },
+  {
+    "bank_id": "ab_bank",
+    "bank_name": "AB Bank PLC",
+    "short_code": "AB",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://abbl.com/rates",
+    "headquarters": "Kakrail, Dhaka"
+  },
+  {
+    "bank_id": "ific",
+    "bank_name": "IFIC Bank PLC",
+    "short_code": "IFIC",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.ificbank.com.bd/rates",
+    "headquarters": "Purana Paltan, Dhaka"
+  },
+  {
+    "bank_id": "uttara",
+    "bank_name": "Uttara Bank PLC",
+    "short_code": "UTTARA",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.25,
+      "6_months": 9.75,
+      "1_year": 10.75,
+      "3_years": 10.5,
+      "5_years": 10.25
+    },
+    "dps_rates": {
+      "3_years": 10.0,
+      "5_years": 10.5,
+      "10_years": 10.75
+    },
+    "instant_encashment": false,
+    "soc_url": "https://uttarabank-bd.com/rates",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "nbl",
+    "bank_name": "National Bank Limited",
+    "short_code": "NBL",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.5,
+      "3_years": 11.25,
+      "5_years": 11.0
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.nblbd.com/rates",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "nrbc",
+    "bank_name": "NRB Commercial Bank PLC",
+    "short_code": "NRBC",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.nrbcommercialbank.com/rates",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "nrb",
+    "bank_name": "NRB Bank Limited",
+    "short_code": "NRB",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.nrbbankbd.com/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "meghna",
+    "bank_name": "Meghna Bank PLC",
+    "short_code": "MEGHNA",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.meghnabank.com.bd/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "midland",
+    "bank_name": "Midland Bank Limited",
+    "short_code": "MDB",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.midlandbankbd.net/rates",
+    "headquarters": "Gulshan-2, Dhaka"
+  },
+  {
+    "bank_id": "modhumoti",
+    "bank_name": "Modhumoti Bank Limited",
+    "short_code": "MODHUMOTI",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.modhumotibank.net/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "sbac",
+    "bank_name": "South Bangla Agriculture and Commerce Bank",
+    "short_code": "SBAC",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.sbacbank.com/rates",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "shimanto",
+    "bank_name": "Shimanto Bank Limited",
+    "short_code": "SHIMANTO",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.shimantobank.com/rates",
+    "headquarters": "Peelkhana, Dhanmondi"
+  },
+  {
+    "bank_id": "community",
+    "bank_name": "Community Bank Bangladesh PLC",
+    "short_code": "COMMUNITY",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 10.75,
+      "5_years": 10.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.communitybankbd.com/rates",
+    "headquarters": "Police Plaza, Gulshan"
+  },
+  {
+    "bank_id": "bengal",
+    "bank_name": "Bengal Commercial Bank Limited",
+    "short_code": "BENGAL",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://bgcb.com.bd/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "citizens",
+    "bank_name": "Citizens Bank PLC",
+    "short_code": "CITIZENS",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://citizensbankbd.com/rates",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "padma",
+    "bank_name": "Padma Bank PLC",
+    "short_code": "PADMA",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 10.0,
+      "6_months": 10.5,
+      "1_year": 11.5,
+      "3_years": 11.25,
+      "5_years": 11.0
+    },
+    "dps_rates": {
+      "3_years": 10.75,
+      "5_years": 11.25,
+      "10_years": 11.5
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.padmabankbd.com/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "bcbl",
+    "bank_name": "Bangladesh Commerce Bank Limited",
+    "short_code": "BCBL",
+    "category": "CONVENTIONAL_PCB",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.0,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.bcblbd.com/rates",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "ibbl",
+    "bank_name": "Islami Bank Bangladesh PLC",
+    "short_code": "IBBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 10000,
+    "fdr_rates": {
+      "3_months": 8.75,
+      "6_months": 9.25,
+      "1_year": 10.25,
+      "3_years": 10.5,
+      "5_years": 10.75
+    },
+    "dps_rates": {
+      "3_years": 9.75,
+      "5_years": 10.25,
+      "10_years": 10.5
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.islamibankbd.com/mudaraba-rates",
+    "headquarters": "Dilkusha, Dhaka"
+  },
+  {
+    "bank_id": "al_arafah",
+    "bank_name": "Al-Arafah Islami Bank PLC",
+    "short_code": "AIBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.25,
+      "6_months": 9.75,
+      "1_year": 10.75,
+      "3_years": 11.0,
+      "5_years": 11.25
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.aibl.com.bd/profit-rates",
+    "headquarters": "Purana Paltan, Dhaka"
+  },
+  {
+    "bank_id": "sibl",
+    "bank_name": "Social Islami Bank PLC",
+    "short_code": "SIBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 11.25,
+      "5_years": 11.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.siblbd.com/rates",
+    "headquarters": "City Center, Motijheel"
+  },
+  {
+    "bank_id": "shahjalal",
+    "bank_name": "Shahjalal Islami Bank PLC",
+    "short_code": "SJIBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.25,
+      "6_months": 9.75,
+      "1_year": 10.75,
+      "3_years": 11.0,
+      "5_years": 11.25
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.sjiblbd.com/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "exim",
+    "bank_name": "Export Import Bank of Bangladesh PLC",
+    "short_code": "EXIM",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 11.25,
+      "5_years": 11.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.eximbankbd.com/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "fsibl",
+    "bank_name": "First Security Islami Bank PLC",
+    "short_code": "FSIBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.5,
+      "5_years": 11.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.fsiblbd.com/rates",
+    "headquarters": "Gulshan-2, Dhaka"
+  },
+  {
+    "bank_id": "global_islami",
+    "bank_name": "Global Islami Bank PLC",
+    "short_code": "GIBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.5,
+      "5_years": 11.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.globalislamibankbd.com/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "union",
+    "bank_name": "Union Bank PLC",
+    "short_code": "UBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.75,
+      "6_months": 10.25,
+      "1_year": 11.25,
+      "3_years": 11.5,
+      "5_years": 11.75
+    },
+    "dps_rates": {
+      "3_years": 10.5,
+      "5_years": 11.0,
+      "10_years": 11.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.unionbank.com.bd/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "standard_islamic",
+    "bank_name": "Standard Bank PLC (Islamic)",
+    "short_code": "SBL",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 11.0,
+      "3_years": 11.25,
+      "5_years": 11.5
+    },
+    "dps_rates": {
+      "3_years": 10.25,
+      "5_years": 10.75,
+      "10_years": 11.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.standardbankbd.com/rates",
+    "headquarters": "Topkhana Road, Dhaka"
+  },
+  {
+    "bank_id": "icb_islamic",
+    "bank_name": "ICB Islamic Bank Limited",
+    "short_code": "ICBISLAMIC",
+    "category": "ISLAMIC",
+    "is_shariah": true,
+    "has_islamic_window": false,
+    "minimum_deposit": 25000,
+    "fdr_rates": {
+      "3_months": 9.0,
+      "6_months": 9.5,
+      "1_year": 10.5,
+      "3_years": 10.75,
+      "5_years": 11.0
+    },
+    "dps_rates": {
+      "3_years": 9.75,
+      "5_years": 10.25,
+      "10_years": 10.5
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.icbislamic-bd.com/rates",
+    "headquarters": "Toka Bhaban, Karwan Bazar"
+  },
+  {
+    "bank_id": "scb",
+    "bank_name": "Standard Chartered Bank Bangladesh",
+    "short_code": "SCB",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 100000,
+    "fdr_rates": {
+      "3_months": 7.5,
+      "6_months": 8.0,
+      "1_year": 8.75,
+      "3_years": 8.5,
+      "5_years": 8.25
+    },
+    "dps_rates": {
+      "3_years": 8.25,
+      "5_years": 8.5,
+      "10_years": 8.75
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.sc.com/bd/rates",
+    "headquarters": "Gulshan-2, Dhaka"
+  },
+  {
+    "bank_id": "hsbc",
+    "bank_name": "HSBC Bangladesh",
+    "short_code": "HSBC",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 100000,
+    "fdr_rates": {
+      "3_months": 7.5,
+      "6_months": 8.0,
+      "1_year": 8.75,
+      "3_years": 8.5,
+      "5_years": 8.25
+    },
+    "dps_rates": {
+      "3_years": 8.25,
+      "5_years": 8.5,
+      "10_years": 8.75
+    },
+    "instant_encashment": true,
+    "soc_url": "https://www.hsbc.com.bd/rates",
+    "headquarters": "Bir Uttam C R Dutta Road, Dhaka"
+  },
+  {
+    "bank_id": "citi",
+    "bank_name": "Citibank N.A. Bangladesh",
+    "short_code": "CITI",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 500000,
+    "fdr_rates": {
+      "3_months": 7.25,
+      "6_months": 7.75,
+      "1_year": 8.5,
+      "3_years": 8.25,
+      "5_years": 8.0
+    },
+    "dps_rates": {
+      "3_years": 8.0,
+      "5_years": 8.25,
+      "10_years": 8.5
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "ceylon",
+    "bank_name": "Commercial Bank of Ceylon PLC",
+    "short_code": "CBC",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 8.5,
+      "6_months": 9.0,
+      "1_year": 10.0,
+      "3_years": 9.75,
+      "5_years": 9.5
+    },
+    "dps_rates": {
+      "3_years": 9.5,
+      "5_years": 9.75,
+      "10_years": 10.0
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.combank.com.bd/rates",
+    "headquarters": "Gulshan-2, Dhaka"
+  },
+  {
+    "bank_id": "woori",
+    "bank_name": "Woori Bank Bangladesh",
+    "short_code": "WOORI",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 100000,
+    "fdr_rates": {
+      "3_months": 8.0,
+      "6_months": 8.5,
+      "1_year": 9.5,
+      "3_years": 9.25,
+      "5_years": 9.0
+    },
+    "dps_rates": {
+      "3_years": 9.0,
+      "5_years": 9.25,
+      "10_years": 9.5
+    },
+    "instant_encashment": false,
+    "soc_url": "https://bd.wooribank.com/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "alfalah",
+    "bank_name": "Bank Alfalah Limited Bangladesh",
+    "short_code": "ALFALAH",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": true,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 8.75,
+      "6_months": 9.25,
+      "1_year": 10.25,
+      "3_years": 10.0,
+      "5_years": 9.75
+    },
+    "dps_rates": {
+      "3_years": 9.75,
+      "5_years": 10.0,
+      "10_years": 10.25
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.bankalfalah.com/bd/rates",
+    "headquarters": "Gulshan-2, Dhaka"
+  },
+  {
+    "bank_id": "sbi",
+    "bank_name": "State Bank of India Bangladesh",
+    "short_code": "SBI",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 8.25,
+      "6_months": 8.75,
+      "1_year": 9.75,
+      "3_years": 9.5,
+      "5_years": 9.25
+    },
+    "dps_rates": {
+      "3_years": 9.25,
+      "5_years": 9.5,
+      "10_years": 9.75
+    },
+    "instant_encashment": false,
+    "soc_url": "https://bd.statebank/rates",
+    "headquarters": "Gulshan-1, Dhaka"
+  },
+  {
+    "bank_id": "habib",
+    "bank_name": "Habib Bank Limited Bangladesh",
+    "short_code": "HBL",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 8.25,
+      "6_months": 8.75,
+      "1_year": 9.75,
+      "3_years": 9.5,
+      "5_years": 9.25
+    },
+    "dps_rates": {
+      "3_years": 9.25,
+      "5_years": 9.5,
+      "10_years": 9.75
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.hbl.com/bangladesh/rates",
+    "headquarters": "Motijheel, Dhaka"
+  },
+  {
+    "bank_id": "nbp",
+    "bank_name": "National Bank of Pakistan",
+    "short_code": "NBP",
+    "category": "FOREIGN",
+    "is_shariah": false,
+    "has_islamic_window": false,
+    "minimum_deposit": 50000,
+    "fdr_rates": {
+      "3_months": 8.0,
+      "6_months": 8.5,
+      "1_year": 9.5,
+      "3_years": 9.25,
+      "5_years": 9.0
+    },
+    "dps_rates": {
+      "3_years": 9.0,
+      "5_years": 9.25,
+      "10_years": 9.5
+    },
+    "instant_encashment": false,
+    "soc_url": "https://www.nbp.com.pk/bangladesh",
+    "headquarters": "Motijheel, Dhaka"
+  }
+]
