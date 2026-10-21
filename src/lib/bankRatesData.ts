@@ -106,6 +106,7 @@ export function filterBanks({
   sortByTenure = "1_year",
   minRating,
   sortBy = "yield",
+  customList,
 }: {
   category?: string;
   isShariah?: boolean;
@@ -114,8 +115,9 @@ export function filterBanks({
   sortByTenure?: "3_months" | "6_months" | "1_year" | "3_years" | "5_years";
   minRating?: number;
   sortBy?: "yield" | "risk_adjusted" | "rating";
+  customList?: BankRateRecord[];
 }): BankRateRecord[] {
-  let list = [...ALL_61_BANKS];
+  let list = customList ? [...customList] : [...ALL_61_BANKS];
 
   if (category && category !== "ALL") {
     list = list.filter((b) => b.category === category);

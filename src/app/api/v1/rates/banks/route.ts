@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
 import { z } from "zod";
 
 const banksQuerySchema = z.object({
@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
 
     const { category, shariah } = parsed.data;
 
-    let banks = [...ALL_61_BANKS];
+    let banks = [...getActiveBanksServer()];
 
     if (category && category !== "ALL") {
       banks = banks.filter((b) => b.category === category);

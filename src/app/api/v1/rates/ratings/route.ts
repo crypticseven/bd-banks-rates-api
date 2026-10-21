@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
 import { z } from "zod";
 
 const ratingsQuerySchema = z.object({
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
 
     const { tier, min_score, sovereign_only } = parsed.data;
 
-    let list = ALL_61_BANKS.map((b) => ({
+    let list = getActiveBanksServer().map((b) => ({
       bank_name: b.bank_name,
       short_code: b.short_code,
       category: b.category,

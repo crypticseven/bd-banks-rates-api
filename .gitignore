@@ -41,6 +41,10 @@ yarn-error.log*
 # Vercel
 .vercel
 
+# Runtime Audit & Staging Output
+src/data/staged_rate_updates.json
+crawl_audit_latest.json
+
 # Operating System
 .DS_Store
 Thumbs.db

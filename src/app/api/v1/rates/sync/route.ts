@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { getActiveBanksServer, applyRateUpdates } from "@/lib/serverRatesPersistence";
 import { z } from "zod";
 import crypto from "crypto";
 import fs from "fs";
@@ -23,12 +23,13 @@ const STAGED_UPDATES_FILE = path.join(process.cwd(), "src", "data", "staged_rate
 
 export async function GET(req: NextRequest) {
   try {
-    const totalBanks = ALL_61_BANKS.length;
-    const conventionalCount = ALL_61_BANKS.filter((b) => b.category === "CONVENTIONAL_PCB").length;
-    const islamicCount = ALL_61_BANKS.filter((b) => b.category === "ISLAMIC").length;
-    const stateOwnedCount = ALL_61_BANKS.filter((b) => b.category === "STATE_OWNED").length;
-    const specializedCount = ALL_61_BANKS.filter((b) => b.category === "SPECIALIZED").length;
-    const foreignCount = ALL_61_BANKS.filter((b) => b.category === "FOREIGN").length;
+    const banks = getActiveBanksServer();
+    const totalBanks = banks.length;
+    const conventionalCount = banks.filter((b) => b.category === "CONVENTIONAL_PCB").length;
+    const islamicCount = banks.filter((b) => b.category === "ISLAMIC").length;
+    const stateOwnedCount = banks.filter((b) => b.category === "STATE_OWNED").length;
+    const specializedCount = banks.filter((b) => b.category === "SPECIALIZED").length;
+    const foreignCount = banks.filter((b) => b.category === "FOREIGN").length;
 
     // Check if staged updates exist
     let stagedCount = 0;
@@ -182,14 +183,19 @@ export async function POST(req: NextRequest) {
       fs.writeFileSync(fallbackFile, JSON.stringify(existingStaged, null, 2), "utf-8");
     }
 
+    // Connect Pipeline: Apply updates directly to the live dataset & in-memory cache
+    const { updatedCount, updatedBanks } = applyRateUpdates(updates);
+
     return NextResponse.json(
       {
         status: "success",
-        message: `Successfully ingested and persisted ${updates.length} bank rate updates to staging.`,
+        message: `Successfully ingested and applied ${updatedCount} bank rate updates to active dataset.`,
         batch_id: stagedBatch.batch_id,
         processed_count: updates.length,
+        applied_count: updatedCount,
+        applied_to_active_dataset: true,
         timestamp,
-        updated_banks: updates.map((u) => u.bank_id),
+        updated_banks: updatedBanks,
       },
       { status: 200 }
     );

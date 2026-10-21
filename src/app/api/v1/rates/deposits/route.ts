@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ALL_61_BANKS, filterBanks, calculateFdrMaturity } from "@/lib/bankRatesData";
+import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
 import { z } from "zod";
 import crypto from "crypto";
 
@@ -85,7 +86,8 @@ export async function GET(req: NextRequest) {
     const instantEncashmentOnly = instant_encashment === "true";
     const hasTinBool = has_tin === "true";
 
-    // Filter and sort
+    // Filter and sort using active live dataset
+    const activeBanks = getActiveBanksServer();
     const filtered = filterBanks({
       category,
       isShariah,
@@ -94,6 +96,7 @@ export async function GET(req: NextRequest) {
       sortByTenure: tenure,
       minRating: min_rating,
       sortBy: sort_by,
+      customList: activeBanks,
     });
 
     const tenureMonthsMap: Record<string, number> = {

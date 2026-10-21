@@ -17,6 +17,11 @@ import json
 import re
 import argparse
 import time
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8')
 from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import urllib.request
@@ -211,6 +216,99 @@ def run_audit(banks, max_workers=10, insecure_tls=False):
     print(f"[*] Audit complete: {success_count}/{total} banks responded with HTTP 200 OK.")
     return results
 
+def apply_results_locally(results, banks):
+    """
+    Applies crawler findings (discovered rates, PDF circular links) directly
+    to the repository's active dataset on disk.
+    """
+    updated_count = 0
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    bank_map = {b["short_code"]: b for b in banks}
+
+    for res in results:
+        code = res["bank_code"]
+        if code in bank_map:
+            bank = bank_map[code]
+            modified = False
+
+            if res.get("parsed_tenure_yields"):
+                for tenure, yield_rate in res["parsed_tenure_yields"].items():
+                    if bank["fdr_rates"].get(tenure) != yield_rate:
+                        bank["fdr_rates"][tenure] = yield_rate
+                        modified = True
+
+            if res.get("pdf_circulars_found"):
+                top_pdf = res["pdf_circulars_found"][0]
+                if bank.get("source_url") != top_pdf:
+                    bank["source_url"] = top_pdf
+                    modified = True
+
+            if modified or res.get("status_code") == 200:
+                bank["fetched_at"] = res.get("fetched_at") or datetime.now(timezone.utc).isoformat()
+                bank["verification_status"] = "VERIFIED_OFFICIAL"
+                # Recalculate risk-adjusted score
+                r1y = bank["fdr_rates"].get("1_year", 0)
+                score = round(r1y * ((bank.get("rating_score", 3.0) / 5.0) ** 0.65), 2)
+                bank["risk_adjusted_yield_score"] = score
+                updated_count += 1
+
+    with open(DATASET_PATH, "w", encoding="utf-8") as f:
+        json.dump(banks, f, indent=2)
+
+    print(f"[✓] Applied crawl updates locally to {updated_count} banks in {DATASET_PATH}")
+    return updated_count
+
+def sync_results_to_api(results, api_url, secret):
+    """
+    Synchronizes discovered rate updates to the live HTTP API endpoint with Bearer auth.
+    """
+    updates = []
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    for res in results:
+        if res.get("parsed_tenure_yields") or res.get("pdf_circulars_found"):
+            upd = {
+                "bank_id": res["bank_code"],
+                "effective_date": today,
+                "notes": f"Automated SOC crawler update from {res['url']}",
+            }
+            if res.get("parsed_tenure_yields"):
+                upd["fdr_rates"] = res["parsed_tenure_yields"]
+            if res.get("pdf_circulars_found"):
+                upd["circular_url"] = res["pdf_circulars_found"][0]
+            updates.append(upd)
+
+    if not updates:
+        print("[!] No verifiable rate updates discovered to push to API.")
+        return False
+
+    payload = json.dumps({"updates": updates}).encode("utf-8")
+    req = urllib.request.Request(
+        api_url,
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {secret}",
+            "User-Agent": "SOC-Crawler-Sync/2.0",
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            print(f"[✓] Successfully pushed {len(updates)} rate updates to API: {api_url}")
+            print(f"    Response: {json.dumps(data, indent=2)}")
+            return True
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="ignore")
+        print(f"[!] API Sync HTTP Error {e.code}: {body}")
+        return False
+    except Exception as e:
+        print(f"[!] API Sync Exception: {str(e)}")
+        return False
+
 def main():
     parser = argparse.ArgumentParser(description="Bangladesh 61 Scheduled Banks SOC Crawler (v2.0)")
     parser.add_argument("--audit", action="store_true", help="Run network probe across all 61 banks")
@@ -218,6 +316,9 @@ def main():
     parser.add_argument("--workers", type=int, default=10, help="Concurrent HTTP worker threads")
     parser.add_argument("--output", type=str, help="Export crawl result JSON to path")
     parser.add_argument("--insecure-tls", action="store_true", help="Allow unverified TLS certificates (not recommended for production)")
+    parser.add_argument("--apply-local", action="store_true", help="Persist discovered rates directly to src/data/bangladesh_61_banks.json")
+    parser.add_argument("--sync-api", type=str, help="Post discovered updates to API endpoint (e.g. https://api.fardinanik.com/api/v1/rates/sync)")
+    parser.add_argument("--sync-secret", type=str, help="Bearer token for API sync (defaults to RATES_SYNC_SECRET env var)")
     args = parser.parse_args()
 
     banks = load_banks()
@@ -230,6 +331,14 @@ def main():
         print(f"[*] Probing bank: {target['bank_name']} ({target['short_code']})...")
         res = probe_bank_soc(target, timeout=20, insecure_tls=args.insecure_tls)
         print(json.dumps(res, indent=2))
+        if args.apply_local:
+            apply_results_locally([res], banks)
+        if args.sync_api:
+            secret = args.sync_secret or os.environ.get("RATES_SYNC_SECRET")
+            if not secret:
+                print("[!] Error: --sync-secret or RATES_SYNC_SECRET environment variable is required to sync to API.")
+            else:
+                sync_results_to_api([res], args.sync_api, secret)
         return
 
     if args.audit or not sys.argv[1:]:
@@ -238,6 +347,16 @@ def main():
             with open(args.output, "w", encoding="utf-8") as out_f:
                 json.dump(results, out_f, indent=2)
             print(f"[✓] Saved crawl results to {args.output}")
+
+        if args.apply_local:
+            apply_results_locally(results, banks)
+
+        if args.sync_api:
+            secret = args.sync_secret or os.environ.get("RATES_SYNC_SECRET")
+            if not secret:
+                print("[!] Error: --sync-secret or RATES_SYNC_SECRET environment variable is required to sync to API.")
+            else:
+                sync_results_to_api(results, args.sync_api, secret)
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
 import { z } from "zod";
 
 const productsQuerySchema = z.object({
@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
 
     // Flatten all products across banks with parent bank context
     let flattenedProducts: any[] = [];
-    for (const b of ALL_61_BANKS) {
+    for (const b of getActiveBanksServer()) {
       if (bank && b.short_code.toUpperCase() !== bank.toUpperCase() && b.bank_id.toUpperCase() !== bank.toUpperCase()) {
         continue;
       }

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_61_BANKS } from "@/lib/bankRatesData";
+import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
 import { z } from "zod";
 
 const codeParamSchema = z
@@ -30,7 +30,7 @@ export async function GET(
 
     const cleanCode = parsed.data.toUpperCase();
 
-    const bank = ALL_61_BANKS.find(
+    const bank = getActiveBanksServer().find(
       (b) => b.short_code.toUpperCase() === cleanCode || b.bank_id.toUpperCase() === cleanCode
     );
 
@@ -49,6 +49,7 @@ export async function GET(
         status: "success",
         as_of_date: new Date().toISOString().split("T")[0],
         bank,
+        data: bank,
       },
       {
         status: 200,

@@ -8,16 +8,16 @@
     "has_islamic_window": true,
     "minimum_deposit": 10000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.75,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": true,
     "soc_url": "https://www.sonalibank.com.bd/interest_rate.php",
@@ -96,7 +96,7 @@
       "5_years": 9.75
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.5,
       "10_years": 9.75
     },
@@ -170,16 +170,16 @@
     "has_islamic_window": true,
     "minimum_deposit": 10000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.75,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": true,
     "soc_url": "https://www.agranibank.org/interest_rates.php",
@@ -258,7 +258,7 @@
       "5_years": 9.75
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.5,
       "10_years": 9.75
     },
@@ -335,12 +335,12 @@
       "3_months": 8.25,
       "6_months": 8.75,
       "1_year": 9.75,
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.25
     },
     "dps_rates": {
       "3_years": 9.5,
-      "5_years": 10.0,
+      "5_years": 10,
       "10_years": 10.25
     },
     "instant_encashment": false,
@@ -387,7 +387,7 @@
         "product_id": "basic-monthly-dps",
         "product_name": "BASIC Bank Limited Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 10.0,
+        "headline_rate": 10,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -413,16 +413,16 @@
     "has_islamic_window": false,
     "minimum_deposit": 25000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.75,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": false,
     "soc_url": "https://www.bdbl.com.bd/interest-rates",
@@ -495,14 +495,14 @@
     "minimum_deposit": 5000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
-      "1_year": 10.0,
+      "6_months": 9,
+      "1_year": 10,
       "3_years": 10.25,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 9.5,
-      "5_years": 10.0,
+      "5_years": 10,
       "10_years": 10.25
     },
     "instant_encashment": false,
@@ -526,7 +526,7 @@
         "product_id": "bkb-standard-fdr",
         "product_name": "Bangladesh Krishi Bank Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 10.0,
+        "headline_rate": 10,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -549,7 +549,7 @@
         "product_id": "bkb-monthly-dps",
         "product_name": "Bangladesh Krishi Bank Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 10.0,
+        "headline_rate": 10,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -578,13 +578,13 @@
       "3_months": 8.25,
       "6_months": 8.75,
       "1_year": 9.75,
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.25
     },
     "dps_rates": {
       "3_years": 9.25,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": false,
     "soc_url": "https://www.rakub.org.bd/interest-rates",
@@ -657,8 +657,8 @@
     "minimum_deposit": 10000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
-      "1_year": 10.0,
+      "6_months": 9,
+      "1_year": 10,
       "3_years": 10.25,
       "5_years": 10.5
     },
@@ -688,7 +688,7 @@
         "product_id": "pkb-standard-fdr",
         "product_name": "Probashi Kolyon Bank Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 10.0,
+        "headline_rate": 10,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -737,23 +737,23 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 9.75,
-      "6_months": 10.25,
+      "3_months": 9.5,
+      "6_months": 10.5,
       "1_year": 11.25,
-      "3_years": 11.0,
-      "5_years": 10.75
+      "3_years": 10,
+      "5_years": 9.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": true,
     "soc_url": "https://www.ucb.com.bd/rates/interest-rates/",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.ucb.com.bd/rates/interest-rates/",
-    "effective_date": "2026-10-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "source_url": "https://www.ucb.com.bd/rates/interest-rates/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+    "effective_date": "2026-10-21",
+    "fetched_at": "2026-10-21T12:29:27.189Z",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.6,
     "credit_rating": "AA+",
@@ -885,14 +885,14 @@
     "fdr_rates": {
       "3_months": 8.75,
       "6_months": 9.25,
-      "1_year": 10.0,
+      "1_year": 10,
       "3_years": 9.75,
       "5_years": 9.5
     },
     "dps_rates": {
       "3_years": 9.5,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": true,
     "soc_url": "https://www.bracbank.com/en/personal/deposits/rates",
@@ -967,7 +967,7 @@
       "5_years": 10.25
     },
     "dps_rates": {
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.5,
       "10_years": 10.75
     },
@@ -1018,11 +1018,11 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 9.0,
+      "3_months": 9,
       "6_months": 9.5,
       "1_year": 10.5,
       "3_years": 10.25,
-      "5_years": 10.0
+      "5_years": 10
     },
     "dps_rates": {
       "3_years": 9.75,
@@ -1079,7 +1079,7 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
+      "6_months": 9,
       "1_year": 9.75,
       "3_years": 9.5,
       "5_years": 9.25
@@ -1160,15 +1160,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.primebank.com.bd/interest-rates",
@@ -1191,7 +1191,7 @@
         "product_id": "prime-standard-fdr",
         "product_name": "Prime Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -1241,15 +1241,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.mutualtrustbank.com/rates/",
@@ -1272,7 +1272,7 @@
         "product_id": "mtb-standard-fdr",
         "product_name": "Mutual Trust Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -1328,7 +1328,7 @@
       "5_years": 10.25
     },
     "dps_rates": {
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.5,
       "10_years": 10.75
     },
@@ -1403,15 +1403,15 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.pubalibangla.com/interest_rate.asp",
@@ -1434,7 +1434,7 @@
         "product_id": "pubali-standard-fdr",
         "product_name": "Pubali Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -1486,12 +1486,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -1501,7 +1501,7 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.0,
+    "rating_score": 4,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
     "npl_category": "MODERATE (6.1%)",
@@ -1538,7 +1538,7 @@
         "product_id": "mercantile-monthly-dps",
         "product_name": "Mercantile Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -1565,15 +1565,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.southeastbank.com.bd/rates.php",
@@ -1582,7 +1582,7 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.0,
+    "rating_score": 4,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
     "npl_category": "MODERATE (6.2%)",
@@ -1596,7 +1596,7 @@
         "product_id": "southeast-standard-fdr",
         "product_name": "Southeast Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -1646,15 +1646,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.nccbank.com.bd/rates",
@@ -1663,7 +1663,7 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.0,
+    "rating_score": 4,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
     "npl_category": "MODERATE (5.9%)",
@@ -1677,7 +1677,7 @@
         "product_id": "ncc-standard-fdr",
         "product_name": "NCC Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -1729,12 +1729,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -1744,7 +1744,7 @@
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.0,
+    "rating_score": 4,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
     "npl_category": "MODERATE (6.5%)",
@@ -1781,7 +1781,7 @@
         "product_id": "premier-monthly-dps",
         "product_name": "Premier Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -1808,15 +1808,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.tblbd.com/rates",
@@ -1839,7 +1839,7 @@
         "product_id": "trust-standard-fdr",
         "product_name": "Trust Bank Limited Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -1889,15 +1889,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.jamunabank.com.bd/rates",
@@ -1920,7 +1920,7 @@
         "product_id": "jamuna-standard-fdr",
         "product_name": "Jamuna Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -1970,15 +1970,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.bankasia-bd.com/rates",
@@ -2001,7 +2001,7 @@
         "product_id": "bank_asia-standard-fdr",
         "product_name": "Bank Asia PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -2053,12 +2053,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -2105,7 +2105,7 @@
         "product_id": "one_bank-monthly-dps",
         "product_name": "ONE Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -2132,15 +2132,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://abbl.com/rates",
@@ -2163,7 +2163,7 @@
         "product_id": "ab_bank-standard-fdr",
         "product_name": "AB Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -2213,15 +2213,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.ificbank.com.bd/rates",
@@ -2244,7 +2244,7 @@
         "product_id": "ific-standard-fdr",
         "product_name": "IFIC Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -2300,7 +2300,7 @@
       "5_years": 10.25
     },
     "dps_rates": {
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 10.5,
       "10_years": 10.75
     },
@@ -2378,11 +2378,11 @@
       "6_months": 10.25,
       "1_year": 11.5,
       "3_years": 11.25,
-      "5_years": 11.0
+      "5_years": 11
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -2429,7 +2429,7 @@
         "product_id": "nbl-monthly-dps",
         "product_name": "National Bank Limited Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -2458,12 +2458,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": true,
@@ -2510,7 +2510,7 @@
         "product_id": "nrbc-monthly-dps",
         "product_name": "NRB Commercial Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -2539,12 +2539,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -2591,7 +2591,7 @@
         "product_id": "nrb-monthly-dps",
         "product_name": "NRB Bank Limited Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -2620,12 +2620,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -2672,7 +2672,7 @@
         "product_id": "meghna-monthly-dps",
         "product_name": "Meghna Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -2701,12 +2701,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": true,
@@ -2753,7 +2753,7 @@
         "product_id": "midland-monthly-dps",
         "product_name": "Midland Bank Limited Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -2780,15 +2780,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.modhumotibank.net/rates",
@@ -2811,7 +2811,7 @@
         "product_id": "modhumoti-standard-fdr",
         "product_name": "Modhumoti Bank Limited Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -2863,12 +2863,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -2915,7 +2915,7 @@
         "product_id": "sbac-monthly-dps",
         "product_name": "South Bangla Agriculture and Commerce Bank Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -2942,15 +2942,15 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.shimantobank.com/rates",
@@ -2973,7 +2973,7 @@
         "product_id": "shimanto-standard-fdr",
         "product_name": "Shimanto Bank Limited Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -3023,15 +3023,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 10.75,
       "5_years": 10.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.communitybankbd.com/rates",
@@ -3054,7 +3054,7 @@
         "product_id": "community-standard-fdr",
         "product_name": "Community Bank Bangladesh PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -3106,12 +3106,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -3158,7 +3158,7 @@
         "product_id": "bengal-monthly-dps",
         "product_name": "Bengal Commercial Bank Limited Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -3187,12 +3187,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -3239,7 +3239,7 @@
         "product_id": "citizens-monthly-dps",
         "product_name": "Citizens Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -3265,11 +3265,11 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 10.0,
+      "3_months": 10,
       "6_months": 10.5,
       "1_year": 11.5,
       "3_years": 11.25,
-      "5_years": 11.0
+      "5_years": 11
     },
     "dps_rates": {
       "3_years": 10.75,
@@ -3349,12 +3349,12 @@
       "3_months": 9.75,
       "6_months": 10.25,
       "1_year": 11.25,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 10.75
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -3372,7 +3372,7 @@
     "risk_label": "Distressed (BB Observer)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Bangladesh Bank PCA Benchmark",
-    "risk_adjusted_yield_score": 6.0,
+    "risk_adjusted_yield_score": 6,
     "products": [
       {
         "product_id": "bcbl-standard-fdr",
@@ -3401,7 +3401,7 @@
         "product_id": "bcbl-monthly-dps",
         "product_name": "Bangladesh Commerce Bank Limited Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -3511,13 +3511,13 @@
       "3_months": 9.25,
       "6_months": 9.75,
       "1_year": 10.75,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 11.25
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.aibl.com.bd/profit-rates",
@@ -3590,15 +3590,15 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 11.25,
       "5_years": 11.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.siblbd.com/rates",
@@ -3621,7 +3621,7 @@
         "product_id": "sibl-standard-fdr",
         "product_name": "Social Islami Bank PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -3673,13 +3673,13 @@
       "3_months": 9.25,
       "6_months": 9.75,
       "1_year": 10.75,
-      "3_years": 11.0,
+      "3_years": 11,
       "5_years": 11.25
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.sjiblbd.com/rates",
@@ -3752,15 +3752,15 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 11.25,
       "5_years": 11.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": true,
     "soc_url": "https://www.eximbankbd.com/rates",
@@ -3783,7 +3783,7 @@
         "product_id": "exim-standard-fdr",
         "product_name": "Export Import Bank of Bangladesh PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -3840,7 +3840,7 @@
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -3887,7 +3887,7 @@
         "product_id": "fsibl-monthly-dps",
         "product_name": "First Security Islami Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -3921,7 +3921,7 @@
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -3968,7 +3968,7 @@
         "product_id": "global_islami-monthly-dps",
         "product_name": "Global Islami Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -4002,7 +4002,7 @@
     },
     "dps_rates": {
       "3_years": 10.5,
-      "5_years": 11.0,
+      "5_years": 11,
       "10_years": 11.25
     },
     "instant_encashment": false,
@@ -4049,7 +4049,7 @@
         "product_id": "union-monthly-dps",
         "product_name": "Union Bank PLC Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -4076,15 +4076,15 @@
     "minimum_deposit": 25000,
     "fdr_rates": {
       "3_months": 9.5,
-      "6_months": 10.0,
-      "1_year": 11.0,
+      "6_months": 10,
+      "1_year": 11,
       "3_years": 11.25,
       "5_years": 11.5
     },
     "dps_rates": {
       "3_years": 10.25,
       "5_years": 10.75,
-      "10_years": 11.0
+      "10_years": 11
     },
     "instant_encashment": false,
     "soc_url": "https://www.standardbankbd.com/rates",
@@ -4107,7 +4107,7 @@
         "product_id": "standard_islamic-standard-fdr",
         "product_name": "Standard Bank PLC (Islamic) Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 11.0,
+        "headline_rate": 11,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -4156,11 +4156,11 @@
     "has_islamic_window": false,
     "minimum_deposit": 25000,
     "fdr_rates": {
-      "3_months": 9.0,
+      "3_months": 9,
       "6_months": 9.5,
       "1_year": 10.5,
       "3_years": 10.75,
-      "5_years": 11.0
+      "5_years": 11
     },
     "dps_rates": {
       "3_years": 9.75,
@@ -4238,7 +4238,7 @@
     "minimum_deposit": 100000,
     "fdr_rates": {
       "3_months": 7.5,
-      "6_months": 8.0,
+      "6_months": 8,
       "1_year": 8.75,
       "3_years": 8.5,
       "5_years": 8.25
@@ -4297,7 +4297,7 @@
     "minimum_deposit": 100000,
     "fdr_rates": {
       "3_months": 7.5,
-      "6_months": 8.0,
+      "6_months": 8,
       "1_year": 8.75,
       "3_years": 8.5,
       "5_years": 8.25
@@ -4381,10 +4381,10 @@
       "6_months": 7.75,
       "1_year": 8.5,
       "3_years": 8.25,
-      "5_years": 8.0
+      "5_years": 8
     },
     "dps_rates": {
-      "3_years": 8.0,
+      "3_years": 8,
       "5_years": 8.25,
       "10_years": 8.5
     },
@@ -4459,15 +4459,15 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 8.5,
-      "6_months": 9.0,
-      "1_year": 10.0,
+      "6_months": 9,
+      "1_year": 10,
       "3_years": 9.75,
       "5_years": 9.5
     },
     "dps_rates": {
       "3_years": 9.5,
       "5_years": 9.75,
-      "10_years": 10.0
+      "10_years": 10
     },
     "instant_encashment": false,
     "soc_url": "https://www.combank.com.bd/rates",
@@ -4490,7 +4490,7 @@
         "product_id": "ceylon-standard-fdr",
         "product_name": "Commercial Bank of Ceylon PLC Fixed Deposit Receipt",
         "product_type": "FDR",
-        "headline_rate": 10.0,
+        "headline_rate": 10,
         "tenure_options": [
           "3_months",
           "6_months",
@@ -4539,14 +4539,14 @@
     "has_islamic_window": false,
     "minimum_deposit": 100000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.25,
-      "5_years": 9.0
+      "5_years": 9
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.25,
       "10_years": 9.5
     },
@@ -4623,12 +4623,12 @@
       "3_months": 8.75,
       "6_months": 9.25,
       "1_year": 10.25,
-      "3_years": 10.0,
+      "3_years": 10,
       "5_years": 9.75
     },
     "dps_rates": {
       "3_years": 9.75,
-      "5_years": 10.0,
+      "5_years": 10,
       "10_years": 10.25
     },
     "instant_encashment": false,
@@ -4675,7 +4675,7 @@
         "product_id": "alfalah-monthly-dps",
         "product_name": "Bank Alfalah Limited Bangladesh Monthly Sanchay Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 10.0,
+        "headline_rate": 10,
         "tenure_options": [
           "3_years",
           "5_years"
@@ -4863,14 +4863,14 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 8.0,
+      "3_months": 8,
       "6_months": 8.5,
       "1_year": 9.5,
       "3_years": 9.25,
-      "5_years": 9.0
+      "5_years": 9
     },
     "dps_rates": {
-      "3_years": 9.0,
+      "3_years": 9,
       "5_years": 9.25,
       "10_years": 9.5
     },
