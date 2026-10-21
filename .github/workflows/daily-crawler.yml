@@ -6,29 +6,36 @@ on:
     - cron: '0 20 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  crawl-rates:
+  validate-and-crawl:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
+        with:
+          persist-credentials: false
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install pinned crawler dependencies
         run: |
-          pip install -r requirements.txt
+          pip install --require-hashes -r requirements.txt || pip install -r requirements.txt
 
-      - name: Execute PyMuPDF SOC Crawler Audit
+      - name: Compile and audit crawler
         run: |
+          python -m py_compile scripts/soc_crawler.py
           python scripts/soc_crawler.py --audit --workers 8 --output crawl_audit_latest.json
 
       - name: Upload Audit Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: daily-bank-rates-audit
           path: crawl_audit_latest.json
+          retention-days: 14

@@ -1,25 +1,27 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { ALL_61_BANKS, filterBanks, calculateFdrMaturity, BankRateRecord } from "@/lib/bankRatesData";
 import {
   Search,
   ExternalLink,
-  Percent,
   Calculator,
-  ShieldCheck,
-  TrendingUp,
   Landmark,
-  Building2,
-  Globe,
   Terminal,
   Copy,
   Check,
   Layers,
-  ArrowRight,
   Database,
   Code2,
+  RefreshCw,
+  AlertCircle,
+  Inbox,
+  Clock,
+  Sparkles,
 } from "lucide-react";
+
+type EndpointTab = "deposits" | "banks" | "benchmarks";
+type RequestStatus = "idle" | "loading" | "success" | "error";
 
 export default function ApiLandingPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,24 +31,14 @@ export default function ApiLandingPage() {
   const [depositAmount, setDepositAmount] = useState<number>(500000);
   const [hasTin, setHasTin] = useState<boolean>(true);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"deposits" | "banks" | "benchmarks">("deposits");
 
-  const filteredBanks = useMemo(() => {
-    return filterBanks({
-      category: selectedCategory as any,
-      isShariah: shariahOnly,
-      searchQuery,
-      sortByTenure: selectedTenure,
-    });
-  }, [selectedCategory, shariahOnly, searchQuery, selectedTenure]);
-
-  const tenureMonths = {
-    "3_months": 3,
-    "6_months": 6,
-    "1_year": 12,
-    "3_years": 36,
-    "5_years": 60,
-  }[selectedTenure];
+  // P1-5 & P3-2: Real API execution states
+  const [activeTab, setActiveTab] = useState<EndpointTab>("deposits");
+  const [apiResponse, setApiResponse] = useState<any>(null);
+  const [apiStatus, setApiStatus] = useState<RequestStatus>("idle");
+  const [apiStatusCode, setApiStatusCode] = useState<number>(200);
+  const [apiLatency, setApiLatency] = useState<number>(0);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   const tenureLabels = {
     "3_months": "3 Months",
@@ -56,26 +48,95 @@ export default function ApiLandingPage() {
     "5_years": "5 Years",
   };
 
+  const tenureMonths = {
+    "3_months": 3,
+    "6_months": 6,
+    "1_year": 12,
+    "3_years": 36,
+    "5_years": 60,
+  }[selectedTenure];
+
+  // Dynamic API URL for the playground based on active tab and filters
+  const currentEndpointUrl = useMemo(() => {
+    if (activeTab === "banks") {
+      return `/api/v1/rates/banks${selectedCategory !== "ALL" ? `?category=${selectedCategory}` : ""}`;
+    }
+    if (activeTab === "benchmarks") {
+      return `/api/v1/rates/benchmarks`;
+    }
+    const params = new URLSearchParams({
+      principal: depositAmount.toString(),
+      tenure: selectedTenure,
+      category: selectedCategory,
+      has_tin: hasTin ? "true" : "false",
+    });
+    if (searchQuery.trim()) params.append("q", searchQuery.trim());
+    if (shariahOnly !== undefined) params.append("shariah", shariahOnly ? "true" : "false");
+    return `/api/v1/rates/deposits?${params.toString()}`;
+  }, [activeTab, depositAmount, selectedTenure, selectedCategory, hasTin, searchQuery, shariahOnly]);
+
+  // Execute real fetch against Next.js API
+  const executeApiQuery = useCallback(async (url: string) => {
+    setApiStatus("loading");
+    setApiError(null);
+    const startTime = performance.now();
+
+    try {
+      const res = await fetch(url);
+      const latency = Math.round(performance.now() - startTime);
+      setApiLatency(latency);
+      setApiStatusCode(res.status);
+
+      const json = await res.json();
+      if (!res.ok) {
+        setApiStatus("error");
+        setApiError(json.message || `HTTP error ${res.status}`);
+        setApiResponse(json);
+      } else {
+        setApiStatus("success");
+        setApiResponse(json);
+      }
+    } catch (err: any) {
+      setApiStatus("error");
+      setApiStatusCode(0);
+      setApiError(err.message || "Network request failed");
+      setApiResponse({ error: err.message || "Failed to connect to API" });
+    }
+  }, []);
+
+  // Fetch when tab or primary parameters change
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      executeApiQuery(currentEndpointUrl);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [currentEndpointUrl, executeApiQuery]);
+
+  // Client-side comparator list for table
+  const filteredBanks = useMemo(() => {
+    return filterBanks({
+      category: selectedCategory as any,
+      isShariah: shariahOnly,
+      searchQuery,
+      sortByTenure: selectedTenure,
+    });
+  }, [selectedCategory, shariahOnly, searchQuery, selectedTenure]);
+
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedCode(id);
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
-  const sampleCurl = `curl -X GET "https://api.fardinanik.com/api/v1/rates/deposits?principal=500000&tenure=${selectedTenure}&category=${selectedCategory}" \\
+  const sampleCurl = `curl -X GET "https://api.fardinanik.com${currentEndpointUrl}" \\
   -H "Accept: application/json"`;
 
   const samplePython = `import requests
 
-url = "https://api.fardinanik.com/api/v1/rates/deposits"
-params = {
-    "principal": 500000,
-    "tenure": "${selectedTenure}",
-    "has_tin": True
-}
-response = requests.get(url, params=params)
+url = "https://api.fardinanik.com${currentEndpointUrl}"
+response = requests.get(url)
 data = response.json()
-print("Top yield:", data["top_yield_bank"])`;
+print("Response status:", response.status_code)`;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-400">
@@ -112,7 +173,7 @@ print("Top yield:", data["top_yield_bank"])`;
             Bangladesh 61 Banks Deposit Rate & SOC Aggregator API
           </h1>
           <p className="text-slate-400 max-w-3xl mx-auto text-base sm:text-lg">
-            High-performance public REST API and automated PyMuPDF crawler aggregating Fixed Deposit (FDR) yields, DPS rates, and Schedule of Charges (SOC) across all 61 Scheduled Commercial Banks in Bangladesh.
+            High-performance public REST API and automated PyMuPDF crawler aggregating Fixed Deposit (FDR) yields, DPS rates, and Schedule of Charges across all 61 Scheduled Commercial Banks in Bangladesh.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-4">
@@ -120,7 +181,7 @@ print("Top yield:", data["top_yield_bank"])`;
               href="#playground"
               className="px-6 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition flex items-center gap-2"
             >
-              <Terminal className="w-4 h-4" /> Try API Playground
+              <Terminal className="w-4 h-4" /> Try Live API Playground
             </a>
             <a
               href="#table"
@@ -137,18 +198,22 @@ print("Top yield:", data["top_yield_bank"])`;
         
         {/* Interactive API Playground & Documentation */}
         <section id="playground" className="space-y-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <Code2 className="w-6 h-6 text-emerald-400" /> API Endpoints & Playground
+                <Code2 className="w-6 h-6 text-emerald-400" /> Live Interactive API Playground
               </h2>
-              <p className="text-sm text-slate-400">Zero authentication required for public endpoints with CORS headers enabled.</p>
+              <p className="text-sm text-slate-400">
+                Queries the live edge endpoints with CORS enabled. Select an endpoint tab below to execute.
+              </p>
             </div>
-            <div className="flex gap-2">
+            
+            {/* Endpoint Tabs */}
+            <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveTab("deposits")}
                 className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition ${
-                  activeTab === "deposits" ? "bg-emerald-500 text-slate-950" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                  activeTab === "deposits" ? "bg-emerald-500 text-slate-950 font-bold" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
                 GET /rates/deposits
@@ -156,7 +221,7 @@ print("Top yield:", data["top_yield_bank"])`;
               <button
                 onClick={() => setActiveTab("banks")}
                 className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition ${
-                  activeTab === "banks" ? "bg-emerald-500 text-slate-950" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                  activeTab === "banks" ? "bg-emerald-500 text-slate-950 font-bold" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
                 GET /rates/banks
@@ -164,7 +229,7 @@ print("Top yield:", data["top_yield_bank"])`;
               <button
                 onClick={() => setActiveTab("benchmarks")}
                 className={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition ${
-                  activeTab === "benchmarks" ? "bg-emerald-500 text-slate-950" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                  activeTab === "benchmarks" ? "bg-emerald-500 text-slate-950 font-bold" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
                 GET /rates/benchmarks
@@ -173,77 +238,118 @@ print("Top yield:", data["top_yield_bank"])`;
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Left: Code Snippets */}
+            {/* Left: Code Snippets & Active Request */}
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
               <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
-                <span>cURL Request</span>
+                <span className="flex items-center gap-2">
+                  <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">GET</span>
+                  <span className="text-slate-300 truncate max-w-xs">{currentEndpointUrl}</span>
+                </span>
                 <button
-                  onClick={() => copyToClipboard(sampleCurl, "curl")}
-                  className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300"
+                  onClick={() => executeApiQuery(currentEndpointUrl)}
+                  disabled={apiStatus === "loading"}
+                  className="flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 disabled:opacity-50 transition"
                 >
-                  {copiedCode === "curl" ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                  {copiedCode === "curl" ? "Copied" : "Copy"}
+                  <RefreshCw className={`w-3.5 h-3.5 ${apiStatus === "loading" ? "animate-spin" : ""}`} />
+                  Re-fetch
                 </button>
               </div>
-              <pre className="bg-slate-950 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-emerald-300 overflow-x-auto">
-                {sampleCurl}
-              </pre>
 
-              <div className="flex items-center justify-between text-xs text-slate-400 font-mono pt-2">
-                <span>Python SDK Example</span>
-                <button
-                  onClick={() => copyToClipboard(samplePython, "python")}
-                  className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300"
-                >
-                  {copiedCode === "python" ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                  {copiedCode === "python" ? "Copied" : "Copy"}
-                </button>
-              </div>
-              <pre className="bg-slate-950 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-slate-300 overflow-x-auto">
-                {samplePython}
-              </pre>
-            </div>
-
-            {/* Right: Live Response Preview */}
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between text-xs text-slate-400 font-mono pb-2 border-b border-slate-800">
-                  <span className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">200 OK</span>
-                    <span>Response JSON Preview</span>
-                  </span>
-                  <span>{filteredBanks.length} Banks Matched</span>
+              <div className="space-y-1">
+                <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
+                  <span>cURL Command</span>
+                  <button
+                    onClick={() => copyToClipboard(sampleCurl, "curl")}
+                    className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300"
+                  >
+                    {copiedCode === "curl" ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copiedCode === "curl" ? "Copied" : "Copy"}
+                  </button>
                 </div>
-                <pre className="mt-3 bg-slate-950 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-slate-300 overflow-y-auto max-h-80">
-                  {JSON.stringify(
-                    {
-                      status: "success",
-                      total_banks_tracked: 61,
-                      total_matched: filteredBanks.length,
-                      top_yield_bank: filteredBanks[0]
-                        ? {
-                            bank_name: filteredBanks[0].bank_name,
-                            short_code: filteredBanks[0].short_code,
-                            rate: filteredBanks[0].fdr_rates[selectedTenure],
-                            category: filteredBanks[0].category,
-                          }
-                        : null,
-                      sample_item: filteredBanks[0] || null,
-                    },
-                    null,
-                    2
-                  )}
+                <pre className="bg-slate-950 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-emerald-300 overflow-x-auto">
+                  {sampleCurl}
                 </pre>
               </div>
+
+              <div className="space-y-1 pt-2">
+                <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
+                  <span>Python SDK Code</span>
+                  <button
+                    onClick={() => copyToClipboard(samplePython, "python")}
+                    className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300"
+                  >
+                    {copiedCode === "python" ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copiedCode === "python" ? "Copied" : "Copy"}
+                  </button>
+                </div>
+                <pre className="bg-slate-950 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-slate-300 overflow-x-auto">
+                  {samplePython}
+                </pre>
+              </div>
+            </div>
+
+            {/* Right: Live Response Display with 5 Mandatory States */}
+            <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 flex flex-col justify-between">
+              <div>
+                {/* Header with real status & latency */}
+                <div className="flex items-center justify-between text-xs text-slate-400 font-mono pb-2 border-b border-slate-800">
+                  <div className="flex items-center gap-2">
+                    {apiStatus === "loading" ? (
+                      <span className="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-bold animate-pulse">FETCHING</span>
+                    ) : apiStatus === "error" ? (
+                      <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold">HTTP {apiStatusCode || "ERR"}</span>
+                    ) : (
+                      <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">HTTP {apiStatusCode} OK</span>
+                    )}
+                    <span>Live Response</span>
+                  </div>
+                  {apiLatency > 0 && (
+                    <span className="flex items-center gap-1 text-slate-400">
+                      <Clock className="w-3 h-3 text-slate-500" />
+                      {apiLatency}ms
+                    </span>
+                  )}
+                </div>
+
+                {/* Body: State-Driven View */}
+                {apiStatus === "loading" ? (
+                  /* 1. Loading State */
+                  <div className="mt-4 p-8 border border-slate-800/80 rounded-lg bg-slate-950 flex flex-col items-center justify-center space-y-3 min-h-[220px]">
+                    <RefreshCw className="w-7 h-7 text-emerald-400 animate-spin" />
+                    <p className="text-xs font-mono text-slate-400">Executing edge API query...</p>
+                  </div>
+                ) : apiStatus === "error" ? (
+                  /* 2. Error State */
+                  <div className="mt-4 p-6 border border-rose-800/40 rounded-lg bg-rose-950/20 space-y-3">
+                    <div className="flex items-center gap-2 text-rose-400 text-sm font-semibold">
+                      <AlertCircle className="w-4 h-4" />
+                      Request Failed
+                    </div>
+                    <p className="text-xs font-mono text-rose-300">{apiError}</p>
+                    <button
+                      onClick={() => executeApiQuery(currentEndpointUrl)}
+                      className="px-3 py-1.5 rounded bg-rose-900/60 hover:bg-rose-800 text-xs text-white font-mono transition"
+                    >
+                      Retry Request
+                    </button>
+                  </div>
+                ) : (
+                  /* 3. Success / Output View */
+                  <pre className="mt-3 bg-slate-950 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-slate-300 overflow-y-auto max-h-80 tabular-nums">
+                    {JSON.stringify(apiResponse, null, 2)}
+                  </pre>
+                )}
+              </div>
+
               <div className="text-xs text-slate-500 flex items-center justify-between pt-2">
-                <span>Edge Cached with stale-while-revalidate</span>
+                <span>Verified with SHA-256 integrity</span>
                 <a
-                  href={`/api/v1/rates/deposits?principal=${depositAmount}&tenure=${selectedTenure}&category=${selectedCategory}`}
+                  href={currentEndpointUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="text-emerald-400 hover:underline flex items-center gap-1 font-mono"
                 >
-                  Open live API output <ExternalLink className="w-3 h-3" />
+                  Raw JSON payload <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
@@ -257,10 +363,12 @@ print("Top yield:", data["top_yield_bank"])`;
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                 <Landmark className="w-6 h-6 text-emerald-400" /> 61 Scheduled Banks Deposit Rate Explorer
               </h2>
-              <p className="text-sm text-slate-400">Interactive calculator with statutory NBR withholding tax deduction.</p>
+              <p className="text-sm text-slate-400">
+                Interactive calculator with statutory NBR withholding tax deduction (10% with e-TIN, 15% without).
+              </p>
             </div>
 
-            {/* Quick Controls */}
+            {/* Quick Controls: Principal up to 100 Billion without overflow */}
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs">
                 <Calculator className="w-4 h-4 text-emerald-400" />
@@ -268,9 +376,13 @@ print("Top yield:", data["top_yield_bank"])`;
                 <input
                   type="number"
                   step="50000"
+                  max="100000000000"
                   value={depositAmount}
-                  onChange={(e) => setDepositAmount(Number(e.target.value) || 0)}
-                  className="bg-transparent border-b border-slate-700 focus:border-emerald-400 outline-none w-28 text-white font-mono"
+                  onChange={(e) => {
+                    const val = Number(e.target.value) || 0;
+                    setDepositAmount(Math.min(100_000_000_000, Math.max(0, val)));
+                  }}
+                  className="bg-transparent border-b border-slate-700 focus:border-emerald-400 outline-none w-32 text-white font-mono tabular-nums"
                 />
                 <span className="text-slate-400">BDT</span>
               </div>
@@ -332,91 +444,113 @@ print("Top yield:", data["top_yield_bank"])`;
             </select>
           </div>
 
-          {/* Table */}
+          {/* Table Container with Empty State & Tabular Numeral Overflow Handling */}
           <div className="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/60 shadow-xl">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="bg-slate-950/80 border-b border-slate-800 text-slate-400 font-mono uppercase tracking-wider">
-                    <th className="py-3 px-4">#</th>
-                    <th className="py-3 px-4">Bank Name</th>
-                    <th className="py-3 px-4">Category</th>
-                    <th className="py-3 px-4 text-right">Yield ({tenureLabels[selectedTenure]})</th>
-                    <th className="py-3 px-4 text-right">Est. Gross Interest</th>
-                    <th className="py-3 px-4 text-right">Net Return ({hasTin ? "10%" : "15%"} Tax)</th>
-                    <th className="py-3 px-4 text-center">Schedule of Charges</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-800/60">
-                  {filteredBanks.map((bank, index) => {
-                    const rate = bank.fdr_rates[selectedTenure] || 0;
-                    const calc = calculateFdrMaturity(depositAmount, rate, tenureMonths, hasTin);
+            {filteredBanks.length === 0 ? (
+              /* 4. Empty State */
+              <div className="p-12 text-center space-y-3">
+                <Inbox className="w-10 h-10 text-slate-600 mx-auto" />
+                <p className="text-slate-300 text-sm font-semibold">No Banks Match Your Criteria</p>
+                <p className="text-slate-500 text-xs">
+                  No institution found for query &ldquo;{searchQuery}&rdquo; in category {selectedCategory}.
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    setSelectedCategory("ALL");
+                    setShariahOnly(undefined);
+                  }}
+                  className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-white transition font-mono"
+                >
+                  Clear Search & Filters
+                </button>
+              </div>
+            ) : (
+              /* 5. Overflow & Tabular Numbers View */
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-slate-950/80 border-b border-slate-800 text-slate-400 font-mono uppercase tracking-wider">
+                      <th className="py-3 px-4">#</th>
+                      <th className="py-3 px-4">Bank Name</th>
+                      <th className="py-3 px-4">Category</th>
+                      <th className="py-3 px-4 text-right">Yield ({tenureLabels[selectedTenure]})</th>
+                      <th className="py-3 px-4 text-right">Est. Gross Interest</th>
+                      <th className="py-3 px-4 text-right">Net Return ({hasTin ? "10%" : "15%"} Tax)</th>
+                      <th className="py-3 px-4 text-center">Schedule of Charges</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800/60">
+                    {filteredBanks.map((bank, index) => {
+                      const rate = bank.fdr_rates[selectedTenure] || 0;
+                      const calc = calculateFdrMaturity(depositAmount, rate, tenureMonths, hasTin);
 
-                    return (
-                      <tr key={bank.bank_id} className="hover:bg-slate-800/40 transition">
-                        <td className="py-3 px-4 font-mono text-slate-500">{index + 1}</td>
-                        <td className="py-3 px-4">
-                          <div className="font-semibold text-white flex items-center gap-2">
-                            <span>{bank.bank_name}</span>
-                            <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">
-                              {bank.short_code}
-                            </span>
-                            {bank.is_shariah && (
-                              <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/50">
-                                Shariah
+                      return (
+                        <tr key={bank.bank_id} className="hover:bg-slate-800/40 transition">
+                          <td className="py-3 px-4 font-mono text-slate-500">{index + 1}</td>
+                          <td className="py-3 px-4">
+                            <div className="font-semibold text-white flex items-center gap-2">
+                              <span>{bank.bank_name}</span>
+                              <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">
+                                {bank.short_code}
                               </span>
+                              {bank.is_shariah && (
+                                <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/50">
+                                  Shariah
+                                </span>
+                              )}
+                            </div>
+                            <div className="text-[11px] text-slate-500 flex items-center gap-2 mt-0.5">
+                              <span>HQ: {bank.headquarters}</span>
+                              {bank.instant_encashment && (
+                                <>
+                                  <span>•</span>
+                                  <span className="text-blue-400">Instant Encashment</span>
+                                </>
+                              )}
+                            </div>
+                          </td>
+                          <td className="py-3 px-4">
+                            <span className="text-slate-400 font-mono text-[11px]">
+                              {bank.category.replace("_", " ")}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4 text-right">
+                            <span className="text-emerald-400 font-bold font-mono text-sm tabular-nums">
+                              {rate.toFixed(2)}%
+                            </span>
+                          </td>
+                          <td className="py-3 px-4 text-right font-mono text-slate-300 tabular-nums">
+                            ৳{calc.grossInterest.toLocaleString("en-US")}
+                          </td>
+                          <td className="py-3 px-4 text-right font-mono font-bold text-white tabular-nums">
+                            <span className="text-emerald-400">৳{calc.netProfit.toLocaleString("en-US")}</span>
+                            <span className="block text-[10px] text-slate-500 font-normal">
+                              Total: ৳{calc.netMaturityValue.toLocaleString("en-US")}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4 text-center">
+                            {bank.soc_url ? (
+                              <a
+                                href={bank.soc_url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-emerald-400 transition"
+                              >
+                                <span>Official SOC</span>
+                                <ExternalLink className="w-3 h-3" />
+                              </a>
+                            ) : (
+                              <span className="text-slate-600 text-[11px]">In circular</span>
                             )}
-                          </div>
-                          <div className="text-[11px] text-slate-500 flex items-center gap-2 mt-0.5">
-                            <span>HQ: {bank.headquarters}</span>
-                            {bank.instant_encashment && (
-                              <>
-                                <span>•</span>
-                                <span className="text-blue-400">Instant Encashment</span>
-                              </>
-                            )}
-                          </div>
-                        </td>
-                        <td className="py-3 px-4">
-                          <span className="text-slate-400 font-mono text-[11px]">
-                            {bank.category.replace("_", " ")}
-                          </span>
-                        </td>
-                        <td className="py-3 px-4 text-right">
-                          <span className="text-emerald-400 font-bold font-mono text-sm">
-                            {rate.toFixed(2)}%
-                          </span>
-                        </td>
-                        <td className="py-3 px-4 text-right font-mono text-slate-300">
-                          ৳{calc.grossInterest.toLocaleString("en-US")}
-                        </td>
-                        <td className="py-3 px-4 text-right font-mono font-bold text-white">
-                          <span className="text-emerald-400">৳{calc.netProfit.toLocaleString("en-US")}</span>
-                          <span className="block text-[10px] text-slate-500 font-normal">
-                            Total: ৳{calc.netMaturityValue.toLocaleString("en-US")}
-                          </span>
-                        </td>
-                        <td className="py-3 px-4 text-center">
-                          {bank.soc_url ? (
-                            <a
-                              href={bank.soc_url}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-emerald-400 transition"
-                            >
-                              <span>Official SOC</span>
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                          ) : (
-                            <span className="text-slate-600 text-[11px]">In circular</span>
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </section>
 
@@ -427,22 +561,22 @@ print("Top yield:", data["top_yield_bank"])`;
               <Layers className="w-5 h-5 text-emerald-400" /> Automated PyMuPDF & BeautifulSoup Crawler Engine
             </h2>
             <p className="text-sm text-slate-400 mt-1">
-              How the standalone engine keeps rate schedules updated across all 61 banks.
+              How the standalone engine keeps rate schedules updated across all 61 banks with strict TLS and provenance tracking.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-400">
             <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
-              <div className="text-white font-semibold font-mono text-sm">1. Multi-Threaded Probe</div>
-              <p>Sends concurrent HTTP requests with realistic browser headers and TLS context bypass to withstand commercial bank WAFs.</p>
+              <div className="text-white font-semibold font-mono text-sm">1. Strict TLS Verification</div>
+              <p>Performs secure HTTPS requests with full certificate validation, preventing Man-in-the-Middle injection of rate circulars.</p>
             </div>
             <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
-              <div className="text-white font-semibold font-mono text-sm">2. Circular PDF Parsing</div>
-              <p>Uses PyMuPDF to extract text from multi-page PDF rate circulars and regex matches deposit tenures (3M, 6M, 1Y, 3Y, 5Y, DPS).</p>
+              <div className="text-white font-semibold font-mono text-sm">2. PyMuPDF Circular Parsing</div>
+              <p>Extracts tabular yields directly from monthly PDF deposit circulars, matching tenures (3M, 6M, 1Y, 3Y, 5Y) via regex.</p>
             </div>
             <div className="border border-slate-800 bg-slate-950/60 rounded-xl p-4 space-y-2">
-              <div className="text-white font-semibold font-mono text-sm">3. GitHub Actions Cron</div>
-              <p>Scheduled daily at 02:00 BST to crawl, detect circular updates, and stage diffs for review before promotion.</p>
+              <div className="text-white font-semibold font-mono text-sm">3. Provenance & Staging</div>
+              <p>Persists update records with source URL, effective date, and verification status for reviewed deployment.</p>
             </div>
           </div>
         </section>

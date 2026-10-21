@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Bangladesh 61 Banks Deposit Rate & SOC Aggregator API",
-    "version": "1.0.0",
-    "description": "Public REST API providing real-time deposit interest rates (FDR/DPS), Schedule of Charges (SOC), and net return calculations across all 61 Scheduled Commercial Banks in Bangladesh.",
+    "version": "1.3.0",
+    "description": "High-performance public REST API & automated PyMuPDF crawler aggregating deposit interest rates (FDR/DPS) and Schedule of Charges across all 61 Scheduled Commercial Banks in Bangladesh.",
     "contact": {
       "name": "Fardin Ahsan Anik",
       "url": "https://fardinanik.com",
@@ -28,18 +28,95 @@
     "/api/v1/rates/deposits": {
       "get": {
         "summary": "Query deposit rates across all 61 scheduled banks",
-        "description": "Retrieve filtered deposit rates, tenure yields, and simulated maturity values with NBR tax deductions.",
+        "description": "Retrieve filtered deposit rates, tenure yields, and simulated maturity values with NBR statutory tax deductions.",
         "parameters": [
-          { "name": "category", "in": "query", "schema": { "type": "string", "enum": ["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"] } },
-          { "name": "tenure", "in": "query", "schema": { "type": "string", "enum": ["3_months", "6_months", "1_year", "3_years", "5_years"], "default": "1_year" } },
-          { "name": "shariah", "in": "query", "schema": { "type": "boolean" } },
-          { "name": "principal", "in": "query", "schema": { "type": "number", "example": 500000 } },
-          { "name": "has_tin", "in": "query", "schema": { "type": "boolean", "default": true } },
-          { "name": "q", "in": "query", "schema": { "type": "string" } }
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "tenure",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["3_months", "6_months", "1_year", "3_years", "5_years"],
+              "default": "1_year"
+            }
+          },
+          {
+            "name": "principal",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 100000000000,
+              "example": 500000
+            }
+          },
+          {
+            "name": "has_tin",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"],
+              "default": "true"
+            }
+          },
+          {
+            "name": "shariah",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          },
+          {
+            "name": "instant_encashment",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["true", "false"]
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          }
         ],
         "responses": {
           "200": {
-            "description": "Array of bank deposit rates and maturity returns."
+            "description": "Successful retrieval of deposit rates",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "success" },
+                    "total_banks_tracked": { "type": "integer", "example": 61 },
+                    "total_matched": { "type": "integer", "example": 61 },
+                    "data": { "type": "array", "items": { "type": "object" } }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error for invalid query parameters"
           }
         }
       }
@@ -47,10 +124,12 @@
     "/api/v1/rates/banks": {
       "get": {
         "summary": "Directory of all 61 scheduled banks",
+        "parameters": [
+          { "name": "category", "in": "query", "schema": { "type": "string" } },
+          { "name": "shariah", "in": "query", "schema": { "type": "string" } }
+        ],
         "responses": {
-          "200": {
-            "description": "List of bank profiles, headquarters, and SOC URLs."
-          }
+          "200": { "description": "Bank directory list" }
         }
       }
     },
@@ -70,7 +149,7 @@
       "get": {
         "summary": "Central bank policy rates and NBR withholding tax regime",
         "responses": {
-          "200": { "description": "Policy repo rate, SLF, SDF, CRR, SLR, and tax tiers." }
+          "200": { "description": "Policy repo rate, SLF, SDF, CRR, SLR, and tax tiers" }
         }
       }
     },
@@ -82,7 +161,49 @@
       "post": {
         "summary": "Administrative ingestion endpoint to stage rate updates",
         "security": [{ "BearerAuth": [] }],
-        "responses": { "200": { "description": "Update receipt" } }
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["updates"],
+                "properties": {
+                  "updates": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["bank_id"],
+                      "properties": {
+                        "bank_id": { "type": "string" },
+                        "fdr_rates": { "type": "object" },
+                        "dps_rates": { "type": "object" },
+                        "circular_url": { "type": "string" },
+                        "effective_date": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Staging update receipt" },
+          "401": { "description": "Unauthorized" },
+          "400": { "description": "Validation error" },
+          "503": { "description": "Sync service not configured" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Administrative Bearer token configured via RATES_SYNC_SECRET"
       }
     }
   }

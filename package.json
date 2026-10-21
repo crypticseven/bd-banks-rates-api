@@ -19,7 +19,7 @@
     "dev": "next dev -p 3009",
     "build": "next build",
     "start": "next start -p 3009",
-    "lint": "next lint",
+    "lint": "tsc --noEmit",
     "crawl": "python scripts/soc_crawler.py --audit"
   },
   "dependencies": {

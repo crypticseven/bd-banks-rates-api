@@ -1,29 +1,68 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ALL_61_BANKS, filterBanks, calculateFdrMaturity } from "@/lib/bankRatesData";
+import { z } from "zod";
+
+const querySchema = z.object({
+  category: z
+    .enum(["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"])
+    .default("ALL"),
+  tenure: z
+    .enum(["3_months", "6_months", "1_year", "3_years", "5_years"])
+    .default("1_year"),
+  principal: z.coerce.number().finite().positive().max(100_000_000_000).optional(),
+  has_tin: z.enum(["true", "false"]).default("true"),
+  shariah: z.enum(["true", "false"]).optional(),
+  instant_encashment: z.enum(["true", "false"]).optional(),
+  q: z.string().trim().max(100).optional(),
+});
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 
-    const category = searchParams.get("category") || "ALL";
-    const shariahParam = searchParams.get("shariah");
-    const isShariah = shariahParam !== null ? shariahParam === "true" : undefined;
-    const instantEncashmentOnly = searchParams.get("instant_encashment") === "true";
-    const searchQuery = searchParams.get("q") || "";
-    const tenure = (searchParams.get("tenure") || "1_year") as "3_months" | "6_months" | "1_year" | "3_years" | "5_years";
-    const principalStr = searchParams.get("principal");
-    const hasTin = searchParams.get("has_tin") !== "false";
+    // Extract query parameters object for Zod validation
+    const queryObj: Record<string, string> = {};
+    searchParams.forEach((value, key) => {
+      queryObj[key] = value;
+    });
+
+    const parsedQuery = querySchema.safeParse(queryObj);
+
+    // P1-6: Return structured 400 response on validation failure
+    if (!parsedQuery.success) {
+      return NextResponse.json(
+        {
+          status: "bad_request",
+          message: "Invalid query parameters provided.",
+          errors: parsedQuery.error.format(),
+        },
+        { status: 400 }
+      );
+    }
+
+    const {
+      category,
+      tenure,
+      principal,
+      has_tin,
+      shariah,
+      instant_encashment,
+      q,
+    } = parsedQuery.data;
+
+    const isShariah = shariah !== undefined ? shariah === "true" : undefined;
+    const instantEncashmentOnly = instant_encashment === "true";
+    const hasTinBool = has_tin === "true";
 
     // Filter and sort by highest yield for selected tenure
     const filtered = filterBanks({
       category: category as any,
       isShariah,
       instantEncashmentOnly,
-      searchQuery,
+      searchQuery: q || "",
       sortByTenure: tenure,
     });
 
-    const principal = principalStr ? parseFloat(principalStr) : null;
     const tenureMonthsMap: Record<string, number> = {
       "3_months": 3,
       "6_months": 6,
@@ -35,8 +74,8 @@ export async function GET(req: NextRequest) {
 
     const enrichedData = filtered.map((bank) => {
       const rate = bank.fdr_rates[tenure] || 0;
-      const calculation = principal && !isNaN(principal) && principal > 0
-        ? calculateFdrMaturity(principal, rate, months, hasTin)
+      const calculation = principal && principal > 0
+        ? calculateFdrMaturity(principal, rate, months, hasTinBool)
         : null;
 
       return {

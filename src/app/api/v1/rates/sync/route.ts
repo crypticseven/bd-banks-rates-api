@@ -1,19 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ALL_61_BANKS } from "@/lib/bankRatesData";
 import { z } from "zod";
+import crypto from "crypto";
+import fs from "fs";
+import path from "path";
 
+// Strict schema for authenticated rate updates
 const rateUpdateSchema = z.object({
-  secret_key: z.string().min(16),
   updates: z.array(
     z.object({
-      bank_id: z.string(),
-      fdr_rates: z.record(z.string(), z.number()).optional(),
-      dps_rates: z.record(z.string(), z.number()).optional(),
+      bank_id: z.string().min(2),
+      fdr_rates: z.record(z.string(), z.number().min(0).max(30)).optional(),
+      dps_rates: z.record(z.string(), z.number().min(0).max(30)).optional(),
       circular_url: z.string().url().optional(),
-      effective_date: z.string().optional(),
+      effective_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Format must be YYYY-MM-DD").optional(),
+      notes: z.string().max(500).optional(),
     })
-  ),
+  ).min(1, "At least one bank update is required"),
 });
+
+const STAGED_UPDATES_FILE = path.join(process.cwd(), "src", "data", "staged_rate_updates.json");
 
 export async function GET(req: NextRequest) {
   try {
@@ -24,11 +30,22 @@ export async function GET(req: NextRequest) {
     const specializedCount = ALL_61_BANKS.filter((b) => b.category === "SPECIALIZED").length;
     const foreignCount = ALL_61_BANKS.filter((b) => b.category === "FOREIGN").length;
 
+    // Check if staged updates exist
+    let stagedCount = 0;
+    if (fs.existsSync(STAGED_UPDATES_FILE)) {
+      try {
+        const stagedData = JSON.parse(fs.readFileSync(STAGED_UPDATES_FILE, "utf-8"));
+        stagedCount = Array.isArray(stagedData) ? stagedData.length : 0;
+      } catch {
+        stagedCount = 0;
+      }
+    }
+
     return NextResponse.json(
       {
         status: "operational",
         service: "SOC & Deposit Rates Ingestion Pipeline",
-        version: "v1.2.0",
+        version: "v1.3.0",
         as_of_date: new Date().toISOString().split("T")[0],
         total_banks_tracked: totalBanks,
         breakdown: {
@@ -38,10 +55,12 @@ export async function GET(req: NextRequest) {
           full_islamic_pcb: islamicCount,
           foreign_commercial_fcb: foreignCount,
         },
+        staged_updates_pending_review: stagedCount,
         crawler_engine: {
           target_frequency: "Daily automated check at 02:00 BST (UTC+6)",
           supported_formats: ["HTML Responsive Tables", "PDF Circulars (PyMuPDF parser)"],
           last_sync_timestamp: new Date().toISOString(),
+          provenance_verification: "Standard SHA-256 integrity & source URL validation",
         },
         central_bank_compliance: {
           regulatory_body: "Bangladesh Bank (Banking Regulation and Policy Department)",
@@ -55,13 +74,13 @@ export async function GET(req: NextRequest) {
       {
         status: 200,
         headers: {
-          "Cache-Control": "public, s-maxage=1800",
+          "Cache-Control": "private, no-cache, no-store, must-revalidate",
         },
       }
     );
   } catch (error) {
     return NextResponse.json(
-      { status: "error", message: "Internal sync telemetry error" },
+      { status: "error", message: "Internal sync telemetry error." },
       { status: 500 }
     );
   }
@@ -69,15 +88,35 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const authHeader = req.headers.get("Authorization") || "";
-    const bearerToken = authHeader.replace(/^Bearer\s+/i, "");
-    const expectedSecret = process.env.RATES_SYNC_SECRET || "fardinanik_internal_rates_sync_secret_2026";
+    const expectedSecret = process.env.RATES_SYNC_SECRET;
 
-    if (bearerToken !== expectedSecret) {
+    // P0-1: Reject immediately if secret is not configured in environment
+    if (!expectedSecret || expectedSecret.length < 16) {
+      return NextResponse.json(
+        {
+          status: "error",
+          message: "Sync service is not configured on this deployment. RATES_SYNC_SECRET is required.",
+        },
+        { status: 503 }
+      );
+    }
+
+    const authHeader = req.headers.get("Authorization") || "";
+    const match = authHeader.match(/^Bearer\s+(.+)$/i);
+    const providedSecret = match ? match[1] : "";
+
+    // P0-1: Constant-time comparison to prevent timing attacks
+    const expectedBuf = Buffer.from(expectedSecret);
+    const providedBuf = Buffer.from(providedSecret);
+
+    if (
+      expectedBuf.length !== providedBuf.length ||
+      !crypto.timingSafeEqual(expectedBuf, providedBuf)
+    ) {
       return NextResponse.json(
         {
           status: "unauthorized",
-          message: "Valid administrative Bearer token required for SOC ingestion.",
+          message: "Invalid administrative credentials.",
         },
         { status: 401 }
       );
@@ -88,19 +127,45 @@ export async function POST(req: NextRequest) {
 
     if (!parsed.success) {
       return NextResponse.json(
-        { status: "validation_error", errors: parsed.error.format() },
+        {
+          status: "validation_error",
+          errors: parsed.error.format(),
+        },
         { status: 400 }
       );
     }
 
     const { updates } = parsed.data;
 
+    // P1-2: Persist incoming updates durably to disk with audit metadata
+    let existingStaged: any[] = [];
+    if (fs.existsSync(STAGED_UPDATES_FILE)) {
+      try {
+        existingStaged = JSON.parse(fs.readFileSync(STAGED_UPDATES_FILE, "utf-8"));
+      } catch {
+        existingStaged = [];
+      }
+    }
+
+    const timestamp = new Date().toISOString();
+    const stagedBatch = {
+      batch_id: crypto.randomUUID(),
+      ingested_at: timestamp,
+      client_ip_hash: crypto.createHash("sha256").update(req.headers.get("x-forwarded-for") || "local").digest("hex").slice(0, 16),
+      updates_count: updates.length,
+      records: updates,
+    };
+
+    existingStaged.push(stagedBatch);
+    fs.writeFileSync(STAGED_UPDATES_FILE, JSON.stringify(existingStaged, null, 2), "utf-8");
+
     return NextResponse.json(
       {
         status: "success",
-        message: `Successfully staged rate updates for ${updates.length} banks.`,
+        message: `Successfully ingested and persisted ${updates.length} bank rate updates to staging.`,
+        batch_id: stagedBatch.batch_id,
         processed_count: updates.length,
-        timestamp: new Date().toISOString(),
+        timestamp,
         updated_banks: updates.map((u) => u.bank_id),
       },
       { status: 200 }

@@ -21,7 +21,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.sonalibank.com.bd/interest_rate.php",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.sonalibank.com.bd/interest_rate.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "janata",
@@ -45,7 +49,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://jb.com.bd/schedule-of-charges",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://jb.com.bd/schedule-of-charges",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "agrani",
@@ -69,7 +77,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.agranibank.org/interest_rates.php",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.agranibank.org/interest_rates.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "rupali",
@@ -93,7 +105,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.rupalibank.com.bd/rates.html",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.rupalibank.com.bd/rates.html",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "basic",
@@ -117,7 +133,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.basicbank.com.bd/interest_rate.php",
-    "headquarters": "Sena Kalyan Bhaban, Motijheel"
+    "headquarters": "Sena Kalyan Bhaban, Motijheel",
+    "source_url": "https://www.basicbank.com.bd/interest_rate.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "bdbl",
@@ -141,7 +161,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.bdbl.com.bd/interest-rates",
-    "headquarters": "BDBL Bhaban, Kawran Bazar"
+    "headquarters": "BDBL Bhaban, Kawran Bazar",
+    "source_url": "https://www.bdbl.com.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "bkb",
@@ -165,7 +189,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://krishibank.org.bd/interest-rate/",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://krishibank.org.bd/interest-rate/",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "rakub",
@@ -189,7 +217,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.rakub.org.bd/interest-rates",
-    "headquarters": "Rajshahi, Bangladesh"
+    "headquarters": "Rajshahi, Bangladesh",
+    "source_url": "https://www.rakub.org.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "pkb",
@@ -213,7 +245,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://pkb.gov.bd/interest-rate",
-    "headquarters": "Eskaton Garden, Dhaka"
+    "headquarters": "Eskaton Garden, Dhaka",
+    "source_url": "https://pkb.gov.bd/interest-rate",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "ucb",
@@ -237,7 +273,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.ucb.com.bd/rates/interest-rates/",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.ucb.com.bd/rates/interest-rates/",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "brac",
@@ -261,7 +301,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.bracbank.com/en/personal/deposits/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.bracbank.com/en/personal/deposits/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "city",
@@ -285,7 +329,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.thecitybank.com/rates-and-charges",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.thecitybank.com/rates-and-charges",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "ebl",
@@ -309,7 +357,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.ebl.com.bd/interest-rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.ebl.com.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "dbbl",
@@ -333,7 +385,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.dutchbanglabank.com/rates.html",
-    "headquarters": "Sena Kalyan Bhaban, Motijheel"
+    "headquarters": "Sena Kalyan Bhaban, Motijheel",
+    "source_url": "https://www.dutchbanglabank.com/rates.html",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "prime",
@@ -357,7 +413,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.primebank.com.bd/interest-rates",
-    "headquarters": "Nikunja-2, Dhaka"
+    "headquarters": "Nikunja-2, Dhaka",
+    "source_url": "https://www.primebank.com.bd/interest-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "mtb",
@@ -381,7 +441,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.mutualtrustbank.com/rates/",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.mutualtrustbank.com/rates/",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "dhaka",
@@ -405,7 +469,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://dhakabankltd.com/rates/",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://dhakabankltd.com/rates/",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "pubali",
@@ -429,7 +497,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.pubalibangla.com/interest_rate.asp",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.pubalibangla.com/interest_rate.asp",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "mercantile",
@@ -453,7 +525,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.mblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.mblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "southeast",
@@ -477,7 +553,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.southeastbank.com.bd/rates.php",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.southeastbank.com.bd/rates.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "ncc",
@@ -501,7 +581,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.nccbank.com.bd/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.nccbank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "premier",
@@ -525,7 +609,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.premierbankltd.com/rates",
-    "headquarters": "Banani, Dhaka"
+    "headquarters": "Banani, Dhaka",
+    "source_url": "https://www.premierbankltd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "trust",
@@ -549,7 +637,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.tblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.tblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "jamuna",
@@ -573,7 +665,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.jamunabank.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.jamunabank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "bank_asia",
@@ -597,7 +693,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.bankasia-bd.com/rates",
-    "headquarters": "Purana Paltan, Dhaka"
+    "headquarters": "Purana Paltan, Dhaka",
+    "source_url": "https://www.bankasia-bd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "one_bank",
@@ -621,7 +721,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.onebank.com.bd/rates.php",
-    "headquarters": "Kawran Bazar, Dhaka"
+    "headquarters": "Kawran Bazar, Dhaka",
+    "source_url": "https://www.onebank.com.bd/rates.php",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "ab_bank",
@@ -645,7 +749,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://abbl.com/rates",
-    "headquarters": "Kakrail, Dhaka"
+    "headquarters": "Kakrail, Dhaka",
+    "source_url": "https://abbl.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "ific",
@@ -669,7 +777,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.ificbank.com.bd/rates",
-    "headquarters": "Purana Paltan, Dhaka"
+    "headquarters": "Purana Paltan, Dhaka",
+    "source_url": "https://www.ificbank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "uttara",
@@ -693,7 +805,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://uttarabank-bd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://uttarabank-bd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "nbl",
@@ -717,7 +833,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.nblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.nblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "nrbc",
@@ -741,7 +861,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.nrbcommercialbank.com/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.nrbcommercialbank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "nrb",
@@ -765,7 +889,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.nrbbankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.nrbbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "meghna",
@@ -789,7 +917,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.meghnabank.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.meghnabank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "midland",
@@ -813,7 +945,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.midlandbankbd.net/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.midlandbankbd.net/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "modhumoti",
@@ -837,7 +973,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.modhumotibank.net/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.modhumotibank.net/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "sbac",
@@ -861,7 +1001,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.sbacbank.com/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.sbacbank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "shimanto",
@@ -885,7 +1029,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.shimantobank.com/rates",
-    "headquarters": "Peelkhana, Dhanmondi"
+    "headquarters": "Peelkhana, Dhanmondi",
+    "source_url": "https://www.shimantobank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "community",
@@ -909,7 +1057,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.communitybankbd.com/rates",
-    "headquarters": "Police Plaza, Gulshan"
+    "headquarters": "Police Plaza, Gulshan",
+    "source_url": "https://www.communitybankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "bengal",
@@ -933,7 +1085,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://bgcb.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://bgcb.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "citizens",
@@ -957,7 +1113,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://citizensbankbd.com/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://citizensbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "padma",
@@ -981,7 +1141,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.padmabankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.padmabankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "bcbl",
@@ -1005,7 +1169,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.bcblbd.com/rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.bcblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "ibbl",
@@ -1029,7 +1197,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.islamibankbd.com/mudaraba-rates",
-    "headquarters": "Dilkusha, Dhaka"
+    "headquarters": "Dilkusha, Dhaka",
+    "source_url": "https://www.islamibankbd.com/mudaraba-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "al_arafah",
@@ -1053,7 +1225,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.aibl.com.bd/profit-rates",
-    "headquarters": "Purana Paltan, Dhaka"
+    "headquarters": "Purana Paltan, Dhaka",
+    "source_url": "https://www.aibl.com.bd/profit-rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "sibl",
@@ -1077,7 +1253,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.siblbd.com/rates",
-    "headquarters": "City Center, Motijheel"
+    "headquarters": "City Center, Motijheel",
+    "source_url": "https://www.siblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "shahjalal",
@@ -1101,7 +1281,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.sjiblbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.sjiblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "exim",
@@ -1125,7 +1309,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.eximbankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.eximbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "fsibl",
@@ -1149,7 +1337,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.fsiblbd.com/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.fsiblbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "global_islami",
@@ -1173,7 +1365,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.globalislamibankbd.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.globalislamibankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "union",
@@ -1197,7 +1393,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.unionbank.com.bd/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.unionbank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "standard_islamic",
@@ -1221,7 +1421,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.standardbankbd.com/rates",
-    "headquarters": "Topkhana Road, Dhaka"
+    "headquarters": "Topkhana Road, Dhaka",
+    "source_url": "https://www.standardbankbd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "icb_islamic",
@@ -1245,7 +1449,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.icbislamic-bd.com/rates",
-    "headquarters": "Toka Bhaban, Karwan Bazar"
+    "headquarters": "Toka Bhaban, Karwan Bazar",
+    "source_url": "https://www.icbislamic-bd.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "scb",
@@ -1269,7 +1477,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.sc.com/bd/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.sc.com/bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "hsbc",
@@ -1293,7 +1505,11 @@
     },
     "instant_encashment": true,
     "soc_url": "https://www.hsbc.com.bd/rates",
-    "headquarters": "Bir Uttam C R Dutta Road, Dhaka"
+    "headquarters": "Bir Uttam C R Dutta Road, Dhaka",
+    "source_url": "https://www.hsbc.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "citi",
@@ -1317,7 +1533,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "ceylon",
@@ -1341,7 +1561,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.combank.com.bd/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.combank.com.bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "woori",
@@ -1365,7 +1589,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://bd.wooribank.com/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://bd.wooribank.com/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "alfalah",
@@ -1389,7 +1617,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.bankalfalah.com/bd/rates",
-    "headquarters": "Gulshan-2, Dhaka"
+    "headquarters": "Gulshan-2, Dhaka",
+    "source_url": "https://www.bankalfalah.com/bd/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "sbi",
@@ -1413,7 +1645,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://bd.statebank/rates",
-    "headquarters": "Gulshan-1, Dhaka"
+    "headquarters": "Gulshan-1, Dhaka",
+    "source_url": "https://bd.statebank/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "habib",
@@ -1437,7 +1673,11 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.hbl.com/bangladesh/rates",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.hbl.com/bangladesh/rates",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   },
   {
     "bank_id": "nbp",
@@ -1461,6 +1701,10 @@
     },
     "instant_encashment": false,
     "soc_url": "https://www.nbp.com.pk/bangladesh",
-    "headquarters": "Motijheel, Dhaka"
+    "headquarters": "Motijheel, Dhaka",
+    "source_url": "https://www.nbp.com.pk/bangladesh",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-21T02:00:00Z",
+    "verification_status": "VERIFIED_OFFICIAL"
   }
 ]

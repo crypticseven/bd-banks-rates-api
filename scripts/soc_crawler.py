@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
 ================================================================================
-BANGLADESH 61 SCHEDULED BANKS - SOC & DEPOSIT RATE CRAWLER ENGINE
+BANGLADESH 61 SCHEDULED BANKS - SOC & DEPOSIT RATE CRAWLER ENGINE (v2.0)
 ================================================================================
 Author: Fardin Ahsan Anik (fardinanik.com / UCB IT Lead)
 Purpose: Crawls official Schedule of Charges (SOC) and Deposit Rate notices across
          all 61 scheduled commercial banks in Bangladesh, parses HTML/PDF rate
-         schedules, detects circular changes via HTTP ETag/Last-Modified, and
-         generates an empirical audit report.
+         schedules, detects circular changes, extracts tenure yields, and
+         generates an empirical audit report with provenance metadata.
 ================================================================================
 """
 
@@ -17,25 +17,26 @@ import json
 import re
 import argparse
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import urllib.request
 import urllib.error
+from urllib.parse import urljoin
 import ssl
 
+# P1-4: Strict dependency verification - fail fast if missing
 try:
-    import requests
     from bs4 import BeautifulSoup
     import pymupdf as fitz
-except ImportError as e:
-    print(f"Missing optional package: {e}. Falling back to standard library.")
+except ImportError as exc:
+    raise SystemExit(
+        "Crawler dependencies are required. Run: pip install -r requirements.txt"
+    ) from exc
 
-# Path to the primary dataset
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 DATASET_PATH = os.path.join(PROJECT_ROOT, "src", "data", "bangladesh_61_banks.json")
 
-# Standard headers to prevent blocking by bank WAFs
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -47,15 +48,15 @@ HEADERS = {
     "Connection": "keep-alive",
 }
 
-# Regex patterns for rate discovery
 RATE_PATTERN = re.compile(r"(\d{1,2}(?:\.\d{1,2})?)\s*%", re.IGNORECASE)
+
+# P2-4: Wire TENURE_PATTERNS into rate extraction logic
 TENURE_PATTERNS = {
     "3_months": re.compile(r"(?:3\s*(?:month|mo|m)|90\s*days|three\s*month)", re.IGNORECASE),
     "6_months": re.compile(r"(?:6\s*(?:month|mo|m)|180\s*days|six\s*month)", re.IGNORECASE),
     "1_year": re.compile(r"(?:1\s*(?:year|yr|y)|12\s*months|one\s*year|360\s*days|365\s*days)", re.IGNORECASE),
     "3_years": re.compile(r"(?:3\s*(?:years|yrs|y)|36\s*months|three\s*year)", re.IGNORECASE),
     "5_years": re.compile(r"(?:5\s*(?:years|yrs|y)|60\s*months|five\s*year)", re.IGNORECASE),
-    "dps": re.compile(r"(?:dps|deposit\s*pension|recurring|monthly\s*scheme)", re.IGNORECASE),
 }
 
 def load_banks():
@@ -64,10 +65,28 @@ def load_banks():
     with open(DATASET_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def probe_bank_soc(bank, timeout=12):
+def extract_rates_by_tenure(text):
     """
-    Probes an individual bank's official SOC URL.
-    Returns HTTP metadata, content type, discovered PDF links, and raw text samples.
+    Scans extracted text for deposit tenures and associated percentage yields.
+    """
+    discovered_rates = {}
+    lines = text.splitlines()
+
+    for i, line in enumerate(lines):
+        for tenure, pattern in TENURE_PATTERNS.items():
+            if pattern.search(line):
+                # Look for rates in current line and adjacent 2 lines
+                context = " ".join(lines[max(0, i - 1):min(len(lines), i + 3)])
+                matches = RATE_PATTERN.findall(context)
+                valid_rates = [float(m) for m in matches if 4.0 <= float(m) <= 15.0]
+                if valid_rates and tenure not in discovered_rates:
+                    discovered_rates[tenure] = max(valid_rates)
+
+    return discovered_rates
+
+def probe_bank_soc(bank, timeout=12, insecure_tls=False):
+    """
+    Probes an individual bank's official SOC URL with strict TLS verification by default.
     """
     url = bank.get("soc_url") or bank.get("official_soc_url", "")
     code = bank.get("short_code", "")
@@ -83,7 +102,10 @@ def probe_bank_soc(bank, timeout=12):
         "etag": None,
         "pdf_circulars_found": [],
         "detected_rate_sample": [],
+        "parsed_tenure_yields": {},
         "latency_ms": None,
+        "tls_verified": not insecure_tls,
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
         "error": None,
     }
 
@@ -95,9 +117,12 @@ def probe_bank_soc(bank, timeout=12):
 
     try:
         req = urllib.request.Request(url, headers=HEADERS)
+        
+        # P0-2: Standard TLS verification by default
         ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE  # For banks with intermediate cert issues
+        if insecure_tls:
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
 
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as response:
             latency = int((time.time() - start_time) * 1000)
@@ -108,20 +133,22 @@ def probe_bank_soc(bank, timeout=12):
             result["last_modified"] = response.headers.get("Last-Modified")
             result["etag"] = response.headers.get("ETag")
 
-            # Read first 1MB of content
-            content = response.read(1024 * 1024)
+            # Read first 1.5MB of content
+            content = response.read(1536 * 1024)
 
             if "application/pdf" in content_type:
-                # Direct PDF handling
+                # Direct PDF circular handling
                 result["pdf_circulars_found"].append(url)
                 try:
                     doc = fitz.open(stream=content, filetype="pdf")
                     extracted_text = ""
-                    for page_num in range(min(len(doc), 3)):
-                        extracted_text += doc[page_num].get_text()
+                    for page_num in range(min(len(doc), 6)):
+                        extracted_text += doc[page_num].get_text() + "\n"
+                    
                     matches = RATE_PATTERN.findall(extracted_text)
-                    if matches:
-                        result["detected_rate_sample"] = [f"{m}%" for m in matches[:6]]
+                    valid_matches = [f"{m}%" for m in matches if 4.0 <= float(m) <= 15.0]
+                    result["detected_rate_sample"] = valid_matches[:6]
+                    result["parsed_tenure_yields"] = extract_rates_by_tenure(extracted_text)
                 except Exception as pdf_err:
                     result["error"] = f"PDF parse error: {str(pdf_err)}"
             else:
@@ -130,22 +157,22 @@ def probe_bank_soc(bank, timeout=12):
                     html_text = content.decode("utf-8", errors="ignore")
                     soup = BeautifulSoup(html_text, "html.parser")
 
-                    # Look for links to PDF circulars
+                    # P1-3: Correct urljoin import for link resolution
                     for a in soup.find_all("a", href=True):
                         href = a["href"].strip()
                         link_text = a.get_text().strip().lower()
                         if href.endswith(".pdf") or "pdf" in href.lower():
-                            if any(w in link_text or w in href.lower() for w in ["rate", "interest", "soc", "charge", "deposit", "fdr"]):
-                                full_link = urllib.parse.urljoin(url, href)
+                            if any(w in link_text or w in href.lower() for w in ["rate", "interest", "soc", "charge", "deposit", "fdr", "schedule"]):
+                                full_link = urljoin(url, href)
                                 if full_link not in result["pdf_circulars_found"]:
                                     result["pdf_circulars_found"].append(full_link)
 
-                    # Look for rate tables or percentages in text
-                    matches = RATE_PATTERN.findall(soup.get_text())
-                    if matches:
-                        # Filter realistic deposit rates (between 4% and 15%)
-                        clean_rates = [f"{m}%" for m in matches if 4.0 <= float(m) <= 15.0]
-                        result["detected_rate_sample"] = clean_rates[:6]
+                    # Extract text and discover rates
+                    page_text = soup.get_text()
+                    matches = RATE_PATTERN.findall(page_text)
+                    clean_rates = [f"{m}%" for m in matches if 4.0 <= float(m) <= 15.0]
+                    result["detected_rate_sample"] = clean_rates[:6]
+                    result["parsed_tenure_yields"] = extract_rates_by_tenure(page_text)
 
                 except Exception as html_err:
                     result["error"] = f"HTML parse error: {str(html_err)}"
@@ -160,38 +187,37 @@ def probe_bank_soc(bank, timeout=12):
 
     return result
 
-def run_audit(banks, max_workers=10):
-    """
-    Concurrent audit of all 61 banks.
-    """
+def run_audit(banks, max_workers=10, insecure_tls=False):
     total = len(banks)
     print(f"\n[*] Initiating SOC Crawler audit for all {total} Bangladesh Scheduled Banks...")
-    print(f"[*] Concurrency worker pool: {max_workers} threads\n" + "-" * 75)
+    print(f"[*] TLS Verification: {'ENABLED (Strict)' if not insecure_tls else 'DISABLED (Insecure)'}")
+    print(f"[*] Concurrency worker pool: {max_workers} threads\n" + "-" * 80)
 
     results = []
     success_count = 0
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(probe_bank_soc, bank): bank for bank in banks}
+        futures = {executor.submit(probe_bank_soc, bank, 14, insecure_tls): bank for bank in banks}
         for future in as_completed(futures):
             res = future.result()
             results.append(res)
             status_symbol = "[✓]" if res["status_code"] == 200 else "[!]"
             status_text = f"HTTP {res['status_code']}" if res['status_code'] else "FAILED"
             rate_info = f"Rates: {', '.join(res['detected_rate_sample'][:3])}" if res['detected_rate_sample'] else "No rates extracted"
-            print(f"{status_symbol} [{res['bank_code']:<8}] {res['bank_name'][:28]:<28} | {status_text:<10} | {rate_info}")
+            print(f"{status_symbol} [{res['bank_code']:<8}] {res['bank_name'][:26]:<26} | {status_text:<10} | {rate_info}")
             if res["status_code"] == 200:
                 success_count += 1
 
-    print("-" * 75)
+    print("-" * 80)
     print(f"[*] Audit complete: {success_count}/{total} banks responded with HTTP 200 OK.")
     return results
 
 def main():
-    parser = argparse.ArgumentParser(description="Bangladesh 61 Scheduled Banks SOC Crawler")
+    parser = argparse.ArgumentParser(description="Bangladesh 61 Scheduled Banks SOC Crawler (v2.0)")
     parser.add_argument("--audit", action="store_true", help="Run network probe across all 61 banks")
     parser.add_argument("--bank", type=str, help="Target specific bank short code (e.g. UCB, BRAC, SCB)")
     parser.add_argument("--workers", type=int, default=10, help="Concurrent HTTP worker threads")
     parser.add_argument("--output", type=str, help="Export crawl result JSON to path")
+    parser.add_argument("--insecure-tls", action="store_true", help="Allow unverified TLS certificates (not recommended for production)")
     args = parser.parse_args()
 
     banks = load_banks()
@@ -201,13 +227,13 @@ def main():
         if not target:
             print(f"[!] Bank short code '{args.bank}' not found in dataset of 61 banks.")
             sys.exit(1)
-        print(f"[*] Deep probing single bank: {target['bank_name']} ({target['short_code']})...")
-        res = probe_bank_soc(target, timeout=20)
+        print(f"[*] Probing bank: {target['bank_name']} ({target['short_code']})...")
+        res = probe_bank_soc(target, timeout=20, insecure_tls=args.insecure_tls)
         print(json.dumps(res, indent=2))
         return
 
     if args.audit or not sys.argv[1:]:
-        results = run_audit(banks, max_workers=args.workers)
+        results = run_audit(banks, max_workers=args.workers, insecure_tls=args.insecure_tls)
         if args.output:
             with open(args.output, "w", encoding="utf-8") as out_f:
                 json.dump(results, out_f, indent=2)

@@ -27,6 +27,10 @@ export interface BankRateRecord {
   instant_encashment: boolean;
   soc_url: string;
   headquarters: string;
+  source_url: string;
+  effective_date: string;
+  fetched_at: string;
+  verification_status: "VERIFIED_OFFICIAL" | "CIRCULAR_PENDING";
 }
 
 export const ALL_61_BANKS: BankRateRecord[] = banksData as BankRateRecord[];
