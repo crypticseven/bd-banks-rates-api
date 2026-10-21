@@ -136,7 +136,7 @@
     "/api/v1/rates/products": {
       "get": {
         "summary": "Search branded deposit products across all 61 banks",
-        "description": "Granular product-level query including UCB Agroni FDR, UCB AYMA Women FDR, UCB Superflex DPS, BRAC Double Scheme, etc.",
+        "description": "Granular product-level query including UCB Earn First FDR, UCB AYMA Women FDR, UCB Superflex DPS, BRAC Double Scheme, etc.",
         "parameters": [
           { "name": "bank", "in": "query", "schema": { "type": "string", "example": "UCB" } },
           { "name": "type", "in": "query", "schema": { "type": "string", "enum": ["FDR", "DPS", "SPECIAL_SCHEME"] } },

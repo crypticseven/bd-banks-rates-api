@@ -66,9 +66,9 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
     assert.equal(ucb.stability_tier, "TIER_3_MODERATE");
 
     // Check UCB products
-    const agroniFdr = ucb.products.find((p) => p.product_id === "ucb-agroni-fdr");
-    assert.ok(agroniFdr, "UCB Agroni FDR must exist");
-    assert.equal(agroniFdr.headline_rate, 11.25, "UCB Agroni FDR rate must be 11.25%");
+    const earnFirstFdr = ucb.products.find((p) => p.product_id === "ucb-earn-first-fdr");
+    assert.ok(earnFirstFdr, "UCB Earn First FDR must exist");
+    assert.equal(earnFirstFdr.headline_rate, 11.25, "UCB Earn First FDR rate must be 11.25%");
 
     const aymaWomen = ucb.products.find((p) => p.product_id === "ucb-ayma-women-fdr");
     assert.ok(aymaWomen, "UCB AYMA Women FDR must exist");

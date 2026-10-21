@@ -91,8 +91,8 @@ RATINGS_MAP = {
 BRANDED_PRODUCTS_MAP = {
     "ucb": [
         {
-            "product_id": "ucb-agroni-fdr",
-            "product_name": "UCB Agroni Fixed Deposit (Highest Retail Yield)",
+            "product_id": "ucb-earn-first-fdr",
+            "product_name": "UCB Earn First Fixed Deposit (Upfront Profit FDR)",
             "product_type": "FDR",
             "headline_rate": 11.25,
             "tenure_options": ["3_months", "6_months", "1_year", "3_years", "5_years"],
@@ -100,7 +100,7 @@ BRANDED_PRODUCTS_MAP = {
             "minimum_amount": 50000,
             "target_segment": "GENERAL_RETAIL",
             "features": [
-                "Highest competitive retail rate at 11.25% p.a.",
+                "Highest competitive retail upfront profit yield at 11.25% p.a.",
                 "Instant loan facility up to 90% of deposit value",
                 "Automated renewal upon maturity",
                 "Instant encashment available through UCB ONE app"

@@ -276,7 +276,7 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
               </div>
               <h3 className="text-sm font-bold text-white">United Commercial Bank PLC (UCB)</h3>
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Offers <strong>11.25% - 11.75%</strong> on Agroni/AYMA/Probashi schemes. NPL stood at <strong>16.27%</strong> in Q2 2026. Board allocated 100% of profits to provisions under a 5-year turnaround. Higher yield compensates for balance sheet transition.
+                Offers <strong>11.25% - 11.75%</strong> on Earn First/AYMA/Probashi schemes. NPL stood at <strong>16.27%</strong> in Q2 2026. Board allocated 100% of profits to provisions under a 5-year turnaround. Higher yield compensates for balance sheet transition.
               </p>
             </div>
 
@@ -488,7 +488,7 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
               <Search className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
               <input
                 type="text"
-                placeholder="Search bank name, code, or product (e.g. UCB, Agroni, Astha)..."
+                placeholder="Search bank name, code, or product (e.g. UCB, Earn First, Astha)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"

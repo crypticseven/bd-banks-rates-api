@@ -89,9 +89,9 @@ def extract_rates_by_tenure(text):
 
     return discovered_rates
 
-def probe_bank_soc(bank, timeout=12, insecure_tls=False):
+def probe_bank_soc(bank, timeout=12):
     """
-    Probes an individual bank's official SOC URL with strict TLS verification by default.
+    Probes an individual bank's official SOC URL with strict TLS verification.
     """
     url = bank.get("soc_url") or bank.get("official_soc_url", "")
     code = bank.get("short_code", "")
@@ -109,7 +109,7 @@ def probe_bank_soc(bank, timeout=12, insecure_tls=False):
         "detected_rate_sample": [],
         "parsed_tenure_yields": {},
         "latency_ms": None,
-        "tls_verified": not insecure_tls,
+        "tls_verified": True,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "error": None,
     }
@@ -123,11 +123,8 @@ def probe_bank_soc(bank, timeout=12, insecure_tls=False):
     try:
         req = urllib.request.Request(url, headers=HEADERS)
         
-        # P0-2: Standard TLS verification by default
+        # P0-2: Mandatory Strict TLS verification - Zero disabled TLS/hostname checks permitted
         ctx = ssl.create_default_context()
-        if insecure_tls:
-            ctx.check_hostname = False
-            ctx.verify_mode = ssl.CERT_NONE
 
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as response:
             latency = int((time.time() - start_time) * 1000)
@@ -192,16 +189,16 @@ def probe_bank_soc(bank, timeout=12, insecure_tls=False):
 
     return result
 
-def run_audit(banks, max_workers=10, insecure_tls=False):
+def run_audit(banks, max_workers=10):
     total = len(banks)
     print(f"\n[*] Initiating SOC Crawler audit for all {total} Bangladesh Scheduled Banks...")
-    print(f"[*] TLS Verification: {'ENABLED (Strict)' if not insecure_tls else 'DISABLED (Insecure)'}")
+    print("[*] TLS Verification: MANDATORY STRICT (Zero disabled TLS/hostname checks)")
     print(f"[*] Concurrency worker pool: {max_workers} threads\n" + "-" * 80)
 
     results = []
     success_count = 0
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(probe_bank_soc, bank, 14, insecure_tls): bank for bank in banks}
+        futures = {executor.submit(probe_bank_soc, bank, 14): bank for bank in banks}
         for future in as_completed(futures):
             res = future.result()
             results.append(res)
@@ -315,7 +312,6 @@ def main():
     parser.add_argument("--bank", type=str, help="Target specific bank short code (e.g. UCB, BRAC, SCB)")
     parser.add_argument("--workers", type=int, default=10, help="Concurrent HTTP worker threads")
     parser.add_argument("--output", type=str, help="Export crawl result JSON to path")
-    parser.add_argument("--insecure-tls", action="store_true", help="Allow unverified TLS certificates (not recommended for production)")
     parser.add_argument("--apply-local", action="store_true", help="Persist discovered rates directly to src/data/bangladesh_61_banks.json")
     parser.add_argument("--sync-api", type=str, help="Post discovered updates to API endpoint (e.g. https://api.fardinanik.com/api/v1/rates/sync)")
     parser.add_argument("--sync-secret", type=str, help="Bearer token for API sync (defaults to RATES_SYNC_SECRET env var)")
@@ -329,7 +325,7 @@ def main():
             print(f"[!] Bank short code '{args.bank}' not found in dataset of 61 banks.")
             sys.exit(1)
         print(f"[*] Probing bank: {target['bank_name']} ({target['short_code']})...")
-        res = probe_bank_soc(target, timeout=20, insecure_tls=args.insecure_tls)
+        res = probe_bank_soc(target, timeout=20)
         print(json.dumps(res, indent=2))
         if args.apply_local:
             apply_results_locally([res], banks)
@@ -342,7 +338,7 @@ def main():
         return
 
     if args.audit or not sys.argv[1:]:
-        results = run_audit(banks, max_workers=args.workers, insecure_tls=args.insecure_tls)
+        results = run_audit(banks, max_workers=args.workers)
         if args.output:
             with open(args.output, "w", encoding="utf-8") as out_f:
                 json.dump(results, out_f, indent=2)
