@@ -88,10 +88,11 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const expectedSecret = process.env.RATES_SYNC_SECRET;
+    const rawSecret = process.env.RATES_SYNC_SECRET;
+    const preHashedSecret = process.env.RATES_SYNC_SECRET_HASH;
 
-    // P0-1: Reject immediately if secret is not configured in environment
-    if (!expectedSecret || expectedSecret.length < 16) {
+    // Fail-fast with 503 if secret is not configured in environment
+    if ((!rawSecret || rawSecret.length < 16) && !preHashedSecret) {
       return NextResponse.json(
         {
           status: "error",
@@ -105,13 +106,29 @@ export async function POST(req: NextRequest) {
     const match = authHeader.match(/^Bearer\s+(.+)$/i);
     const providedSecret = match ? match[1] : "";
 
-    // P0-1: Constant-time comparison to prevent timing attacks
-    const expectedBuf = Buffer.from(expectedSecret);
-    const providedBuf = Buffer.from(providedSecret);
+    if (!providedSecret) {
+      return NextResponse.json(
+        {
+          status: "unauthorized",
+          message: "Bearer authentication token required.",
+        },
+        { status: 401 }
+      );
+    }
+
+    // Cryptographic Double SHA-256 Constant-Time Verification:
+    // Both sides are hashed to fixed 32-byte buffers so timingSafeEqual ALWAYS executes
+    // across exactly 32 bytes without early length bailout or memory timing leaks.
+    const expectedHash = preHashedSecret
+      ? Buffer.from(preHashedSecret, "hex")
+      : crypto.createHash("sha256").update(rawSecret!).digest();
+
+    const providedHash = crypto.createHash("sha256").update(providedSecret).digest();
 
     if (
-      expectedBuf.length !== providedBuf.length ||
-      !crypto.timingSafeEqual(expectedBuf, providedBuf)
+      expectedHash.length !== 32 ||
+      providedHash.length !== 32 ||
+      !crypto.timingSafeEqual(expectedHash, providedHash)
     ) {
       return NextResponse.json(
         {

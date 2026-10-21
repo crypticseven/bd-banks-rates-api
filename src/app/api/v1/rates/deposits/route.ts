@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ALL_61_BANKS, filterBanks, calculateFdrMaturity } from "@/lib/bankRatesData";
 import { z } from "zod";
+import crypto from "crypto";
 
 const querySchema = z.object({
   category: z
@@ -55,15 +56,30 @@ export async function GET(req: NextRequest) {
       api_key,
     } = parsedQuery.data;
 
-    // Check private key authentication (Header x-api-key, Bearer token, or query param)
+    // Check private key authentication using Double SHA-256 Constant-Time Verification
     const authHeader = req.headers.get("x-api-key") || req.headers.get("Authorization") || "";
     const bearerKey = authHeader.replace(/^Bearer\s+/i, "");
-    const privateSecret = process.env.PRIVATE_ACCESS_KEY || process.env.RATES_SYNC_SECRET;
-    const isPrivateAuthorized = Boolean(
-      privateSecret &&
-      privateSecret.length >= 16 &&
-      (api_key === privateSecret || bearerKey === privateSecret || req.headers.get("x-api-key") === privateSecret)
-    );
+    const incomingKey = (api_key || req.headers.get("x-api-key") || bearerKey || "").trim();
+
+    const rawPrivateSecret = process.env.PRIVATE_ACCESS_KEY || process.env.RATES_SYNC_SECRET;
+    const preHashedPrivateSecret = process.env.PRIVATE_ACCESS_KEY_HASH;
+
+    let isPrivateAuthorized = false;
+    if (incomingKey && (rawPrivateSecret || preHashedPrivateSecret)) {
+      try {
+        const expectedHash = preHashedPrivateSecret
+          ? Buffer.from(preHashedPrivateSecret, "hex")
+          : crypto.createHash("sha256").update(rawPrivateSecret!).digest();
+
+        const incomingHash = crypto.createHash("sha256").update(incomingKey).digest();
+
+        if (expectedHash.length === 32 && crypto.timingSafeEqual(expectedHash, incomingHash)) {
+          isPrivateAuthorized = true;
+        }
+      } catch {
+        isPrivateAuthorized = false;
+      }
+    }
 
     const isShariah = shariah !== undefined ? shariah === "true" : undefined;
     const instantEncashmentOnly = instant_encashment === "true";
