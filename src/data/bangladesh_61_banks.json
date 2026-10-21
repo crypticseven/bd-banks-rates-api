@@ -25,7 +25,7 @@
     "headquarters": "Motijheel, Dhaka",
     "source_url": "https://www.sonalibank.com.bd/PDF_file/intt_rates.pdf",
     "effective_date": "2026-10-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:07.417550+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.7,
     "credit_rating": "A+",
@@ -35,7 +35,7 @@
     "risk_label": "Moderate Risk (Sovereign Guaranteed Backstop)",
     "sovereign_backed": true,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 7.81,
+    "risk_adjusted_yield_score": 5.84,
     "products": [
       {
         "product_id": "sonali-standard-fdr",
@@ -116,9 +116,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.jb.com.bd/products/rate_of_interest",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.jb.com.bd/products/rate_of_interest",
+    "source_url": "https://www.jb.com.bd/assets/file/documents/rate_of_interest_2026-10-01_10-27-52am.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:07.417913+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 2,
     "credit_rating": "B+",
@@ -128,7 +128,7 @@
     "risk_label": "Severe Distressed (Beximco/AnonTex Defaults, Sovereign Backed)",
     "sovereign_backed": true,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 5.1,
+    "risk_adjusted_yield_score": 4.96,
     "products": [
       {
         "product_id": "janata-standard-fdr",
@@ -210,7 +210,7 @@
     "headquarters": "Motijheel, Dhaka",
     "source_url": "https://www.agranibank.org/index.php/home/interest_rate/ql",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:07.418108+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 2.8,
     "credit_rating": "BBB",
@@ -220,7 +220,7 @@
     "risk_label": "Elevated Risk (High Classified Loans, Sovereign Backed)",
     "sovereign_backed": true,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 6.52,
+    "risk_adjusted_yield_score": 5.83,
     "products": [
       {
         "product_id": "agrani-standard-fdr",
@@ -377,12 +377,12 @@
     "has_islamic_window": false,
     "minimum_deposit": 25000,
     "fdr_rates": {
-      "3_months": 9.25,
-      "6_months": 10.0,
-      "1_year": 9.75,
+      "3_months": 9.0,
+      "6_months": 9.25,
+      "1_year": 8.5,
       "2_years": 9.5,
-      "3_years": 10.67,
-      "5_years": 10.67
+      "3_years": 9.0,
+      "5_years": 9.5
     },
     "dps_rates": {
       "3_years": 10.0,
@@ -392,9 +392,9 @@
     "instant_encashment": false,
     "soc_url": "https://basicbankplc.com/en/rate-and-charge/rate-of-interest",
     "headquarters": "Sena Kalyan Bhaban, Motijheel",
-    "source_url": "https://basicbankplc.com/en/rate-and-charge/rate-of-interest",
+    "source_url": "https://basicbankplc.com/storage/rate_of_interest/106_1791357744_8552.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:07.418451+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 1.5,
     "credit_rating": "B",
@@ -404,7 +404,7 @@
     "risk_label": "Critically Distressed (Legacy Scams, Sovereign Backed)",
     "sovereign_backed": true,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 4.46,
+    "risk_adjusted_yield_score": 3.89,
     "products": [
       {
         "product_id": "basic-standard-fdr",
@@ -989,9 +989,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.bracbank.com/corporate",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://brackweb.s3.ap-southeast-1.amazonaws.com/uploads/all/2026/10/BRAC_Bank_Deposit_Interest_Rate_Effective_from_October_15,_20266acf796d088b7.pdf",
+    "source_url": "https://brackweb.s3.ap-southeast-1.amazonaws.com/uploads/all/Daily_Exchange_Rate_as_on_19_Oct_20266ad5a642f2c20.pdf",
     "effective_date": "2026-10-15",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:08.123864+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.9,
     "credit_rating": "AAA",
@@ -1001,7 +1001,7 @@
     "risk_label": "Lowest Risk (Best-in-Class Balance Sheet)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL (AAA Tier)",
-    "risk_adjusted_yield_score": 9.87,
+    "risk_adjusted_yield_score": 7.4,
     "products": [
       {
         "product_id": "brac-term-deposit",
@@ -1169,9 +1169,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.ebl.com.bd/retail/deposit-interest-rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.ebl.com.bd/assets/rates/Deposit_Rate_sheet-ED_15_September_2026_EBL_WEB_Version_Final.pdf",
+    "source_url": "https://www.ebl.com.bd/eblannualreports/areport-25/reports/21-Corporate-Governance-Report.pdf",
     "effective_date": "2026-09-15",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:08.542241+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.8,
     "credit_rating": "AAA",
@@ -1181,7 +1181,7 @@
     "risk_label": "Lowest Risk (Prime Corporate & Retail Franchise)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL (AAA Tier)",
-    "risk_adjusted_yield_score": 10.23,
+    "risk_adjusted_yield_score": 7.79,
     "products": [
       {
         "product_id": "ebl-term-deposit",
@@ -1260,9 +1260,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.dutchbanglabank.com/fc/Exchange-Rate.pdf",
     "headquarters": "Sena Kalyan Bhaban, Motijheel",
-    "source_url": "https://www.dutchbanglabank.com/retail/dps.html",
+    "source_url": "https://www.dutchbanglabank.com/fc/Exchange-Rate.pdf",
     "effective_date": "2026-10-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:08.955989+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.5,
     "credit_rating": "AA+",
@@ -1272,7 +1272,7 @@
     "risk_label": "Low Risk (Dominant Retail Deposit Base)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.1,
+    "risk_adjusted_yield_score": 7.47,
     "products": [
       {
         "product_id": "dbbl-deposit-plus-scheme",
@@ -1352,9 +1352,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.primebank.com.bd/view-rates",
     "headquarters": "Nikunja-2, Dhaka",
-    "source_url": "https://www.primebank.com.bd/view-rates",
+    "source_url": "https://www.primebank.com.bd/assets/sustainable/climate-strategy/Prime-Bank-Climate-Strategy.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:08.986275+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.4,
     "credit_rating": "AA",
@@ -1364,7 +1364,7 @@
     "risk_label": "Low Risk (Well Managed Corporate Book)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 10.12,
+    "risk_adjusted_yield_score": 7.71,
     "products": [
       {
         "product_id": "prime-standard-fdr",
@@ -1444,9 +1444,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.mutualtrustbank.com/schedule-of-charges/",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.mutualtrustbank.com/schedule-of-charges/",
+    "source_url": "https://www.mutualtrustbank.com/wp-content/uploads/2026/10/Schedule-of-Charges-MTB-Retail_Banking_effective_from_1st-October-2026_Final.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:09.100148+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.2,
     "credit_rating": "AA",
@@ -1456,7 +1456,7 @@
     "risk_label": "Low-Moderate Risk (Strong Governance)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.82,
+    "risk_adjusted_yield_score": 7.81,
     "products": [
       {
         "product_id": "mtb-standard-fdr",
@@ -1536,9 +1536,9 @@
     "instant_encashment": true,
     "soc_url": "https://dhakabank.com.bd/rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://dhakabank.com.bd/rates",
+    "source_url": "https://dhakabank.com.bd/wp-content/uploads/2026/10/Rates-of-Deposit-Effective-from-October-15-2026.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:09.923150+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.1,
     "credit_rating": "AA-",
@@ -1548,7 +1548,7 @@
     "risk_label": "Low-Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.45,
+    "risk_adjusted_yield_score": 6.59,
     "products": [
       {
         "product_id": "dhaka-standard-fdr",
@@ -1630,7 +1630,7 @@
     "headquarters": "Motijheel, Dhaka",
     "source_url": "https://www.pubalibankbd.com",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:10.110944+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.8,
     "credit_rating": "AAA",
@@ -1640,7 +1640,7 @@
     "risk_label": "Lowest Risk (Disciplined Underwriting, Strong CAR)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL (AAA Tier)",
-    "risk_adjusted_yield_score": 10.71,
+    "risk_adjusted_yield_score": 8.03,
     "products": [
       {
         "product_id": "pubali-standard-fdr",
@@ -1707,10 +1707,10 @@
     "fdr_rates": {
       "3_months": 7.5,
       "6_months": 7.75,
-      "1_year": 8.0,
+      "1_year": 9.0,
       "2_years": 8.0,
-      "3_years": 8.0,
-      "5_years": 8.0
+      "3_years": 9.0,
+      "5_years": 9.0
     },
     "dps_rates": {
       "3_years": 7.72,
@@ -1720,9 +1720,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.mblbd.com/interest-rates",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.mblbd.com/interest-rates",
+    "source_url": "https://www.mblbd.com/./assets/csr/MBL-CSR-2025.pdf",
     "effective_date": "2026-10-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:10.241750+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.7,
     "credit_rating": "A+",
@@ -1732,7 +1732,7 @@
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.25,
+    "risk_adjusted_yield_score": 7.4,
     "products": [
       {
         "product_id": "mbl-term-deposit",
@@ -1811,7 +1811,7 @@
     "headquarters": "Dilkusha, Dhaka",
     "source_url": "https://www.southeastbank.com.bd/documents/deposit_rates/All_Deposit_list_of_SEBPLC.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:10.265062+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.6,
     "credit_rating": "A+",
@@ -1821,7 +1821,7 @@
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.89,
+    "risk_adjusted_yield_score": 6.66,
     "products": [
       {
         "product_id": "seb-retail-fd",
@@ -2013,9 +2013,9 @@
     "instant_encashment": false,
     "soc_url": "https://thepremierbankplc.com/schedule-of-charges",
     "headquarters": "Banani, Dhaka",
-    "source_url": "https://thepremierbankplc.com/schedule-of-charges",
+    "source_url": "https://thepremierbankplc.com/wp-content/uploads/2025/04/Schedule-of-Charges-Commissions_Conventional-Banking-July-2026-v2.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:10.946041+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.5,
     "credit_rating": "A",
@@ -2025,7 +2025,7 @@
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.92,
+    "risk_adjusted_yield_score": 8.13,
     "products": [
       {
         "product_id": "premier-standard-fdr",
@@ -2091,7 +2091,7 @@
     "minimum_deposit": 50000,
     "fdr_rates": {
       "3_months": 7.38,
-      "6_months": 7.38,
+      "6_months": 8.25,
       "1_year": 7.38,
       "2_years": 7.38,
       "3_years": 7.38,
@@ -2107,7 +2107,7 @@
     "headquarters": "Dilkusha, Dhaka",
     "source_url": "https://www.tblbd.com/rates/",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:11.139516+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.4,
     "credit_rating": "AA+",
@@ -2117,7 +2117,7 @@
     "risk_label": "Low Risk (Army Welfare Trust Backed)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 10.12,
+    "risk_adjusted_yield_score": 6.79,
     "products": [
       {
         "product_id": "trust-standard-fdr",
@@ -2197,9 +2197,9 @@
     "instant_encashment": false,
     "soc_url": "https://jamunabankbd.com/interest-rates/",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://jamunabankbd.com/interest-rates/",
+    "source_url": "https://jamunabankbd.com/wp-content/uploads/2026/10/Jamuna_Bank_Deposit_Schemes_20260930.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:11.169747+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.1,
     "credit_rating": "AA-",
@@ -2209,7 +2209,7 @@
     "risk_label": "Low-Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.67,
+    "risk_adjusted_yield_score": 8.17,
     "products": [
       {
         "product_id": "jamuna-standard-fdr",
@@ -2274,12 +2274,12 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 6.67,
+      "3_months": 7.0,
       "6_months": 7.0,
-      "1_year": 7.12,
+      "1_year": 7.25,
       "2_years": 7.12,
-      "3_years": 7.12,
-      "5_years": 7.12
+      "3_years": 7.5,
+      "5_years": 7.75
     },
     "dps_rates": {
       "3_years": 7.37,
@@ -2291,7 +2291,7 @@
     "headquarters": "Purana Paltan, Dhaka",
     "source_url": "https://www.bankasia-bd.com/other/interestrates",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:11.931136+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.8,
     "credit_rating": "A+",
@@ -2301,7 +2301,7 @@
     "risk_label": "Moderate Risk (Agent Banking Leader)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.2,
+    "risk_adjusted_yield_score": 6.07,
     "products": [
       {
         "product_id": "bank_asia-standard-fdr",
@@ -2383,7 +2383,7 @@
     "headquarters": "Kawran Bazar, Dhaka",
     "source_url": "https://www.onebank.com.bd/home/corporate-banking/deposit",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:12.516637+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 2.8,
     "credit_rating": "BBB-",
@@ -2393,7 +2393,7 @@
     "risk_label": "High Risk (Corporate Classified Loan Backlog)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 7.72,
+    "risk_adjusted_yield_score": 6.6,
     "products": [
       {
         "product_id": "one_bank-standard-fdr",
@@ -2473,9 +2473,9 @@
     "instant_encashment": false,
     "soc_url": "https://abbl.com/schedule-of-charges",
     "headquarters": "Kakrail, Dhaka",
-    "source_url": "https://abbl.com/schedule-of-charges",
+    "source_url": "https://abbl.com/wp-content/uploads/2026/07/AB-Bank-Schedule-of-Charges-01-07-26.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:13.141148+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 2.6,
     "credit_rating": "BB+",
@@ -2485,7 +2485,7 @@
     "risk_label": "High Risk (Legacy Default Book)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 7.19,
+    "risk_adjusted_yield_score": 7.84,
     "products": [
       {
         "product_id": "ab_bank-standard-fdr",
@@ -2567,7 +2567,7 @@
     "headquarters": "Purana Paltan, Dhaka",
     "source_url": "https://www.ificbank.com.bd/interest-rates",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:13.366576+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 2.7,
     "credit_rating": "BBB-",
@@ -2577,7 +2577,7 @@
     "risk_label": "High Risk (Beximco Exposure / Board Restructured)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 7.37,
+    "risk_adjusted_yield_score": 6.03,
     "products": [
       {
         "product_id": "ific-standard-fdr",
@@ -2841,9 +2841,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.nrbcommercialbank.com/interest-rates",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.nrbcommercialbank.com/interest-rates",
+    "source_url": "https://sbplc.nrbcommercialbank.com/cdn/web/SOC_28_07_2021.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:13.736607+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.2,
     "credit_rating": "A-",
@@ -2853,7 +2853,7 @@
     "risk_label": "Elevated Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.42,
+    "risk_adjusted_yield_score": 7.74,
     "products": [
       {
         "product_id": "nrbc-standard-fdr",
@@ -2933,9 +2933,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.nrbbankbd.com/forms-downloads/#interest-rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.nrbbankbd.com/forms-downloads/#interest-rates",
+    "source_url": "https://www.nrbbankbd.com/wp-content/uploads/2026/07/NRB-Schedule-of-Charge-July-2026.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:14.527956+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.3,
     "credit_rating": "A-",
@@ -2945,7 +2945,7 @@
     "risk_label": "Elevated Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.59,
+    "risk_adjusted_yield_score": 7.82,
     "products": [
       {
         "product_id": "nrb-standard-fdr",
@@ -3027,7 +3027,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://www.meghnabank.com.bd/corporate",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:14.609459+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.5,
     "credit_rating": "A",
@@ -3037,7 +3037,7 @@
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.92,
+    "risk_adjusted_yield_score": 5.35,
     "products": [
       {
         "product_id": "meghna-standard-fdr",
@@ -3117,9 +3117,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.midlandbankbd.net/logo-and-corporate-values/",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.midlandbankbd.net/logo-and-corporate-values/",
+    "source_url": "https://www.midlandbankbd.net/wp-content/uploads/2026/06/Corporate_Governance_Compliance_2026.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:15.138783+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.6,
     "credit_rating": "A",
@@ -3129,7 +3129,7 @@
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.09,
+    "risk_adjusted_yield_score": 7.27,
     "products": [
       {
         "product_id": "midland-standard-fdr",
@@ -3301,9 +3301,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.sbacbank.com/interest-rates",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.sbacbank.com/interest-rates",
+    "source_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:15.211854+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3,
     "credit_rating": "BBB+",
@@ -3313,7 +3313,7 @@
     "risk_label": "High Risk (Governance Pressures)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.07,
+    "risk_adjusted_yield_score": 8.97,
     "products": [
       {
         "product_id": "sbac-standard-fdr",
@@ -3395,7 +3395,7 @@
     "headquarters": "Peelkhana, Dhanmondi",
     "source_url": "https://shimantobank.com/rates",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:15.357311+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.4,
     "credit_rating": "AA",
@@ -3405,7 +3405,7 @@
     "risk_label": "Low Risk (BGB Welfare Backed)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 10.12,
+    "risk_adjusted_yield_score": 9.2,
     "products": [
       {
         "product_id": "shimanto-standard-fdr",
@@ -3470,12 +3470,12 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 9.25,
-      "6_months": 9.5,
-      "1_year": 9.5,
+      "3_months": 8.25,
+      "6_months": 8.5,
+      "1_year": 8.6,
       "2_years": 9.5,
-      "3_years": 9.5,
-      "5_years": 9.5
+      "3_years": 8.7,
+      "5_years": 10.0
     },
     "dps_rates": {
       "3_years": 9.75,
@@ -3487,7 +3487,7 @@
     "headquarters": "Police Plaza, Gulshan",
     "source_url": "https://www.communitybankbd.com/wp-content/uploads/2026/09/Deposit-interest-rate-effective-from-01-10-2026.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:15.536793+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.4,
     "credit_rating": "AA",
@@ -3497,7 +3497,7 @@
     "risk_label": "Low Risk (Police Kallyan Trust Backed)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 10.12,
+    "risk_adjusted_yield_score": 7.91,
     "products": [
       {
         "product_id": "community-standard-fdr",
@@ -3579,7 +3579,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://www.bengalbank.com",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:16.002173+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.5,
     "credit_rating": "A-",
@@ -3589,7 +3589,7 @@
     "risk_label": "Moderate Risk (Emerging Franchise)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.92,
+    "risk_adjusted_yield_score": 7.93,
     "products": [
       {
         "product_id": "bengal-standard-fdr",
@@ -3669,9 +3669,9 @@
     "instant_encashment": false,
     "soc_url": "https://citizensbankbd.com/retail/deposit",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://citizensbankbd.com/retail/deposit",
+    "source_url": "https://citizensbankbd.com/public/assets/card-module/1738493709_SOC_28.01.2025.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:16.110809+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.5,
     "credit_rating": "A-",
@@ -3853,9 +3853,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.bcblbd.com/interest_rates",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.bcblbd.com/interest_rates",
+    "source_url": "https://www.bcblbd.com/interest_rate_pdf/",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:16.250017+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 1.4,
     "credit_rating": "B-",
@@ -3865,7 +3865,7 @@
     "risk_label": "Critically Distressed (Chronic Capital Deficit)",
     "sovereign_backed": false,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 4.92,
+    "risk_adjusted_yield_score": 4.81,
     "products": [
       {
         "product_id": "bcbl-standard-fdr",
@@ -3945,9 +3945,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.islamibankbd.com/rates",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.islamibankbd.com/rates",
+    "source_url": "https://www.islamibankbd.com/public/assets/Share-Profit-CurrencyRate/Rate-Return-Investment/1773288006_Declared Investment Profit Rate 090326.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:16.305337+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 1.8,
     "credit_rating": "B",
@@ -3957,7 +3957,7 @@
     "risk_label": "Critically Distressed (Tk 94k Cr Default, BB Reconstitution)",
     "sovereign_backed": false,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 5.28,
+    "risk_adjusted_yield_score": 5.15,
     "products": [
       {
         "product_id": "ibbl-standard-fdr",
@@ -4131,7 +4131,7 @@
     "headquarters": "City Center, Motijheel",
     "source_url": "https://www.siblbd.com/profit-rates",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:16.782071+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 1.8,
     "credit_rating": "B",
@@ -4141,7 +4141,7 @@
     "risk_label": "Severe Distressed (Board Reconstituted / High NPL)",
     "sovereign_backed": false,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 5.66,
+    "risk_adjusted_yield_score": 2.83,
     "products": [
       {
         "product_id": "sibl-standard-fdr",
@@ -4223,7 +4223,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:17.070086+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.3,
     "credit_rating": "AA",
@@ -4233,7 +4233,7 @@
     "risk_label": "Low Risk (Most Stable Islamic PCB)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.75,
+    "risk_adjusted_yield_score": 7.48,
     "products": [
       {
         "product_id": "shahjalal-standard-fdr",
@@ -4405,9 +4405,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.fsiblbd.com/corporateInfo.php",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.fsiblbd.com/corporateInfo.php",
+    "source_url": "https://www.fsiblbd.com/File/Compliance-Status-of-CGC.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:17.667767+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 1.8,
     "credit_rating": "B",
@@ -4417,7 +4417,7 @@
     "risk_label": "Severe Distressed (Consolidation Target)",
     "sovereign_backed": false,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 5.79,
+    "risk_adjusted_yield_score": 2.83,
     "products": [
       {
         "product_id": "fsibl-standard-fdr",
@@ -4499,7 +4499,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://www.globalislamibank.com/profit-rates",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:17.726638+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 1.7,
     "credit_rating": "B",
@@ -4509,7 +4509,7 @@
     "risk_label": "Severe Distressed (Board Reconstituted)",
     "sovereign_backed": false,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 5.58,
+    "risk_adjusted_yield_score": 2.73,
     "products": [
       {
         "product_id": "global_islami-standard-fdr",
@@ -4591,7 +4591,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://www.unionbank.com.bd/corporate-strategy",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:17.902701+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 1.1,
     "credit_rating": "C",
@@ -4601,7 +4601,7 @@
     "risk_label": "Critically Insolvent (Administrator Appointed)",
     "sovereign_backed": false,
     "rating_agency": "Bangladesh Bank Supervisory AQR / BB Rating",
-    "risk_adjusted_yield_score": 4.2,
+    "risk_adjusted_yield_score": 2.06,
     "products": [
       {
         "product_id": "union-standard-fdr",
@@ -4681,9 +4681,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.standardbankbd.com/profit-rates",
     "headquarters": "Topkhana Road, Dhaka",
-    "source_url": "https://www.standardbankbd.com/profit-rates",
+    "source_url": "https://www.standardbankbd.com/file?id=efb9e36e-3d8e-4e92-828c-672f31f9f309.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:17.984887+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.4,
     "credit_rating": "A",
@@ -4693,7 +4693,7 @@
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.56,
+    "risk_adjusted_yield_score": 8.17,
     "products": [
       {
         "product_id": "standard_islamic-standard-fdr",
@@ -4865,9 +4865,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.sc.com/bd/exchange-rates/",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.sc.com/bd/exchange-rates/",
+    "source_url": "https://av.sc.com/bd/content/docs/bd-exchange-rates-nineteen-october-twenty-six.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:18.482657+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 5,
     "credit_rating": "AAA",
@@ -4877,7 +4877,7 @@
     "risk_label": "Sovereign-Tier Safety (Global Balance Sheet)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL (AAA Tier)",
-    "risk_adjusted_yield_score": 8.75,
+    "risk_adjusted_yield_score": 3.5,
     "products": [
       {
         "product_id": "scb-term-saver",
@@ -4936,9 +4936,9 @@
     "instant_encashment": true,
     "soc_url": "https://www.hsbc.com.bd/national-integrity-strategy/",
     "headquarters": "Bir Uttam C R Dutta Road, Dhaka",
-    "source_url": "https://www.hsbc.com.bd/national-integrity-strategy/",
+    "source_url": "https://www.hsbc.com.bd/content/dam/hsbc/hbbd/documents/NIS_Annual_Plan_2024-2025.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:18.649285+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 5,
     "credit_rating": "AAA",
@@ -5030,7 +5030,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:19.088549+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 5,
     "credit_rating": "AAA",
@@ -5040,7 +5040,7 @@
     "risk_label": "Sovereign-Tier Corporate Safety",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL (AAA Tier)",
-    "risk_adjusted_yield_score": 8.5,
+    "risk_adjusted_yield_score": 0.1,
     "products": [
       {
         "product_id": "citi-standard-fdr",
@@ -5214,7 +5214,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://wooribank.com/rates",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:19.613437+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.4,
     "credit_rating": "AA+",
@@ -5224,7 +5224,7 @@
     "risk_label": "Low Risk (Korean Trade & MNC Franchise)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.74,
+    "risk_adjusted_yield_score": 4.14,
     "products": [
       {
         "product_id": "woori-standard-fdr",
@@ -5304,9 +5304,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.bankalfalah.com/schedule-of-charges",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.bankalfalah.com/schedule-of-charges",
+    "source_url": "https://prodbaf.blob.core.windows.net/data/Schedule%20of%20Charges%20July%20-%20Dec%202026%20(conventional).pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:19.885918+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.2,
     "credit_rating": "AA-",
@@ -5316,7 +5316,7 @@
     "risk_label": "Low-Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 9.15,
+    "risk_adjusted_yield_score": 8.71,
     "products": [
       {
         "product_id": "alfalah-standard-fdr",
@@ -5398,7 +5398,7 @@
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://sbibd.com",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:19.935453+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.3,
     "credit_rating": "AA",
@@ -5408,7 +5408,7 @@
     "risk_label": "Low Risk (Indian State Backed)",
     "sovereign_backed": true,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.84,
+    "risk_adjusted_yield_score": 6.57,
     "products": [
       {
         "product_id": "sbi-standard-fdr",
@@ -5488,9 +5488,9 @@
     "instant_encashment": false,
     "soc_url": "https://www.hbl.com/bangladesh",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.hbl.com/bangladesh",
+    "source_url": "https://www.hbl.com/assets/documents/Daily_Exchange_Rate_-_19_Oct_2026.pdf",
     "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "fetched_at": "2026-10-21T23:03:19.969517+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.8,
     "credit_rating": "A+",
@@ -5500,7 +5500,7 @@
     "risk_label": "Moderate Risk",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 8.16,
+    "risk_adjusted_yield_score": 7.95,
     "products": [
       {
         "product_id": "habib-standard-fdr",
