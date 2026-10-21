@@ -57,30 +57,32 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
     }
   });
 
-  await t.test("UCB has verified 11.25% - 11.75% products and audited 16.27% NPL turnaround rating", () => {
+  await t.test("UCB has verified circular 1634 rates (8.00% - 9.25%) and audited 16.27% NPL turnaround rating", () => {
     const ucb = banksData.find((b) => b.short_code === "UCB");
     assert.ok(ucb, "UCB must exist in dataset");
     assert.equal(ucb.npl_ratio_pct, 16.27, "UCB NPL ratio must be 16.27%");
     assert.equal(ucb.rating_score, 3.5, "UCB audited turnaround score must be 3.5/5.0");
     assert.equal(ucb.credit_rating, "A", "UCB credit rating must be A");
     assert.equal(ucb.stability_tier, "TIER_3_MODERATE");
+    assert.equal(ucb.verification_status, "VERIFIED_OFFICIAL");
+    assert.equal(ucb.source_pdf_sha256, "72e706f0c768296219e4ef0cff1b0d4d4f3131388fba457895689ad91e0d1ae9");
 
-    // Check UCB products
+    // Check UCB products from verified Circular 1634
+    const earningPlus = ucb.products.find((p) => p.product_id === "ucb-earning-plus-fd");
+    assert.ok(earningPlus, "Retail UCB Earning Plus must exist");
+    assert.equal(earningPlus.headline_rate, 9.25, "UCB Earning Plus top rate must be 9.25% p.a. (Circular 1634 Page 10)");
+
     const retailFdr = ucb.products.find((p) => p.product_id === "ucb-retail-fd");
     assert.ok(retailFdr, "UCB Retail Fixed Deposit must exist");
-    assert.equal(retailFdr.headline_rate, 11.25, "UCB Retail Fixed Deposit rate must be 11.25%");
+    assert.equal(retailFdr.headline_rate, 8.50, "UCB Retail Fixed Deposit peak rate must be 8.50% (180 days, Page 7)");
 
-    const womensDps = ucb.products.find((p) => p.product_id === "ucb-womens-dps-plus");
-    assert.ok(womensDps, "UCB Women's DPS Plus must exist");
-    assert.equal(womensDps.headline_rate, 11.50, "UCB Women's DPS Plus rate must be 11.50%");
+    const nrbDps = ucb.products.find((p) => p.product_id === "ucb-nrb-dps-plus");
+    assert.ok(nrbDps, "UCB NRB DPS Plus must exist");
+    assert.equal(nrbDps.headline_rate, 8.50, "UCB NRB DPS Plus rate must be 8.50% (Circular 1634 Page 7)");
 
-    const superflexDps = ucb.products.find((p) => p.product_id === "ucb-superflex-dps");
-    assert.ok(superflexDps, "UCB Superflex DPS must exist");
-    assert.equal(superflexDps.headline_rate, 11.25, "UCB Superflex DPS rate must be 11.25%");
-
-    const probashi = ucb.products.find((p) => p.product_id === "ucb-nrb-dps-plus");
-    assert.ok(probashi, "UCB NRB DPS Plus must exist");
-    assert.equal(probashi.headline_rate, 11.75, "UCB NRB DPS Plus rate must be 11.75%");
+    const youngstersDps = ucb.products.find((p) => p.product_id === "ucb-youngsters-dps");
+    assert.ok(youngstersDps, "UCB Youngsters DPS must exist");
+    assert.equal(youngstersDps.headline_rate, 8.50, "UCB Youngsters DPS rate must be 8.50% (Circular 1634 Page 8)");
   });
 });
 

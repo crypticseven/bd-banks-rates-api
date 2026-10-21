@@ -25,7 +25,7 @@
     "source_url": "https://www.sonalibank.com.bd/interest_rate.php",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.7,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -79,7 +79,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 15.2
+    "npl_ratio_pct": 15.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "janata",
@@ -107,7 +108,7 @@
     "source_url": "https://jb.com.bd/schedule-of-charges",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2,
     "credit_rating": "B+",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -161,7 +162,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 68.5
+    "npl_ratio_pct": 68.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "agrani",
@@ -189,7 +191,7 @@
     "source_url": "https://www.agranibank.org/interest_rates.php",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.8,
     "credit_rating": "BBB",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -243,7 +245,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 28.4
+    "npl_ratio_pct": 28.4,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "rupali",
@@ -271,7 +274,7 @@
     "source_url": "https://www.rupalibank.com.bd/rates.html",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.7,
     "credit_rating": "BBB",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -325,7 +328,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 24.8
+    "npl_ratio_pct": 24.8,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "basic",
@@ -353,7 +357,7 @@
     "source_url": "https://www.basicbank.com.bd/interest_rate.php",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.5,
     "credit_rating": "B",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -407,7 +411,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 64.5
+    "npl_ratio_pct": 64.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "bdbl",
@@ -435,7 +440,7 @@
     "source_url": "https://www.bdbl.com.bd/interest-rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.1,
     "credit_rating": "BB",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -489,7 +494,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 43.2
+    "npl_ratio_pct": 43.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "bkb",
@@ -517,7 +523,7 @@
     "source_url": "https://krishibank.org.bd/interest-rate/",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.8,
     "credit_rating": "BBB-",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -571,7 +577,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 26.5
+    "npl_ratio_pct": 26.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "rakub",
@@ -599,7 +606,7 @@
     "source_url": "https://www.rakub.org.bd/interest-rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.5,
     "credit_rating": "BB+",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -653,7 +660,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 32.8
+    "npl_ratio_pct": 32.8,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "pkb",
@@ -681,7 +689,7 @@
     "source_url": "https://pkb.gov.bd/interest-rate",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.5,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
@@ -735,7 +743,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 7.2
+    "npl_ratio_pct": 7.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "ucb",
@@ -746,22 +755,22 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 9.5,
-      "6_months": 10.5,
-      "1_year": 11.25,
-      "3_years": 10,
-      "5_years": 9.75
+      "3_months": 8.25,
+      "6_months": 8.5,
+      "1_year": 8.0,
+      "3_years": 7.75,
+      "5_years": 7.75
     },
     "dps_rates": {
-      "3_years": 10.5,
-      "5_years": 11,
-      "10_years": 11.25
+      "3_years": 8.5,
+      "5_years": 8.5,
+      "10_years": 8.5
     },
     "instant_encashment": true,
     "soc_url": "https://www.ucb.com.bd/rates/interest-rates/",
     "headquarters": "Gulshan-1, Dhaka",
     "source_url": "https://www.ucb.com.bd/assets/pdf/fdr_soc_circular_2026_oct.pdf",
-    "effective_date": "2026-10-21",
+    "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T12:43:52.746Z",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.5,
@@ -775,136 +784,153 @@
     "risk_adjusted_yield_score": 8.92,
     "products": [
       {
-        "product_id": "ucb-retail-fd",
-        "product_name": "UCB Retail Fixed Deposit (General Term Deposit)",
+        "product_id": "ucb-earning-plus-fd",
+        "product_name": "Retail UCB Earning Plus (Periodic Profit FDR)",
         "product_type": "FDR",
-        "headline_rate": 11.25,
+        "headline_rate": 9.25,
         "tenure_options": [
-          "3_months",
-          "6_months",
           "1_year",
+          "2_years",
           "3_years",
           "5_years"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 50000,
-        "target_segment": "GENERAL_RETAIL",
-        "features": [
-          "Official UCB retail term deposit (BDT 50,000 minimum)",
-          "Peak 1-year rate of 11.25% p.a.",
-          "Loan facility up to 90% of deposit value",
-          "Instant encashment available through UCB ONE app"
-        ],
-        "instant_encashment": true,
-        "shariah_compliant": false
-      },
-      {
-        "product_id": "ucb-earning-plus-fd",
-        "product_name": "UCB Earning Plus FD (Periodic Profit FDR)",
-        "product_type": "FDR",
-        "headline_rate": 11.0,
-        "tenure_options": [
-          "6_months",
-          "1_year",
-          "3_years"
-        ],
-        "best_tenure": "1_year",
-        "minimum_amount": 100000,
         "target_segment": "SENIOR_CITIZEN",
         "features": [
-          "Monthly or quarterly profit payout to linked account",
-          "Designed for retired individuals and regular income seekers",
-          "Automatic reinvestment of principal upon maturity"
+          "Highest verified rate in UCB Instruction Circular No. 1634 (Page 10)",
+          "9.25% p.a. for Half-Yearly payout (Prefix 3429 / 3432 / 3453)",
+          "9.00% p.a. for Quarterly payout (Prefix 3428 / 3431 / 3452)",
+          "8.75% p.a. for Monthly payout (Prefix 3427)"
         ],
         "instant_encashment": true,
-        "shariah_compliant": false
+        "shariah_compliant": false,
+        "official_prefix": "3429",
+        "circular_page_reference": 10
       },
       {
-        "product_id": "ucb-superflex-dps",
-        "product_name": "UCB Super Flex DPS",
-        "product_type": "DPS",
-        "headline_rate": 11.25,
+        "product_id": "ucb-retail-fd",
+        "product_name": "Retail Fixed Deposit (exclusive)",
+        "product_type": "FDR",
+        "headline_rate": 8.5,
         "tenure_options": [
-          "3_years",
+          "3_months",
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "6_months",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Official UCB standard term deposit from Circular 1634 (Page 7)",
+          "180 Days: 8.50% p.a. | 90 Days: 8.25% p.a. | 360 Days: 8.00% p.a.",
+          "All balance slabs from Below Tk 25 Lac up to Tk 1 Crore+",
+          "Loan against deposit facility up to 90%"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false,
+        "official_prefix": null,
+        "circular_page_reference": 7
+      },
+      {
+        "product_id": "ucb-ayma-fd",
+        "product_name": "Retail Ayma Fixed Deposit (exclusive)",
+        "product_type": "FDR",
+        "headline_rate": 8.5,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "6_months",
+        "minimum_amount": 50000,
+        "target_segment": "WOMEN",
+        "features": [
+          "Dedicated female deposit scheme from Circular 1634 (Page 7)",
+          "180 Days: 8.50% p.a. | 90 Days: 8.25% p.a. | 360 Days: 8.00% p.a.",
+          "Priority customer service privileges"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false,
+        "official_prefix": null,
+        "circular_page_reference": 7
+      },
+      {
+        "product_id": "ucb-nrb-dps-plus",
+        "product_name": "Retail NRB DPS Plus (Expatriate Savings)",
+        "product_type": "DPS",
+        "headline_rate": 8.5,
+        "tenure_options": [
           "5_years",
+          "7_years",
           "10_years"
         ],
         "best_tenure": "5_years",
         "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
-        "features": [
-          "Official UCB Super Flex monthly savings scheme",
-          "Installments from BDT 1,000 to BDT 50,000/month",
-          "Compounding monthly yield reaching 11.25% p.a."
-        ],
-        "instant_encashment": false,
-        "shariah_compliant": false
-      },
-      {
-        "product_id": "ucb-womens-dps-plus",
-        "product_name": "UCB Women's DPS Plus",
-        "product_type": "DPS",
-        "headline_rate": 11.5,
-        "tenure_options": [
-          "3_years",
-          "5_years"
-        ],
-        "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "WOMEN",
-        "features": [
-          "Dedicated female financial inclusion scheme on ucb.com.bd",
-          "Preferential bonus yield of 11.50% p.a.",
-          "Complimentary health insurance & lifestyle discount benefits"
-        ],
-        "instant_encashment": false,
-        "shariah_compliant": false
-      },
-      {
-        "product_id": "ucb-nrb-dps-plus",
-        "product_name": "UCB NRB DPS Plus (Expatriate Savings Scheme)",
-        "product_type": "SPECIAL_SCHEME",
-        "headline_rate": 11.75,
-        "tenure_options": [
-          "1_year",
-          "3_years",
-          "5_years"
-        ],
-        "best_tenure": "1_year",
-        "minimum_amount": 5000,
         "target_segment": "NRB_EXPATRIATE",
         "features": [
-          "Tailored for Non-Resident Bangladeshis remitting foreign exchange",
-          "Highest rate at 11.75% p.a. + 2.5% central bank remittance cash incentive",
-          "Dual-currency repatriable facility"
+          "Official UCB Expatriate Scheme from Circular 1634 (Page 7)",
+          "5, 7, 10 Years tenure at 8.50% p.a. (Prefixes 3510, 3511, 3512)",
+          "Minimum monthly installment Tk 1,000"
         ],
-        "instant_encashment": true,
-        "shariah_compliant": false
+        "instant_encashment": false,
+        "shariah_compliant": false,
+        "official_prefix": "3510",
+        "circular_page_reference": 7
       },
       {
-        "product_id": "ucb-taqwa-mudaraba-term",
-        "product_name": "UCB Taqwa Mudaraba Term Deposit",
-        "product_type": "FDR",
-        "headline_rate": 10.75,
+        "product_id": "ucb-youngsters-dps",
+        "product_name": "Retail UCB Youngsters DPS",
+        "product_type": "DPS",
+        "headline_rate": 8.5,
         "tenure_options": [
-          "3_months",
-          "6_months",
-          "1_year",
-          "3_years"
+          "5_years",
+          "7_years",
+          "10_years"
         ],
-        "best_tenure": "1_year",
-        "minimum_amount": 50000,
-        "target_segment": "ISLAMIC_SHARIAH",
+        "best_tenure": "5_years",
+        "minimum_amount": 100,
+        "target_segment": "RETAIL_SAVINGS",
         "features": [
-          "Official UCB Taqwa Islamic Banking Window product",
-          "100% Shariah-compliant profit-sharing ratio",
-          "Audited by UCB Shariah Board"
+          "Official youth savings scheme from Circular 1634 (Page 8)",
+          "5, 7, 10 Years tenure at 8.50% p.a. (Prefixes 3523, 3572, 3524)",
+          "Low entry threshold: Minimum Tk 100/month"
         ],
-        "instant_encashment": true,
-        "shariah_compliant": true
+        "instant_encashment": false,
+        "shariah_compliant": false,
+        "official_prefix": "3523",
+        "circular_page_reference": 8
+      },
+      {
+        "product_id": "ucb-multi-millionaire",
+        "product_name": "Retail UCB Multi-Millionaire One Million",
+        "product_type": "SPECIAL_SCHEME",
+        "headline_rate": 8.5,
+        "tenure_options": [
+          "5_years",
+          "6_years",
+          "7_years",
+          "8_years",
+          "9_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 5000,
+        "target_segment": "HNI_PREMIUM",
+        "features": [
+          "Target maturity scheme from Circular 1634 (Page 8)",
+          "Prefixes 3525 through 3529 at 8.50% p.a.",
+          "Fixed monthly deposit targeted to achieve BDT 1,000,000"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false,
+        "official_prefix": "3525",
+        "circular_page_reference": 8
       }
     ],
-    "npl_ratio_pct": 16.27
+    "npl_ratio_pct": 16.27,
+    "circular_number": "Instruction Circular No. 1634",
+    "source_pdf_sha256": "72e706f0c768296219e4ef0cff1b0d4d4f3131388fba457895689ad91e0d1ae9",
+    "verification_note": "Audited against UCB Instruction Circular No. 1634 (October 1, 2026). SHA-256: 72e706f0c768..."
   },
   {
     "bank_id": "brac",
@@ -932,7 +958,7 @@
     "source_url": "https://www.bracbank.com/en/personal/deposits/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.9,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
@@ -982,7 +1008,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.27
+    "npl_ratio_pct": 2.27,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "city",
@@ -1010,7 +1037,7 @@
     "source_url": "https://www.thecitybank.com/rates-and-charges",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.5,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
@@ -1041,7 +1068,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 4.65
+    "npl_ratio_pct": 4.65,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "ebl",
@@ -1069,7 +1097,7 @@
     "source_url": "https://www.ebl.com.bd/interest-rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.8,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
@@ -1102,7 +1130,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.24
+    "npl_ratio_pct": 2.24,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "dbbl",
@@ -1130,7 +1159,7 @@
     "source_url": "https://www.dutchbanglabank.com/rates.html",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.5,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
@@ -1184,7 +1213,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 4.92
+    "npl_ratio_pct": 4.92,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "prime",
@@ -1212,7 +1242,7 @@
     "source_url": "https://www.primebank.com.bd/interest-rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.4,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
@@ -1266,7 +1296,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 4.45
+    "npl_ratio_pct": 4.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "mtb",
@@ -1294,7 +1325,7 @@
     "source_url": "https://www.mutualtrustbank.com/rates/",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.2,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
@@ -1348,7 +1379,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 5.65
+    "npl_ratio_pct": 5.65,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "dhaka",
@@ -1376,7 +1408,7 @@
     "source_url": "https://dhakabankltd.com/rates/",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.1,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
@@ -1430,7 +1462,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 5.85
+    "npl_ratio_pct": 5.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "pubali",
@@ -1458,7 +1491,7 @@
     "source_url": "https://www.pubalibangla.com/interest_rate.asp",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.8,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
@@ -1512,7 +1545,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.14
+    "npl_ratio_pct": 2.14,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "mercantile",
@@ -1540,7 +1574,7 @@
     "source_url": "https://www.mblbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.7,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -1594,7 +1628,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 7.85
+    "npl_ratio_pct": 7.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "southeast",
@@ -1622,7 +1657,7 @@
     "source_url": "https://www.southeastbank.com.bd/rates.php",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.6,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -1676,7 +1711,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 8.45
+    "npl_ratio_pct": 8.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "ncc",
@@ -1704,7 +1740,7 @@
     "source_url": "https://www.nccbank.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.8,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -1758,7 +1794,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 6.95
+    "npl_ratio_pct": 6.95,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "premier",
@@ -1786,7 +1823,7 @@
     "source_url": "https://www.premierbankltd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.5,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
@@ -1840,7 +1877,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 8.9
+    "npl_ratio_pct": 8.9,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "trust",
@@ -1868,7 +1906,7 @@
     "source_url": "https://www.tblbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.4,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
@@ -1922,7 +1960,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 4.35
+    "npl_ratio_pct": 4.35,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "jamuna",
@@ -1950,7 +1989,7 @@
     "source_url": "https://www.jamunabank.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.1,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
@@ -2004,7 +2043,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 5.45
+    "npl_ratio_pct": 5.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "bank_asia",
@@ -2032,7 +2072,7 @@
     "source_url": "https://www.bankasia-bd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.8,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -2086,7 +2126,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 6.85
+    "npl_ratio_pct": 6.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "one_bank",
@@ -2114,7 +2155,7 @@
     "source_url": "https://www.onebank.com.bd/rates.php",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.8,
     "credit_rating": "BBB-",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -2168,7 +2209,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 18.5
+    "npl_ratio_pct": 18.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "ab_bank",
@@ -2196,7 +2238,7 @@
     "source_url": "https://abbl.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.6,
     "credit_rating": "BB+",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -2250,7 +2292,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 21.4
+    "npl_ratio_pct": 21.4,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "ific",
@@ -2278,7 +2321,7 @@
     "source_url": "https://www.ificbank.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 2.7,
     "credit_rating": "BBB-",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -2332,7 +2375,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 18.9
+    "npl_ratio_pct": 18.9,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "uttara",
@@ -2360,7 +2404,7 @@
     "source_url": "https://uttarabank-bd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.7,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -2414,7 +2458,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 7.2
+    "npl_ratio_pct": 7.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "nbl",
@@ -2442,7 +2487,7 @@
     "source_url": "https://www.nblbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.8,
     "credit_rating": "B",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -2496,7 +2541,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 38.2
+    "npl_ratio_pct": 38.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "nrbc",
@@ -2524,7 +2570,7 @@
     "source_url": "https://www.nrbcommercialbank.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.2,
     "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
@@ -2578,7 +2624,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 10.85
+    "npl_ratio_pct": 10.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "nrb",
@@ -2606,7 +2653,7 @@
     "source_url": "https://www.nrbbankbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.3,
     "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
@@ -2660,7 +2707,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 8.9
+    "npl_ratio_pct": 8.9,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "meghna",
@@ -2688,7 +2736,7 @@
     "source_url": "https://www.meghnabank.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.5,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
@@ -2742,7 +2790,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 7.45
+    "npl_ratio_pct": 7.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "midland",
@@ -2770,7 +2819,7 @@
     "source_url": "https://www.midlandbankbd.net/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.6,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
@@ -2824,7 +2873,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 6.85
+    "npl_ratio_pct": 6.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "modhumoti",
@@ -2852,7 +2902,7 @@
     "source_url": "https://www.modhumotibank.net/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.7,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -2906,7 +2956,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 6.25
+    "npl_ratio_pct": 6.25,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "sbac",
@@ -2934,7 +2985,7 @@
     "source_url": "https://www.sbacbank.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3,
     "credit_rating": "BBB+",
     "stability_tier": "TIER_4_WATCHLIST",
@@ -2988,7 +3039,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 13.45
+    "npl_ratio_pct": 13.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "shimanto",
@@ -3016,7 +3068,7 @@
     "source_url": "https://www.shimantobank.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.4,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
@@ -3070,7 +3122,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.45
+    "npl_ratio_pct": 2.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "community",
@@ -3098,7 +3151,7 @@
     "source_url": "https://www.communitybankbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.4,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
@@ -3152,7 +3205,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.15
+    "npl_ratio_pct": 2.15,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "bengal",
@@ -3180,7 +3234,7 @@
     "source_url": "https://bgcb.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.5,
     "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
@@ -3234,7 +3288,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 4.85
+    "npl_ratio_pct": 4.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "citizens",
@@ -3262,7 +3317,7 @@
     "source_url": "https://citizensbankbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.5,
     "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
@@ -3316,7 +3371,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 3.85
+    "npl_ratio_pct": 3.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "padma",
@@ -3344,7 +3400,7 @@
     "source_url": "https://www.padmabankbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.2,
     "credit_rating": "C",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -3398,7 +3454,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 67.5
+    "npl_ratio_pct": 67.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "bcbl",
@@ -3426,7 +3483,7 @@
     "source_url": "https://www.bcblbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.4,
     "credit_rating": "B-",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -3480,7 +3537,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 48.2
+    "npl_ratio_pct": 48.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "ibbl",
@@ -3508,7 +3566,7 @@
     "source_url": "https://www.islamibankbd.com/mudaraba-rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.8,
     "credit_rating": "B",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -3562,7 +3620,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 51.2
+    "npl_ratio_pct": 51.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "al_arafah",
@@ -3590,7 +3649,7 @@
     "source_url": "https://www.aibl.com.bd/profit-rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.4,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
@@ -3644,7 +3703,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 9.2
+    "npl_ratio_pct": 9.2,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "sibl",
@@ -3672,7 +3732,7 @@
     "source_url": "https://www.siblbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.8,
     "credit_rating": "B",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -3726,7 +3786,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 37.58
+    "npl_ratio_pct": 37.58,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "shahjalal",
@@ -3754,7 +3815,7 @@
     "source_url": "https://www.sjiblbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.3,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
@@ -3808,7 +3869,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 4.75
+    "npl_ratio_pct": 4.75,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "exim",
@@ -3836,7 +3898,7 @@
     "source_url": "https://www.eximbankbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.2,
     "credit_rating": "A-",
     "stability_tier": "TIER_3_MODERATE",
@@ -3890,7 +3952,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 11.85
+    "npl_ratio_pct": 11.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "fsibl",
@@ -3918,7 +3981,7 @@
     "source_url": "https://www.fsiblbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.8,
     "credit_rating": "B",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -3972,7 +4035,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 36.63
+    "npl_ratio_pct": 36.63,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "global_islami",
@@ -4000,7 +4064,7 @@
     "source_url": "https://www.globalislamibankbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.7,
     "credit_rating": "B",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -4054,7 +4118,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 38.5
+    "npl_ratio_pct": 38.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "union",
@@ -4082,7 +4147,7 @@
     "source_url": "https://www.unionbank.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1.1,
     "credit_rating": "C",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -4136,7 +4201,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 92.5
+    "npl_ratio_pct": 92.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "standard_islamic",
@@ -4164,7 +4230,7 @@
     "source_url": "https://www.standardbankbd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.4,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
@@ -4218,7 +4284,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 8.95
+    "npl_ratio_pct": 8.95,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "icb_islamic",
@@ -4246,7 +4313,7 @@
     "source_url": "https://www.icbislamic-bd.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 1,
     "credit_rating": "C",
     "stability_tier": "TIER_5_DISTRESSED",
@@ -4300,7 +4367,8 @@
         "shariah_compliant": true
       }
     ],
-    "npl_ratio_pct": 86.5
+    "npl_ratio_pct": 86.5,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "scb",
@@ -4328,7 +4396,7 @@
     "source_url": "https://www.sc.com/bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 5,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
@@ -4360,7 +4428,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.15
+    "npl_ratio_pct": 2.15,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "hsbc",
@@ -4388,7 +4457,7 @@
     "source_url": "https://www.hsbc.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 5,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
@@ -4442,7 +4511,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 1.45
+    "npl_ratio_pct": 1.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "citi",
@@ -4470,7 +4540,7 @@
     "source_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 5,
     "credit_rating": "AAA",
     "stability_tier": "TIER_1_PRIME",
@@ -4524,7 +4594,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 1.85
+    "npl_ratio_pct": 1.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "ceylon",
@@ -4552,7 +4623,7 @@
     "source_url": "https://www.combank.com.bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.5,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
@@ -4606,7 +4677,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.45
+    "npl_ratio_pct": 2.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "woori",
@@ -4634,7 +4706,7 @@
     "source_url": "https://bd.wooribank.com/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.4,
     "credit_rating": "AA+",
     "stability_tier": "TIER_2_STRONG",
@@ -4688,7 +4760,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 2.65
+    "npl_ratio_pct": 2.65,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "alfalah",
@@ -4716,7 +4789,7 @@
     "source_url": "https://www.bankalfalah.com/bd/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.2,
     "credit_rating": "AA-",
     "stability_tier": "TIER_2_STRONG",
@@ -4770,7 +4843,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 4.25
+    "npl_ratio_pct": 4.25,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "sbi",
@@ -4798,7 +4872,7 @@
     "source_url": "https://bd.statebank/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 4.3,
     "credit_rating": "AA",
     "stability_tier": "TIER_2_STRONG",
@@ -4852,7 +4926,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 3.85
+    "npl_ratio_pct": 3.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "habib",
@@ -4880,7 +4955,7 @@
     "source_url": "https://www.hbl.com/bangladesh/rates",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.8,
     "credit_rating": "A+",
     "stability_tier": "TIER_3_MODERATE",
@@ -4934,7 +5009,8 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 5.45
+    "npl_ratio_pct": 5.45,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   },
   {
     "bank_id": "nbp",
@@ -4962,7 +5038,7 @@
     "source_url": "https://www.nbp.com.pk/bangladesh",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
-    "verification_status": "VERIFIED_OFFICIAL",
+    "verification_status": "CIRCULAR_PENDING",
     "rating_score": 3.5,
     "credit_rating": "A",
     "stability_tier": "TIER_3_MODERATE",
@@ -5016,6 +5092,7 @@
         "shariah_compliant": false
       }
     ],
-    "npl_ratio_pct": 7.85
+    "npl_ratio_pct": 7.85,
+    "verification_note": "Pending official bank-issued treasury circular verification."
   }
 ]
