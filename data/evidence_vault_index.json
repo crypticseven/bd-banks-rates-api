@@ -1,0 +1,15 @@
+[
+  {
+    "sourceId": "ff20c6ac3989c8fb94a035ac2cfaaff7",
+    "bankCode": "CITY",
+    "sourceUrl": "https://www.citybankplc.com/gsi/conventional-banking-products",
+    "sourceType": "HTML_DOM",
+    "authority": "BANK_OFFICIAL",
+    "httpStatus": 200,
+    "sha256Hash": "b408b312c06b31581b06d3d452ea9d14623701097a529fc9a261d55eafe35cff",
+    "artifactStoragePath": "data\\vault\\CITY\\2026-10-22_b408b312c06b3158.html",
+    "retrievedAt": "2026-10-22T09:02:06.181049+00:00",
+    "accessStatus": "RETRIEVED_VIA_STEALTH_DRILL",
+    "engine": "DrissionPage"
+  }
+]

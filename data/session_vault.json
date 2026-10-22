@@ -1,0 +1,13 @@
+{
+  "domain": "citybankplc.com",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+  "saved_at_utc": "2026-10-22T08:49:08.876955+00:00",
+  "expires_in_seconds": 7200,
+  "cookies": {
+    "wssplashchk": "91349d4707ee459a92c03f7f40c2fd3794deec4e.1792662543.1",
+    "EXPIRES_AT": "some-expiry-value",
+    "lang": "en",
+    "cbw-userType": "personal",
+    "access-token-cbw": "2453274|Gf6UjUcg50XVTAJJHaXMwbAjBuJRCyf1Hmc2hCxAc9e1234c"
+  }
+}

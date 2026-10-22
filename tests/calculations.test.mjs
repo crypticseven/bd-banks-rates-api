@@ -133,3 +133,84 @@ test("Deposit Maturity Calculation & NBR Tax Tests", async (t) => {
     assert.equal(result.netMaturityValue, 1085000);
   });
 });
+
+test("Statutory Bangladesh Bank Excise Duty & Net Yield Rigor", async (t) => {
+  const { calculateExciseDuty, calculateNetMaturity } = await import("../src/lib/ratesCalculator.ts");
+
+  await t.test("Excise duty adheres strictly to statutory brackets", () => {
+    assert.equal(calculateExciseDuty(80000, 1), 0, "Balance <= 100k has 0 duty");
+    assert.equal(calculateExciseDuty(250000, 1), 150, "Balance 100k-500k has 150 duty");
+    assert.equal(calculateExciseDuty(800000, 1), 500, "Balance 500k-1M has 500 duty");
+    assert.equal(calculateExciseDuty(5000000, 1), 3000, "Balance 1M-10M has 3,000 duty");
+    assert.equal(calculateExciseDuty(20000000, 1), 15000, "Balance 10M-50M has 15,000 duty");
+    assert.equal(calculateExciseDuty(80000000, 1), 50000, "Balance > 50M has 50,000 duty");
+
+    // Multi-year adjustments (deducted annually per calendar year)
+    assert.equal(calculateExciseDuty(5000000, 3), 9000, "3-year tenure multiplies annual excise duty by 3");
+  });
+
+  await t.test("Product calculation calculates penny-perfect net yield with TDS and Excise", () => {
+    // ৳1,000,000 at 10% for 1 year with TIN
+    const res = calculateNetMaturity({
+      principal: 1000000,
+      annualRate: 10.0,
+      tenureMonths: 12,
+      paymentFrequency: "MATURITY",
+      hasTin: true,
+      productName: "Test FDR",
+      bankCode: "TEST",
+    });
+
+    assert.equal(res.gross_interest, 100000);
+    assert.equal(res.withholding_tax_tds_pct, 10);
+    assert.equal(res.withholding_tax, 10000);
+    // Peak balance = 1,000,000 + 100,000 = 1,100,000 -> bracket 1M-10M -> 3,000 excise duty
+    assert.equal(res.statutory_excise_duty_amount, 3000);
+    assert.equal(res.net_profit, 87000);
+    assert.equal(res.net_payable_maturity_amount, 1087000);
+  });
+});
+
+test("Deterministic Mathematical Confidence Gating", async (t) => {
+  const { evaluateRateConfidence } = await import("../src/services/confidenceScorer.ts");
+
+  await t.test("High-authority primary treasury circular achieves >= 0.95 approval", () => {
+    const evalResult = evaluateRateConfidence({
+      sourceAuthority: "TREASURY_CIRCULAR",
+      completeness: {
+        hasProductName: true,
+        hasProductType: true,
+        hasExplicitTenure: true,
+        hasExplicitRate: true,
+      },
+      structuralAlignment: "EXPLICIT_TABLE_ROW_OR_CARD",
+      rateValue: 8.50,
+      crossSourceAgreement: "MATCHES_OR_WITHIN_CORRIDOR",
+      publishedWithinCurrentQuarter: true,
+    });
+
+    assert.equal(evalResult.score, 1.0);
+    assert.equal(evalResult.isApproved, true);
+    assert.equal(evalResult.quarantineReason, undefined);
+  });
+
+  await t.test("Aggregator or incomplete source is quarantined (< 0.95)", () => {
+    const evalResult = evaluateRateConfidence({
+      sourceAuthority: "AGGREGATOR",
+      completeness: {
+        hasProductName: true,
+        hasProductType: true,
+        hasExplicitTenure: true,
+        hasExplicitRate: true,
+      },
+      structuralAlignment: "EXPLICIT_TABLE_ROW_OR_CARD",
+      rateValue: 8.50,
+      crossSourceAgreement: "MATCHES_OR_WITHIN_CORRIDOR",
+      publishedWithinCurrentQuarter: true,
+    });
+
+    assert.ok(evalResult.score < 0.95);
+    assert.equal(evalResult.isApproved, false);
+    assert.ok(evalResult.quarantineReason.includes("HELD_IN_STAGING_QUARANTINE"));
+  });
+});
