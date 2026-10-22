@@ -1,0 +1,11 @@
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+.next
+.git
+.github
+tests/fixtures/*.pdf
+__pycache__
+*.pyc
+.env*.local

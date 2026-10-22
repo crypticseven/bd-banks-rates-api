@@ -26,16 +26,30 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5.3.0
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Node dependencies
         run: npm ci || npm install
 
-      - name: Typecheck and lint
+      - name: Install Python test dependencies
+        run: pip install -r requirements.txt
+
+      - name: TypeScript Static Analysis & Lint
         run: npm run lint
 
-      - name: Run unit and invariant tests
+      - name: Node.js Banking Invariant Tests
         run: npm test
 
-      - name: Build Next.js application
+      - name: Python Circular Parser & Ground-Truth Tests
+        run: |
+          python -m py_compile scripts/parse_ucb_circular.py
+          python -m unittest tests/test_parse_ucb_circular.py
+
+      - name: Production Turbopack Build
         run: npm run build
 
   crawl-and-sync:
