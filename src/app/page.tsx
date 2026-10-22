@@ -44,19 +44,26 @@ export default function ApiLandingPage() {
   const [selectedBankForModal, setSelectedBankForModal] = useState<BankRateRecord | null>(null);
   const [privateApiKey, setPrivateApiKey] = useState<string>("bdrip_demo_eval_2026");
 
-  // Dynamic Market Intelligence computed from authoritative dataset
+  // Dynamic Market Intelligence computed algorithmically across ALL 61 scheduled banks
   const marketIntelligence = useMemo(() => {
+    // 1. Prime Sweetspot: Top safety rating (>= 4.5) with highest competitive yield
     const primeBank = [...ALL_61_BANKS]
       .filter((b) => b.rating_score >= 4.5)
       .sort((a, b) => (b.fdr_rates["1_year"] || 0) - (a.fdr_rates["1_year"] || 0))[0] || ALL_61_BANKS[0];
 
-    const ucb = ALL_61_BANKS.find((b) => b.short_code === "UCB");
+    // 2. Algorithmic Turnaround Candidate: Bank in transition recovery (10% <= NPL <= 30%) with highest yield
+    const turnaroundBank = [...ALL_61_BANKS]
+      .filter((b) => b.npl_ratio_pct && b.npl_ratio_pct >= 10.0 && b.npl_ratio_pct <= 30.0)
+      .sort((a, b) => (b.fdr_rates["1_year"] || 0) - (a.fdr_rates["1_year"] || 0))[0] ||
+      ALL_61_BANKS.find((b) => b.short_code === "UCB") ||
+      ALL_61_BANKS[0];
 
+    // 3. Distressed Watchlist: Bank with highest classified loan ratio (> 30% NPL)
     const distressedBank = [...ALL_61_BANKS]
       .filter((b) => b.npl_ratio_pct !== null && b.npl_ratio_pct !== undefined)
       .sort((a, b) => (b.npl_ratio_pct || 0) - (a.npl_ratio_pct || 0))[0] || ALL_61_BANKS[0];
 
-    return { primeBank, ucb, distressedBank };
+    return { primeBank, turnaroundBank, distressedBank };
   }, []);
 
   // Real API execution states
@@ -196,7 +203,7 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <span className="text-slate-500">•</span>
             <span className="text-slate-400">Prime High Yield: <strong className="text-emerald-400">{marketIntelligence.primeBank?.bank_name} ({marketIntelligence.primeBank?.fdr_rates["1_year"]}% @ {marketIntelligence.primeBank?.credit_rating})</strong></span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Turnaround Profile: <strong className="text-cyan-400">{marketIntelligence.ucb?.short_code} ({marketIntelligence.ucb?.fdr_rates["1_year"]}% - 9.25% @ {marketIntelligence.ucb?.npl_ratio_pct}% NPL)</strong></span>
+            <span className="text-slate-400">Turnaround Leader: <strong className="text-cyan-400">{marketIntelligence.turnaroundBank?.short_code} ({marketIntelligence.turnaroundBank?.fdr_rates["1_year"]}% @ {marketIntelligence.turnaroundBank?.npl_ratio_pct}% NPL)</strong></span>
           </div>
           <div className="flex items-center gap-4 text-slate-400 font-mono">
             <a href="https://github.com/crypticseven/bd-banks-rates-api" target="_blank" rel="noreferrer" className="hover:text-white flex items-center gap-1 transition">
@@ -287,15 +294,15 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <div className="border border-cyan-500/30 bg-cyan-950/20 rounded-xl p-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold font-mono">
-                  ⚡ DYNAMIC TURNAROUND
+                  ⚡ ALGORITHMIC TURNAROUND
                 </span>
                 <span className="text-cyan-400 font-mono font-bold text-xs">
-                  {marketIntelligence.ucb?.rating_score}★ {marketIntelligence.ucb?.credit_rating} (NPL {marketIntelligence.ucb?.npl_ratio_pct}%)
+                  {marketIntelligence.turnaroundBank?.rating_score}★ {marketIntelligence.turnaroundBank?.credit_rating} (NPL {marketIntelligence.turnaroundBank?.npl_ratio_pct}%)
                 </span>
               </div>
-              <h3 className="text-sm font-bold text-white">{marketIntelligence.ucb?.bank_name} ({marketIntelligence.ucb?.short_code})</h3>
+              <h3 className="text-sm font-bold text-white">{marketIntelligence.turnaroundBank?.bank_name} ({marketIntelligence.turnaroundBank?.short_code})</h3>
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Verified <strong>{marketIntelligence.ucb?.fdr_rates["1_year"]}%</strong> (1Y Retail FD), <strong>{marketIntelligence.ucb?.fdr_rates["6_months"]}%</strong> (180D / DPS), and up to <strong>9.25%</strong> on Retail Earning Plus (Instruction Circular 1634). NPL stood at <strong>{marketIntelligence.ucb?.npl_ratio_pct}%</strong> in Q2 2026 with 100% of profits allocated to provisions under a 5-year recovery plan.
+                Offers verified <strong>{marketIntelligence.turnaroundBank?.fdr_rates["1_year"]}%</strong> (1Y FD) and <strong>{marketIntelligence.turnaroundBank?.fdr_rates["6_months"]}%</strong> (6-Month). NPL stands at <strong>{marketIntelligence.turnaroundBank?.npl_ratio_pct}%</strong>. Higher yield compensates for balance sheet transition under capital recovery plan.
               </p>
             </div>
 
@@ -761,6 +768,100 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             </div>
           </div>
         )}
+        {/* Commercial Monetization & Developer Business Proposition */}
+        <section id="licensing" className="border border-emerald-500/30 bg-gradient-to-br from-slate-900 via-slate-950 to-emerald-950/30 rounded-2xl p-6 sm:p-10 space-y-8">
+          <div className="max-w-3xl space-y-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-400 text-xs font-mono font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5" /> Proprietary Commercial Licensing &amp; B2B Proposition
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Power Your FinTech or Corporate Treasury with the BDRIP-API™ Engine
+            </h2>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Eliminate manual deposit rate tracking. Integrate real-time, central bank supervised deposit yields, official Schedule of Charges (SOC), and regulatory CAMELS risk ratings directly into your mobile app, ERP, or algorithmic treasury desk.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Sandbox Tier */}
+            <div className="border border-slate-800 bg-slate-900/60 rounded-xl p-6 space-y-4 flex flex-col justify-between">
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-slate-400 uppercase">Evaluation Sandbox</span>
+                <div className="text-2xl font-bold text-white font-mono">FREE</div>
+                <p className="text-xs text-slate-400">For developers, hackathons, and architecture evaluations.</p>
+                <ul className="text-xs text-slate-300 space-y-2 pt-3 font-mono">
+                  <li className="flex items-center gap-2">✔ 60 requests / minute</li>
+                  <li className="flex items-center gap-2">✔ All 61 Scheduled Banks</li>
+                  <li className="flex items-center gap-2">✔ Standard JSON schemas</li>
+                  <li className="flex items-center gap-2 text-slate-500">✖ Commercial redistribution</li>
+                </ul>
+              </div>
+              <button
+                onClick={() => {
+                  setPrivateApiKey("bdrip_demo_eval_2026");
+                  window.location.hash = "#playground";
+                }}
+                className="w-full py-2.5 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-white text-xs font-mono font-bold transition text-center"
+              >
+                Use Demo Key (bdrip_demo_eval_2026)
+              </button>
+            </div>
+
+            {/* Growth FinTech Tier */}
+            <div className="border border-emerald-500/50 bg-emerald-950/30 rounded-xl p-6 space-y-4 flex flex-col justify-between relative shadow-lg shadow-emerald-950/50">
+              <div className="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-mono text-[10px] font-extrabold uppercase">
+                Most Popular
+              </div>
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-emerald-400 uppercase">FinTech Partner</span>
+                <div className="text-2xl font-bold text-white font-mono">৳18,000 <span className="text-xs text-slate-400 font-normal">/ month ($149)</span></div>
+                <p className="text-xs text-slate-300">For personal finance apps, neobanks, and loan origination platforms.</p>
+                <ul className="text-xs text-slate-200 space-y-2 pt-3 font-mono">
+                  <li className="flex items-center gap-2">✔ 1,000 requests / minute</li>
+                  <li className="flex items-center gap-2">✔ Granular Branded Schemes (DPS/FDR)</li>
+                  <li className="flex items-center gap-2">✔ Commercial redistributive license</li>
+                  <li className="flex items-center gap-2">✔ 99.9% Uptime SLA commitment</li>
+                </ul>
+              </div>
+              <a
+                href="mailto:fardinahsananik@gmail.com?subject=BDRIP-API%20FinTech%20Partner%20License%20Inquiry"
+                className="w-full py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-bold transition text-center block"
+              >
+                Acquire FinTech Partner License
+              </a>
+            </div>
+
+            {/* Enterprise Tier */}
+            <div className="border border-slate-800 bg-slate-900/60 rounded-xl p-6 space-y-4 flex flex-col justify-between">
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase">Enterprise Core &amp; Treasury</span>
+                <div className="text-2xl font-bold text-white font-mono">৳60,000 <span className="text-xs text-slate-400 font-normal">/ month ($499)</span></div>
+                <p className="text-xs text-slate-400">For commercial banks, financial conglomerates &amp; ERP treasuries.</p>
+                <ul className="text-xs text-slate-300 space-y-2 pt-3 font-mono">
+                  <li className="flex items-center gap-2">✔ 10,000 requests / minute</li>
+                  <li className="flex items-center gap-2">✔ Real-time Circular Webhook alerts</li>
+                  <li className="flex items-center gap-2">✔ Supervisory CAMELS risk datasets</li>
+                  <li className="flex items-center gap-2">✔ Custom CBS ingestion connector</li>
+                </ul>
+              </div>
+              <a
+                href="mailto:fardinahsananik@gmail.com?subject=Enterprise%20Core%20Banking%20License%20Contract"
+                className="w-full py-2.5 rounded-lg border border-cyan-500/50 bg-cyan-950/40 hover:bg-cyan-900/50 text-cyan-300 text-xs font-mono font-bold transition text-center block"
+              >
+                Contact Architect for Enterprise SLA
+              </a>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+            <div>
+              Sole Proprietor &amp; Chief Architect: <strong className="text-white">Fardin Ahsan Anik</strong> &bull; <a href="mailto:fardinahsananik@gmail.com" className="text-emerald-400 hover:underline">fardinahsananik@gmail.com</a>
+            </div>
+            <div>
+              Direct Licensing Portal: <a href="https://fardinanik.com" target="_blank" rel="noreferrer" className="text-slate-200 hover:text-white underline">fardinanik.com</a>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}

@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
     const parsed = ratingsQuerySchema.safeParse(queryObj);
     if (!parsed.success) {
       return NextResponse.json(
-        { status: "bad_request", message: "Invalid parameters.", errors: parsed.error.format() },
+        { status: "bad_request", code: "VALIDATION_ERROR", message: "Invalid parameters.", errors: parsed.error.format() },
         { status: 400 }
       );
     }
@@ -86,9 +86,15 @@ export async function GET(req: NextRequest) {
     // Sort by rating score descending
     list.sort((a, b) => b.rating_score - a.rating_score);
 
-    // Identify dynamic market intelligence recommendations
-    const primeRecommendation = list.find((b) => (b.stability_tier === "TIER_1_PRIME" || b.stability_tier === "TIER_2_STRONG") && b.rate_1_year >= 10.0) || list[0];
-    const ucbRecord = list.find((b) => b.short_code === "UCB");
+    // Dynamic algorithmic market intelligence
+    const primeRecommendation = list.find((b) => (b.stability_tier === "TIER_1_PRIME" || b.stability_tier === "TIER_2_STRONG") && b.rate_1_year >= 8.0) || list[0];
+    
+    // Algorithmic turnaround candidate across all banks
+    const turnaroundCandidates = list
+      .filter((b) => b.npl_ratio_pct && b.npl_ratio_pct >= 10.0 && b.npl_ratio_pct <= 30.0)
+      .sort((a, b) => b.rate_1_year - a.rate_1_year);
+    const turnaroundRecommendation = turnaroundCandidates[0] || list.find((b) => b.short_code === "UCB") || list[0];
+
     const highestYieldOverall = [...list].sort((a, b) => b.rate_1_year - a.rate_1_year)[0];
 
     const requestId = crypto.randomUUID();
@@ -114,18 +120,18 @@ export async function GET(req: NextRequest) {
             credit_rating: primeRecommendation.credit_rating,
             rate_1_year: primeRecommendation.rate_1_year,
             npl_ratio_pct: primeRecommendation.npl_ratio_pct,
-            verdict: `Highest yield among prime/strong financial institutions (${primeRecommendation.credit_rating} rated, NPL ${primeRecommendation.npl_ratio_pct}%). Optimal balance of return and depositor safety.`,
+            verdict: `Highest yield among prime financial institutions (${primeRecommendation.credit_rating} rated, NPL ${primeRecommendation.npl_ratio_pct}%). Optimal balance of return and depositor safety.`,
           },
-          turnaround_high_yield_opportunity: ucbRecord ? {
-            bank_name: ucbRecord.bank_name,
-            short_code: ucbRecord.short_code,
-            rate_1_year: ucbRecord.rate_1_year,
-            npl_ratio_pct: ucbRecord.npl_ratio_pct,
-            rating_score: ucbRecord.rating_score,
-            credit_rating: ucbRecord.credit_rating,
-            stability_tier: ucbRecord.stability_tier,
-            verdict: `Dynamic High-Yield Turnaround: ${ucbRecord.bank_name} offers ${ucbRecord.rate_1_year}% on 1-year general retail term deposit. NPL stands at ${ucbRecord.npl_ratio_pct}%. Board allocated 100% of profits to provisions under 5-year turnaround. Higher yield compensates for balance sheet transition.`,
-          } : undefined,
+          turnaround_high_yield_opportunity: {
+            bank_name: turnaroundRecommendation.bank_name,
+            short_code: turnaroundRecommendation.short_code,
+            rate_1_year: turnaroundRecommendation.rate_1_year,
+            npl_ratio_pct: turnaroundRecommendation.npl_ratio_pct,
+            rating_score: turnaroundRecommendation.rating_score,
+            credit_rating: turnaroundRecommendation.credit_rating,
+            stability_tier: turnaroundRecommendation.stability_tier,
+            verdict: `Algorithmic High-Yield Turnaround Leader: ${turnaroundRecommendation.bank_name} offers ${turnaroundRecommendation.rate_1_year}% on 1-year general retail term deposit with NPL at ${turnaroundRecommendation.npl_ratio_pct}%. Higher yield compensates for balance sheet transition under capital recovery plan.`,
+          },
           nominal_highest_yield_alert: {
             bank_name: highestYieldOverall.bank_name,
             short_code: highestYieldOverall.short_code,
@@ -154,7 +160,7 @@ export async function GET(req: NextRequest) {
     return attachCommercialHeaders(response, client);
   } catch (error) {
     return NextResponse.json(
-      { status: "error", message: "Failed to generate ratings report." },
+      { status: "error", code: "INTERNAL_ERROR", message: "Failed to generate ratings report." },
       { status: 500 }
     );
   }

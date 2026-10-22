@@ -3,6 +3,7 @@
  * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
  *
  * COMMERCIAL FIXED DEPOSIT & SAVINGS RATES ENGINE
+ * Enterprise REST API with dynamic cross-bank intelligence, Zod schema gating & pagination.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -26,6 +27,8 @@ const querySchema = z.object({
   instant_encashment: z.enum(["true", "false"]).optional(),
   min_rating: z.coerce.number().min(1).max(5).optional(),
   sort_by: z.enum(["yield", "risk_adjusted", "rating"]).default("yield"),
+  page: z.coerce.number().int().min(1).default(1),
+  limit: z.coerce.number().int().min(1).max(100).default(61),
   q: z.string().trim().max(100).optional(),
   api_key: z.string().optional(),
 });
@@ -64,6 +67,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json(
         {
           status: "bad_request",
+          code: "VALIDATION_ERROR",
           message: "Invalid query parameters provided.",
           errors: parsedQuery.error.format(),
         },
@@ -80,6 +84,8 @@ export async function GET(req: NextRequest) {
       instant_encashment,
       min_rating,
       sort_by,
+      page,
+      limit,
       q,
     } = parsedQuery.data;
 
@@ -120,7 +126,7 @@ export async function GET(req: NextRequest) {
         selected_tenure: tenure,
         current_rate: rate,
         maturity_calculation: calculation,
-        // Include privileged supervisory risk audit for authorized clients
+        // Privileged supervisory risk audit
         commercial_supervisory_audit: {
           capital_adequacy: bank.capital_adequacy_ratio_car,
           npl_tier: bank.npl_category,
@@ -132,10 +138,42 @@ export async function GET(req: NextRequest) {
       };
     });
 
-    // Dynamic Market Intelligence Computations
-    const ucbRecord = enrichedData.find((b) => b.short_code === "UCB") ||
-      activeBanks.find((b) => b.short_code === "UCB");
-    const topYieldBank = enrichedData[0] || null;
+    // =========================================================================
+    // FULLY ALGORITHMIC DYNAMIC MARKET INTELLIGENCE (Cross-Bank Autonomous Scorer)
+    // Evaluates all 61 banks dynamically based on live circular yields and balance sheets
+    // =========================================================================
+    
+    // 1. Prime Sweetspot: AAA/AA+ rating with lowest NPL and highest rate in its safety tier
+    const primeCandidates = [...activeBanks]
+      .filter((b) => b.rating_score >= 4.5)
+      .sort((a, b) => (b.fdr_rates["1_year"] || 0) - (a.fdr_rates["1_year"] || 0));
+    const primeSweetspot = primeCandidates[0] || activeBanks[0];
+
+    // 2. Turnaround Opportunity: Bank undergoing restructuring/recovery (10% <= NPL <= 30%)
+    // offering attractive yield to retain retail deposits while provisioning profits
+    const turnaroundCandidates = [...activeBanks]
+      .filter((b) => b.npl_ratio_pct && b.npl_ratio_pct >= 10.0 && b.npl_ratio_pct <= 30.0)
+      .sort((a, b) => (b.fdr_rates["1_year"] || 0) - (a.fdr_rates["1_year"] || 0));
+    const turnaroundCandidate = turnaroundCandidates[0] ||
+      activeBanks.find((b) => b.short_code === "UCB") ||
+      activeBanks[0];
+
+    // 3. Distressed Watchlist: Institution with highest classified loan ratio (> 30% NPL)
+    const distressedCandidates = [...activeBanks]
+      .filter((b) => b.npl_ratio_pct !== null && b.npl_ratio_pct !== undefined)
+      .sort((a, b) => (b.npl_ratio_pct || 0) - (a.npl_ratio_pct || 0));
+    const distressedAlert = distressedCandidates[0] || activeBanks[0];
+
+    // Top ranked in current filter view
+    const topRankedBank = enrichedData[0] || null;
+
+    // =========================================================================
+    // ENTERPRISE PAGINATION
+    // =========================================================================
+    const totalRecords = enrichedData.length;
+    const totalPages = Math.ceil(totalRecords / limit) || 1;
+    const offset = (page - 1) * limit;
+    const paginatedRecords = enrichedData.slice(offset, offset + limit);
 
     const requestId = crypto.randomUUID();
 
@@ -151,8 +189,14 @@ export async function GET(req: NextRequest) {
           tier: client.tier,
           rate_limit_remaining: rateLimit.remaining,
         },
-        total_banks_tracked: ALL_61_BANKS.length,
-        total_matched: enrichedData.length,
+        pagination: {
+          total_records: totalRecords,
+          page,
+          limit,
+          total_pages: totalPages,
+          has_next_page: page < totalPages,
+          has_prev_page: page > 1,
+        },
         sort_mode: sort_by,
         central_bank_benchmarks: {
           policy_repo_rate: "10.00%",
@@ -163,26 +207,44 @@ export async function GET(req: NextRequest) {
           nbr_withholding_tax_no_tin: "15%",
         },
         dynamic_market_intelligence: {
-          turnaround_candidate: ucbRecord ? {
-            bank_name: ucbRecord.bank_name,
-            short_code: ucbRecord.short_code,
-            rate_1_year: ucbRecord.fdr_rates["1_year"],
-            rating_score: ucbRecord.rating_score,
-            credit_rating: ucbRecord.credit_rating,
-            npl_ratio_pct: ucbRecord.npl_ratio_pct,
-            verdict: `Dynamic Turnaround Yield: ${ucbRecord.bank_name} offers ${ucbRecord.fdr_rates["1_year"]}% on 1-year general retail term deposit. NPL stands at ${ucbRecord.npl_ratio_pct}%. Higher yield balances active balance sheet transition under 5-year recovery plan.`,
-          } : null,
-          top_ranked_bank: topYieldBank ? {
-            bank_name: topYieldBank.bank_name,
-            short_code: topYieldBank.short_code,
-            rate: topYieldBank.current_rate,
-            rating_score: topYieldBank.rating_score,
-            credit_rating: topYieldBank.credit_rating,
+          safest_highest_yield_sweetspot: {
+            bank_name: primeSweetspot.bank_name,
+            short_code: primeSweetspot.short_code,
+            rate_1_year: primeSweetspot.fdr_rates["1_year"],
+            rating_score: primeSweetspot.rating_score,
+            credit_rating: primeSweetspot.credit_rating,
+            npl_ratio_pct: primeSweetspot.npl_ratio_pct,
+            verdict: `Safest Yield Sweetspot: ${primeSweetspot.bank_name} offers verified ${primeSweetspot.fdr_rates["1_year"]}% with ${primeSweetspot.credit_rating} stability (${primeSweetspot.npl_ratio_pct}% NPL, CAR ${primeSweetspot.capital_adequacy_ratio_car}). Optimal capital safety.`,
+          },
+          turnaround_candidate: {
+            bank_name: turnaroundCandidate.bank_name,
+            short_code: turnaroundCandidate.short_code,
+            rate_1_year: turnaroundCandidate.fdr_rates["1_year"],
+            rating_score: turnaroundCandidate.rating_score,
+            credit_rating: turnaroundCandidate.credit_rating,
+            npl_ratio_pct: turnaroundCandidate.npl_ratio_pct,
+            verdict: `Algorithmic Turnaround Leader: ${turnaroundCandidate.bank_name} (${turnaroundCandidate.short_code}) offers ${turnaroundCandidate.fdr_rates["1_year"]}% with ${turnaroundCandidate.npl_ratio_pct}% NPL. Higher yield compensates for balance sheet transition under capital recovery plan.`,
+          },
+          distressed_watchlist: {
+            bank_name: distressedAlert.bank_name,
+            short_code: distressedAlert.short_code,
+            rate_1_year: distressedAlert.fdr_rates["1_year"],
+            rating_score: distressedAlert.rating_score,
+            credit_rating: distressedAlert.credit_rating,
+            npl_ratio_pct: distressedAlert.npl_ratio_pct,
+            verdict: `Distressed Alert: ${distressedAlert.bank_name} carries acute classified loans (${distressedAlert.npl_ratio_pct}% NPL). Nominal interest reflects liquidity deficit rather than balance sheet strength.`,
+          },
+          top_ranked_bank: topRankedBank ? {
+            bank_name: topRankedBank.bank_name,
+            short_code: topRankedBank.short_code,
+            rate: topRankedBank.current_rate,
+            rating_score: topRankedBank.rating_score,
+            credit_rating: topRankedBank.credit_rating,
             tenure,
-            category: topYieldBank.category,
+            category: topRankedBank.category,
           } : null,
         },
-        data: enrichedData,
+        data: paginatedRecords,
       },
       {
         status: 200,
@@ -198,7 +260,7 @@ export async function GET(req: NextRequest) {
   } catch (error) {
     console.error("Error serving commercial 61 banks rates API:", error);
     return NextResponse.json(
-      { status: "error", message: "Failed to fetch bank rates dataset." },
+      { status: "error", code: "INTERNAL_ERROR", message: "Failed to fetch bank rates dataset." },
       { status: 500 }
     );
   }

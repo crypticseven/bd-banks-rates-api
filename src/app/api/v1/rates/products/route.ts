@@ -3,6 +3,7 @@
  * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
  *
  * COMMERCIAL PRODUCTS (FDR, DPS, SPECIAL SCHEMES) CATALOG ENDPOINT
+ * Granular product schemes with pagination and Zod schema gating.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -30,6 +31,8 @@ const productsQuerySchema = z.object({
   min_rate: z.coerce.number().min(0).max(30).optional(),
   instant_encashment: z.enum(["true", "false"]).optional(),
   shariah: z.enum(["true", "false"]).optional(),
+  page: z.coerce.number().int().min(1).default(1),
+  limit: z.coerce.number().int().min(1).max(100).default(50),
   q: z.string().trim().max(100).optional(),
 });
 
@@ -64,6 +67,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json(
         {
           status: "bad_request",
+          code: "VALIDATION_ERROR",
           message: "Invalid query parameters.",
           errors: parsed.error.format(),
         },
@@ -71,7 +75,7 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    const { bank, type, segment, min_rate, instant_encashment, shariah, q } = parsed.data;
+    const { bank, type, segment, min_rate, instant_encashment, shariah, page, limit, q } = parsed.data;
 
     // Flatten all products across banks with parent bank context
     let flattenedProducts: any[] = [];
@@ -131,6 +135,12 @@ export async function GET(req: NextRequest) {
     // Sort by headline rate descending
     flattenedProducts.sort((a, b) => b.headline_rate - a.headline_rate);
 
+    // Pagination
+    const totalRecords = flattenedProducts.length;
+    const totalPages = Math.ceil(totalRecords / limit) || 1;
+    const offset = (page - 1) * limit;
+    const paginatedProducts = flattenedProducts.slice(offset, offset + limit);
+
     const requestId = crypto.randomUUID();
 
     const response = NextResponse.json(
@@ -145,9 +155,16 @@ export async function GET(req: NextRequest) {
           tier: client.tier,
           rate_limit_remaining: rateLimit.remaining,
         },
-        total_products: flattenedProducts.length,
+        pagination: {
+          total_records: totalRecords,
+          page,
+          limit,
+          total_pages: totalPages,
+          has_next_page: page < totalPages,
+          has_prev_page: page > 1,
+        },
         top_product: flattenedProducts[0] || null,
-        data: flattenedProducts,
+        data: paginatedProducts,
       },
       {
         status: 200,
@@ -162,7 +179,7 @@ export async function GET(req: NextRequest) {
     return attachCommercialHeaders(response, client);
   } catch (error) {
     return NextResponse.json(
-      { status: "error", message: "Failed to query products." },
+      { status: "error", code: "INTERNAL_ERROR", message: "Failed to query products." },
       { status: 500 }
     );
   }
