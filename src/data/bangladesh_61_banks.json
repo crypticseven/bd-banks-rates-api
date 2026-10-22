@@ -547,7 +547,7 @@
       "primary_bank_domain": "https://www.bdbl.com.bd",
       "verified_soc_url": "https://www.bdbl.com.bd/pages/static-pages/interest-rate-29b598-6922e134933eb65569e2adb8",
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
-      "evidence_snippet": "Crawled link (সুদের হার): 178257 bytes",
+      "evidence_snippet": "Crawled link (\u09b8\u09c1\u09a6\u09c7\u09b0 \u09b9\u09be\u09b0): 178257 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -880,7 +880,7 @@
         "features": [
           "Official Instruction Circular 1634 (Prefix 3429)",
           "9.25% p.a. for Half-Yearly profit payout option",
-          "Minimum deposit ৳100,000"
+          "Minimum deposit \u09f3100,000"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -946,7 +946,7 @@
         "features": [
           "Official Instruction Circular 1634 (Page 8)",
           "8.50% p.a. installment deposit",
-          "Low starting threshold ৳500/month"
+          "Low starting threshold \u09f3500/month"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -1325,7 +1325,7 @@
         "minimum_amount": 2500,
         "target_segment": "RETAIL_SAVINGS",
         "features": [
-          "Target ৳1,000,000 corpus maturity",
+          "Target \u09f31,000,000 corpus maturity",
           "8.50% annual yield for long term wealth building"
         ],
         "instant_encashment": false,
@@ -1876,7 +1876,7 @@
         "target_segment": "MONTHLY_PROFIT",
         "features": [
           "Official Table 11: 9.00% simple interest p.a.",
-          "৳750/month per ৳100,000 deposit before tax with auto-renewal"
+          "\u09f3750/month per \u09f3100,000 deposit before tax with auto-renewal"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -1947,7 +1947,7 @@
         "features": [
           "Official Circular September 01, 2026 (Page 3)",
           "8.25% p.a. for standard retail 1-year deposit (<50L)",
-          "8.50% for ৳50L-৳150L, 9.00% for ৳150L+"
+          "8.50% for \u09f350L-\u09f3150L, 9.00% for \u09f3150L+"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -1987,7 +1987,7 @@
         "target_segment": "MONTHLY_CASH_FLOW",
         "features": [
           "Official Circular Page 5: 10.03% annual effective rate",
-          "৳800 monthly cash payout per ৳100,000 deposit before tax"
+          "\u09f3800 monthly cash payout per \u09f3100,000 deposit before tax"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -2368,7 +2368,7 @@
       "primary_bank_domain": "https://jamunabankbd.com",
       "verified_soc_url": "https://jamunabankbd.com/interest-rates/",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (Interest Rates – Jamuna Bank, 1 tables)",
+      "evidence_snippet": "HTML Rate Page (Interest Rates \u2013 Jamuna Bank, 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -4668,7 +4668,7 @@
       "primary_bank_domain": "https://www.globalislamibank.com",
       "verified_soc_url": "https://www.globalislamibank.com/profit-rates",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (GlobalIslamiBank.com – Premium Bangla Domain Name Buy-Sell Marketplace, 0 tables)",
+      "evidence_snippet": "HTML Rate Page (GlobalIslamiBank.com \u2013 Premium Bangla Domain Name Buy-Sell Marketplace, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -5213,28 +5213,29 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 8.0,
-      "6_months": 8.5,
-      "1_year": 8.5,
-      "2_years": 7.24,
-      "3_years": 8.45,
-      "5_years": 8.45
+      "1_month": 4.5,
+      "3_months": 5.0,
+      "6_months": 5.25,
+      "1_year": 5.5,
+      "2_years": 7.5,
+      "3_years": 7.5,
+      "5_years": 7.5
     },
     "dps_rates": {
-      "3_years": 8.75,
-      "5_years": 9.0,
-      "10_years": 9.0
+      "3_years": 7.5,
+      "5_years": 8.0,
+      "10_years": 8.0
     },
     "instant_encashment": false,
-    "soc_url": "https://www.combank.net/bangladesh",
-    "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.combank.net/bangladesh",
-    "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "soc_url": "https://www.combank.net.bd/assets/documents/Schedule-of-Charges.pdf",
+    "headquarters": "Hadi Tower, NW(K)-1, Gulshan-2, Dhaka",
+    "source_url": "https://www.combank.net.bd/tariffs/interest-rate.html",
+    "effective_date": "2026-10-01",
+    "fetched_at": "2026-10-22T09:30:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
-    "rating_score": 4.5,
-    "credit_rating": "AA+",
-    "stability_tier": "TIER_2_STRONG",
+    "rating_score": 4.7,
+    "credit_rating": "AAA",
+    "stability_tier": "TIER_1_PRIME",
     "npl_category": "PRIME_LOW (2.45%)",
     "capital_adequacy_ratio_car": ">17.5%",
     "risk_label": "Low Risk (Disciplined FCB Portfolio)",
@@ -5243,56 +5244,118 @@
     "risk_adjusted_yield_score": 9.34,
     "products": [
       {
-        "product_id": "ceylon-standard-fdr",
-        "product_name": "Commercial Bank of Ceylon PLC Fixed Deposit Receipt",
+        "product_id": "ceylon-regular-fdr",
+        "product_name": "Commercial Bank of Ceylon Regular Fixed Deposit",
         "product_type": "FDR",
-        "headline_rate": 8.5,
+        "headline_rate": 7.5,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
           "1_year",
-          "3_years",
-          "5_years"
+          "2_years"
         ],
-        "best_tenure": "1_year",
+        "best_tenure": "2_years",
         "minimum_amount": 50000,
         "target_segment": "GENERAL_RETAIL",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 8.5%",
-          "Regulatory filing window: 5.12-8.50%",
-          "Loan against deposit facility eligible"
+          "Official tiered schedule: 1M (4.50%), 3M (5.00%), 6M (5.25%), 1Y (5.50%), 2Y (7.50% nominal / 7.24% AER)",
+          "Multiple interest payout options: At Maturity, Monthly, or Quarterly",
+          "Loan / Overdraft against deposit facility eligible (up to 90% of deposit value)",
+          "Backed by Sri Lanka's largest private bank with pristine 2.45% NPL in Bangladesh operations"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
-        "product_id": "ceylon-monthly-dps",
-        "product_name": "Commercial Bank of Ceylon PLC Monthly Sanchay Scheme (DPS)",
-        "product_type": "DPS",
-        "headline_rate": 9.0,
+        "product_id": "ceylon-366-days-fd",
+        "product_name": "Commercial Bank of Ceylon 366 Days Fixed Deposit",
+        "product_type": "FDR",
+        "headline_rate": 7.5,
         "tenure_options": [
-          "3_years",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Signature leap-tenure 366-day fixed deposit account",
+          "Retail rate: 5.50% (below 50 Lac); Institutional/High-Value slabs: up to 7.50%",
+          "Access to Overdraft (OD) facility up to 90% of deposit balance",
+          "Premature encashment paid at standard savings account rate for the duration held"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ceylon-high5-fd",
+        "product_name": "Commercial Bank of Ceylon High-5 Fixed Deposit (High5FD)",
+        "product_type": "FDR",
+        "headline_rate": 7.5,
+        "tenure_options": [
           "5_years"
         ],
         "best_tenure": "5_years",
-        "minimum_amount": 1000,
+        "minimum_amount": 100000,
+        "target_segment": "LONG_TERM",
+        "features": [
+          "5-Year guaranteed high-return fixed deposit designed for market cycle resilience",
+          "Steady yield shielding depositors against downward interest rate volatility",
+          "Loan and Overdraft facilities accessible up to 85% of deposit value"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ceylon-monthly-savings",
+        "product_name": "Commercial Bank of Ceylon Monthly Interest-Bearing Savings Account",
+        "product_type": "SPECIAL_SCHEME",
+        "headline_rate": 4.5,
+        "tenure_options": [
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 25000,
         "target_segment": "RETAIL_SAVINGS",
         "features": [
-          "Monthly installment deposit yield: 9.0%",
-          "Compounded return upon tenure completion"
+          "Interest calculated on daily product and credited on a monthly basis",
+          "Combines transaction liquidity with steady interest accrual",
+          "Free debit card privileges and digital banking via Comb@nk Online"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ceylon-dollarsmart-fdr",
+        "product_name": "Commercial Bank of Ceylon DOLLARSMART Foreign Currency FD",
+        "product_type": "SPECIAL_SCHEME",
+        "headline_rate": 3.5,
+        "tenure_options": [
+          "1_year",
+          "2_years"
+        ],
+        "best_tenure": "2_years",
+        "minimum_amount": 1000,
+        "target_segment": "NRB",
+        "features": [
+          "Offered in USD, GBP, and EUR for Non-Resident Bangladeshis and RFCD holders",
+          "USD rates: 1.00% (1M) to 2.00% (2Y), up to 3.50% for high-value deposit slabs",
+          "Exempt from local taxes for eligible non-resident foreign currency accounts"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 2.45,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 5.12-8.50%; 6-Month: 5.25-8.50%; Savings: 6.00%.",
+    "verification_note": "Verified from Commercial Bank of Ceylon official tariff schedule (combank.net.bd) and Bangladesh Bank statutory weighted average report (4.82% weighted deposit rate, 11.47% lending rate). Retail FDR: 4.50%-7.50%; 366-Days FD: 5.50%-7.50%; High-5 FD: 7.50%.",
     "official_provenance": {
-      "primary_bank_domain": "https://www.combankbd.com",
-      "verified_soc_url": "https://www.combank.net/bangladesh",
-      "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
-      "evidence_snippet": null,
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
+      "primary_bank_domain": "https://www.combank.net.bd",
+      "verified_soc_url": "https://www.combank.net.bd/assets/documents/Schedule-of-Charges.pdf",
+      "tariff_url": "https://www.combank.net.bd/tariffs/interest-rate.html",
+      "bb_weighted_avg_url": "https://www.bb.org.bd/en/index.php/econdata/w_avg_interest",
+      "audit_status": "VERIFIED_VIA_PRIMARY_SCHEDULE_AND_BB",
+      "evidence_snippet": "Commercial Bank of Ceylon Limited - BB Weighted Avg Deposit Rate 4.82%, Retail FDR 1M 4.50%, 3M 5.00%, 6M 5.25%, 1Y/366D 5.50%-7.50%, 2Y 7.50% (AER 7.24%), High-5 FD 7.50%",
+      "last_audited_at": "2026-10-22T09:30:00Z",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
   },
@@ -5383,7 +5446,7 @@
       "primary_bank_domain": "https://wooribank.com/bd",
       "verified_soc_url": "https://wooribank.com/rates",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (우리은행, 0 tables)",
+      "evidence_snippet": "HTML Rate Page (\uc6b0\ub9ac\uc740\ud589, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }

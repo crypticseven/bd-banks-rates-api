@@ -112,6 +112,36 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
     assert.ok(insuranceDps, "City Insurance Backed DPS must exist");
     assert.equal(insuranceDps.headline_rate, 8.00);
   });
+
+  await t.test("Commercial Bank of Ceylon PLC has verified tariff rates and branded products", () => {
+    const cbc = banksData.find((b) => b.short_code === "CBC");
+    assert.ok(cbc, "CBC must exist in dataset");
+    assert.equal(cbc.bank_name, "Commercial Bank of Ceylon PLC");
+    assert.equal(cbc.category, "FOREIGN");
+    assert.equal(cbc.fdr_rates["1_month"], 4.50, "CBC 1M FDR rate must be 4.50%");
+    assert.equal(cbc.fdr_rates["1_year"], 5.50, "CBC 1Y FDR rate must be 5.50%");
+    assert.equal(cbc.fdr_rates["2_years"], 7.50, "CBC 2Y FDR rate must be 7.50% (7.24% AER)");
+    assert.equal(cbc.fdr_rates["5_years"], 7.50, "CBC High-5 FD rate must be 7.50%");
+    assert.equal(cbc.source_url, "https://www.combank.net.bd/tariffs/interest-rate.html");
+    assert.equal(cbc.verification_status, "VERIFIED_OFFICIAL");
+    assert.equal(cbc.products.length, 5, "CBC must have 5 official branded products");
+
+    const regFdr = cbc.products.find((p) => p.product_id === "ceylon-regular-fdr");
+    assert.ok(regFdr, "CBC Regular FDR must exist");
+    assert.equal(regFdr.headline_rate, 7.50);
+
+    const fd366 = cbc.products.find((p) => p.product_id === "ceylon-366-days-fd");
+    assert.ok(fd366, "CBC 366 Days FD must exist");
+    assert.equal(fd366.headline_rate, 7.50);
+
+    const high5 = cbc.products.find((p) => p.product_id === "ceylon-high5-fd");
+    assert.ok(high5, "CBC High-5 FD must exist");
+    assert.equal(high5.headline_rate, 7.50);
+
+    const savings = cbc.products.find((p) => p.product_id === "ceylon-monthly-savings");
+    assert.ok(savings, "CBC Monthly Savings must exist");
+    assert.equal(savings.headline_rate, 4.50);
+  });
 });
 
 test("Deposit Maturity Calculation & NBR Tax Tests", async (t) => {
