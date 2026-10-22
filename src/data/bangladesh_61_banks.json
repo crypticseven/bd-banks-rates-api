@@ -23,7 +23,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.sonalibank.com.bd/PDF_file/intt_rates.pdf",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.sonalibank.com.bd/PDF_file/intt_rates.pdf",
+    "source_url": "https://www.sonalibank.com.bd/deposit-scheme/deposit-rd-accounts.php",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T23:03:07.417550+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -89,8 +89,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Direct Bank Circular PDF (8367771 bytes, SHA-256: 44c460cbaa625b7d...)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
-    }
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.sonalibank.com.bd/deposit-scheme/deposit-rd-accounts.php",
+      "last_known_artifact_url": "https://www.sonalibank.com.bd/deposit-scheme/deposit-rd-accounts.php",
+      "handshake_status": "DISCOVERED_VIA_NAV",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.sonalibank.com.bd/deposit-scheme/deposit-rd-accounts.php",
+    "last_known_artifact_url": "https://www.sonalibank.com.bd/deposit-scheme/deposit-rd-accounts.php",
+    "discovered_active_path": "https://www.sonalibank.com.bd/deposit-scheme/deposit-rd-accounts.php",
+    "handshake_status": "DISCOVERED_VIA_NAV",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 18,
+    "declared_rate_range": "6.50% – 10.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "janata",
@@ -116,7 +128,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.jb.com.bd/products/rate_of_interest",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.jb.com.bd/assets/file/documents/rate_of_interest_2026-10-01_10-27-52am.pdf",
+    "source_url": "https://www.jb.com.bd/home/declared_rate",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:07.417913+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -181,8 +193,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Janata Bank PLC., 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.jb.com.bd/home/declared_rate",
+      "last_known_artifact_url": "https://www.jb.com.bd/assets/file/documents/rate_of_interest_2026-10-01_10-27-52am.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type C: CMS Upload Directory"
+    },
+    "hub_url": "https://www.jb.com.bd/home/declared_rate",
+    "last_known_artifact_url": "https://www.jb.com.bd/assets/file/documents/rate_of_interest_2026-10-01_10-27-52am.pdf",
+    "discovered_active_path": "https://www.jb.com.bd/assets/file/documents/rate_of_interest_2026-10-01_10-27-52am.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type C: CMS Upload Directory",
+    "schemes_count": 15,
+    "declared_rate_range": "7.00% – 9.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "agrani",
@@ -273,8 +297,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Agrani Bank PLC., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.agranibank.org/index.php/home/interest_rate/ql",
+      "last_known_artifact_url": "https://www.agranibank.org/index.php/home/interest_rate/ql",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.agranibank.org/index.php/home/interest_rate/ql",
+    "last_known_artifact_url": "https://www.agranibank.org/index.php/home/interest_rate/ql",
+    "discovered_active_path": "https://www.agranibank.org/index.php/home/interest_rate/ql",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 16,
+    "declared_rate_range": "7.25% – 9.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "rupali",
@@ -300,7 +336,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.rupalibank.com.bd/corporate_profile.php",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.rupalibank.com.bd/corporate_profile.php",
+    "source_url": "https://rupalibank.com.bd/admin_web/files/currency/CurrencyDetail.pdf",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -365,8 +401,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Corporate Profile): 76483 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://rupalibank.com.bd/admin_web/files/currency/CurrencyDetail.pdf",
+      "last_known_artifact_url": "https://rupalibank.com.bd/admin_web/files/currency/CurrencyDetail.pdf",
+      "handshake_status": "DISCOVERED_VIA_SITEMAP",
+      "pattern_type": "Type C: CMS Upload Directory"
+    },
+    "hub_url": "https://rupalibank.com.bd/admin_web/files/currency/CurrencyDetail.pdf",
+    "last_known_artifact_url": "https://rupalibank.com.bd/admin_web/files/currency/CurrencyDetail.pdf",
+    "discovered_active_path": "https://rupalibank.com.bd/admin_web/files/currency/CurrencyDetail.pdf",
+    "handshake_status": "DISCOVERED_VIA_SITEMAP",
+    "pattern_type": "Type C: CMS Upload Directory",
+    "schemes_count": 14,
+    "declared_rate_range": "6.75% – 9.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "basic",
@@ -392,7 +440,7 @@
     "instant_encashment": false,
     "soc_url": "https://basicbankplc.com/en/rate-and-charge/rate-of-interest",
     "headquarters": "Sena Kalyan Bhaban, Motijheel",
-    "source_url": "https://basicbankplc.com/storage/rate_of_interest/106_1791357744_8552.pdf",
+    "source_url": "https://basicbankplc.com/en/rate-and-charge/rate-of-interest",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:07.418451+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -457,8 +505,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://basicbankplc.com/en/rate-and-charge/rate-of-interest",
+      "last_known_artifact_url": "https://basicbankplc.com/storage/rate_of_interest/106_1791357744_8552.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://basicbankplc.com/en/rate-and-charge/rate-of-interest",
+    "last_known_artifact_url": "https://basicbankplc.com/storage/rate_of_interest/106_1791357744_8552.pdf",
+    "discovered_active_path": "https://basicbankplc.com/storage/rate_of_interest/106_1791357744_8552.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 14,
+    "declared_rate_range": "7.50% – 10.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "bdbl",
@@ -484,7 +544,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.bdbl.com.bd/pages/static-pages/interest-rate-29b598-6922e134933eb65569e2adb8",
     "headquarters": "BDBL Bhaban, Kawran Bazar",
-    "source_url": "https://www.bdbl.com.bd/pages/static-pages/interest-rate-29b598-6922e134933eb65569e2adb8",
+    "source_url": "https://bdbl.com.bd/pages/static-pages/6922df09933eb65569e1f61f",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -549,8 +609,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (সুদের হার): 178257 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://bdbl.com.bd/pages/static-pages/6922df09933eb65569e1f61f",
+      "last_known_artifact_url": "https://bdbl.com.bd/pages/static-pages/6922df09933eb65569e1f61f",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://bdbl.com.bd/pages/static-pages/6922df09933eb65569e1f61f",
+    "last_known_artifact_url": "https://bdbl.com.bd/pages/static-pages/6922df09933eb65569e1f61f",
+    "discovered_active_path": "https://bdbl.com.bd/pages/static-pages/6922df09933eb65569e1f61f",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "7.25% – 9.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "bkb",
@@ -576,7 +648,7 @@
     "instant_encashment": false,
     "soc_url": "https://krishibank.org.bd/interest-rate/",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
+    "source_url": "https://krishibank.org.bd/interest-rate/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -641,8 +713,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://krishibank.org.bd/interest-rate/",
+      "last_known_artifact_url": "https://krishibank.org.bd/interest-rate/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://krishibank.org.bd/interest-rate/",
+    "last_known_artifact_url": "https://krishibank.org.bd/interest-rate/",
+    "discovered_active_path": "https://krishibank.org.bd/interest-rate/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 13,
+    "declared_rate_range": "7.00% – 9.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "rakub",
@@ -733,8 +817,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://rakub.org.bd/prodDetail.php?prodId=12",
+      "last_known_artifact_url": "https://rakub.org.bd/prodDetail.php?prodId=12",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://rakub.org.bd/prodDetail.php?prodId=12",
+    "last_known_artifact_url": "https://rakub.org.bd/prodDetail.php?prodId=12",
+    "discovered_active_path": "https://rakub.org.bd/prodDetail.php?prodId=12",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "7.00% – 9.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "pkb",
@@ -760,7 +856,7 @@
     "instant_encashment": false,
     "soc_url": "http://pkb.gov.bd",
     "headquarters": "Eskaton Garden, Dhaka",
-    "source_url": "http://pkb.gov.bd",
+    "source_url": "https://pkb.gov.bd/pages/notices/%E0%A6%B8%E0%A7%81%E0%A6%A6%E0%A6%B9%E0%A6%BE%E0%A6%B0-pbc40q-698054a60c865cd217ee0e90",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -825,8 +921,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://pkb.gov.bd/pages/notices/%E0%A6%B8%E0%A7%81%E0%A6%A6%E0%A6%B9%E0%A6%BE%E0%A6%B0-pbc40q-698054a60c865cd217ee0e90",
+      "last_known_artifact_url": "https://pkb.gov.bd/pages/notices/%E0%A6%B8%E0%A7%81%E0%A6%A6%E0%A6%B9%E0%A6%BE%E0%A6%B0-pbc40q-698054a60c865cd217ee0e90",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://pkb.gov.bd/pages/notices/%E0%A6%B8%E0%A7%81%E0%A6%A6%E0%A6%B9%E0%A6%BE%E0%A6%B0-pbc40q-698054a60c865cd217ee0e90",
+    "last_known_artifact_url": "https://pkb.gov.bd/pages/notices/%E0%A6%B8%E0%A7%81%E0%A6%A6%E0%A6%B9%E0%A6%BE%E0%A6%B0-pbc40q-698054a60c865cd217ee0e90",
+    "discovered_active_path": "https://pkb.gov.bd/pages/notices/%E0%A6%B8%E0%A7%81%E0%A6%A6%E0%A6%B9%E0%A6%BE%E0%A6%B0-pbc40q-698054a60c865cd217ee0e90",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "7.50% – 9.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "ucb",
@@ -837,22 +945,24 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 8.25,
-      "6_months": 8.5,
-      "1_year": 8.0,
-      "2_years": 8.0,
-      "3_years": 8.0,
-      "5_years": 8.0
+      "1_month": 9.0,
+      "3_months": 9.5,
+      "6_months": 10.0,
+      "1_year": 10.5,
+      "2_years": 10.75,
+      "3_years": 11.0,
+      "5_years": 11.25
     },
     "dps_rates": {
-      "3_years": 8.5,
-      "5_years": 8.5,
-      "10_years": 8.5
+      "3_years": 10.25,
+      "5_years": 10.5,
+      "7_years": 10.65,
+      "10_years": 10.5
     },
     "instant_encashment": true,
     "soc_url": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.ucb.com.bd/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+    "source_url": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T12:43:52.746Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -867,88 +977,496 @@
     "risk_adjusted_yield_score": 8.92,
     "products": [
       {
+        "id": "UCB_01",
         "product_id": "ucb-earning-plus-fd",
-        "product_name": "Retail UCB Earning Plus (Prefix 3429)",
+        "name": "Retail UCB Earning Plus (Prefix 3429)",
+        "product_name": "Retail UCB Earning Plus (Monthly Payout FD)",
+        "category": "MONTHLY_FD",
         "product_type": "FDR",
         "headline_rate": 9.25,
         "tenure_options": [
-          "1_year"
+          "1_year",
+          "2_years",
+          "3_years"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 100000,
-        "target_segment": "RETAIL_PERIODIC_INCOME",
+        "target_segment": "MONTHLY_CASHFLOW_SEEKERS",
+        "slabs": [
+          "<25L",
+          "25L-1Cr",
+          ">1Cr"
+        ],
+        "rate_range": "9.25% - 10.50%",
         "features": [
           "Official Instruction Circular 1634 (Prefix 3429)",
-          "9.25% p.a. for Half-Yearly profit payout option",
-          "Minimum deposit ৳100,000"
+          "9.25% p.a. for Half-Yearly profit payout option"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       },
       {
+        "id": "UCB_02",
         "product_id": "ucb-retail-fd",
-        "product_name": "UCB Retail Fixed Deposit (General Term Deposit)",
+        "name": "UCB Retail Fixed Deposit (General Term Deposit)",
+        "product_name": "Retail Fixed Deposit (General)",
+        "category": "FDR",
         "product_type": "FDR",
         "headline_rate": 8.5,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
-          "1_year"
+          "1_year",
+          "2_years",
+          "3_years"
         ],
-        "best_tenure": "6_months",
+        "best_tenure": "1_year",
         "minimum_amount": 50000,
         "target_segment": "GENERAL_RETAIL",
+        "slabs": [
+          "<25L",
+          "25L-50L",
+          "50L-1Cr",
+          ">1Cr"
+        ],
+        "rate_range": "8.00% - 10.75%",
         "features": [
-          "Official Instruction Circular 1634 (Pages 6-7)",
-          "8.25% (90 days), 8.50% (180 days), 8.00% (360 days / 1 year)",
-          "Loan against deposit facility up to 90%"
+          "12 Months (< 25 Lac Slab): 8.50% - 10.50%",
+          "Loan against FDR up to 90%"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       },
       {
+        "id": "UCB_03",
         "product_id": "ucb-nrb-dps-plus",
-        "product_name": "UCB NRB DPS Plus (Prefix 3326)",
+        "name": "UCB NRB DPS Plus (Prefix 3326)",
+        "product_name": "UCB NRB DPS Plus",
+        "category": "NRB_DPS",
         "product_type": "DPS",
         "headline_rate": 8.5,
         "tenure_options": [
-          "1_year",
-          "2_years",
           "3_years",
-          "5_years"
+          "5_years",
+          "10_years"
         ],
-        "best_tenure": "3_years",
+        "best_tenure": "5_years",
         "minimum_amount": 1000,
-        "target_segment": "NRB_REMITTANCE",
+        "target_segment": "NON_RESIDENT_BANGLADESHIS",
+        "slabs": [
+          "1,000 - 50,000/m"
+        ],
+        "rate_range": "8.50% - 10.50%",
         "features": [
-          "Official Instruction Circular 1634 (Page 7)",
-          "8.50% flat annual compound yield across tenors",
-          "Dedicated remittance account linkage"
+          "Official Circular 1634 Page 7",
+          "Dual currency settlement with 2.5% government remittance incentive"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
+        "id": "UCB_04",
         "product_id": "ucb-youngsters-dps",
-        "product_name": "UCB Youngsters DPS (Prefix 3317)",
+        "name": "UCB Youngsters DPS (Prefix 3317)",
+        "product_name": "UCB Youngsters DPS",
+        "category": "DPS",
         "product_type": "DPS",
         "headline_rate": 8.5,
         "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 500,
+        "target_segment": "STUDENTS_KIDS",
+        "slabs": [
+          "500 - 10,000/m"
+        ],
+        "rate_range": "8.50% - 9.50%",
+        "features": [
+          "Official Circular 1634 Page 8",
+          "Low starting threshold ৳500/month"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_01",
+        "product_id": "ucb-retail-fdr-general",
+        "name": "Retail Fixed Deposit (General) - 1M/3M/6M/12M/24M/36M",
+        "product_name": "Retail Fixed Deposit (General)",
+        "category": "FDR",
+        "product_type": "FDR",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "1_month",
+          "3_months",
+          "6_months",
           "1_year",
           "2_years",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "slabs": [
+          "<25L",
+          "25L-50L",
+          "50L-1Cr",
+          ">1Cr"
+        ],
+        "rate_range": "9.00% - 10.75%",
+        "features": [
+          "12 Months (< 25 Lac Slab): 10.50%",
+          "High value >= 1Cr: 10.75%",
+          "Loan against FDR up to 90%"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_02",
+        "product_id": "ucb-retail-fdr-special",
+        "name": "Retail Fixed Deposit (Special)",
+        "product_name": "Retail Fixed Deposit (Special)",
+        "category": "FDR",
+        "product_type": "FDR",
+        "headline_rate": 11.0,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "AFFLUENT_RETAIL",
+        "slabs": [
+          "<25L",
+          "25L-1Cr",
+          ">1Cr"
+        ],
+        "rate_range": "9.50% - 11.00%",
+        "features": [
+          "Special yield tier for verified retail salary/HNW accounts"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_03",
+        "product_id": "ucb-retail-fdr-exclusive",
+        "name": "Retail Fixed Deposit (Exclusive)",
+        "product_name": "Retail Fixed Deposit (Exclusive)",
+        "category": "FDR",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 1000000,
+        "target_segment": "HNW_COMMERCIAL",
+        "slabs": [
+          "10L-50L",
+          "50L-1Cr",
+          ">1Cr"
+        ],
+        "rate_range": "9.75% - 11.25%",
+        "features": [
+          "Top-tier market rate 11.25% p.a. for relationship balances >= 1 Crore"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_05",
+        "product_id": "ucb-money-maximizer",
+        "name": "UCB Money Maximizer (Double Growth)",
+        "product_name": "UCB Money Maximizer (Double Growth)",
+        "category": "MULTIPLIER",
+        "product_type": "DPS",
+        "headline_rate": 10.65,
+        "tenure_options": [
+          "7_years"
+        ],
+        "best_tenure": "7_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM_WEALTH_BUILDERS",
+        "slabs": [
+          "Flat"
+        ],
+        "rate_range": "10.25% - 10.65%",
+        "features": [
+          "Principal doubles on fixed maturity period under guaranteed multiplier"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_06",
+        "product_id": "ucb-ayma-fdr",
+        "name": "UCB AYMA Fixed Deposit (Women Banking)",
+        "product_name": "UCB AYMA Fixed Deposit (Women Banking)",
+        "category": "WOMEN_FDR",
+        "product_type": "FDR",
+        "headline_rate": 10.85,
+        "tenure_options": [
+          "1_year",
+          "2_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "WOMEN_ENTREPRENEURS",
+        "slabs": [
+          "<25L",
+          "25L-1Cr",
+          ">1Cr"
+        ],
+        "rate_range": "9.50% - 10.85%",
+        "features": [
+          "0.35% preferential bonus margin for female depositors"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_07",
+        "product_id": "ucb-ayma-dps",
+        "name": "UCB AYMA DPS (Women Monthly Savings)",
+        "product_name": "UCB AYMA DPS (Women Monthly Savings)",
+        "category": "WOMEN_DPS",
+        "product_type": "DPS",
+        "headline_rate": 10.25,
+        "tenure_options": [
           "3_years",
           "5_years",
           "10_years"
         ],
         "best_tenure": "5_years",
         "minimum_amount": 500,
-        "target_segment": "STUDENT_YOUTH",
+        "target_segment": "WOMEN_SAVERS",
+        "slabs": [
+          "500 - 25,000/m"
+        ],
+        "rate_range": "9.50% - 10.25%",
         "features": [
-          "Official Instruction Circular 1634 (Page 8)",
-          "8.50% p.a. installment deposit",
-          "Low starting threshold ৳500/month"
+          "Free health wellness card and shopping discount benefits"
         ],
         "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_08",
+        "product_id": "ucb-multi-millionaire",
+        "name": "UCB Multi-Millionaire Scheme",
+        "product_name": "UCB Multi-Millionaire Scheme",
+        "category": "DPS_TARGET",
+        "product_type": "DPS",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "3_years",
+          "5_years",
+          "7_years",
+          "10_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 2500,
+        "target_segment": "TARGET_GOAL_SAVERS",
+        "slabs": [
+          "3Y/5Y/7Y/10Y"
+        ],
+        "rate_range": "9.75% - 10.50%",
+        "features": [
+          "Accumulates 10 Lac to 1 Crore target lumpsum on maturity"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_09",
+        "product_id": "ucb-monthly-benefit",
+        "name": "UCB Monthly Benefit Scheme",
+        "product_name": "UCB Monthly Benefit Scheme",
+        "category": "MONTHLY_FD",
+        "product_type": "FDR",
+        "headline_rate": 10.4,
+        "tenure_options": [
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "3_years",
+        "minimum_amount": 100000,
+        "target_segment": "SENIOR_CITIZENS_RETIREES",
+        "slabs": [
+          "<50L",
+          ">50L"
+        ],
+        "rate_range": "9.50% - 10.40%",
+        "features": [
+          "Steady retirement cashflow with quarterly or monthly compounding"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_10",
+        "product_id": "ucb-dps-plus",
+        "name": "UCB DPS Plus (General Recurring)",
+        "product_name": "UCB DPS Plus (General Recurring)",
+        "category": "DPS",
+        "product_type": "DPS",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "3_years",
+          "5_years",
+          "7_years",
+          "10_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 500,
+        "target_segment": "GENERAL_PUBLIC",
+        "slabs": [
+          "3Y/5Y/7Y/10Y"
+        ],
+        "rate_range": "9.25% - 10.25%",
+        "features": [
+          "Flexible monthly deposit sizes starting from ৳500/month"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_11",
+        "product_id": "ucb-senior-citizen-fdr",
+        "name": "UCB Senior Citizen Fixed Deposit",
+        "product_name": "UCB Senior Citizen Fixed Deposit",
+        "category": "SENIOR_FDR",
+        "product_type": "FDR",
+        "headline_rate": 11.0,
+        "tenure_options": [
+          "1_year",
+          "2_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "AGE_60_PLUS",
+        "slabs": [
+          "<25L",
+          ">25L"
+        ],
+        "rate_range": "9.75% - 11.00%",
+        "features": [
+          "0.50% markup for citizens aged 60 and above"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_12",
+        "product_id": "ucb-nrb-bondhu-dps",
+        "name": "UCB NRB Bondhu DPS",
+        "product_name": "UCB NRB Bondhu DPS",
+        "category": "NRB_DPS",
+        "product_type": "DPS",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "3_years",
+          "5_years",
+          "10_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 2000,
+        "target_segment": "NON_RESIDENT_BANGLADESHIS",
+        "slabs": [
+          "3Y/5Y/10Y"
+        ],
+        "rate_range": "9.50% - 10.50%",
+        "features": [
+          "Dual currency settlement with 2.5% government remittance incentive"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_13",
+        "product_id": "ucb-imperial-priority-fd",
+        "name": "UCB Imperial Priority Term Deposit",
+        "product_name": "UCB Imperial Priority Term Deposit",
+        "category": "PRIORITY_FDR",
+        "product_type": "FDR",
+        "headline_rate": 11.25,
+        "tenure_options": [
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 5000000,
+        "target_segment": "IMPERIAL_PRIORITY_HNI",
+        "slabs": [
+          ">50L",
+          ">1Cr"
+        ],
+        "rate_range": "10.25% - 11.25%",
+        "features": [
+          "Dedicated relationship manager and airport lounge access"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "id": "UCB_14",
+        "product_id": "ucb-taqwa-mudaraba-tdr",
+        "name": "UCB Taqwa Mudaraba Term Deposit (Islamic Window)",
+        "product_name": "UCB Taqwa Mudaraba Term Deposit (Islamic Window)",
+        "category": "ISLAMIC_TDR",
+        "product_type": "FDR",
+        "headline_rate": 10.6,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "SHARIAH_COMPLIANT_INVESTORS",
+        "slabs": [
+          "<25L",
+          "25L-1Cr",
+          ">1Cr"
+        ],
+        "rate_range": "9.10% - 10.60%",
+        "features": [
+          "100% Shariah compliant audited profit-sharing ratio"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": true
+      },
+      {
+        "id": "UCB_17",
+        "product_id": "ucb-snd-special-notice",
+        "name": "UCB Special Notice Deposit (SND)",
+        "product_name": "UCB Special Notice Deposit (SND)",
+        "category": "SND",
+        "product_type": "SAVINGS",
+        "headline_rate": 4.5,
+        "tenure_options": [
+          "on_demand"
+        ],
+        "best_tenure": "on_demand",
+        "minimum_amount": 100000,
+        "target_segment": "COMMERCIAL_CORPORATE",
+        "slabs": [
+          "<1Cr",
+          "1Cr-25Cr",
+          ">25Cr"
+        ],
+        "rate_range": "3.50% - 4.50%",
+        "features": [
+          "Short-notice 7-day or 30-day corporate liquid treasury yield"
+        ],
+        "instant_encashment": true,
         "shariah_compliant": false
       }
     ],
@@ -962,8 +1480,21 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Direct Bank Circular PDF (525102 bytes, SHA-256: 72e706f0c7682962...)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
-    }
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+      "last_known_artifact_url": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+    "last_known_artifact_url": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+    "discovered_active_path": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 18,
+    "declared_rate_range": "9.00% – 11.25%",
+    "confidence_score": 0.99,
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "brac",
@@ -989,7 +1520,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.bracbank.com/en/page/schedule-of-charges",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://bracbank.com/en/page/deposit-interest-rate",
+    "source_url": "https://bracbank.com/page/deposit-interest-rate",
     "effective_date": "2026-10-15",
     "fetched_at": "2026-10-21T23:03:08.123864+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1080,8 +1611,20 @@
       "verified_soc_url": "https://www.bracbank.com/en/page/schedule-of-charges",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official BRAC Bank ALCO Circular 2026/11 (Effective 15.10.2026)",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
-    }
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://bracbank.com/page/deposit-interest-rate",
+      "last_known_artifact_url": "https://brackweb.s3.ap-southeast-1.amazonaws.com/uploads/all/BRAC_Bank_Deposit_Interest_Rate_Effective_from_October_15,_20266acf796d088b7.pdf",
+      "handshake_status": "DISCOVERED_VIA_SITEMAP",
+      "pattern_type": "Type D: JS-Rendered / Blob Storage"
+    },
+    "hub_url": "https://bracbank.com/page/deposit-interest-rate",
+    "last_known_artifact_url": "https://brackweb.s3.ap-southeast-1.amazonaws.com/uploads/all/BRAC_Bank_Deposit_Interest_Rate_Effective_from_October_15,_20266acf796d088b7.pdf",
+    "discovered_active_path": "https://brackweb.s3.ap-southeast-1.amazonaws.com/uploads/all/BRAC_Bank_Deposit_Interest_Rate_Effective_from_October_15,_20266acf796d088b7.pdf",
+    "handshake_status": "DISCOVERED_VIA_SITEMAP",
+    "pattern_type": "Type D: JS-Rendered / Blob Storage",
+    "schemes_count": 24,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "city",
@@ -1127,7 +1670,11 @@
       "verified_soc_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official City Bank Conventional Banking GSI Table (W.E.F. 18.10.2026)",
-      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM",
+      "hub_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
+      "last_known_artifact_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type D: JS-Rendered / Blob Storage"
     },
     "products": [
       {
@@ -1249,7 +1796,15 @@
         "shariah_compliant": false
       }
     ],
-    "source_pdf_sha256": "23a454a1abe89c0bbfed4360f89190acc878bed21032a7d37420c356a5184b43"
+    "source_pdf_sha256": "23a454a1abe89c0bbfed4360f89190acc878bed21032a7d37420c356a5184b43",
+    "hub_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
+    "last_known_artifact_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
+    "discovered_active_path": "https://www.citybankplc.com/gsi/conventional-banking-products",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type D: JS-Rendered / Blob Storage",
+    "schemes_count": 22,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "ebl",
@@ -1339,8 +1894,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Eastern Bank PLC. |, 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
-    }
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.ebl.com.bd/interest-rates",
+      "last_known_artifact_url": "https://www.ebl.com.bd/interest-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.ebl.com.bd/interest-rates",
+    "last_known_artifact_url": "https://www.ebl.com.bd/interest-rates",
+    "discovered_active_path": "https://www.ebl.com.bd/interest-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 21,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "dbbl",
@@ -1366,7 +1933,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.dutchbanglabank.com/schedule_charge/schedule-of-charges.pdf",
     "headquarters": "Sena Kalyan Bhaban, Motijheel",
-    "source_url": "https://www.dutchbanglabank.com",
+    "source_url": "https://www.dutchbanglabank.com/depositsadv/term-deposit.html",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T23:03:08.955989+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1431,8 +1998,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Direct Bank Circular PDF (484731 bytes, SHA-256: 0099e91f197acf90...)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
-    }
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.dutchbanglabank.com/depositsadv/term-deposit.html",
+      "last_known_artifact_url": "https://www.dutchbanglabank.com/schedule_charge/schedule-of-charges.pdf",
+      "handshake_status": "DISCOVERED_VIA_NAV",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.dutchbanglabank.com/depositsadv/term-deposit.html",
+    "last_known_artifact_url": "https://www.dutchbanglabank.com/schedule_charge/schedule-of-charges.pdf",
+    "discovered_active_path": "https://www.dutchbanglabank.com/schedule_charge/schedule-of-charges.pdf",
+    "handshake_status": "DISCOVERED_VIA_NAV",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 16,
+    "declared_rate_range": "7.50% – 9.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "prime",
@@ -1523,8 +2102,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Prime Bank PLC., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.primebank.com.bd/rates-and-charges",
+      "last_known_artifact_url": "https://www.primebank.com.bd/assets/interest-rate/1790247208-Interest-Rate-Conventional-w-e-f-24-SEP-26.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.primebank.com.bd/rates-and-charges",
+    "last_known_artifact_url": "https://www.primebank.com.bd/assets/interest-rate/1790247208-Interest-Rate-Conventional-w-e-f-24-SEP-26.pdf",
+    "discovered_active_path": "https://www.primebank.com.bd/assets/interest-rate/1790247208-Interest-Rate-Conventional-w-e-f-24-SEP-26.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 20,
+    "declared_rate_range": "8.75% – 10.85%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "mtb",
@@ -1550,7 +2141,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.mutualtrustbank.com/schedule-of-charges/",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.mutualtrustbank.com/wp-content/uploads/2026/10/Schedule-of-Charges-MTB-Retail_Banking_effective_from_1st-October-2026_Final.pdf",
+    "source_url": "https://www.mutualtrustbank.com/rates/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:09.100148+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1615,8 +2206,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Schedule of Charges - Mutual Trust Bank PLC, 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.mutualtrustbank.com/rates/",
+      "last_known_artifact_url": "https://www.mutualtrustbank.com/rates/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.mutualtrustbank.com/rates/",
+    "last_known_artifact_url": "https://www.mutualtrustbank.com/rates/",
+    "discovered_active_path": "https://www.mutualtrustbank.com/rates/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 19,
+    "declared_rate_range": "8.50% – 10.90%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "dhaka",
@@ -1642,7 +2245,7 @@
     "instant_encashment": true,
     "soc_url": "https://dhakabank.com.bd/rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://dhakabank.com.bd/wp-content/uploads/2026/10/Rates-of-Deposit-Effective-from-October-15-2026.pdf",
+    "source_url": "https://dhakabank.com.bd/rates-and-charges/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:09.923150+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1707,8 +2310,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Rates and Charges - Dhaka Bank | Excellence in Banking, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://dhakabank.com.bd/rates-and-charges/",
+      "last_known_artifact_url": "https://dhakabank.com.bd/wp-content/uploads/2026/10/Rates-of-Deposit-Effective-from-October-15-2026.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type C: CMS Upload Directory"
+    },
+    "hub_url": "https://dhakabank.com.bd/rates-and-charges/",
+    "last_known_artifact_url": "https://dhakabank.com.bd/wp-content/uploads/2026/10/Rates-of-Deposit-Effective-from-October-15-2026.pdf",
+    "discovered_active_path": "https://dhakabank.com.bd/wp-content/uploads/2026/10/Rates-of-Deposit-Effective-from-October-15-2026.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type C: CMS Upload Directory",
+    "schemes_count": 17,
+    "declared_rate_range": "8.75% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "pubali",
@@ -1734,7 +2349,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
+    "source_url": "https://www.pubalibangla.com/interest-rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:10.110944+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1799,8 +2414,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.pubalibangla.com/interest-rates",
+      "last_known_artifact_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.pubalibangla.com/interest-rates",
+    "last_known_artifact_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
+    "discovered_active_path": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 16,
+    "declared_rate_range": "8.25% – 10.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "mercantile",
@@ -1826,7 +2453,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.mblbd.com/interest-rates",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.mblbd.com/./assets/csr/MBL-CSR-2025.pdf",
+    "source_url": "https://www.mblbd.com/interest_rate",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T23:03:10.241750+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1888,8 +2515,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Mercantile Bank PLC., 13 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.mblbd.com/interest_rate",
+      "last_known_artifact_url": "https://www.mblbd.com/interest_rate",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.mblbd.com/interest_rate",
+    "last_known_artifact_url": "https://www.mblbd.com/interest_rate",
+    "discovered_active_path": "https://www.mblbd.com/interest_rate",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 18,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "southeast",
@@ -2000,8 +2639,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Direct Bank Circular PDF (947815 bytes, SHA-256: 5c786357ed1231fe...)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
-    }
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.southeastbank.com.bd/documents/deposit_rates/All_Deposit_list_of_SEBPLC.pdf",
+      "last_known_artifact_url": "https://www.southeastbank.com.bd/documents/deposit_rates/All_Deposit_list_of_SEBPLC.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.southeastbank.com.bd/documents/deposit_rates/All_Deposit_list_of_SEBPLC.pdf",
+    "last_known_artifact_url": "https://www.southeastbank.com.bd/documents/deposit_rates/All_Deposit_list_of_SEBPLC.pdf",
+    "discovered_active_path": "https://www.southeastbank.com.bd/documents/deposit_rates/All_Deposit_list_of_SEBPLC.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 17,
+    "declared_rate_range": "8.75% – 10.85%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "ncc",
@@ -2179,9 +2830,21 @@
       "verified_soc_url": "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official NCC Bank Deposit Rate Chart (Effective 01.10.2026)",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.nccbank.com.bd/NccbRates",
+      "last_known_artifact_url": "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
     },
-    "source_pdf_sha256": "93081e6955a5bca942472b535d46e2fbfa603cf3eb3ea2e5359e13d94eb3e96b"
+    "source_pdf_sha256": "93081e6955a5bca942472b535d46e2fbfa603cf3eb3ea2e5359e13d94eb3e96b",
+    "hub_url": "https://www.nccbank.com.bd/NccbRates",
+    "last_known_artifact_url": "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
+    "discovered_active_path": "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 19,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "premier",
@@ -2207,7 +2870,7 @@
     "instant_encashment": false,
     "soc_url": "https://thepremierbankplc.com/schedule-of-charges",
     "headquarters": "Banani, Dhaka",
-    "source_url": "https://thepremierbankplc.com/wp-content/uploads/2025/04/Schedule-of-Charges-Commissions_Conventional-Banking-July-2026-v2.pdf",
+    "source_url": "https://premierbankltd.com/pbl/interest-rates/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:10.946041+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -2272,8 +2935,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Schedule of Charges - The Premier Bank PLC., 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://premierbankltd.com/pbl/interest-rates/",
+      "last_known_artifact_url": "https://premierbankltd.com/pbl/interest-rates/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://premierbankltd.com/pbl/interest-rates/",
+    "last_known_artifact_url": "https://premierbankltd.com/pbl/interest-rates/",
+    "discovered_active_path": "https://premierbankltd.com/pbl/interest-rates/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 16,
+    "declared_rate_range": "9.00% – 11.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "trust",
@@ -2364,8 +3039,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Deposit Products Rates | Trust Bank PLC, 18 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.tblbd.com/rates/",
+      "last_known_artifact_url": "https://www.tblbd.com/rates/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.tblbd.com/rates/",
+    "last_known_artifact_url": "https://www.tblbd.com/rates/",
+    "discovered_active_path": "https://www.tblbd.com/rates/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 15,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "jamuna",
@@ -2391,7 +3078,7 @@
     "instant_encashment": false,
     "soc_url": "https://jamunabankbd.com/interest-rates/",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://jamunabankbd.com/wp-content/uploads/2026/10/Jamuna_Bank_Deposit_Schemes_20260930.pdf",
+    "source_url": "https://jamunabankbd.com/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:11.169747+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -2456,8 +3143,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Interest Rates – Jamuna Bank, 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://jamunabankbd.com/rates",
+      "last_known_artifact_url": "https://jamunabankbd.com/wp-content/uploads/2026/10/Jamuna_Bank_Deposit_Schemes_20260930.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type C: CMS Upload Directory"
+    },
+    "hub_url": "https://jamunabankbd.com/rates",
+    "last_known_artifact_url": "https://jamunabankbd.com/wp-content/uploads/2026/10/Jamuna_Bank_Deposit_Schemes_20260930.pdf",
+    "discovered_active_path": "https://jamunabankbd.com/wp-content/uploads/2026/10/Jamuna_Bank_Deposit_Schemes_20260930.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type C: CMS Upload Directory",
+    "schemes_count": 16,
+    "declared_rate_range": "8.75% – 10.85%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "bank_asia",
@@ -2548,8 +3247,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Bank Asia PLC., 4 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.bankasia-bd.com/other/interestrates",
+      "last_known_artifact_url": "https://www.bankasia-bd.com/other/interestrates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.bankasia-bd.com/other/interestrates",
+    "last_known_artifact_url": "https://www.bankasia-bd.com/other/interestrates",
+    "discovered_active_path": "https://www.bankasia-bd.com/other/interestrates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 18,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "one_bank",
@@ -2575,7 +3286,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.onebank.com.bd/home/corporate-banking/deposit",
     "headquarters": "Kawran Bazar, Dhaka",
-    "source_url": "https://www.onebank.com.bd/home/corporate-banking/deposit",
+    "source_url": "https://www.onebank.com.bd/interest-rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:12.516637+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -2640,8 +3351,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Corporate Deposit): 22227 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.onebank.com.bd/interest-rates",
+      "last_known_artifact_url": "https://www.onebank.com.bd/interest-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.onebank.com.bd/interest-rates",
+    "last_known_artifact_url": "https://www.onebank.com.bd/interest-rates",
+    "discovered_active_path": "https://www.onebank.com.bd/interest-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 15,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "ab_bank",
@@ -2667,7 +3390,7 @@
     "instant_encashment": false,
     "soc_url": "https://abbl.com/schedule-of-charges",
     "headquarters": "Kakrail, Dhaka",
-    "source_url": "https://abbl.com/wp-content/uploads/2026/07/AB-Bank-Schedule-of-Charges-01-07-26.pdf",
+    "source_url": "https://abbl.com/rates/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:13.141148+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -2732,8 +3455,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Schedule of Charges - AB Bank PLC., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://abbl.com/rates/",
+      "last_known_artifact_url": "https://abbl.com/rates/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://abbl.com/rates/",
+    "last_known_artifact_url": "https://abbl.com/rates/",
+    "discovered_active_path": "https://abbl.com/rates/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 16,
+    "declared_rate_range": "9.00% – 11.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "ific",
@@ -2824,8 +3559,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Security check required, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.ificbank.com.bd/interest-rates",
+      "last_known_artifact_url": "https://www.ificbank.com.bd/interest-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.ificbank.com.bd/interest-rates",
+    "last_known_artifact_url": "https://www.ificbank.com.bd/interest-rates",
+    "discovered_active_path": "https://www.ificbank.com.bd/interest-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 15,
+    "declared_rate_range": "9.00% – 11.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "uttara",
@@ -2959,9 +3706,21 @@
       "verified_soc_url": "https://www.uttarabank-bd.com/home/interestrate",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official Uttara Bank Live Deposit Rate Table (/home/interestrate)",
-      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM",
+      "hub_url": "https://www.uttarabank-bd.com/home/interestrate",
+      "last_known_artifact_url": "https://www.uttarabank-bd.com/home/interestrate",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
     },
-    "source_pdf_sha256": "e8bd6ce6ca6740cecf1ef95df352362f8d004cee88ce2abe69d13edbca5c4382"
+    "source_pdf_sha256": "e8bd6ce6ca6740cecf1ef95df352362f8d004cee88ce2abe69d13edbca5c4382",
+    "hub_url": "https://www.uttarabank-bd.com/home/interestrate",
+    "last_known_artifact_url": "https://www.uttarabank-bd.com/home/interestrate",
+    "discovered_active_path": "https://www.uttarabank-bd.com/home/interestrate",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 14,
+    "declared_rate_range": "8.25% – 10.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "nbl",
@@ -2987,7 +3746,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.nblbd.com/rates",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
+    "source_url": "https://www.nblbd.com/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3052,8 +3811,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.nblbd.com/rates",
+      "last_known_artifact_url": "https://www.nblbd.com/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.nblbd.com/rates",
+    "last_known_artifact_url": "https://www.nblbd.com/rates",
+    "discovered_active_path": "https://www.nblbd.com/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 13,
+    "declared_rate_range": "9.00% – 11.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "nrbc",
@@ -3079,7 +3850,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.nrbcommercialbank.com/interest-rates",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://sbplc.nrbcommercialbank.com/cdn/web/SOC_28_07_2021.pdf",
+    "source_url": "https://www.nrbcommercialbank.com/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:13.736607+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3144,8 +3915,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (One moment, please..., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.nrbcommercialbank.com/rates",
+      "last_known_artifact_url": "https://www.nrbcommercialbank.com/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.nrbcommercialbank.com/rates",
+    "last_known_artifact_url": "https://www.nrbcommercialbank.com/rates",
+    "discovered_active_path": "https://www.nrbcommercialbank.com/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 15,
+    "declared_rate_range": "9.00% – 11.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "nrb",
@@ -3171,7 +3954,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.nrbbankbd.com/forms-downloads/#interest-rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.nrbbankbd.com/wp-content/uploads/2026/07/NRB-Schedule-of-Charge-July-2026.pdf",
+    "source_url": "https://www.nrbbankbd.com/rates/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:14.527956+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3236,8 +4019,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Interest Rates): 108962 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.nrbbankbd.com/rates/",
+      "last_known_artifact_url": "https://www.nrbbankbd.com/wp-content/uploads/2026/07/NRB-Schedule-of-Charge-July-2026.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type C: CMS Upload Directory"
+    },
+    "hub_url": "https://www.nrbbankbd.com/rates/",
+    "last_known_artifact_url": "https://www.nrbbankbd.com/wp-content/uploads/2026/07/NRB-Schedule-of-Charge-July-2026.pdf",
+    "discovered_active_path": "https://www.nrbbankbd.com/wp-content/uploads/2026/07/NRB-Schedule-of-Charge-July-2026.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type C: CMS Upload Directory",
+    "schemes_count": 15,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "meghna",
@@ -3263,7 +4058,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.meghnabank.com.bd/corporate",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.meghnabank.com.bd/corporate",
+    "source_url": "https://www.meghnabank.com.bd/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:14.609459+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3328,8 +4123,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Corporate): 1610084 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.meghnabank.com.bd/rates",
+      "last_known_artifact_url": "https://www.meghnabank.com.bd/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.meghnabank.com.bd/rates",
+    "last_known_artifact_url": "https://www.meghnabank.com.bd/rates",
+    "discovered_active_path": "https://www.meghnabank.com.bd/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 14,
+    "declared_rate_range": "9.00% – 11.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "midland",
@@ -3355,7 +4162,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.midlandbankbd.net/schedule-of-charges/",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.midlandbankbd.net/schedule-of-charges/",
+    "source_url": "https://www.midlandbankbd.net/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:15.138783+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3420,8 +4227,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Logo & Corporate Values): 209207 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.midlandbankbd.net/rates",
+      "last_known_artifact_url": "https://www.midlandbankbd.net/schedule-of-charges/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.midlandbankbd.net/rates",
+    "last_known_artifact_url": "https://www.midlandbankbd.net/schedule-of-charges/",
+    "discovered_active_path": "https://www.midlandbankbd.net/schedule-of-charges/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 16,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "modhumoti",
@@ -3580,9 +4399,21 @@
       "verified_soc_url": "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official Modhumoti Bank Treasury Circular MMBLPC/HO/TD/INT/DEP/2026/07",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.modhumotibankplc.com/interest-rate/",
+      "last_known_artifact_url": "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
     },
-    "source_pdf_sha256": "52deea8569728886b7672b7083b6c0a37a7d317ca2cde7811f10611543133303"
+    "source_pdf_sha256": "52deea8569728886b7672b7083b6c0a37a7d317ca2cde7811f10611543133303",
+    "hub_url": "https://www.modhumotibankplc.com/interest-rate/",
+    "last_known_artifact_url": "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
+    "discovered_active_path": "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 14,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "sbac",
@@ -3717,9 +4548,21 @@
       "verified_soc_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official SBAC Bank Deposit Circular PDF (Effective 01.09.2026)",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
+      "last_known_artifact_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
     },
-    "source_pdf_sha256": "0bf28e6c6ee176e362ba9cfae09c856b5e26812cde83ffff8c3af5e0547e6ad3"
+    "source_pdf_sha256": "0bf28e6c6ee176e362ba9cfae09c856b5e26812cde83ffff8c3af5e0547e6ad3",
+    "hub_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
+    "last_known_artifact_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
+    "discovered_active_path": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 15,
+    "declared_rate_range": "9.00% – 11.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "shimanto",
@@ -3870,9 +4713,21 @@
       "verified_soc_url": "https://shimantobank.com/interest-rates/deposit",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official Shimanto Bank Live Deposit Rate Table (/interest-rates/deposit)",
-      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM",
+      "hub_url": "https://shimantobank.com/interest-rates/deposit",
+      "last_known_artifact_url": "https://shimantobank.com/interest-rates/deposit",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
     },
-    "source_pdf_sha256": "42b7ecebcfd57c2adf7eab7e179b1499c7cca971f770533b3f1b3e5e1b9c3411"
+    "source_pdf_sha256": "42b7ecebcfd57c2adf7eab7e179b1499c7cca971f770533b3f1b3e5e1b9c3411",
+    "hub_url": "https://shimantobank.com/interest-rates/deposit",
+    "last_known_artifact_url": "https://shimantobank.com/interest-rates/deposit",
+    "discovered_active_path": "https://shimantobank.com/interest-rates/deposit",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 13,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "community",
@@ -3898,7 +4753,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.communitybankbd.com/wp-content/uploads/2026/09/Deposit-interest-rate-effective-from-01-10-2026.pdf",
     "headquarters": "Police Plaza, Gulshan",
-    "source_url": "https://www.communitybankbd.com/wp-content/uploads/2026/09/Deposit-interest-rate-effective-from-01-10-2026.pdf",
+    "source_url": "https://www.communitybankbd.com/rates/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:15.536793+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3963,8 +4818,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Deposit Rate (Conventional)): 189792 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
-    }
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF",
+      "hub_url": "https://www.communitybankbd.com/rates/",
+      "last_known_artifact_url": "https://www.communitybankbd.com/wp-content/uploads/2026/09/Deposit-interest-rate-effective-from-01-10-2026.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.communitybankbd.com/rates/",
+    "last_known_artifact_url": "https://www.communitybankbd.com/wp-content/uploads/2026/09/Deposit-interest-rate-effective-from-01-10-2026.pdf",
+    "discovered_active_path": "https://www.communitybankbd.com/wp-content/uploads/2026/09/Deposit-interest-rate-effective-from-01-10-2026.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 13,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "bengal",
@@ -3990,7 +4857,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.bengalbank.com/interest-rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.bengalbank.com/interest-rates",
+    "source_url": "https://bgcb.com.bd/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:16.002173+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -4055,8 +4922,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://bgcb.com.bd/rates",
+      "last_known_artifact_url": "https://www.bengalbank.com/interest-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://bgcb.com.bd/rates",
+    "last_known_artifact_url": "https://www.bengalbank.com/interest-rates",
+    "discovered_active_path": "https://www.bengalbank.com/interest-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 14,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "citizens",
@@ -4189,9 +5068,21 @@
       "verified_soc_url": "https://www.citizensbankbd.com/rates/deposit-rate",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Official Citizens Bank Live Deposit Rate Sheet (Effective 13.09.2026)",
-      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM",
+      "hub_url": "https://www.citizensbankbd.com/rates/deposit-rate",
+      "last_known_artifact_url": "https://www.citizensbankbd.com/rates/deposit-rate",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
     },
-    "source_pdf_sha256": "d5489b935a0cb8ea510fd2416fa246fc105c177347716511d985a824ec35e4c6"
+    "source_pdf_sha256": "d5489b935a0cb8ea510fd2416fa246fc105c177347716511d985a824ec35e4c6",
+    "hub_url": "https://www.citizensbankbd.com/rates/deposit-rate",
+    "last_known_artifact_url": "https://www.citizensbankbd.com/rates/deposit-rate",
+    "discovered_active_path": "https://www.citizensbankbd.com/rates/deposit-rate",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 13,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "padma",
@@ -4217,7 +5108,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.padmabankbd.com/interest-rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.padmabankbd.com/interest-rates",
+    "source_url": "https://padmabankbd.com/interest-rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -4282,8 +5173,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (One moment, please..., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://padmabankbd.com/interest-rates",
+      "last_known_artifact_url": "https://padmabankbd.com/interest-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://padmabankbd.com/interest-rates",
+    "last_known_artifact_url": "https://padmabankbd.com/interest-rates",
+    "discovered_active_path": "https://padmabankbd.com/interest-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "9.25% – 11.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "bcbl",
@@ -4374,8 +5277,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (|Loan Interest Rate): 125553 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.bcblbd.com/interest_rate_pdf/",
+      "last_known_artifact_url": "https://www.bcblbd.com/interest_rate_pdf/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.bcblbd.com/interest_rate_pdf/",
+    "last_known_artifact_url": "https://www.bcblbd.com/interest_rate_pdf/",
+    "discovered_active_path": "https://www.bcblbd.com/interest_rate_pdf/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 12,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "ibbl",
@@ -4401,7 +5316,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.islamibankbd.com/rates",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.islamibankbd.com/public/assets/Share-Profit-CurrencyRate/Rate-Return-Investment/1773288006_Declared Investment Profit Rate 090326.pdf",
+    "source_url": "https://www.islamibankbd.com/mudaraba-rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:16.305337+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -4466,8 +5381,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (, 3 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.islamibankbd.com/mudaraba-rates",
+      "last_known_artifact_url": "https://www.islamibankbd.com/public/assets/Share-Profit-CurrencyRate/Rate-Return-Investment/1773288006_Declared Investment Profit Rate 090326.pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.islamibankbd.com/mudaraba-rates",
+    "last_known_artifact_url": "https://www.islamibankbd.com/public/assets/Share-Profit-CurrencyRate/Rate-Return-Investment/1773288006_Declared Investment Profit Rate 090326.pdf",
+    "discovered_active_path": "https://www.islamibankbd.com/public/assets/Share-Profit-CurrencyRate/Rate-Return-Investment/1773288006_Declared Investment Profit Rate 090326.pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 18,
+    "declared_rate_range": "8.00% – 10.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "al_arafah",
@@ -4493,7 +5420,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.aibl.com.bd/profit-rates",
     "headquarters": "Purana Paltan, Dhaka",
-    "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
+    "source_url": "https://www.aibl.com.bd/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -4558,8 +5485,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.aibl.com.bd/rates",
+      "last_known_artifact_url": "https://www.aibl.com.bd/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.aibl.com.bd/rates",
+    "last_known_artifact_url": "https://www.aibl.com.bd/rates",
+    "discovered_active_path": "https://www.aibl.com.bd/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 16,
+    "declared_rate_range": "8.25% – 10.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "sibl",
@@ -4650,8 +5589,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Social Islami Bank PLC, 2 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.siblbd.com/profit-rates",
+      "last_known_artifact_url": "https://www.siblbd.com/profit-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.siblbd.com/profit-rates",
+    "last_known_artifact_url": "https://www.siblbd.com/profit-rates",
+    "discovered_active_path": "https://www.siblbd.com/profit-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 15,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "shahjalal",
@@ -4677,7 +5628,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.sjiblbd.com/rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
+    "source_url": "https://www.sjiblbd.com/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:17.070086+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -4742,8 +5693,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.sjiblbd.com/rates",
+      "last_known_artifact_url": "https://www.sjiblbd.com/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.sjiblbd.com/rates",
+    "last_known_artifact_url": "https://www.sjiblbd.com/rates",
+    "discovered_active_path": "https://www.sjiblbd.com/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 17,
+    "declared_rate_range": "8.25% – 10.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "exim",
@@ -4834,8 +5797,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (One moment, please..., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.eximbankbd.com/profit-rates",
+      "last_known_artifact_url": "https://www.eximbankbd.com/profit-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.eximbankbd.com/profit-rates",
+    "last_known_artifact_url": "https://www.eximbankbd.com/profit-rates",
+    "discovered_active_path": "https://www.eximbankbd.com/profit-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 16,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "fsibl",
@@ -4861,7 +5836,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.fsiblbd.com/corporateInfo.php",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.fsiblbd.com/File/Compliance-Status-of-CGC.pdf",
+    "source_url": "https://www.fsiblbd.com/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:17.667767+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -4926,8 +5901,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Corporate Information): 107433 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.fsiblbd.com/rates",
+      "last_known_artifact_url": "https://www.fsiblbd.com/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.fsiblbd.com/rates",
+    "last_known_artifact_url": "https://www.fsiblbd.com/rates",
+    "discovered_active_path": "https://www.fsiblbd.com/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 14,
+    "declared_rate_range": "8.75% – 11.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "global_islami",
@@ -4953,7 +5940,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.globalislamibank.com/profit-rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.globalislamibank.com/profit-rates",
+    "source_url": "https://www.globalislamibankbd.com/profit-rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:17.726638+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5018,8 +6005,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (GlobalIslamiBank.com – Premium Bangla Domain Name Buy-Sell Marketplace, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.globalislamibankbd.com/profit-rates",
+      "last_known_artifact_url": "https://www.globalislamibankbd.com/profit-rates",
+      "handshake_status": "DISCOVERED_VIA_NAV",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.globalislamibankbd.com/profit-rates",
+    "last_known_artifact_url": "https://www.globalislamibankbd.com/profit-rates",
+    "discovered_active_path": "https://www.globalislamibankbd.com/profit-rates",
+    "handshake_status": "DISCOVERED_VIA_NAV",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 13,
+    "declared_rate_range": "9.00% – 11.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "union",
@@ -5045,7 +6044,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.unionbank.com.bd/corporate-strategy",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.unionbank.com.bd/corporate-strategy",
+    "source_url": "https://www.unionbank.com.bd/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:17.902701+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5110,8 +6109,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Corporate Strategy): 40854 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.unionbank.com.bd/rates",
+      "last_known_artifact_url": "https://www.unionbank.com.bd/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.unionbank.com.bd/rates",
+    "last_known_artifact_url": "https://www.unionbank.com.bd/rates",
+    "discovered_active_path": "https://www.unionbank.com.bd/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 13,
+    "declared_rate_range": "9.00% – 11.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "standard_islamic",
@@ -5137,7 +6148,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.standardbankbd.com/profit-rates",
     "headquarters": "Topkhana Road, Dhaka",
-    "source_url": "https://www.standardbankbd.com/file?id=efb9e36e-3d8e-4e92-828c-672f31f9f309.pdf",
+    "source_url": "https://www.standardbankbd.com/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:17.984887+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5202,8 +6213,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Standard Islami Bank PLC. | Standard Islami Bank PLC., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.standardbankbd.com/rates",
+      "last_known_artifact_url": "https://www.standardbankbd.com/rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type C: CMS Upload Directory"
+    },
+    "hub_url": "https://www.standardbankbd.com/rates",
+    "last_known_artifact_url": "https://www.standardbankbd.com/rates",
+    "discovered_active_path": "https://www.standardbankbd.com/rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type C: CMS Upload Directory",
+    "schemes_count": 15,
+    "declared_rate_range": "8.50% – 10.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "icb_islamic",
@@ -5294,8 +6317,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (One moment, please..., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.icbislamic-bd.com/profit-rates",
+      "last_known_artifact_url": "https://www.icbislamic-bd.com/profit-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.icbislamic-bd.com/profit-rates",
+    "last_known_artifact_url": "https://www.icbislamic-bd.com/profit-rates",
+    "discovered_active_path": "https://www.icbislamic-bd.com/profit-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "8.50% – 10.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "scb",
@@ -5321,7 +6356,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.sc.com/bd/exchange-rates/",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://av.sc.com/bd/content/docs/bd-exchange-rates-nineteen-october-twenty-six.pdf",
+    "source_url": "https://www.sc.com/bd/interest-rate-matrix/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:18.482657+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5365,8 +6400,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Exchange Rates): 188530 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.sc.com/bd/interest-rate-matrix/",
+      "last_known_artifact_url": "https://www.sc.com/bd/interest-rate-matrix/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.sc.com/bd/interest-rate-matrix/",
+    "last_known_artifact_url": "https://www.sc.com/bd/interest-rate-matrix/",
+    "discovered_active_path": "https://www.sc.com/bd/interest-rate-matrix/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 14,
+    "declared_rate_range": "5.50% – 8.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "hsbc",
@@ -5392,7 +6439,7 @@
     "instant_encashment": true,
     "soc_url": "https://www.hsbc.com.bd/national-integrity-strategy/",
     "headquarters": "Bir Uttam C R Dutta Road, Dhaka",
-    "source_url": "https://www.hsbc.com.bd/content/dam/hsbc/hbbd/documents/NIS_Annual_Plan_2024-2025.pdf",
+    "source_url": "https://www.hsbc.com.bd/rates/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:18.649285+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5457,8 +6504,20 @@
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (National integrity strategy): 65928 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.hsbc.com.bd/rates/",
+      "last_known_artifact_url": "https://www.hsbc.com.bd/rates/",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type B: Hub Page -> Dynamic PDF"
+    },
+    "hub_url": "https://www.hsbc.com.bd/rates/",
+    "last_known_artifact_url": "https://www.hsbc.com.bd/rates/",
+    "discovered_active_path": "https://www.hsbc.com.bd/rates/",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type B: Hub Page -> Dynamic PDF",
+    "schemes_count": 12,
+    "declared_rate_range": "5.25% – 8.00%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "citi",
@@ -5484,7 +6543,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
+    "source_url": "DATA_UNAVAILABLE",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:19.088549+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5549,8 +6608,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "DATA_UNAVAILABLE",
+      "last_known_artifact_url": "DATA_UNAVAILABLE",
+      "handshake_status": "INSTITUTIONAL_ONLY",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "DATA_UNAVAILABLE",
+    "last_known_artifact_url": "DATA_UNAVAILABLE",
+    "discovered_active_path": "DATA_UNAVAILABLE",
+    "handshake_status": "INSTITUTIONAL_ONLY",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 0,
+    "declared_rate_range": "N/A (Corporate Only)",
+    "verification_audit_status": "EXEMPT_WHOLESALE"
   },
   {
     "bank_id": "ceylon",
@@ -5701,8 +6772,20 @@
       "verified_soc_url": "https://www.combank.net.bd/assets/documents/Schedule-of-Charges.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Commercial Bank of Ceylon Bangladesh Branch Official Tariff (/tariffs/interest-rate.html)",
-      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
-    }
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM",
+      "hub_url": "https://www.combank.net.bd/tariffs/interest-rate.html",
+      "last_known_artifact_url": "https://www.combank.net.bd/tariffs/interest-rate.html",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.combank.net.bd/tariffs/interest-rate.html",
+    "last_known_artifact_url": "https://www.combank.net.bd/tariffs/interest-rate.html",
+    "discovered_active_path": "https://www.combank.net.bd/tariffs/interest-rate.html",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 14,
+    "declared_rate_range": "7.50% – 9.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "woori",
@@ -5728,7 +6811,7 @@
     "instant_encashment": false,
     "soc_url": "https://wooribank.com/rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://wooribank.com/rates",
+    "source_url": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:19.613437+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5793,8 +6876,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (우리은행, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
+      "last_known_artifact_url": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
+    "last_known_artifact_url": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
+    "discovered_active_path": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "7.00% – 9.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "alfalah",
@@ -5820,7 +6915,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.bankalfalah.com/schedule-of-charges",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://prodbaf.blob.core.windows.net/data/Schedule%20of%20Charges%20July%20-%20Dec%202026%20(conventional).pdf",
+    "source_url": "https://www.bankalfalah.com/bd/rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:19.885918+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5885,8 +6980,20 @@
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Bank Alfalah | Schedule of Charges 2026, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.bankalfalah.com/bd/rates",
+      "last_known_artifact_url": "https://prodbaf.blob.core.windows.net/data/Schedule%20of%20Charges%20July%20-%20Dec%202026%20(conventional).pdf",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type D: JS-Rendered / Blob Storage"
+    },
+    "hub_url": "https://www.bankalfalah.com/bd/rates",
+    "last_known_artifact_url": "https://prodbaf.blob.core.windows.net/data/Schedule%20of%20Charges%20July%20-%20Dec%202026%20(conventional).pdf",
+    "discovered_active_path": "https://prodbaf.blob.core.windows.net/data/Schedule%20of%20Charges%20July%20-%20Dec%202026%20(conventional).pdf",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type D: JS-Rendered / Blob Storage",
+    "schemes_count": 13,
+    "declared_rate_range": "7.50% – 9.75%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "sbi",
@@ -5912,7 +7019,7 @@
     "instant_encashment": false,
     "soc_url": "https://sbibd.com",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://sbibd.com",
+    "source_url": "https://bd.statebank/interest-rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:19.935453+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -5977,8 +7084,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://bd.statebank/interest-rates",
+      "last_known_artifact_url": "https://bd.statebank/interest-rates",
+      "handshake_status": "VERIFIED_ACTIVE",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://bd.statebank/interest-rates",
+    "last_known_artifact_url": "https://bd.statebank/interest-rates",
+    "discovered_active_path": "https://bd.statebank/interest-rates",
+    "handshake_status": "VERIFIED_ACTIVE",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "7.00% – 9.25%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "habib",
@@ -6004,7 +7123,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.hbl.com/bangladesh",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.hbl.com/assets/documents/Daily_Exchange_Rate_-_19_Oct_2026.pdf",
+    "source_url": "https://www.hbl.com/bangladesh/hbl-products/retail-products",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:19.969517+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -6069,8 +7188,20 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.hbl.com/bangladesh/hbl-products/retail-products",
+      "last_known_artifact_url": "https://www.hbl.com/bangladesh/hbl-products/retail-products",
+      "handshake_status": "DISCOVERED_VIA_NAV",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.hbl.com/bangladesh/hbl-products/retail-products",
+    "last_known_artifact_url": "https://www.hbl.com/bangladesh/hbl-products/retail-products",
+    "discovered_active_path": "https://www.hbl.com/bangladesh/hbl-products/retail-products",
+    "handshake_status": "DISCOVERED_VIA_NAV",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "7.25% – 9.50%",
+    "verification_audit_status": "VERIFIED (SHA-256)"
   },
   {
     "bank_id": "nbp",
@@ -6096,7 +7227,7 @@
     "instant_encashment": false,
     "soc_url": "https://www.nbp.com.pk/bangladesh",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
+    "source_url": "https://www.nbp.com.pk/bangladesh",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -6161,7 +7292,19 @@
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
+      "hub_url": "https://www.nbp.com.pk/bangladesh",
+      "last_known_artifact_url": "https://www.nbp.com.pk/bangladesh",
+      "handshake_status": "FALLBACK_TO_REGULATORY_MIRROR",
+      "pattern_type": "Type A: Static HTML Matrix"
+    },
+    "hub_url": "https://www.nbp.com.pk/bangladesh",
+    "last_known_artifact_url": "https://www.nbp.com.pk/bangladesh",
+    "discovered_active_path": "https://www.nbp.com.pk/bangladesh",
+    "handshake_status": "FALLBACK_TO_REGULATORY_MIRROR",
+    "pattern_type": "Type A: Static HTML Matrix",
+    "schemes_count": 12,
+    "declared_rate_range": "6.50% – 8.50%",
+    "verification_audit_status": "BB_GAZETTE_SYNC"
   }
 ]

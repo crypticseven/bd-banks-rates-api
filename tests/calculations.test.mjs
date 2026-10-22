@@ -332,3 +332,42 @@ test("Deterministic Mathematical Confidence Gating", async (t) => {
     assert.ok(evalResult.quarantineReason.includes("HELD_IN_STAGING_QUARANTINE"));
   });
 });
+
+test("Section 6 & 9 Penny-Perfect Maturity & Hub-and-Spoke Invariants", async (t) => {
+  const { calculatePennyPerfectMaturity, computeExciseDuty } = await import("../src/services/maturityCalculator.ts");
+
+  await t.test("Matches exact Section 9 UCB contract sample calculation", () => {
+    const result = calculatePennyPerfectMaturity({
+      principal: 500000,
+      annualRatePct: 10.50,
+      tenureMonths: 12,
+      hasTin: true,
+      compounding: "MATURITY",
+    });
+
+    assert.equal(result.principal, 500000);
+    assert.equal(result.grossInterest, 52500.00, "Gross interest must be 52,500.00 BDT");
+    assert.equal(result.tdsRatePct, 10, "TDS rate with TIN must be 10%");
+    assert.equal(result.tdsAmount, 5250.00, "TDS amount must be 5,250.00 BDT");
+    assert.equal(result.exciseDuty, 500.00, "Statutory excise duty on peak balance 552,500 must be 500.00 BDT");
+    assert.equal(result.netInterest, 46750.00, "Net interest must be 46,750.00 BDT");
+    assert.equal(result.netMaturityPayout, 546750.00, "Net maturity payout must be 546,750.00 BDT");
+    assert.equal(result.effectiveYieldPct, 9.35, "Effective net yield must be 9.35%");
+  });
+
+  await t.test("Hub-and-Spoke bankRegistry.json contains all 61 banks mapped with pattern types", async () => {
+    const fs = await import("fs");
+    const registry = JSON.parse(fs.readFileSync("src/data/bankRegistry.json", "utf-8"));
+    assert.equal(registry.length, 61, "bankRegistry.json must contain exactly 61 banks");
+
+    for (const bank of registry) {
+      assert.ok(bank.bank_code, `Bank missing bank_code: ${bank.bank_name}`);
+      assert.ok(bank.hub_url, `Bank missing hub_url: ${bank.bank_code}`);
+      assert.ok(bank.pattern_type, `Bank missing pattern_type: ${bank.bank_code}`);
+    }
+
+    const ucbReg = registry.find((b) => b.bank_code === "UCB");
+    assert.ok(ucbReg, "UCB must exist in registry");
+    assert.equal(ucbReg.schemes_count, 18, "UCB schemes count must be 18");
+  });
+});
