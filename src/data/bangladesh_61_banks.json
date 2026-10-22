@@ -547,7 +547,7 @@
       "primary_bank_domain": "https://www.bdbl.com.bd",
       "verified_soc_url": "https://www.bdbl.com.bd/pages/static-pages/interest-rate-29b598-6922e134933eb65569e2adb8",
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
-      "evidence_snippet": "Crawled link (\u09b8\u09c1\u09a6\u09c7\u09b0 \u09b9\u09be\u09b0): 178257 bytes",
+      "evidence_snippet": "Crawled link (সুদের হার): 178257 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -880,7 +880,7 @@
         "features": [
           "Official Instruction Circular 1634 (Prefix 3429)",
           "9.25% p.a. for Half-Yearly profit payout option",
-          "Minimum deposit \u09f3100,000"
+          "Minimum deposit ৳100,000"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -946,7 +946,7 @@
         "features": [
           "Official Instruction Circular 1634 (Page 8)",
           "8.50% p.a. installment deposit",
-          "Low starting threshold \u09f3500/month"
+          "Low starting threshold ৳500/month"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -1084,24 +1084,24 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 8.01,
-      "6_months": 8.01,
-      "1_year": 7.88,
-      "2_years": 7.79,
-      "3_years": 7.79,
-      "5_years": 7.79
+      "3_months": 7.0,
+      "6_months": 7.0,
+      "1_year": 7.0,
+      "2_years": 7.0,
+      "3_years": 7.0,
+      "5_years": 6.3
     },
     "dps_rates": {
-      "3_years": 8.13,
-      "5_years": 8.38,
-      "10_years": 8.38
+      "3_years": 8.0,
+      "5_years": 8.5,
+      "10_years": 8.5
     },
     "instant_encashment": true,
-    "soc_url": "https://www.thecitybank.com/interest-rate",
+    "soc_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.thecitybank.com/interest-rate",
-    "effective_date": "2026-09-01",
-    "fetched_at": "2026-10-21T02:00:00Z",
+    "source_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
+    "effective_date": "2026-10-18",
+    "fetched_at": "2026-10-22T08:24:16+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.5,
     "credit_rating": "AA+",
@@ -1111,39 +1111,147 @@
     "risk_label": "Low Risk (Strong Card/Retail Franchise)",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
-    "risk_adjusted_yield_score": 10.04,
+    "risk_adjusted_yield_score": 8.85,
+    "npl_ratio_pct": 4.65,
+    "verification_note": "Verified from official General Schedule of Interest (GSI) conventional banking products effective 18-October-2026. Standard retail FD: 7.00% (up to 7.50% for high-value slabs); Monthly Interest Paying FD: 6.80-7.40%; General DPS: 8.00-8.50%; Insurance Backed DPS: 8.00%.",
+    "official_provenance": {
+      "primary_bank_domain": "https://www.citybankplc.com",
+      "verified_soc_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
+      "audit_status": "ACCESSIBLE_DIRECT_LINK",
+      "evidence_snippet": "City Bank PLC General Schedule of Interest (W.E.F: 18-October-2026) Conventional Banking Products - Fixed Deposit 365D 7.00%-7.50%, General DPS 8.00%-8.50%, Monthly Interest Paying FD 6.80%-7.40%",
+      "last_audited_at": "2026-10-22T08:24:16+00:00",
+      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
+    },
     "products": [
       {
-        "product_id": "city-gem-fdr",
-        "product_name": "City Gem Premium Fixed Deposit",
+        "product_id": "city-general-fdr",
+        "product_name": "City Bank Fixed Deposit Receipt (General Term Deposit)",
         "product_type": "FDR",
-        "headline_rate": 7.88,
+        "headline_rate": 7.0,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "2_years",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "GENERAL_RETAIL",
+        "features": [
+          "Official GSI rate effective 18-October-2026: 7.00% (below 50 Lac), up to 7.50% for institutional/high-value slabs",
+          "Flexible tenure choices: 90 Days (7.00%), 180 Days (7.00%), 365 Days (7.00%)",
+          "Loan against deposit facility eligible (up to 90% SOD)",
+          "Premature encashment available under standard terms"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "city-monthly-interest-fd",
+        "product_name": "City Bank Monthly Interest Paying Fixed Deposit",
+        "product_type": "FDR",
+        "headline_rate": 7.4,
         "tenure_options": [
           "6_months",
+          "1_year",
+          "2_years",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly interest payout directly credited to savings/current account",
+          "Rate structure: 6.90% (6 Months), 6.80% (1 Year), 7.00% (2 Years), up to 7.40% for multi-crore slabs",
+          "Ideal for retirees and individuals seeking monthly cashflow liquidity"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "city-general-dps",
+        "product_name": "City Bank General Deposit Pension Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 8.5,
+        "tenure_options": [
+          "1_year",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "RETAIL_SAVINGS",
+        "features": [
+          "Monthly recurring installment deposit with tiered compounded return",
+          "Short tenures (6-36 Months): 8.00% per annum",
+          "Long tenures (37-120 Months / up to 10 Years): 8.50% per annum",
+          "Auto-debit from Citytouch or City Bank savings accounts"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "city-insurance-dps",
+        "product_name": "City Bank Insurance Backed DPS Account",
+        "product_type": "DPS",
+        "headline_rate": 8.0,
+        "tenure_options": [
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 2000,
+        "target_segment": "LONG_TERM",
+        "features": [
+          "Guaranteed 8.00% return across 5, 10, 15, and 20 year terms",
+          "Integrated complimentary life and health insurance coverage",
+          "Principal and target maturity protection in case of unforeseen events"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "city-gem-fdr",
+        "product_name": "City Gem Priority Banking Fixed Deposit",
+        "product_type": "FDR",
+        "headline_rate": 7.5,
+        "tenure_options": [
+          "6_months",
+          "1_year",
+          "2_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 1000000,
+        "target_segment": "HNI_PREMIUM",
+        "features": [
+          "Exclusive preferential pricing for City Gem high-net-worth clients: up to 7.50%",
+          "Dedicated Wealth Manager and access to City Gem airport lounges",
+          "Complimentary American Express Platinum companion credit card privileges"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "city-seniors-savings",
+        "product_name": "City Bank Seniors' Savings Account",
+        "product_type": "SPECIAL_SCHEME",
+        "headline_rate": 1.5,
+        "tenure_options": [
           "1_year"
         ],
         "best_tenure": "1_year",
-        "minimum_amount": 500000,
-        "target_segment": "HNI_PREMIUM",
+        "minimum_amount": 25000,
+        "target_segment": "SENIOR_CITIZEN",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 7.88%",
-          "Regulatory filing window: 3.60-7.88%",
-          "Loan against deposit facility eligible"
+          "Special tiered interest rate for senior citizens (age 50+)",
+          "Priority service counter at all City Bank branches",
+          "Higher daily ATM cash withdrawal limit and discounted locker rentals"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       }
-    ],
-    "npl_ratio_pct": 4.65,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 3.60-7.88%; 6-Month: 3.69-8.01%; Savings: 1.17-2.88%.",
-    "official_provenance": {
-      "primary_bank_domain": "https://www.thecitybank.com",
-      "verified_soc_url": "https://www.thecitybank.com/interest-rate",
-      "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (One moment, please..., 0 tables)",
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+    ]
   },
   {
     "bank_id": "ebl",
@@ -1217,7 +1325,7 @@
         "minimum_amount": 2500,
         "target_segment": "RETAIL_SAVINGS",
         "features": [
-          "Target \u09f31,000,000 corpus maturity",
+          "Target ৳1,000,000 corpus maturity",
           "8.50% annual yield for long term wealth building"
         ],
         "instant_encashment": false,
@@ -1768,7 +1876,7 @@
         "target_segment": "MONTHLY_PROFIT",
         "features": [
           "Official Table 11: 9.00% simple interest p.a.",
-          "\u09f3750/month per \u09f3100,000 deposit before tax with auto-renewal"
+          "৳750/month per ৳100,000 deposit before tax with auto-renewal"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -1839,7 +1947,7 @@
         "features": [
           "Official Circular September 01, 2026 (Page 3)",
           "8.25% p.a. for standard retail 1-year deposit (<50L)",
-          "8.50% for \u09f350L-\u09f3150L, 9.00% for \u09f3150L+"
+          "8.50% for ৳50L-৳150L, 9.00% for ৳150L+"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -1879,7 +1987,7 @@
         "target_segment": "MONTHLY_CASH_FLOW",
         "features": [
           "Official Circular Page 5: 10.03% annual effective rate",
-          "\u09f3800 monthly cash payout per \u09f3100,000 deposit before tax"
+          "৳800 monthly cash payout per ৳100,000 deposit before tax"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -2260,7 +2368,7 @@
       "primary_bank_domain": "https://jamunabankbd.com",
       "verified_soc_url": "https://jamunabankbd.com/interest-rates/",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (Interest Rates \u2013 Jamuna Bank, 1 tables)",
+      "evidence_snippet": "HTML Rate Page (Interest Rates – Jamuna Bank, 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -4560,7 +4668,7 @@
       "primary_bank_domain": "https://www.globalislamibank.com",
       "verified_soc_url": "https://www.globalislamibank.com/profit-rates",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (GlobalIslamiBank.com \u2013 Premium Bangla Domain Name Buy-Sell Marketplace, 0 tables)",
+      "evidence_snippet": "HTML Rate Page (GlobalIslamiBank.com – Premium Bangla Domain Name Buy-Sell Marketplace, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -5275,7 +5383,7 @@
       "primary_bank_domain": "https://wooribank.com/bd",
       "verified_soc_url": "https://wooribank.com/rates",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (\uc6b0\ub9ac\uc740\ud589, 0 tables)",
+      "evidence_snippet": "HTML Rate Page (우리은행, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }

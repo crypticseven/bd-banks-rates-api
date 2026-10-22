@@ -84,6 +84,34 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
     assert.ok(youngstersDps, "UCB Youngsters DPS must exist");
     assert.equal(youngstersDps.headline_rate, 8.50, "UCB Youngsters DPS rate must be 8.50% (Circular 1634 Page 8)");
   });
+
+  await t.test("City Bank PLC has verified 18-October-2026 GSI rates and branded products", () => {
+    const city = banksData.find((b) => b.short_code === "CITY");
+    assert.ok(city, "City Bank must exist in dataset");
+    assert.equal(city.bank_name, "City Bank PLC");
+    assert.equal(city.category, "CONVENTIONAL_PCB");
+    assert.equal(city.fdr_rates["1_year"], 7.00, "City Bank 1Y FDR rate must be 7.00% (W.E.F 18-Oct-2026)");
+    assert.equal(city.dps_rates["5_years"], 8.50, "City Bank 5Y DPS rate must be 8.50% (W.E.F 18-Oct-2026)");
+    assert.equal(city.source_url, "https://www.citybankplc.com/gsi/conventional-banking-products");
+    assert.equal(city.verification_status, "VERIFIED_OFFICIAL");
+    assert.equal(city.products.length, 6, "City Bank must have 6 official branded products");
+
+    const genFdr = city.products.find((p) => p.product_id === "city-general-fdr");
+    assert.ok(genFdr, "City General Fixed Deposit must exist");
+    assert.equal(genFdr.headline_rate, 7.00);
+
+    const genDps = city.products.find((p) => p.product_id === "city-general-dps");
+    assert.ok(genDps, "City General DPS must exist");
+    assert.equal(genDps.headline_rate, 8.50);
+
+    const mipfd = city.products.find((p) => p.product_id === "city-monthly-interest-fd");
+    assert.ok(mipfd, "City Monthly Interest Paying FD must exist");
+    assert.equal(mipfd.headline_rate, 7.40);
+
+    const insuranceDps = city.products.find((p) => p.product_id === "city-insurance-dps");
+    assert.ok(insuranceDps, "City Insurance Backed DPS must exist");
+    assert.equal(insuranceDps.headline_rate, 8.00);
+  });
 });
 
 test("Deposit Maturity Calculation & NBR Tax Tests", async (t) => {
