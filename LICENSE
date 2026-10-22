@@ -1,21 +1,46 @@
-MIT License
+COMMERCIAL PROPRIETARY SOFTWARE LICENSE & TRADEMARK AGREEMENT
 
-Copyright (c) 2026 Fardin Ahsan Anik
+Platform: Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
+Official Portal: https://fardinanik.com
+Jurisdiction: Dhaka, Bangladesh
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+================================================================================
+1. PROPRIETARY OWNERSHIP & TRADEMARK NOTICE
+================================================================================
+This software, including its source code, algorithm architecture, financial risk-adjusted
+yield calculations, crawler intelligence, database schemas, and API interfaces, is the
+exclusive proprietary property of Fardin Ahsan Anik ("Author & Licensor").
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+"BDRIP™", "Bangladesh Bank Rates Intelligence Platform™", and "Anik FinTech Engine™"
+are trademarks of Fardin Ahsan Anik. All unauthorized copying, imitation, or use of
+these trademarks and associated software is strictly prohibited under the Bangladesh
+Copyright Act 2000 (as amended 2023) and the Trademarks Act 2009.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+================================================================================
+2. COMMERCIAL ACCESS & CREDENTIAL HANDSHAKING
+================================================================================
+This API is strictly closed-access and available solely for authorized commercial use.
+Unauthenticated access is completely prohibited.
+
+Every network request to this service MUST execute an authorized cryptographic handshake
+using an authenticated commercial API key issued directly by Fardin Ahsan Anik:
+- Header: X-API-Key: <COMMERCIAL_API_KEY>
+- Header: Authorization: Bearer <COMMERCIAL_API_KEY>
+
+================================================================================
+3. RESTRICTIONS
+================================================================================
+Under no circumstances may any party:
+a) Decompile, disassemble, reverse engineer, or attempt to derive source algorithms.
+b) Redistribute, sub-license, rent, mirror, or publish unauthenticated proxy gateways.
+c) Scrape, harvest, or bypass rate limits or cryptographic handshake protections.
+d) Remove, alter, or obscure any proprietary copyright, trademark, or provenance notices.
+
+================================================================================
+4. COMMERCIAL INQUIRIES & LICENSING
+================================================================================
+For institutional licensing, enterprise access, or integration partnerships:
+Direct Contact: Fardin Ahsan Anik
+Email: fardinahsananik@gmail.com
+Web: https://fardinanik.com

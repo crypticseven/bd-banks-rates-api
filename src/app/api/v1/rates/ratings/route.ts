@@ -1,6 +1,16 @@
+/**
+ * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+ * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
+ *
+ * COMMERCIAL STABILITY TIERS & RATINGS INTELLIGENCE ENDPOINT
+ */
+
 import { NextRequest, NextResponse } from "next/server";
 import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
+import { validateCommercialHandshake, commercialUnauthorizedResponse, attachCommercialHeaders } from "@/lib/auth/commercialHandshake";
+import { enforceRateLimit, detectMaliciousPayload, rateLimitExceededResponse, securityBlockResponse } from "@/lib/security/antiHackingGuard";
 import { z } from "zod";
+import crypto from "crypto";
 
 const ratingsQuerySchema = z.object({
   tier: z.enum(["TIER_1_PRIME", "TIER_2_STRONG", "TIER_3_MODERATE", "TIER_4_WATCHLIST", "TIER_5_DISTRESSED"]).optional(),
@@ -9,6 +19,24 @@ const ratingsQuerySchema = z.object({
 });
 
 export async function GET(req: NextRequest) {
+  // 1. Anti-Hacking Guard: Intercept injection & malicious payload signatures
+  const securityCheck = detectMaliciousPayload(req);
+  if (!securityCheck.safe) {
+    return securityBlockResponse(securityCheck.reason || "Payload failed security inspection.");
+  }
+
+  // 2. Commercial Credential Handshake Gateway
+  const client = validateCommercialHandshake(req);
+  if (!client.authorized) {
+    return commercialUnauthorizedResponse(client.reason);
+  }
+
+  // 3. Sliding Token Bucket Rate Limiting per Tier
+  const rateLimit = enforceRateLimit(client.clientId, client.rateLimitPerMinute);
+  if (!rateLimit.allowed) {
+    return rateLimitExceededResponse(rateLimit.resetSeconds);
+  }
+
   try {
     const { searchParams } = new URL(req.url);
     const queryObj: Record<string, string> = {};
@@ -58,15 +86,25 @@ export async function GET(req: NextRequest) {
     // Sort by rating score descending
     list.sort((a, b) => b.rating_score - a.rating_score);
 
-    // Identify top recommendations
-    const primeRecommendation = list.find((b) => (b.stability_tier === "TIER_1_PRIME" || b.stability_tier === "TIER_2_STRONG") && b.rate_1_year >= 11.0) || list[0];
+    // Identify dynamic market intelligence recommendations
+    const primeRecommendation = list.find((b) => (b.stability_tier === "TIER_1_PRIME" || b.stability_tier === "TIER_2_STRONG") && b.rate_1_year >= 10.0) || list[0];
     const ucbRecord = list.find((b) => b.short_code === "UCB");
     const highestYieldOverall = [...list].sort((a, b) => b.rate_1_year - a.rate_1_year)[0];
 
-    return NextResponse.json(
+    const requestId = crypto.randomUUID();
+
+    const response = NextResponse.json(
       {
         status: "success",
+        trademark: "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)",
+        licensing: "Proprietary Commercial License - Fardin Ahsan Anik <fardinahsananik@gmail.com>",
         as_of_date: new Date().toISOString().split("T")[0],
+        request_id: requestId,
+        client_context: {
+          client_id: client.clientId,
+          tier: client.tier,
+          rate_limit_remaining: rateLimit.remaining,
+        },
         total_rated_institutions: list.length,
         market_intelligence: {
           safest_highest_yield_sweetspot: {
@@ -86,7 +124,7 @@ export async function GET(req: NextRequest) {
             rating_score: ucbRecord.rating_score,
             credit_rating: ucbRecord.credit_rating,
             stability_tier: ucbRecord.stability_tier,
-            verdict: "High-yield turnaround candidate (11.25% - 11.75%). NPL stood at 16.27% following comprehensive 2024-2026 Asset Quality Review. 100% of operating profits allocated to provisioning under 5-year recovery plan.",
+            verdict: `Dynamic High-Yield Turnaround: ${ucbRecord.bank_name} offers ${ucbRecord.rate_1_year}% on 1-year general retail term deposit. NPL stands at ${ucbRecord.npl_ratio_pct}%. Board allocated 100% of profits to provisions under 5-year turnaround. Higher yield compensates for balance sheet transition.`,
           } : undefined,
           nominal_highest_yield_alert: {
             bank_name: highestYieldOverall.bank_name,
@@ -107,10 +145,13 @@ export async function GET(req: NextRequest) {
         status: 200,
         headers: {
           "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
-          "Access-Control-Allow-Origin": "*",
+          "X-Request-ID": requestId,
+          "X-RateLimit-Remaining": rateLimit.remaining.toString(),
         },
       }
     );
+
+    return attachCommercialHeaders(response, client);
   } catch (error) {
     return NextResponse.json(
       { status: "error", message: "Failed to generate ratings report." },

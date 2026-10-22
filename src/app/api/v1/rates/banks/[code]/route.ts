@@ -1,6 +1,16 @@
+/**
+ * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+ * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
+ *
+ * COMMERCIAL BANK BY CODE ENDPOINT
+ */
+
 import { NextRequest, NextResponse } from "next/server";
 import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
+import { validateCommercialHandshake, commercialUnauthorizedResponse, attachCommercialHeaders } from "@/lib/auth/commercialHandshake";
+import { enforceRateLimit, detectMaliciousPayload, rateLimitExceededResponse, securityBlockResponse } from "@/lib/security/antiHackingGuard";
 import { z } from "zod";
+import crypto from "crypto";
 
 const codeParamSchema = z
   .string()
@@ -13,6 +23,24 @@ export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ code: string }> }
 ) {
+  // 1. Anti-Hacking Guard: Intercept injection & malicious payload signatures
+  const securityCheck = detectMaliciousPayload(req);
+  if (!securityCheck.safe) {
+    return securityBlockResponse(securityCheck.reason || "Payload failed security inspection.");
+  }
+
+  // 2. Commercial Credential Handshake Gateway
+  const client = validateCommercialHandshake(req);
+  if (!client.authorized) {
+    return commercialUnauthorizedResponse(client.reason);
+  }
+
+  // 3. Sliding Token Bucket Rate Limiting per Tier
+  const rateLimit = enforceRateLimit(client.clientId, client.rateLimitPerMinute);
+  if (!rateLimit.allowed) {
+    return rateLimitExceededResponse(rateLimit.resetSeconds);
+  }
+
   try {
     const rawParams = await params;
     const parsed = codeParamSchema.safeParse(rawParams.code);
@@ -44,10 +72,20 @@ export async function GET(
       );
     }
 
-    return NextResponse.json(
+    const requestId = crypto.randomUUID();
+
+    const response = NextResponse.json(
       {
         status: "success",
+        trademark: "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)",
+        licensing: "Proprietary Commercial License - Fardin Ahsan Anik <fardinahsananik@gmail.com>",
         as_of_date: new Date().toISOString().split("T")[0],
+        request_id: requestId,
+        client_context: {
+          client_id: client.clientId,
+          tier: client.tier,
+          rate_limit_remaining: rateLimit.remaining,
+        },
         bank,
         data: bank,
       },
@@ -55,10 +93,13 @@ export async function GET(
         status: 200,
         headers: {
           "Cache-Control": "public, s-maxage=3600",
-          "Access-Control-Allow-Origin": "*",
+          "X-Request-ID": requestId,
+          "X-RateLimit-Remaining": rateLimit.remaining.toString(),
         },
       }
     );
+
+    return attachCommercialHeaders(response, client);
   } catch (error) {
     return NextResponse.json(
       { status: "error", message: "Failed to fetch bank details." },

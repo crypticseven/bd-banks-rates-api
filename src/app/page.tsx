@@ -42,7 +42,22 @@ export default function ApiLandingPage() {
   // Sorting mode: 'yield' | 'risk_adjusted' | 'rating'
   const [sortMode, setSortMode] = useState<"yield" | "risk_adjusted" | "rating">("risk_adjusted");
   const [selectedBankForModal, setSelectedBankForModal] = useState<BankRateRecord | null>(null);
-  const [privateApiKey, setPrivateApiKey] = useState<string>("");
+  const [privateApiKey, setPrivateApiKey] = useState<string>("bdrip_demo_eval_2026");
+
+  // Dynamic Market Intelligence computed from authoritative dataset
+  const marketIntelligence = useMemo(() => {
+    const primeBank = [...ALL_61_BANKS]
+      .filter((b) => b.rating_score >= 4.5)
+      .sort((a, b) => (b.fdr_rates["1_year"] || 0) - (a.fdr_rates["1_year"] || 0))[0] || ALL_61_BANKS[0];
+
+    const ucb = ALL_61_BANKS.find((b) => b.short_code === "UCB");
+
+    const distressedBank = [...ALL_61_BANKS]
+      .filter((b) => b.npl_ratio_pct !== null && b.npl_ratio_pct !== undefined)
+      .sort((a, b) => (b.npl_ratio_pct || 0) - (a.npl_ratio_pct || 0))[0] || ALL_61_BANKS[0];
+
+    return { primeBank, ucb, distressedBank };
+  }, []);
 
   // Real API execution states
   const [activeTab, setActiveTab] = useState<EndpointTab>("deposits");
@@ -177,11 +192,11 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="font-mono text-emerald-400 font-semibold">ALL 61 BANGLADESH SCHEDULED BANKS INDEXED</span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Policy Repo: <strong className="text-slate-200">8.50%</strong></span>
+            <span className="text-slate-400">Policy Repo: <strong className="text-slate-200">10.00%</strong></span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Prime High Yield: <strong className="text-emerald-400">Pubali (8.25% @ AAA)</strong></span>
+            <span className="text-slate-400">Prime High Yield: <strong className="text-emerald-400">{marketIntelligence.primeBank?.bank_name} ({marketIntelligence.primeBank?.fdr_rates["1_year"]}% @ {marketIntelligence.primeBank?.credit_rating})</strong></span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Turnaround Profile: <strong className="text-cyan-400">UCB (8.00% - 9.25% @ 16.27% NPL)</strong></span>
+            <span className="text-slate-400">Turnaround Profile: <strong className="text-cyan-400">{marketIntelligence.ucb?.short_code} ({marketIntelligence.ucb?.fdr_rates["1_year"]}% - 9.25% @ {marketIntelligence.ucb?.npl_ratio_pct}% NPL)</strong></span>
           </div>
           <div className="flex items-center gap-4 text-slate-400 font-mono">
             <a href="https://github.com/crypticseven/bd-banks-rates-api" target="_blank" rel="noreferrer" className="hover:text-white flex items-center gap-1 transition">
@@ -233,7 +248,7 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4" /> Market Intelligence & Stability Insight
+                <ShieldCheck className="w-4 h-4" /> Dynamic Market Intelligence & Stability Insight
               </span>
               <h2 className="text-xl font-bold text-white mt-1">
                 Highest Yield vs. Depositor Safety Index
@@ -242,8 +257,8 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <div className="flex items-center gap-2 bg-slate-950/80 border border-slate-800 px-3 py-1.5 rounded-lg text-xs font-mono">
               <Key className="w-3.5 h-3.5 text-amber-400" />
               <input
-                type="password"
-                placeholder="Private API Key (Optional)..."
+                type="text"
+                placeholder="Commercial API Key..."
                 value={privateApiKey}
                 onChange={(e) => setPrivateApiKey(e.target.value)}
                 className="bg-transparent border-none outline-none text-slate-200 w-44 placeholder-slate-600"
@@ -258,11 +273,13 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
                 <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold font-mono">
                   ★ PRIME SWEETSPOT
                 </span>
-                <span className="text-emerald-400 font-mono font-bold text-xs">4.8★ AAA (NPL 2.14%)</span>
+                <span className="text-emerald-400 font-mono font-bold text-xs">
+                  {marketIntelligence.primeBank?.rating_score}★ {marketIntelligence.primeBank?.credit_rating} (NPL {marketIntelligence.primeBank?.npl_ratio_pct}%)
+                </span>
               </div>
-              <h3 className="text-sm font-bold text-white">Pubali Bank PLC / Trust Bank</h3>
+              <h3 className="text-sm font-bold text-white">{marketIntelligence.primeBank?.bank_name}</h3>
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Offers verified <strong>8.25%</strong> (Pubali 1Y) and <strong>7.38%</strong> (Trust Bank) with pristine balance sheet quality. Pubali holds an audited <strong>2.14% NPL</strong> ratio and &gt;16.4% CAR, while Trust holds 4.35% NPL with institutional backing. Optimal depositor safety.
+                Offers verified <strong>{marketIntelligence.primeBank?.fdr_rates["1_year"]}%</strong> (1Y FD) with pristine balance sheet quality. Holds an audited <strong>{marketIntelligence.primeBank?.npl_ratio_pct}% NPL</strong> ratio and &gt;{marketIntelligence.primeBank?.capital_adequacy_ratio_car}% CAR. Optimal depositor safety.
               </p>
             </div>
 
@@ -270,13 +287,15 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <div className="border border-cyan-500/30 bg-cyan-950/20 rounded-xl p-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold font-mono">
-                  ⚡ TURNAROUND PROFILE
+                  ⚡ DYNAMIC TURNAROUND
                 </span>
-                <span className="text-cyan-400 font-mono font-bold text-xs">3.5★ A (NPL 16.27%)</span>
+                <span className="text-cyan-400 font-mono font-bold text-xs">
+                  {marketIntelligence.ucb?.rating_score}★ {marketIntelligence.ucb?.credit_rating} (NPL {marketIntelligence.ucb?.npl_ratio_pct}%)
+                </span>
               </div>
-              <h3 className="text-sm font-bold text-white">United Commercial Bank PLC (UCB)</h3>
+              <h3 className="text-sm font-bold text-white">{marketIntelligence.ucb?.bank_name} ({marketIntelligence.ucb?.short_code})</h3>
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Verified <strong>8.00%</strong> (1Y Retail FD), <strong>8.50%</strong> (180D / DPS), and up to <strong>9.25%</strong> on Retail Earning Plus (Instruction Circular 1634). NPL stood at <strong>16.27%</strong> in Q2 2026 with 100% of profits allocated to provisions under a 5-year recovery plan.
+                Verified <strong>{marketIntelligence.ucb?.fdr_rates["1_year"]}%</strong> (1Y Retail FD), <strong>{marketIntelligence.ucb?.fdr_rates["6_months"]}%</strong> (180D / DPS), and up to <strong>9.25%</strong> on Retail Earning Plus (Instruction Circular 1634). NPL stood at <strong>{marketIntelligence.ucb?.npl_ratio_pct}%</strong> in Q2 2026 with 100% of profits allocated to provisions under a 5-year recovery plan.
               </p>
             </div>
 
@@ -286,11 +305,13 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
                 <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold font-mono">
                   ⚠ DISTRESSED WATCHLIST
                 </span>
-                <span className="text-amber-400 font-mono font-bold text-xs">1.8★ B (NPL 38.20%)</span>
+                <span className="text-amber-400 font-mono font-bold text-xs">
+                  {marketIntelligence.distressedBank?.rating_score}★ {marketIntelligence.distressedBank?.credit_rating} (NPL {marketIntelligence.distressedBank?.npl_ratio_pct}%)
+                </span>
               </div>
-              <h3 className="text-sm font-bold text-white">National Bank Limited (NBL)</h3>
+              <h3 className="text-sm font-bold text-white">{marketIntelligence.distressedBank?.bank_name} ({marketIntelligence.distressedBank?.short_code})</h3>
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Offers nominal <strong>11.50%</strong> interest rate. Carries <strong>Tk 28,276 crore</strong> classified loans (38.20% NPL) and capital deficits. High rates reflect acute liquidity requirements rather than stability.
+                Offers nominal <strong>{marketIntelligence.distressedBank?.fdr_rates["1_year"]}%</strong> interest rate. Carries <strong>{marketIntelligence.distressedBank?.npl_ratio_pct}% NPL</strong> ratio and capital impairment. High rates reflect acute liquidity requirements rather than stability.
               </p>
             </div>
           </div>
