@@ -142,6 +142,94 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
     assert.ok(savings, "CBC Monthly Savings must exist");
     assert.equal(savings.headline_rate, 4.50);
   });
+
+  await t.test("NCC Bank PLC has verified rates from official October 2026 circular", () => {
+    const ncc = banksData.find((b) => b.short_code === "NCC");
+    assert.ok(ncc, "NCC Bank must exist in dataset");
+    assert.equal(ncc.source_url, "https://www.nccbank.com.bd/NccbRates");
+    assert.equal(ncc.fdr_rates["1_year"], 8.25);
+    assert.equal(ncc.dps_rates["6_years"], 8.75);
+    assert.equal(ncc.verification_status, "VERIFIED_OFFICIAL");
+    assert.ok(ncc.products.length >= 5, "NCC must have at least 5 branded products");
+
+    const highValue = ncc.products.find((p) => p.product_id === "ncc-high-value-fdr");
+    assert.ok(highValue, "NCC High Value FDR must exist");
+    assert.equal(highValue.headline_rate, 8.50);
+
+    const sfds = ncc.products.find((p) => p.product_id === "ncc-sfds-monthly");
+    assert.ok(sfds, "NCC SFDS Monthly must exist");
+    assert.equal(sfds.headline_rate, 8.25);
+  });
+
+  await t.test("Shimanto Bank Limited has verified live rates from interest-rates/deposit", () => {
+    const shimanto = banksData.find((b) => b.short_code === "SHIMANTO");
+    assert.ok(shimanto, "Shimanto Bank must exist");
+    assert.equal(shimanto.source_url, "https://shimantobank.com/interest-rates/deposit");
+    assert.equal(shimanto.fdr_rates["1_year"], 9.75);
+    assert.equal(shimanto.dps_rates["3_years"], 10.00);
+    assert.equal(shimanto.verification_status, "VERIFIED_OFFICIAL");
+
+    const special360 = shimanto.products.find((p) => p.product_id === "shimanto-special-360-fd");
+    assert.ok(special360, "Shimanto Special 360-day FD must exist");
+    assert.equal(special360.headline_rate, 10.25);
+
+    const monthlyFdr = shimanto.products.find((p) => p.product_id === "shimanto-monthly-benefit-fdr");
+    assert.ok(monthlyFdr, "Shimanto Monthly Benefit FDR must exist");
+    assert.equal(monthlyFdr.headline_rate, 10.75);
+  });
+
+  await t.test("SBAC Bank has verified circular rates and multi-tier products", () => {
+    const sbac = banksData.find((b) => b.short_code === "SBAC");
+    assert.ok(sbac, "SBAC Bank must exist");
+    assert.equal(sbac.source_url, "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf");
+    assert.equal(sbac.fdr_rates["1_year"], 9.25);
+    assert.equal(sbac.dps_rates["5_years"], 10.50);
+    assert.equal(sbac.verification_status, "VERIFIED_OFFICIAL");
+
+    const dbs = sbac.products.find((p) => p.product_id === "sbac-dbs");
+    assert.ok(dbs, "SBAC DBS must exist");
+    assert.equal(dbs.headline_rate, 10.41);
+  });
+
+  await t.test("Citizens Bank PLC has verified live rate sheet and DPS products", () => {
+    const citizens = banksData.find((b) => b.short_code === "CITIZENS");
+    assert.ok(citizens, "Citizens Bank must exist");
+    assert.equal(citizens.source_url, "https://www.citizensbankbd.com/rates/deposit-rate");
+    assert.equal(citizens.fdr_rates["1_year"], 9.90);
+    assert.equal(citizens.dps_rates["5_years"], 11.50);
+    assert.equal(citizens.dps_rates["10_years"], 12.00);
+    assert.equal(citizens.verification_status, "VERIFIED_OFFICIAL");
+
+    const dbs = citizens.products.find((p) => p.product_id === "citizens-double-benefit");
+    assert.ok(dbs, "Citizens DBS must exist");
+    assert.equal(dbs.headline_rate, 10.96);
+  });
+
+  await t.test("Modhumoti Bank PLC has verified circular MMBLPC/HO/TD/INT/DEP/2026/07", () => {
+    const modhumoti = banksData.find((b) => b.short_code === "MODHUMOTI");
+    assert.ok(modhumoti, "Modhumoti Bank must exist");
+    assert.equal(modhumoti.source_url, "https://www.modhumotibankplc.com/interest-rate/");
+    assert.equal(modhumoti.fdr_rates["1_year"], 6.75);
+    assert.equal(modhumoti.dps_rates["5_years"], 11.50);
+    assert.equal(modhumoti.verification_status, "VERIFIED_OFFICIAL");
+
+    const specialTenor = modhumoti.products.find((p) => p.product_id === "modhumoti-special-tenor-fd");
+    assert.ok(specialTenor, "Modhumoti Special Tenor FDR must exist");
+    assert.equal(specialTenor.headline_rate, 9.00);
+  });
+
+  await t.test("Uttara Bank PLC has verified Table 6 rates from home/interestrate", () => {
+    const uttara = banksData.find((b) => b.short_code === "UTTARA");
+    assert.ok(uttara, "Uttara Bank must exist");
+    assert.equal(uttara.source_url, "https://www.uttarabank-bd.com/home/interestrate");
+    assert.equal(uttara.fdr_rates["1_year"], 8.00);
+    assert.equal(uttara.dps_rates["5_years"], 9.00);
+    assert.equal(uttara.verification_status, "VERIFIED_OFFICIAL");
+
+    const dbds = uttara.products.find((p) => p.product_id === "uttara-dbds");
+    assert.ok(dbds, "Uttara DBDS must exist");
+    assert.equal(dbds.headline_rate, 8.00);
+  });
 });
 
 test("Deposit Maturity Calculation & NBR Tax Tests", async (t) => {

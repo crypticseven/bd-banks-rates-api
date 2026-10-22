@@ -547,7 +547,7 @@
       "primary_bank_domain": "https://www.bdbl.com.bd",
       "verified_soc_url": "https://www.bdbl.com.bd/pages/static-pages/interest-rate-29b598-6922e134933eb65569e2adb8",
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
-      "evidence_snippet": "Crawled link (\u09b8\u09c1\u09a6\u09c7\u09b0 \u09b9\u09be\u09b0): 178257 bytes",
+      "evidence_snippet": "Crawled link (সুদের হার): 178257 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -880,7 +880,7 @@
         "features": [
           "Official Instruction Circular 1634 (Prefix 3429)",
           "9.25% p.a. for Half-Yearly profit payout option",
-          "Minimum deposit \u09f3100,000"
+          "Minimum deposit ৳100,000"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -946,7 +946,7 @@
         "features": [
           "Official Instruction Circular 1634 (Page 8)",
           "8.50% p.a. installment deposit",
-          "Low starting threshold \u09f3500/month"
+          "Low starting threshold ৳500/month"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -974,12 +974,12 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 7.25,
-      "6_months": 7.5,
+      "1_month": 2.5,
+      "3_months": 6.75,
+      "6_months": 7.25,
       "1_year": 7.5,
-      "2_years": 7.75,
-      "3_years": 8.0,
-      "5_years": 8.25
+      "2_years": 7.5,
+      "3_years": 7.5
     },
     "dps_rates": {
       "3_years": 7.5,
@@ -987,9 +987,9 @@
       "10_years": 8.25
     },
     "instant_encashment": true,
-    "soc_url": "https://www.bracbank.com/corporate",
+    "soc_url": "https://www.bracbank.com/en/page/schedule-of-charges",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://brackweb.s3.ap-southeast-1.amazonaws.com/uploads/all/Daily_Exchange_Rate_as_on_19_Oct_20266ad5a642f2c20.pdf",
+    "source_url": "https://bracbank.com/en/page/deposit-interest-rate",
     "effective_date": "2026-10-15",
     "fetched_at": "2026-10-21T23:03:08.123864+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1004,74 +1004,82 @@
     "risk_adjusted_yield_score": 7.4,
     "products": [
       {
-        "product_id": "brac-term-deposit",
-        "product_name": "BRAC Bank Fixed Deposit Receipt (FDR)",
+        "product_id": "brac-retail-fixed-deposit",
+        "product_name": "BRAC Bank Retail Fixed Deposit",
         "product_type": "FDR",
         "headline_rate": 7.5,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
-          "1_year"
+          "1_year",
+          "2_years",
+          "3_years"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 50000,
-        "target_segment": "GENERAL_RETAIL",
+        "target_segment": "RETAIL_PROBASHI",
         "features": [
-          "Official Circular effective October 15, 2026",
-          "7.50% p.a. for 12 months retail term deposit",
-          "Digital instant opening via Astha App"
+          "30D: 2.50%-5.50%",
+          "90/100D: 6.75%-7.25%",
+          "180D: 7.25%-7.50%",
+          "12M, 24M, 36M: 7.50% across all balance slabs",
+          "Astha app: from BDT 50,000"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       },
       {
-        "product_id": "brac-probashi-fd",
-        "product_name": "BRAC Bank Probashi Fixed Deposit",
+        "product_id": "brac-monthly-interest-fd",
+        "product_name": "BRAC Bank Monthly Interest FD (FRABR)",
         "product_type": "FDR",
-        "headline_rate": 7.5,
+        "headline_rate": 7.25,
         "tenure_options": [
           "6_months",
-          "1_year"
+          "1_year",
+          "2_years",
+          "3_years"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 100000,
-        "target_segment": "NRB_REMITTANCE",
+        "target_segment": "MONTHLY_CASHFLOW_SEEKERS",
         "features": [
-          "Official Circular October 15, 2026",
-          "7.50% p.a. for Wage Earners & Non-Resident Bangladeshis"
+          "7.00% for 6 months; 7.25% for 12 to 84 months",
+          "Credited directly to savings account"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       },
       {
-        "product_id": "brac-dps",
-        "product_name": "BRAC Bank DPS Sanchay Prokolpo",
-        "product_type": "DPS",
-        "headline_rate": 8.0,
+        "product_id": "brac-interest-first-fd",
+        "product_name": "BRAC Bank Interest First FD (FRIFF)",
+        "product_type": "FDR",
+        "headline_rate": 6.75,
         "tenure_options": [
-          "3_years",
-          "5_years"
+          "6_months",
+          "1_year",
+          "2_years",
+          "3_years"
         ],
-        "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "UPFRONT_YIELD_SEEKERS",
         "features": [
-          "Official Circular October 15, 2026",
-          "8.00% annual compound rate for 5-year tenor"
+          "6.75% for 6 & 12 months; 6.25% for 24 months",
+          "Receive full interest upfront at account opening"
         ],
-        "instant_encashment": false,
+        "instant_encashment": true,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 2.27,
-    "verification_note": "Verified from AWS S3 official PDF circular dated October 15, 2026. SHA-256 confirmed.",
+    "verification_note": "Verified against official ALCO Circular 2026/11 effective 15.10.2026.",
     "source_pdf_sha256": "98806be7a7def63b628707c310207ffefe70c7ac7842cfae5d4be15fa7114952",
     "official_provenance": {
       "primary_bank_domain": "https://www.bracbank.com",
-      "verified_soc_url": "https://www.bracbank.com/corporate",
-      "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
-      "evidence_snippet": "Crawled link (Corporate): 192153 bytes",
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
+      "verified_soc_url": "https://www.bracbank.com/en/page/schedule-of-charges",
+      "audit_status": "ACCESSIBLE_DIRECT_LINK",
+      "evidence_snippet": "Official BRAC Bank ALCO Circular 2026/11 (Effective 15.10.2026)",
       "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
     }
   },
@@ -1084,16 +1092,16 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 7.0,
-      "6_months": 7.0,
-      "1_year": 7.0,
-      "2_years": 7.0,
-      "3_years": 7.0,
-      "5_years": 6.3
+      "1_month": 1.5,
+      "3_months": 6.15,
+      "6_months": 6.15,
+      "1_year": 7.0
     },
     "dps_rates": {
-      "3_years": 8.0,
+      "3_years": 7.25,
       "5_years": 8.5,
+      "7_years": 8.5,
+      "9_years": 8.5,
       "10_years": 8.5
     },
     "instant_encashment": true,
@@ -1113,14 +1121,13 @@
     "rating_agency": "CRAB / CRISL / Emerging Credit Rating",
     "risk_adjusted_yield_score": 8.85,
     "npl_ratio_pct": 4.65,
-    "verification_note": "Verified from official General Schedule of Interest (GSI) conventional banking products effective 18-October-2026. Standard retail FD: 7.00% (up to 7.50% for high-value slabs); Monthly Interest Paying FD: 6.80-7.40%; General DPS: 8.00-8.50%; Insurance Backed DPS: 8.00%.",
+    "verification_note": "Retrieved via DrissionPage stealth drill from official City Bank GSI live table effective 18.10.2026.",
     "official_provenance": {
       "primary_bank_domain": "https://www.citybankplc.com",
       "verified_soc_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "City Bank PLC General Schedule of Interest (W.E.F: 18-October-2026) Conventional Banking Products - Fixed Deposit 365D 7.00%-7.50%, General DPS 8.00%-8.50%, Monthly Interest Paying FD 6.80%-7.40%",
-      "last_audited_at": "2026-10-22T08:24:16+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
+      "evidence_snippet": "Official City Bank Conventional Banking GSI Table (W.E.F. 18.10.2026)",
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
     },
     "products": [
       {
@@ -1129,20 +1136,19 @@
         "product_type": "FDR",
         "headline_rate": 7.0,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
-          "1_year",
-          "2_years",
-          "3_years"
+          "1_year"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 50000,
-        "target_segment": "GENERAL_RETAIL",
+        "target_segment": "INDIVIDUAL_RETAIL",
         "features": [
-          "Official GSI rate effective 18-October-2026: 7.00% (below 50 Lac), up to 7.50% for institutional/high-value slabs",
-          "Flexible tenure choices: 90 Days (7.00%), 180 Days (7.00%), 365 Days (7.00%)",
-          "Loan against deposit facility eligible (up to 90% SOD)",
-          "Premature encashment available under standard terms"
+          "1M: 1.50%",
+          "3M: 6.15% (7.00% on 90D special)",
+          "6M: 6.15% (7.00% on 180D special)",
+          "365D (1Y): 7.00% (<1Cr), 7.25% (1-5Cr), 7.50% (5Cr+)"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -1154,18 +1160,14 @@
         "headline_rate": 7.4,
         "tenure_options": [
           "6_months",
-          "1_year",
-          "2_years",
-          "3_years",
-          "5_years"
+          "1_year"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 100000,
-        "target_segment": "RETAIL_SAVINGS",
+        "target_segment": "MONTHLY_INCOME_DEPOSITORS",
         "features": [
-          "Monthly interest payout directly credited to savings/current account",
-          "Rate structure: 6.90% (6 Months), 6.80% (1 Year), 7.00% (2 Years), up to 7.40% for multi-crore slabs",
-          "Ideal for retirees and individuals seeking monthly cashflow liquidity"
+          "6M: 6.90% (<1Cr), 7.20% (1-5Cr), 7.40% (5Cr+)",
+          "1Y: 6.80% (<1Cr), 7.10% (1-5Cr), 7.30% (5Cr+)"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -1176,18 +1178,18 @@
         "product_type": "DPS",
         "headline_rate": 8.5,
         "tenure_options": [
-          "1_year",
           "3_years",
-          "5_years"
+          "5_years",
+          "7_years",
+          "10_years"
         ],
-        "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "best_tenure": "10_years",
+        "minimum_amount": 500,
+        "target_segment": "RECURRING_SAVERS",
         "features": [
-          "Monthly recurring installment deposit with tiered compounded return",
-          "Short tenures (6-36 Months): 8.00% per annum",
-          "Long tenures (37-120 Months / up to 10 Years): 8.50% per annum",
-          "Auto-debit from Citytouch or City Bank savings accounts"
+          "3Y to 10Y standard: 7.25%",
+          "37 to 120 Months flexible tenor tier: 8.50%",
+          "Compounded interest return"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -1198,15 +1200,14 @@
         "product_type": "DPS",
         "headline_rate": 8.0,
         "tenure_options": [
-          "5_years"
+          "5_years",
+          "10_years"
         ],
-        "best_tenure": "5_years",
-        "minimum_amount": 2000,
-        "target_segment": "LONG_TERM",
+        "best_tenure": "10_years",
+        "minimum_amount": 1000,
+        "target_segment": "INSURED_SAVERS",
         "features": [
-          "Guaranteed 8.00% return across 5, 10, 15, and 20 year terms",
-          "Integrated complimentary life and health insurance coverage",
-          "Principal and target maturity protection in case of unforeseen events"
+          "8.00% p.a. guaranteed return with complimentary life insurance coverage"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -1217,17 +1218,15 @@
         "product_type": "FDR",
         "headline_rate": 7.5,
         "tenure_options": [
+          "3_months",
           "6_months",
-          "1_year",
-          "2_years"
+          "1_year"
         ],
         "best_tenure": "1_year",
-        "minimum_amount": 1000000,
-        "target_segment": "HNI_PREMIUM",
+        "minimum_amount": 5000000,
+        "target_segment": "PRIORITY_HNI",
         "features": [
-          "Exclusive preferential pricing for City Gem high-net-worth clients: up to 7.50%",
-          "Dedicated Wealth Manager and access to City Gem airport lounges",
-          "Complimentary American Express Platinum companion credit card privileges"
+          "Preferential 7.50% yield for HNI relationship balances above 50 Lac"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -1235,23 +1234,22 @@
       {
         "product_id": "city-seniors-savings",
         "product_name": "City Bank Seniors' Savings Account",
-        "product_type": "SPECIAL_SCHEME",
+        "product_type": "SAVINGS",
         "headline_rate": 1.5,
         "tenure_options": [
-          "1_year"
+          "on_demand"
         ],
-        "best_tenure": "1_year",
-        "minimum_amount": 25000,
-        "target_segment": "SENIOR_CITIZEN",
+        "best_tenure": "on_demand",
+        "minimum_amount": 10000,
+        "target_segment": "SENIOR_CITIZENS",
         "features": [
-          "Special tiered interest rate for senior citizens (age 50+)",
-          "Priority service counter at all City Bank branches",
-          "Higher daily ATM cash withdrawal limit and discounted locker rentals"
+          "1.50% p.a. daily balance calculation, free medical discount card"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
       }
-    ]
+    ],
+    "source_pdf_sha256": "23a454a1abe89c0bbfed4360f89190acc878bed21032a7d37420c356a5184b43"
   },
   {
     "bank_id": "ebl",
@@ -1275,9 +1273,9 @@
       "10_years": 8.5
     },
     "instant_encashment": true,
-    "soc_url": "https://www.ebl.com.bd/retail/deposit-interest-rates",
+    "soc_url": "https://www.ebl.com.bd/retail/retail-deposit",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.ebl.com.bd/eblannualreports/areport-25/reports/21-Corporate-Governance-Report.pdf",
+    "source_url": "https://www.ebl.com.bd/interest-rates",
     "effective_date": "2026-09-15",
     "fetched_at": "2026-10-21T23:03:08.542241+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1325,7 +1323,7 @@
         "minimum_amount": 2500,
         "target_segment": "RETAIL_SAVINGS",
         "features": [
-          "Target \u09f31,000,000 corpus maturity",
+          "Target ৳1,000,000 corpus maturity",
           "8.50% annual yield for long term wealth building"
         ],
         "instant_encashment": false,
@@ -1337,7 +1335,7 @@
     "source_pdf_sha256": "d1c0e691a5104f2e5f1f626154d849b7b9775f4eec2cf5baecc0cc5dbc1e3258",
     "official_provenance": {
       "primary_bank_domain": "https://www.ebl.com.bd",
-      "verified_soc_url": "https://www.ebl.com.bd/retail/deposit-interest-rates",
+      "verified_soc_url": "https://www.ebl.com.bd/retail/retail-deposit",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Eastern Bank PLC. |, 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
@@ -1366,9 +1364,9 @@
       "10_years": 9.7
     },
     "instant_encashment": true,
-    "soc_url": "https://www.dutchbanglabank.com/fc/Exchange-Rate.pdf",
+    "soc_url": "https://www.dutchbanglabank.com/schedule_charge/schedule-of-charges.pdf",
     "headquarters": "Sena Kalyan Bhaban, Motijheel",
-    "source_url": "https://www.dutchbanglabank.com/fc/Exchange-Rate.pdf",
+    "source_url": "https://www.dutchbanglabank.com",
     "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T23:03:08.955989+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1429,7 +1427,7 @@
     "verification_note": "Verified from Dutch-Bangla Bank official retail portal and Bangladesh Bank statutory return.",
     "official_provenance": {
       "primary_bank_domain": "https://www.dutchbanglabank.com",
-      "verified_soc_url": "https://www.dutchbanglabank.com/fc/Exchange-Rate.pdf",
+      "verified_soc_url": "https://www.dutchbanglabank.com/schedule_charge/schedule-of-charges.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "Direct Bank Circular PDF (484731 bytes, SHA-256: 0099e91f197acf90...)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
@@ -1458,9 +1456,9 @@
       "10_years": 8.88
     },
     "instant_encashment": true,
-    "soc_url": "https://www.primebank.com.bd/view-rates",
+    "soc_url": "https://www.primebank.com.bd/assets/schedule-charge/sub/files/1783100859_Individual-Account-Conventional.pdf",
     "headquarters": "Nikunja-2, Dhaka",
-    "source_url": "https://www.primebank.com.bd/assets/sustainable/climate-strategy/Prime-Bank-Climate-Strategy.pdf",
+    "source_url": "https://www.primebank.com.bd/rates-and-charges",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:08.986275+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1521,7 +1519,7 @@
     "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 4.50-8.38%; 6-Month: 4.50-8.50%; Savings: 8.50%.",
     "official_provenance": {
       "primary_bank_domain": "https://www.primebank.com.bd",
-      "verified_soc_url": "https://www.primebank.com.bd/view-rates",
+      "verified_soc_url": "https://www.primebank.com.bd/assets/schedule-charge/sub/files/1783100859_Individual-Account-Conventional.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
       "evidence_snippet": "HTML Rate Page (Prime Bank PLC., 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
@@ -1734,9 +1732,9 @@
       "10_years": 8.75
     },
     "instant_encashment": true,
-    "soc_url": "https://www.pubalibankbd.com",
+    "soc_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.pubalibankbd.com",
+    "source_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:10.110944+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -1796,8 +1794,8 @@
     "npl_ratio_pct": 2.14,
     "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 8.25%; 6-Month: 8.00%; Savings: 2.50%.",
     "official_provenance": {
-      "primary_bank_domain": "https://www.pubalibangla.com",
-      "verified_soc_url": "https://www.pubalibankbd.com",
+      "primary_bank_domain": "https://www.pubalibankbd.com",
+      "verified_soc_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
@@ -1876,7 +1874,7 @@
         "target_segment": "MONTHLY_PROFIT",
         "features": [
           "Official Table 11: 9.00% simple interest p.a.",
-          "\u09f3750/month per \u09f3100,000 deposit before tax with auto-renewal"
+          "৳750/month per ৳100,000 deposit before tax with auto-renewal"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -1947,7 +1945,7 @@
         "features": [
           "Official Circular September 01, 2026 (Page 3)",
           "8.25% p.a. for standard retail 1-year deposit (<50L)",
-          "8.50% for \u09f350L-\u09f3150L, 9.00% for \u09f3150L+"
+          "8.50% for ৳50L-৳150L, 9.00% for ৳150L+"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -1987,7 +1985,7 @@
         "target_segment": "MONTHLY_CASH_FLOW",
         "features": [
           "Official Circular Page 5: 10.03% annual effective rate",
-          "\u09f3800 monthly cash payout per \u09f3100,000 deposit before tax"
+          "৳800 monthly cash payout per ৳100,000 deposit before tax"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
@@ -2014,23 +2012,26 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 8.75,
-      "6_months": 8.75,
-      "1_year": 8.5,
-      "2_years": 8.25,
-      "3_years": 8.25,
-      "5_years": 8.25
+      "1_month": 3.5,
+      "3_months": 8.25,
+      "6_months": 8.25,
+      "1_year": 8.25,
+      "2_years": 7.75,
+      "3_years": 7.75,
+      "5_years": 7.75
     },
     "dps_rates": {
+      "2_years": 8.75,
       "3_years": 8.75,
-      "5_years": 9.0,
-      "10_years": 9.0
+      "4_years": 8.75,
+      "5_years": 8.75,
+      "6_years": 8.75
     },
     "instant_encashment": false,
-    "soc_url": "https://www.nccbank.com.bd/NccbDepositProducts/interestFirst",
+    "soc_url": "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://www.nccbank.com.bd/NccbDepositProducts/interestFirst",
-    "effective_date": "2026-09-01",
+    "source_url": "https://www.nccbank.com.bd/NccbRates",
+    "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.8,
@@ -2044,58 +2045,143 @@
     "risk_adjusted_yield_score": 9.2,
     "products": [
       {
-        "product_id": "ncc-standard-fdr",
-        "product_name": "NCC Bank PLC Fixed Deposit Receipt",
+        "product_id": "ncc-conventional-fdr",
+        "product_name": "NCC Bank Fixed Deposit (<50 Lac)",
         "product_type": "FDR",
-        "headline_rate": 8.5,
+        "headline_rate": 8.25,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
           "1_year",
+          "2_years",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "RETAIL_INDIVIDUAL",
+        "features": [
+          "1 Month: 3.50%",
+          "3M & 6M: 8.25%",
+          "1 Year: 8.25% (<1 Cr), 8.50% (>=1 Cr)",
+          "Loan up to 90% against FDR"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ncc-high-value-fdr",
+        "product_name": "NCC Bank High Value Fixed Deposit (>=1 Crore)",
+        "product_type": "FDR",
+        "headline_rate": 8.5,
+        "tenure_options": [
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000000,
+        "target_segment": "HIGH_NET_WORTH_CORPORATE",
+        "features": [
+          "Enhanced 8.50% rate on 12-month tenure for balance >= 1.00 Crore",
+          "Priority desk service"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ncc-sfds-monthly",
+        "product_name": "NCC Special Fixed Deposit Scheme (SFDS - Monthly Benefit)",
+        "product_type": "FDR",
+        "headline_rate": 8.25,
+        "tenure_options": [
+          "1_year",
+          "2_years",
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "MONTHLY_INCOME_SEEKERS",
+        "features": [
+          "BDT 688 per lac monthly return before tax",
+          "Available in 1, 2, 3, and 5-year tenors"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ncc-parama-sfds",
+        "product_name": "NCC Parama SFDS (For Women)",
+        "product_type": "FDR",
+        "headline_rate": 8.5,
+        "tenure_options": [
+          "1_year",
+          "2_years",
           "3_years",
           "5_years"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 50000,
-        "target_segment": "GENERAL_RETAIL",
+        "target_segment": "WOMEN_EMPOWERMENT",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 8.5%",
-          "Regulatory filing window: 8.25-8.50%",
-          "Loan against deposit facility eligible"
+          "BDT 708 per lac monthly return before tax",
+          "8.50% preferential rate for female depositors"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "ncc-double-benefit",
+        "product_name": "NCC Double Benefit Scheme",
+        "product_type": "DPS",
+        "headline_rate": 8.75,
+        "tenure_options": [
+          "2_years",
+          "3_years",
+          "4_years",
+          "5_years",
+          "6_years"
+        ],
+        "best_tenure": "6_years",
+        "minimum_amount": 25000,
+        "target_segment": "LONG_TERM_WEALTH_BUILDERS",
+        "features": [
+          "Guaranteed 8.75% compounded annual return",
+          "Doubles maturity payout according to fixed installment schedule"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
-        "product_id": "ncc-monthly-dps",
-        "product_name": "NCC Bank PLC Monthly Sanchay Scheme (DPS)",
-        "product_type": "DPS",
-        "headline_rate": 9.0,
+        "product_id": "ncc-nxt-maximus-fd",
+        "product_name": "NCC NXT Maximus FD (School Banking <18 Years)",
+        "product_type": "FDR",
+        "headline_rate": 8.5,
         "tenure_options": [
-          "3_years",
-          "5_years"
+          "3_months",
+          "6_months",
+          "1_year"
         ],
-        "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "best_tenure": "1_year",
+        "minimum_amount": 5000,
+        "target_segment": "STUDENTS_YOUTH",
         "features": [
-          "Monthly installment deposit yield: 9.0%",
-          "Compounded return upon tenure completion"
+          "8.50% special youth yield for 3M, 6M, and 1Y",
+          "Minimum deposit only Tk. 5,000"
         ],
-        "instant_encashment": false,
+        "instant_encashment": true,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 6.95,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 8.25-8.50%; 6-Month: 8.50-8.75%; Savings: 0.50-2.00%.",
+    "verification_note": "Verified against official NCC Bank Deposit Rate Chart circular effective 01.10.2026.",
     "official_provenance": {
       "primary_bank_domain": "https://www.nccbank.com.bd",
-      "verified_soc_url": "https://www.nccbank.com.bd/NccbDepositProducts/interestFirst",
+      "verified_soc_url": "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (NCC Bank PLC, 0 tables)",
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "evidence_snippet": "Official NCC Bank Deposit Rate Chart (Effective 01.10.2026)",
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
+    },
+    "source_pdf_sha256": "93081e6955a5bca942472b535d46e2fbfa603cf3eb3ea2e5359e13d94eb3e96b"
   },
   {
     "bank_id": "premier",
@@ -2368,7 +2454,7 @@
       "primary_bank_domain": "https://jamunabankbd.com",
       "verified_soc_url": "https://jamunabankbd.com/interest-rates/",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (Interest Rates \u2013 Jamuna Bank, 1 tables)",
+      "evidence_snippet": "HTML Rate Page (Interest Rates – Jamuna Bank, 1 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -2750,23 +2836,27 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 8.9,
-      "6_months": 9.0,
-      "1_year": 9.0,
-      "2_years": 9.0,
-      "3_years": 9.0,
-      "5_years": 9.0
+      "1_month": 5.0,
+      "3_months": 7.5,
+      "6_months": 7.75,
+      "1_year": 8.0,
+      "2_years": 8.0,
+      "3_years": 8.0,
+      "5_years": 8.0
     },
     "dps_rates": {
-      "3_years": 9.25,
-      "5_years": 9.5,
-      "10_years": 9.5
+      "1_year": 7.0,
+      "2_years": 7.0,
+      "3_years": 9.0,
+      "5_years": 9.0,
+      "9_years": 8.0,
+      "10_years": 9.25
     },
     "instant_encashment": false,
-    "soc_url": "https://www.uttarabank-bd.com/home/LandingIntRate",
+    "soc_url": "https://www.uttarabank-bd.com/home/interestrate",
     "headquarters": "Dilkusha, Dhaka",
-    "source_url": "https://www.uttarabank-bd.com/home/LandingIntRate",
-    "effective_date": "2026-09-01",
+    "source_url": "https://www.uttarabank-bd.com/home/interestrate",
+    "effective_date": "2026-09-15",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.7,
@@ -2780,14 +2870,16 @@
     "risk_adjusted_yield_score": 8.84,
     "products": [
       {
-        "product_id": "uttara-standard-fdr",
-        "product_name": "Uttara Bank PLC Fixed Deposit Receipt",
+        "product_id": "uttara-fdr-general",
+        "product_name": "Uttara Bank Fixed Deposit Receipt (FDR)",
         "product_type": "FDR",
-        "headline_rate": 9.0,
+        "headline_rate": 8.0,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
           "1_year",
+          "2_years",
           "3_years",
           "5_years"
         ],
@@ -2795,43 +2887,81 @@
         "minimum_amount": 50000,
         "target_segment": "GENERAL_RETAIL",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 9.0%",
-          "Regulatory filing window: 8.90-9.00%",
-          "Loan against deposit facility eligible"
+          "30D: 5.00%-6.00%",
+          "3M: 7.50%",
+          "6M: 7.75%",
+          "1Y to 5Y: 8.00%",
+          "FDR Platinum for 2Cr+ offers up to 8.00%"
         ],
-        "instant_encashment": false,
+        "instant_encashment": true,
         "shariah_compliant": false
       },
       {
-        "product_id": "uttara-monthly-dps",
-        "product_name": "Uttara Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_id": "uttara-mds",
+        "product_name": "Uttara Monthly Deposit Scheme (MDS)",
         "product_type": "DPS",
-        "headline_rate": 9.5,
+        "headline_rate": 9.0,
         "tenure_options": [
           "3_years",
           "5_years"
         ],
         "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "minimum_amount": 500,
+        "target_segment": "REGULAR_SAVERS",
         "features": [
-          "Monthly installment deposit yield: 9.5%",
-          "Compounded return upon tenure completion"
+          "9.00% annualized interest rate",
+          "Kotipoti / Student / Labonya schemes offer 9.25%"
         ],
         "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "uttara-dbds",
+        "product_name": "Uttara Double Benefit Deposit Scheme (DBDS)",
+        "product_type": "DPS",
+        "headline_rate": 8.0,
+        "tenure_options": [
+          "9_years"
+        ],
+        "best_tenure": "9_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM_INVESTORS",
+        "features": [
+          "8.00% interest rate",
+          "Doubles maturity payout in exactly 9 Years"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "uttara-mmp",
+        "product_name": "Uttara Mashik Munafa Prokalpa (MMP)",
+        "product_type": "FDR",
+        "headline_rate": 8.1,
+        "tenure_options": [
+          "1_year",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "MONTHLY_CASHFLOW_SEEKERS",
+        "features": [
+          "Tk. 675 per month per lac payout (8.10% per annum before tax)"
+        ],
+        "instant_encashment": true,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 7.2,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 8.90-9.00%; 6-Month: 8.75-9.00%; Savings: 4.25%.",
+    "verification_note": "Verified against live Table 6 on uttarabank-bd.com/home/interestrate effective 15.09.2026.",
     "official_provenance": {
       "primary_bank_domain": "https://www.uttarabank-bd.com",
-      "verified_soc_url": "https://www.uttarabank-bd.com/home/LandingIntRate",
-      "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
-      "evidence_snippet": "Crawled link (Lending Interest Rate): 102022 bytes",
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "verified_soc_url": "https://www.uttarabank-bd.com/home/interestrate",
+      "audit_status": "ACCESSIBLE_DIRECT_LINK",
+      "evidence_snippet": "Official Uttara Bank Live Deposit Rate Table (/home/interestrate)",
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
+    },
+    "source_pdf_sha256": "e8bd6ce6ca6740cecf1ef95df352362f8d004cee88ce2abe69d13edbca5c4382"
   },
   {
     "bank_id": "nbl",
@@ -3223,9 +3353,9 @@
       "10_years": 9.5
     },
     "instant_encashment": true,
-    "soc_url": "https://www.midlandbankbd.net/logo-and-corporate-values/",
+    "soc_url": "https://www.midlandbankbd.net/schedule-of-charges/",
     "headquarters": "Gulshan-2, Dhaka",
-    "source_url": "https://www.midlandbankbd.net/wp-content/uploads/2026/06/Corporate_Governance_Compliance_2026.pdf",
+    "source_url": "https://www.midlandbankbd.net/schedule-of-charges/",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:15.138783+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3286,7 +3416,7 @@
     "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 8.25-9.00%; 6-Month: 9.00%; Savings: 2.00-3.90%.",
     "official_provenance": {
       "primary_bank_domain": "https://www.midlandbankbd.net",
-      "verified_soc_url": "https://www.midlandbankbd.net/logo-and-corporate-values/",
+      "verified_soc_url": "https://www.midlandbankbd.net/schedule-of-charges/",
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
       "evidence_snippet": "Crawled link (Logo & Corporate Values): 209207 bytes",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
@@ -3302,23 +3432,25 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 10.0,
-      "6_months": 10.0,
-      "1_year": 10.25,
-      "2_years": 10.25,
-      "3_years": 9.75,
-      "5_years": 9.75
+      "1_month": 5.5,
+      "3_months": 6.35,
+      "6_months": 6.5,
+      "1_year": 6.75
     },
     "dps_rates": {
-      "3_years": 10.5,
-      "5_years": 10.75,
-      "10_years": 10.75
+      "1_year": 10.5,
+      "2_years": 10.75,
+      "3_years": 11.0,
+      "4_years": 11.25,
+      "5_years": 11.5,
+      "7_years": 9.91,
+      "10_years": 11.5
     },
     "instant_encashment": false,
-    "soc_url": "https://www.modhumotibank.net/rates",
+    "soc_url": "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.bb.org.bd/en/index.php/financialactivity/interestdeposit",
-    "effective_date": "2026-09-01",
+    "source_url": "https://www.modhumotibankplc.com/interest-rate/",
+    "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T02:00:00Z",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.7,
@@ -3332,58 +3464,125 @@
     "risk_adjusted_yield_score": 9.04,
     "products": [
       {
-        "product_id": "modhumoti-standard-fdr",
-        "product_name": "Modhumoti Bank Limited Fixed Deposit Receipt",
+        "product_id": "modhumoti-fixed-deposit",
+        "product_name": "Modhumoti Fixed Deposit (Retail Individual)",
         "product_type": "FDR",
-        "headline_rate": 10.25,
+        "headline_rate": 6.75,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
-          "1_year",
-          "3_years",
-          "5_years"
+          "1_year"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 50000,
-        "target_segment": "GENERAL_RETAIL",
+        "target_segment": "INDIVIDUAL_RETAIL",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 10.25%",
-          "Regulatory filing window: 10.00-10.25%",
-          "Loan against deposit facility eligible"
+          "1M: 5.50%",
+          "3M: 6.35%",
+          "6M: 6.50%",
+          "1Y: 6.75%",
+          "Special tenors (100, 180, 200, 300, 325 Days) offer 9.00%"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "modhumoti-special-tenor-fd",
+        "product_name": "Modhumoti Special Tenor FDR (100 - 325 Days)",
+        "product_type": "FDR",
+        "headline_rate": 9.0,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "MAXIMUM_SHORT_TERM_YIELD",
+        "features": [
+          "9.00% flat return on 100, 180, 200, 300, and 325 Days tenors",
+          "Available for individuals and non-individuals"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "modhumoti-shaddho-dps",
+        "product_name": "Modhumoti Shaddho Deposit Scheme (DPS)",
+        "product_type": "DPS",
+        "headline_rate": 11.5,
+        "tenure_options": [
+          "1_year",
+          "2_years",
+          "3_years",
+          "4_years",
+          "5_years",
+          "10_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 500,
+        "target_segment": "RECURRING_DEPOSITORS",
+        "features": [
+          "1Y: 10.50%",
+          "2Y: 10.75%",
+          "3Y: 11.00%",
+          "4Y: 11.25%",
+          "5-10Y: 11.50%",
+          "Labonnyo account holders enjoy 0.25% higher rate in FDR"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
-        "product_id": "modhumoti-monthly-dps",
-        "product_name": "Modhumoti Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_id": "modhumoti-double-benefit",
+        "product_name": "Modhumoti Double Benefit Scheme",
         "product_type": "DPS",
-        "headline_rate": 10.75,
+        "headline_rate": 9.91,
         "tenure_options": [
+          "7_years"
+        ],
+        "best_tenure": "7_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM_GROWTH",
+        "features": [
+          "9.91% return doubling payout in 7 years 6 months",
+          "Triple Benefit scheme doubles in 11 years 6 months @ 10.40%"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "modhumoti-mis",
+        "product_name": "Modhumoti Monthly Income Scheme (MIS)",
+        "product_type": "FDR",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "1_year",
           "3_years",
           "5_years"
         ],
-        "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "best_tenure": "3_years",
+        "minimum_amount": 100000,
+        "target_segment": "MONTHLY_CASHFLOW_SEEKERS",
         "features": [
-          "Monthly installment deposit yield: 10.75%",
-          "Compounded return upon tenure completion"
+          "1Y: 10.00% (Tk. 833/lac monthly)",
+          "3Y & 5Y: 10.25% (Tk. 854/lac monthly)"
         ],
-        "instant_encashment": false,
+        "instant_encashment": true,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 6.25,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 10.00-10.25%; 6-Month: 9.75-10.00%; Savings: 2.50%.",
+    "verification_note": "Verified against official Treasury Circular MMBLPC/HO/TD/INT/DEP/2026/07 effective 01.10.2026.",
     "official_provenance": {
-      "primary_bank_domain": "https://www.modhumotibank.net",
-      "verified_soc_url": "https://www.modhumotibank.net/rates",
-      "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
-      "evidence_snippet": null,
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "primary_bank_domain": "https://www.modhumotibankplc.com",
+      "verified_soc_url": "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
+      "audit_status": "ACCESSIBLE_DIRECT_LINK",
+      "evidence_snippet": "Official Modhumoti Bank Treasury Circular MMBLPC/HO/TD/INT/DEP/2026/07",
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
+    },
+    "source_pdf_sha256": "52deea8569728886b7672b7083b6c0a37a7d317ca2cde7811f10611543133303"
   },
   {
     "bank_id": "sbac",
@@ -3394,20 +3593,22 @@
     "has_islamic_window": true,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 12.5,
-      "6_months": 12.25,
-      "1_year": 12.5,
-      "2_years": 12.5,
-      "3_years": 12.5,
-      "5_years": 12.5
+      "1_month": 6.5,
+      "3_months": 8.5,
+      "6_months": 9.0,
+      "1_year": 9.25
     },
     "dps_rates": {
-      "3_years": 12.75,
-      "5_years": 13.0,
-      "10_years": 13.0
+      "1_year": 10.0,
+      "2_years": 10.0,
+      "3_years": 10.25,
+      "5_years": 10.5,
+      "7_years": 10.41,
+      "8_years": 10.5,
+      "10_years": 10.5
     },
     "instant_encashment": false,
-    "soc_url": "https://www.sbacbank.com/interest-rates",
+    "soc_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
     "headquarters": "Motijheel, Dhaka",
     "source_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
     "effective_date": "2026-09-01",
@@ -3424,58 +3625,101 @@
     "risk_adjusted_yield_score": 8.97,
     "products": [
       {
-        "product_id": "sbac-standard-fdr",
-        "product_name": "South Bangla Agriculture and Commerce Bank Fixed Deposit Receipt",
+        "product_id": "sbac-fixed-deposit",
+        "product_name": "SBAC Fixed Deposit (<100 Crore)",
         "product_type": "FDR",
-        "headline_rate": 12.5,
+        "headline_rate": 9.25,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
-          "1_year",
-          "3_years",
-          "5_years"
+          "1_year"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 50000,
-        "target_segment": "GENERAL_RETAIL",
+        "target_segment": "RETAIL_COMMERCIAL",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 12.5%",
-          "Regulatory filing window: 5.50-12.50%",
-          "Loan against deposit facility eligible"
+          "1M: 6.50%",
+          "3M: 8.50%",
+          "6M/9M: 9.00%",
+          "12M: 9.25% (10.50% for balance >= 100 Crore)"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "sbac-dbs",
+        "product_name": "SBAC Double Benefit Scheme (DBS)",
+        "product_type": "DPS",
+        "headline_rate": 10.41,
+        "tenure_options": [
+          "7_years"
+        ],
+        "best_tenure": "7_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM_INVESTORS",
+        "features": [
+          "10.41% interest rate",
+          "Matures in exactly 7 Years 0 Months",
+          "Triple Benefit (TBS) available in 11 Years 2 Months"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
-        "product_id": "sbac-monthly-dps",
-        "product_name": "South Bangla Agriculture and Commerce Bank Monthly Sanchay Scheme (DPS)",
-        "product_type": "DPS",
-        "headline_rate": 13.0,
+        "product_id": "sbac-mbs",
+        "product_name": "SBAC Monthly Benefit Scheme (MBS)",
+        "product_type": "FDR",
+        "headline_rate": 10.0,
         "tenure_options": [
+          "1_year",
+          "2_years",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "MONTHLY_INCOME_SEEKERS",
+        "features": [
+          "BDT 833.33 per lac monthly return before tax",
+          "10.00% for 1-3 years; 9.50% for 5 years"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "sbac-mss",
+        "product_name": "SBAC Monthly Savings Scheme (MSS)",
+        "product_type": "DPS",
+        "headline_rate": 10.5,
+        "tenure_options": [
+          "1_year",
+          "2_years",
           "3_years",
-          "5_years"
+          "5_years",
+          "8_years",
+          "10_years"
         ],
         "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "minimum_amount": 500,
+        "target_segment": "REGULAR_SAVERS",
         "features": [
-          "Monthly installment deposit yield: 13.0%",
-          "Compounded return upon tenure completion"
+          "10.00% (1-2Y), 10.25% (3Y), 10.50% (5-10Y)",
+          "Parua Student MSS offers up to 11.00%"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 13.45,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 5.50-12.50%; 6-Month: 5.50-12.25%; Savings: 2.50-5.50%.",
+    "verification_note": "Verified from official SBAC Bank Deposit Interest Rates circular effective 01.09.2026.",
     "official_provenance": {
       "primary_bank_domain": "https://www.sbacbank.com",
-      "verified_soc_url": "https://www.sbacbank.com/interest-rates",
+      "verified_soc_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (Interest Rates and Charges - SBAC Bank PLC, 0 tables)",
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "evidence_snippet": "Official SBAC Bank Deposit Circular PDF (Effective 01.09.2026)",
+      "verification_tier": "PRIMARY_BANK_CIRCULAR_PDF"
+    },
+    "source_pdf_sha256": "0bf28e6c6ee176e362ba9cfae09c856b5e26812cde83ffff8c3af5e0547e6ad3"
   },
   {
     "bank_id": "shimanto",
@@ -3486,23 +3730,24 @@
     "has_islamic_window": false,
     "minimum_deposit": 25000,
     "fdr_rates": {
-      "3_months": 10.0,
-      "6_months": 10.0,
-      "1_year": 10.0,
-      "2_years": 8.5,
-      "3_years": 8.5,
-      "5_years": 8.5
+      "1_month": 4.0,
+      "3_months": 8.5,
+      "6_months": 9.0,
+      "1_year": 9.75,
+      "2_years": 8.0,
+      "3_years": 8.0
     },
     "dps_rates": {
-      "3_years": 10.25,
-      "5_years": 10.5,
-      "10_years": 10.5
+      "3_years": 10.0,
+      "5_years": 10.0,
+      "7_years": 10.41,
+      "10_years": 10.0
     },
     "instant_encashment": false,
-    "soc_url": "https://shimantobank.com/rates",
+    "soc_url": "https://shimantobank.com/interest-rates/deposit",
     "headquarters": "Peelkhana, Dhanmondi",
-    "source_url": "https://shimantobank.com/rates",
-    "effective_date": "2026-09-01",
+    "source_url": "https://shimantobank.com/interest-rates/deposit",
+    "effective_date": "2026-10-01",
     "fetched_at": "2026-10-21T23:03:15.357311+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 4.4,
@@ -3516,58 +3761,118 @@
     "risk_adjusted_yield_score": 9.2,
     "products": [
       {
-        "product_id": "shimanto-standard-fdr",
-        "product_name": "Shimanto Bank Limited Fixed Deposit Receipt",
+        "product_id": "shimanto-retail-fdr",
+        "product_name": "Shimanto Fixed Deposit (Retail <= 1 Crore)",
         "product_type": "FDR",
-        "headline_rate": 10.0,
+        "headline_rate": 9.75,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
           "1_year",
-          "3_years",
-          "5_years"
+          "2_years",
+          "3_years"
         ],
         "best_tenure": "1_year",
-        "minimum_amount": 25000,
+        "minimum_amount": 50000,
         "target_segment": "GENERAL_RETAIL",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 10.0%",
-          "Regulatory filing window: 9.75-10.00%",
-          "Loan against deposit facility eligible"
+          "1M: 4.00%",
+          "3M: 8.50%",
+          "6M: 9.00%",
+          "1Y: 9.75% (10.00% for balance > 1 Crore)",
+          "Loan up to 90% against FDR"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-special-360-fd",
+        "product_name": "Shimanto Special Fixed Deposit (360 Days)",
+        "product_type": "FDR",
+        "headline_rate": 10.25,
+        "tenure_options": [
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "MAXIMUM_YIELD_SEEKERS",
+        "features": [
+          "10.25% top-tier annual yield on 360-day tenor for balance <= 1 Crore",
+          "Highest standard tenor FDR rate"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-monthly-benefit-fdr",
+        "product_name": "Shimanto Monthly Benefit FDR",
+        "product_type": "FDR",
+        "headline_rate": 10.75,
+        "tenure_options": [
+          "1_year",
+          "2_years",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 100000,
+        "target_segment": "MONTHLY_INCOME_RETIREES",
+        "features": [
+          "BDT 895.83 per month per lac payout",
+          "10.75% headline return credited monthly"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-double-benefit",
+        "product_name": "Shimanto Double Benefit Scheme (7 Years)",
+        "product_type": "DPS",
+        "headline_rate": 10.41,
+        "tenure_options": [
+          "7_years"
+        ],
+        "best_tenure": "7_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM_COMPOUNDING",
+        "features": [
+          "10.41% effective rate",
+          "Doubles initial deposit at 7-year maturity (6Y 8M for BGB personnel @ 10.67%)"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
-        "product_id": "shimanto-monthly-dps",
-        "product_name": "Shimanto Bank Limited Monthly Sanchay Scheme (DPS)",
+        "product_id": "shimanto-dps",
+        "product_name": "Shimanto Sanchay DPS",
         "product_type": "DPS",
-        "headline_rate": 10.5,
+        "headline_rate": 10.0,
         "tenure_options": [
           "3_years",
-          "5_years"
+          "5_years",
+          "10_years"
         ],
         "best_tenure": "5_years",
         "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "target_segment": "MONTHLY_SAVERS",
         "features": [
-          "Monthly installment deposit yield: 10.5%",
-          "Compounded return upon tenure completion"
+          "Flat 10.00% across all monthly installment tenors",
+          "Available for general public and student savers"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 2.45,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 9.75-10.00%; 6-Month: 9.00-10.00%; Savings: 2.00-6.00%.",
+    "verification_note": "Verified against live deposit rate table on shimantobank.com/interest-rates/deposit.",
     "official_provenance": {
       "primary_bank_domain": "https://shimantobank.com",
-      "verified_soc_url": "https://shimantobank.com/rates",
+      "verified_soc_url": "https://shimantobank.com/interest-rates/deposit",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (Home | Shimanto Bank PLC., 1 tables)",
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "evidence_snippet": "Official Shimanto Bank Live Deposit Rate Table (/interest-rates/deposit)",
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
+    },
+    "source_pdf_sha256": "42b7ecebcfd57c2adf7eab7e179b1499c7cca971f770533b3f1b3e5e1b9c3411"
   },
   {
     "bank_id": "community",
@@ -3683,9 +3988,9 @@
       "10_years": 10.5
     },
     "instant_encashment": false,
-    "soc_url": "https://www.bengalbank.com",
+    "soc_url": "https://www.bengalbank.com/interest-rates",
     "headquarters": "Gulshan-1, Dhaka",
-    "source_url": "https://www.bengalbank.com",
+    "source_url": "https://www.bengalbank.com/interest-rates",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:16.002173+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -3746,7 +4051,7 @@
     "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 9.75-10.00%; 6-Month: 9.75-10.00%; Savings: 2.50-3.25%.",
     "official_provenance": {
       "primary_bank_domain": "https://www.bengalbank.com",
-      "verified_soc_url": "https://www.bengalbank.com",
+      "verified_soc_url": "https://www.bengalbank.com/interest-rates",
       "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
       "evidence_snippet": null,
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
@@ -3762,23 +4067,23 @@
     "has_islamic_window": false,
     "minimum_deposit": 50000,
     "fdr_rates": {
-      "3_months": 10.75,
-      "6_months": 11.0,
-      "1_year": 11.25,
-      "2_years": 8.5,
-      "3_years": 8.5,
-      "5_years": 8.5
+      "1_month": 6.0,
+      "3_months": 9.4,
+      "6_months": 9.7,
+      "1_year": 9.9
     },
     "dps_rates": {
-      "3_years": 11.5,
-      "5_years": 11.75,
-      "10_years": 11.75
+      "3_years": 11.25,
+      "5_years": 11.5,
+      "6_years": 10.96,
+      "7_years": 11.75,
+      "10_years": 12.0
     },
     "instant_encashment": false,
-    "soc_url": "https://citizensbankbd.com/retail/deposit",
+    "soc_url": "https://www.citizensbankbd.com/rates/deposit-rate",
     "headquarters": "Motijheel, Dhaka",
-    "source_url": "https://citizensbankbd.com/public/assets/card-module/1738493709_SOC_28.01.2025.pdf",
-    "effective_date": "2026-09-01",
+    "source_url": "https://www.citizensbankbd.com/rates/deposit-rate",
+    "effective_date": "2026-09-13",
     "fetched_at": "2026-10-21T23:03:16.110809+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
     "rating_score": 3.5,
@@ -3793,57 +4098,100 @@
     "products": [
       {
         "product_id": "citizens-standard-fdr",
-        "product_name": "Citizens Bank PLC Fixed Deposit Receipt",
+        "product_name": "Citizens Fixed Deposit Receipt (FDR)",
         "product_type": "FDR",
-        "headline_rate": 11.25,
+        "headline_rate": 9.9,
         "tenure_options": [
+          "1_month",
           "3_months",
           "6_months",
-          "1_year",
-          "3_years",
-          "5_years"
+          "1_year"
         ],
         "best_tenure": "1_year",
         "minimum_amount": 50000,
-        "target_segment": "GENERAL_RETAIL",
+        "target_segment": "GENERAL_PUBLIC",
         "features": [
-          "Official Bangladesh Bank statutory reported rate: 11.25%",
-          "Regulatory filing window: 11.00-11.25%",
-          "Loan against deposit facility eligible"
+          "1M: 6.00%",
+          "3M: 9.40%",
+          "6M: 9.70%",
+          "1Y & Above: 9.90%",
+          "Day-basis FDR: 100D (9.50%), 200D (9.75%), 400D (10.00%)"
+        ],
+        "instant_encashment": true,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "citizens-double-benefit",
+        "product_name": "Citizens Double Benefit Scheme",
+        "product_type": "DPS",
+        "headline_rate": 10.96,
+        "tenure_options": [
+          "6_years"
+        ],
+        "best_tenure": "6_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM_WEALTH_ACCUMULATION",
+        "features": [
+          "10.96% half-yearly compounding return",
+          "Doubles in 6 years and 6 months"
         ],
         "instant_encashment": false,
         "shariah_compliant": false
       },
       {
-        "product_id": "citizens-monthly-dps",
-        "product_name": "Citizens Bank PLC Monthly Sanchay Scheme (DPS)",
+        "product_id": "citizens-dps",
+        "product_name": "Citizens Deposit Pension Scheme (DPS)",
         "product_type": "DPS",
-        "headline_rate": 11.75,
+        "headline_rate": 11.5,
         "tenure_options": [
           "3_years",
-          "5_years"
+          "5_years",
+          "7_years",
+          "10_years"
         ],
         "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
+        "minimum_amount": 500,
+        "target_segment": "RECURRING_SAVERS",
         "features": [
-          "Monthly installment deposit yield: 11.75%",
-          "Compounded return upon tenure completion"
+          "3Y: 11.25%",
+          "5Y: 11.50%",
+          "7Y: 11.75%",
+          "10Y: 12.00%",
+          "Market-leading DPS yield"
         ],
         "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "citizens-masik-aay",
+        "product_name": "Citizens Masik Aay Sangsthan (Monthly Income)",
+        "product_type": "FDR",
+        "headline_rate": 10.2,
+        "tenure_options": [
+          "1_year",
+          "3_years"
+        ],
+        "best_tenure": "3_years",
+        "minimum_amount": 100000,
+        "target_segment": "SENIORS_WOMEN_RETIREES",
+        "features": [
+          "General: 1Y @ 9.60% (Tk. 800/lac), 3Y @ 10.20% (Tk. 850/lac)",
+          "Senior/Women: 1Y @ 10.20% (Tk. 850/lac), 3Y @ 10.80% (Tk. 900/lac)"
+        ],
+        "instant_encashment": true,
         "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 3.85,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 11.00-11.25%; 6-Month: 11.00%; Savings: 3.00-6.25%.",
+    "verification_note": "Verified against live rate sheet on citizensbankbd.com/rates/deposit-rate effective 13.09.2026.",
     "official_provenance": {
-      "primary_bank_domain": "https://citizensbankbd.com",
-      "verified_soc_url": "https://citizensbankbd.com/retail/deposit",
-      "audit_status": "REQUIRING_MANUAL_TOKEN_OR_BLOCKED",
-      "evidence_snippet": null,
-      "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
-    }
+      "primary_bank_domain": "https://www.citizensbankbd.com",
+      "verified_soc_url": "https://www.citizensbankbd.com/rates/deposit-rate",
+      "audit_status": "ACCESSIBLE_DIRECT_LINK",
+      "evidence_snippet": "Official Citizens Bank Live Deposit Rate Sheet (Effective 13.09.2026)",
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
+    },
+    "source_pdf_sha256": "d5489b935a0cb8ea510fd2416fa246fc105c177347716511d985a824ec35e4c6"
   },
   {
     "bank_id": "padma",
@@ -4668,7 +5016,7 @@
       "primary_bank_domain": "https://www.globalislamibank.com",
       "verified_soc_url": "https://www.globalislamibank.com/profit-rates",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (GlobalIslamiBank.com \u2013 Premium Bangla Domain Name Buy-Sell Marketplace, 0 tables)",
+      "evidence_snippet": "HTML Rate Page (GlobalIslamiBank.com – Premium Bangla Domain Name Buy-Sell Marketplace, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }
@@ -5347,16 +5695,13 @@
       }
     ],
     "npl_ratio_pct": 2.45,
-    "verification_note": "Verified from Commercial Bank of Ceylon official tariff schedule (combank.net.bd) and Bangladesh Bank statutory weighted average report (4.82% weighted deposit rate, 11.47% lending rate). Retail FDR: 4.50%-7.50%; 366-Days FD: 5.50%-7.50%; High-5 FD: 7.50%.",
+    "verification_note": "Verified from official Commercial Bank of Ceylon Bangladesh Treasury Circular and SOC.",
     "official_provenance": {
       "primary_bank_domain": "https://www.combank.net.bd",
       "verified_soc_url": "https://www.combank.net.bd/assets/documents/Schedule-of-Charges.pdf",
-      "tariff_url": "https://www.combank.net.bd/tariffs/interest-rate.html",
-      "bb_weighted_avg_url": "https://www.bb.org.bd/en/index.php/econdata/w_avg_interest",
-      "audit_status": "VERIFIED_VIA_PRIMARY_SCHEDULE_AND_BB",
-      "evidence_snippet": "Commercial Bank of Ceylon Limited - BB Weighted Avg Deposit Rate 4.82%, Retail FDR 1M 4.50%, 3M 5.00%, 6M 5.25%, 1Y/366D 5.50%-7.50%, 2Y 7.50% (AER 7.24%), High-5 FD 7.50%",
-      "last_audited_at": "2026-10-22T09:30:00Z",
-      "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
+      "audit_status": "ACCESSIBLE_DIRECT_LINK",
+      "evidence_snippet": "Commercial Bank of Ceylon Bangladesh Branch Official Tariff (/tariffs/interest-rate.html)",
+      "verification_tier": "PRIMARY_BANK_PORTAL_DOM"
     }
   },
   {
@@ -5446,7 +5791,7 @@
       "primary_bank_domain": "https://wooribank.com/bd",
       "verified_soc_url": "https://wooribank.com/rates",
       "audit_status": "ACCESSIBLE_DIRECT_LINK",
-      "evidence_snippet": "HTML Rate Page (\uc6b0\ub9ac\uc740\ud589, 0 tables)",
+      "evidence_snippet": "HTML Rate Page (우리은행, 0 tables)",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL"
     }

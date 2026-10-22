@@ -46,6 +46,7 @@ src/data/staged_rate_updates.json
 crawl_audit_latest.json
 data/vault/
 data/circulars/
+scratch/
 
 # Operating System
 .DS_Store

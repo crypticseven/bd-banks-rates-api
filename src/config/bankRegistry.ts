@@ -4,7 +4,7 @@
  * Covers 5 regulatory categories chartered by Bangladesh Bank.
  */
 
-export type IngestionMode = "RAW_WEBPAGE" | "PDF_CIRCULAR" | "HYBRID";
+export type IngestionMode = "RAW_WEBPAGE" | "PDF_CIRCULAR" | "TREASURY_CIRCULAR_PDF" | "HYBRID";
 export type BankCategory = "STATE_OWNED" | "SPECIALIZED" | "CONVENTIONAL_PCB" | "ISLAMIC" | "FOREIGN";
 
 export interface BankConfig {
@@ -132,9 +132,9 @@ export const BANK_REGISTRY: BankConfig[] = [
     bankCode: "BRAC",
     officialName: "BRAC Bank PLC",
     category: "CONVENTIONAL_PCB",
-    ingestionMode: "HYBRID",
-    primaryUrl: "https://www.bracbank.com/en/retail/deposit/fixed-deposit",
-    secondarySocUrl: "https://www.bracbank.com/charges",
+    ingestionMode: "TREASURY_CIRCULAR_PDF",
+    primaryUrl: "https://bracbank.com/en/page/deposit-interest-rate",
+    secondarySocUrl: "https://brackweb.s3.ap-southeast-1.amazonaws.com/uploads/all/BRAC_Bank_Deposit_Interest_Rate_Effective_from_October_15,_20266acf796d088b7.pdf",
   },
   {
     bankCode: "EBL",
@@ -204,9 +204,9 @@ export const BANK_REGISTRY: BankConfig[] = [
     bankCode: "NCC",
     officialName: "NCC Bank PLC",
     category: "CONVENTIONAL_PCB",
-    ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://www.nccbank.com.bd/rates",
-    secondarySocUrl: "https://www.nccbank.com.bd",
+    ingestionMode: "TREASURY_CIRCULAR_PDF",
+    primaryUrl: "https://www.nccbank.com.bd/NccbRates",
+    secondarySocUrl: "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
   },
   {
     bankCode: "PREMIER",
@@ -269,8 +269,8 @@ export const BANK_REGISTRY: BankConfig[] = [
     officialName: "Uttara Bank PLC",
     category: "CONVENTIONAL_PCB",
     ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://www.uttarabank-bd.com/rates",
-    secondarySocUrl: "https://www.uttarabank-bd.com",
+    primaryUrl: "https://www.uttarabank-bd.com/home/interestrate",
+    secondarySocUrl: "https://www.uttarabank-bd.com/home/interestrate",
   },
   {
     bankCode: "NBL",
@@ -316,25 +316,25 @@ export const BANK_REGISTRY: BankConfig[] = [
     bankCode: "MODHUMOTI",
     officialName: "Modhumoti Bank Limited",
     category: "CONVENTIONAL_PCB",
-    ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://www.modhumotibank.net/rates",
-    secondarySocUrl: "https://www.modhumotibank.net",
+    ingestionMode: "TREASURY_CIRCULAR_PDF",
+    primaryUrl: "https://www.modhumotibankplc.com/interest-rate/",
+    secondarySocUrl: "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
   },
   {
     bankCode: "SBAC",
     officialName: "South Bangla Agriculture and Commerce Bank",
     category: "CONVENTIONAL_PCB",
-    ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://www.sbacbank.com/rates",
-    secondarySocUrl: "https://www.sbacbank.com",
+    ingestionMode: "TREASURY_CIRCULAR_PDF",
+    primaryUrl: "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
+    secondarySocUrl: "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
   },
   {
     bankCode: "SHIMANTO",
     officialName: "Shimanto Bank Limited",
     category: "CONVENTIONAL_PCB",
     ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://shimantobank.com/rates",
-    secondarySocUrl: "https://shimantobank.com",
+    primaryUrl: "https://shimantobank.com/interest-rates/deposit",
+    secondarySocUrl: "https://shimantobank.com/interest-rates/deposit",
   },
   {
     bankCode: "COMMUNITY",
@@ -349,16 +349,16 @@ export const BANK_REGISTRY: BankConfig[] = [
     officialName: "Bengal Commercial Bank Limited",
     category: "CONVENTIONAL_PCB",
     ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://bgcb.com.bd/rates",
-    secondarySocUrl: "https://bgcb.com.bd",
+    primaryUrl: "https://www.bengalbank.com/interest-rates",
+    secondarySocUrl: "https://www.bengalbank.com/interest-rates",
   },
   {
     bankCode: "CITIZENS",
     officialName: "Citizens Bank PLC",
     category: "CONVENTIONAL_PCB",
     ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://citizensbankbd.com/rates",
-    secondarySocUrl: "https://citizensbankbd.com",
+    primaryUrl: "https://www.citizensbankbd.com/rates/deposit-rate",
+    secondarySocUrl: "https://www.citizensbankbd.com/rates/deposit-rate",
   },
   {
     bankCode: "PADMA",
@@ -493,8 +493,8 @@ export const BANK_REGISTRY: BankConfig[] = [
     officialName: "Commercial Bank of Ceylon PLC",
     category: "FOREIGN",
     ingestionMode: "RAW_WEBPAGE",
-    primaryUrl: "https://www.combank.net.bd/rates",
-    secondarySocUrl: "https://www.combank.net.bd",
+    primaryUrl: "https://www.combank.net.bd/tariffs/interest-rate.html",
+    secondarySocUrl: "https://www.combank.net.bd/assets/documents/Schedule-of-Charges.pdf",
   },
   {
     bankCode: "WOORI",

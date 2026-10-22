@@ -11,5 +11,18 @@
     "retrievedAt": "2026-10-22T09:02:06.181049+00:00",
     "accessStatus": "RETRIEVED_VIA_STEALTH_DRILL",
     "engine": "DrissionPage"
+  },
+  {
+    "sourceId": "3c1745c6165f54b2fb5422d9160a8406",
+    "bankCode": "CITY",
+    "sourceUrl": "https://www.citybankplc.com/gsi/conventional-banking-products",
+    "sourceType": "HTML_DOM",
+    "authority": "BANK_OFFICIAL",
+    "httpStatus": 200,
+    "sha256Hash": "23a454a1abe89c0bbfed4360f89190acc878bed21032a7d37420c356a5184b43",
+    "artifactStoragePath": "data\\vault\\CITY\\2026-10-22_23a454a1abe89c0b.html",
+    "retrievedAt": "2026-10-22T09:54:03.248834+00:00",
+    "accessStatus": "RETRIEVED_VIA_STEALTH_DRILL",
+    "engine": "DrissionPage"
   }
 ]
