@@ -179,9 +179,9 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
             <span className="text-slate-500">•</span>
             <span className="text-slate-400">Policy Repo: <strong className="text-slate-200">8.50%</strong></span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Prime High Yield: <strong className="text-emerald-400">Pubali / Trust (11.00% @ AAA/AA+)</strong></span>
+            <span className="text-slate-400">Prime High Yield: <strong className="text-emerald-400">Pubali (8.25% @ AAA)</strong></span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-400">Turnaround Yield: <strong className="text-cyan-400">UCB (11.25% - 11.75% @ 16.27% NPL)</strong></span>
+            <span className="text-slate-400">Turnaround Profile: <strong className="text-cyan-400">UCB (8.00% - 9.25% @ 16.27% NPL)</strong></span>
           </div>
           <div className="flex items-center gap-4 text-slate-400 font-mono">
             <a href="https://github.com/crypticseven/bd-banks-rates-api" target="_blank" rel="noreferrer" className="hover:text-white flex items-center gap-1 transition">
@@ -262,21 +262,21 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
               </div>
               <h3 className="text-sm font-bold text-white">Pubali Bank PLC / Trust Bank</h3>
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Offers <strong>11.00%</strong> with verified prime balance sheet quality. Pubali holds a <strong>2.14% NPL</strong> ratio and &gt;16.4% CAR, while Trust holds 4.35% NPL with Army Welfare Trust backing. Optimal depositor safety.
+                Offers verified <strong>8.25%</strong> (Pubali 1Y) and <strong>7.38%</strong> (Trust Bank) with pristine balance sheet quality. Pubali holds an audited <strong>2.14% NPL</strong> ratio and &gt;16.4% CAR, while Trust holds 4.35% NPL with institutional backing. Optimal depositor safety.
               </p>
             </div>
 
-            {/* Turnaround High-Yield */}
+            {/* Turnaround Profile */}
             <div className="border border-cyan-500/30 bg-cyan-950/20 rounded-xl p-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold font-mono">
-                  ⚡ HIGH-YIELD TURNAROUND
+                  ⚡ TURNAROUND PROFILE
                 </span>
                 <span className="text-cyan-400 font-mono font-bold text-xs">3.5★ A (NPL 16.27%)</span>
               </div>
               <h3 className="text-sm font-bold text-white">United Commercial Bank PLC (UCB)</h3>
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Offers <strong>11.25% - 11.75%</strong> on Earn First/AYMA/Probashi schemes. NPL stood at <strong>16.27%</strong> in Q2 2026. Board allocated 100% of profits to provisions under a 5-year turnaround. Higher yield compensates for balance sheet transition.
+                Verified <strong>8.00%</strong> (1Y Retail FD), <strong>8.50%</strong> (180D / DPS), and up to <strong>9.25%</strong> on Retail Earning Plus (Instruction Circular 1634). NPL stood at <strong>16.27%</strong> in Q2 2026 with 100% of profits allocated to provisions under a 5-year recovery plan.
               </p>
             </div>
 
