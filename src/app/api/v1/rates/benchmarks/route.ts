@@ -1,5 +1,5 @@
 /**
- * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+ * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
  * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
  *
  * AUTHORITATIVE CENTRAL BANK MONETARY BENCHMARKS ENDPOINT
@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
   const payload = {
     status: "success",
     data_status: "verified_authoritative",
-    trademark: "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)",
+    trademark: "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)",
     licensing: "Proprietary Commercial License - Fardin Ahsan Anik <fardinahsananik@gmail.com>",
     regulatory_authority: "Bangladesh Bank (Central Bank of Bangladesh) & National Board of Revenue (NBR)",
     as_of_date: new Date().toISOString().split("T")[0],

@@ -3,7 +3,7 @@
 ================================================================================
 SOC & DEPOSIT RATES - PRODUCTION PUBLISHER ENGINE
 ================================================================================
-Author: Fardin Ahsan Anik (fardinanik.com / UCB IT Lead)
+Author: Fardin Ahsan Anik (fardinanik.me / UCB IT Lead)
 Purpose: Ingests crawl audit output (crawl_audit_latest.json), filters verified
          tenure rates, formats payload matching rateUpdateSchema, and performs
          an authenticated HTTP handshake with the production or staging API.

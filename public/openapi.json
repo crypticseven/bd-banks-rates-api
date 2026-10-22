@@ -6,7 +6,7 @@
     "description": "High-performance public REST API & automated PyMuPDF crawler aggregating deposit interest rates (FDR/DPS) and Schedule of Charges across all 61 Scheduled Commercial Banks in Bangladesh.",
     "contact": {
       "name": "Fardin Ahsan Anik",
-      "url": "https://fardinanik.com",
+      "url": "https://fardinanik.me",
       "email": "fardinahsananik@gmail.com"
     },
     "license": {
@@ -16,7 +16,7 @@
   },
   "servers": [
     {
-      "url": "https://api.fardinanik.com",
+      "url": "https://api.fardinanik.me",
       "description": "Production Edge CDN"
     },
     {

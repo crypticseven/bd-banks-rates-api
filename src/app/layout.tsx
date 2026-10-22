@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Fintech API",
     "Bangladesh",
   ],
-  authors: [{ name: "Fardin Ahsan Anik", url: "https://fardinanik.com" }],
+  authors: [{ name: "Fardin Ahsan Anik", url: "https://fardinanik.me" }],
 };
 
 export default function RootLayout({

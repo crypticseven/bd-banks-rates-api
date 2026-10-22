@@ -3,7 +3,7 @@
 ================================================================================
 BANGLADESH 61 SCHEDULED BANKS - SOC & DEPOSIT RATE CRAWLER ENGINE (v2.0)
 ================================================================================
-Author: Fardin Ahsan Anik (fardinanik.com / UCB IT Lead)
+Author: Fardin Ahsan Anik (fardinanik.me / UCB IT Lead)
 Purpose: Crawls official Schedule of Charges (SOC) and Deposit Rate notices across
          all 61 scheduled commercial banks in Bangladesh, parses HTML/PDF rate
          schedules, detects circular changes, extracts tenure yields, and
@@ -313,7 +313,7 @@ def main():
     parser.add_argument("--workers", type=int, default=10, help="Concurrent HTTP worker threads")
     parser.add_argument("--output", type=str, help="Export crawl result JSON to path")
     parser.add_argument("--apply-local", action="store_true", help="Persist discovered rates directly to src/data/bangladesh_61_banks.json")
-    parser.add_argument("--sync-api", type=str, help="Post discovered updates to API endpoint (e.g. https://api.fardinanik.com/api/v1/rates/sync)")
+    parser.add_argument("--sync-api", type=str, help="Post discovered updates to API endpoint (e.g. https://api.fardinanik.me/api/v1/rates/sync)")
     parser.add_argument("--sync-secret", type=str, help="Bearer token for API sync (defaults to RATES_SYNC_SECRET env var)")
     args = parser.parse_args()
 

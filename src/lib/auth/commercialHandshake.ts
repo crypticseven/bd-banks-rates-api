@@ -1,5 +1,5 @@
 /**
- * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+ * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
  * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
  *
  * COMMERCIAL CREDENTIAL HANDSHAKE & GATEWAY ENGINE
@@ -138,7 +138,7 @@ export function validateCommercialHandshake(req: NextRequest): CommercialClientI
     tier: "UNAUTHORIZED",
     clientId: "invalid_key",
     rateLimitPerMinute: 0,
-    reason: "Invalid commercial credentials. Handshake rejected by Anik FinTech Engine™.",
+    reason: "Invalid commercial credentials. Handshake rejected by HashCorp-FinTech Engine-TDRD Rates™.",
   };
 }
 
@@ -154,7 +154,7 @@ export function commercialUnauthorizedResponse(reason?: string): NextResponse {
       message: reason || "This API is strictly closed for commercial use. Credential handshaking is required.",
       trademark: "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™)",
       copyright: "Copyright (c) 2024-2026 Fardin Ahsan Anik (fardinahsananik@gmail.com). All Rights Reserved.",
-      licensing_portal: "https://fardinanik.com",
+      licensing_portal: "https://fardinanik.me",
       handshake_spec: {
         header_options: [
           "X-API-Key: <your_commercial_key>",
@@ -182,7 +182,7 @@ export function commercialUnauthorizedResponse(reason?: string): NextResponse {
  */
 export function attachCommercialHeaders(res: NextResponse, client: CommercialClientIdentity): NextResponse {
   res.headers.set("X-Commercial-License", "Proprietary - Fardin Ahsan Anik (fardinahsananik@gmail.com)");
-  res.headers.set("X-Trademark", "BDRIP-API(TM) / Anik FinTech Engine(TM)");
+  res.headers.set("X-Trademark", "BDRIP-API(TM) / HashCorp-FinTech Engine-TDRD Rates(TM)");
   res.headers.set("X-Client-Tier", client.tier);
   res.headers.set("X-Client-ID", client.clientId);
   res.headers.set("X-Content-Type-Options", "nosniff");

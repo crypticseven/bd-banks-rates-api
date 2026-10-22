@@ -179,12 +179,12 @@ export default function ApiLandingPage() {
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
-  const sampleCurl = `curl -X GET "https://api.fardinanik.com${currentEndpointUrl}" \\
+  const sampleCurl = `curl -X GET "https://api.fardinanik.me${currentEndpointUrl}" \\
   -H "Accept: application/json"${privateApiKey ? ` \\\n  -H "x-api-key: ${privateApiKey}"` : ""}`;
 
   const samplePython = `import requests
 
-url = "https://api.fardinanik.com${currentEndpointUrl}"
+url = "https://api.fardinanik.me${currentEndpointUrl}"
 headers = {"Accept": "application/json"${privateApiKey ? `, "x-api-key": "${privateApiKey}"` : ""}}
 response = requests.get(url, headers=headers)
 data = response.json()
@@ -858,7 +858,7 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
               Sole Proprietor &amp; Chief Architect: <strong className="text-white">Fardin Ahsan Anik</strong> &bull; <a href="mailto:fardinahsananik@gmail.com" className="text-emerald-400 hover:underline">fardinahsananik@gmail.com</a>
             </div>
             <div>
-              Direct Licensing Portal: <a href="https://fardinanik.com" target="_blank" rel="noreferrer" className="text-slate-200 hover:text-white underline">fardinanik.com</a>
+              Direct Licensing Portal: <a href="https://fardinanik.me" target="_blank" rel="noreferrer" className="text-slate-200 hover:text-white underline">fardinanik.me</a>
             </div>
           </div>
         </section>
@@ -866,7 +866,7 @@ print("Top Bank:", data.get("top_ranked_bank") or data.get("top_product"))`;
 
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500 space-y-2">
-        <p>Open FinTech Infrastructure for Bangladesh • Maintained by <a href="https://fardinanik.com" className="text-slate-400 hover:text-white">Fardin Ahsan Anik</a></p>
+        <p>Open FinTech Infrastructure for Bangladesh • Maintained by <a href="https://fardinanik.me" className="text-slate-400 hover:text-white">Fardin Ahsan Anik</a></p>
         <p>Data sourced from official bank circulars and Bangladesh Bank benchmarks. Not financial advice.</p>
       </footer>
     </div>

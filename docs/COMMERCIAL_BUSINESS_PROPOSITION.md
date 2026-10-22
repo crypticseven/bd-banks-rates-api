@@ -1,10 +1,10 @@
-# Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+# Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
 # Commercial Monetization, B2B Sales Strategy & Financial Modeling Proposition
 
 **Proprietary Commercial Asset**: BDRIP-API™  
 **Sole Proprietor & Chief Commercial Officer**: Fardin Ahsan Anik  
 **Inquiries & Enterprise Agreements**: `fardinahsananik@gmail.com`  
-**Commercial Licensing Portal**: `https://fardinanik.com`  
+**Commercial Licensing Portal**: `https://fardinanik.me`  
 **Legal Framework**: Proprietary Commercial Source (Bangladesh Copyright Act & International IP Treaties)
 
 ---
@@ -114,7 +114,7 @@ To scale customer acquisition autonomously without manual billing friction:
    - Standard response headers assert proprietary ownership on every byte sent:
      ```http
      X-Commercial-License: Proprietary - Fardin Ahsan Anik (fardinahsananik@gmail.com)
-     X-Trademark: BDRIP-API(TM) / Anik FinTech Engine(TM)
+     X-Trademark: BDRIP-API(TM) / HashCorp-FinTech Engine-TDRD Rates(TM)
      ```
 2. **Watermarking & Hash Tracking**:
    - Each API key tier embeds cryptographic checksums. If a client attempts to illegally republish the raw JSON stream, the response metadata uniquely identifies the originating client account.
@@ -142,4 +142,4 @@ To protect your intellectual property and commercial source code from public scr
 * **Master Admin Secret Key**: `fardinanik_ultra_secure_secret_live_2026`
 * **Demo Sandbox Key**: `bdrip_demo_eval_2026`
 * **Proprietor Contact**: `fardinahsananik@gmail.com`
-* **Official Website**: `https://fardinanik.com`
+* **Official Website**: `https://fardinanik.me`

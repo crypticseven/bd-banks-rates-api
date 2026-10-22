@@ -1,4 +1,4 @@
-# Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+# Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
 ## Official Commercial Integration, Security & Licensing Manual
 
 **Proprietary Intellectual Property & Trademark**  
@@ -11,7 +11,7 @@
 
 ## 1. Executive Overview & Commercial Transition
 
-The **Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)** provides real-time, authoritative deposit rates, Schedule of Charges (SOC), and regulatory risk audits across all **61 Scheduled Commercial Banks** licensed under Bangladesh Bank (Bank Company Act 1991).
+The **Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)** provides real-time, authoritative deposit rates, Schedule of Charges (SOC), and regulatory risk audits across all **61 Scheduled Commercial Banks** licensed under Bangladesh Bank (Bank Company Act 1991).
 
 ### The Closed Commercial Architecture
 As of October 2026, **open public access has been deprecated and permanently retired**. All production, corporate, and partner requests require cryptographic **Credential Handshaking**. Any request without certified credentials is systematically intercepted with `HTTP 401 Unauthorized` and an audited telemetry response.
@@ -75,7 +75,7 @@ The platform implements an institutional-grade security perimeter:
    - `X-Content-Type-Options: nosniff`
    - `X-Frame-Options: DENY`
    - `X-Commercial-License: Proprietary - Fardin Ahsan Anik (fardinahsananik@gmail.com)`
-   - `X-Trademark: BDRIP-API™ / Anik FinTech Engine™`
+   - `X-Trademark: BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™`
    - `X-Client-Tier: <TIER>`
    - `X-Request-ID: <UUID>`
 
@@ -84,7 +84,7 @@ The platform implements an institutional-grade security perimeter:
 ## 4. Complete Endpoints Reference
 
 ### Base URLs
-- **Production API Gateway:** `https://api.fardinanik.com`
+- **Production API Gateway:** `https://api.fardinanik.me`
 - **Local Development / Docker:** `http://localhost:3009`
 
 ---
@@ -95,7 +95,7 @@ The platform implements an institutional-grade security perimeter:
 
 #### Sample Request:
 ```bash
-curl -X GET "https://api.fardinanik.com/api/v1/rates/benchmarks" \
+curl -X GET "https://api.fardinanik.me/api/v1/rates/benchmarks" \
   -H "X-API-Key: bdrip_demo_eval_2026"
 ```
 
@@ -104,7 +104,7 @@ curl -X GET "https://api.fardinanik.com/api/v1/rates/benchmarks" \
 {
   "status": "success",
   "data_status": "verified_authoritative",
-  "trademark": "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)",
+  "trademark": "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)",
   "licensing": "Proprietary Commercial License - Fardin Ahsan Anik <fardinahsananik@gmail.com>",
   "regulatory_authority": "Bangladesh Bank (Central Bank of Bangladesh) & National Board of Revenue (NBR)",
   "as_of_date": "2026-10-22",
@@ -146,7 +146,7 @@ curl -X GET "https://api.fardinanik.com/api/v1/rates/benchmarks" \
 
 #### Sample Request:
 ```bash
-curl -X GET "https://api.fardinanik.com/api/v1/rates/deposits?tenure=1_year&principal=1000000&has_tin=true&sort_by=risk_adjusted" \
+curl -X GET "https://api.fardinanik.me/api/v1/rates/deposits?tenure=1_year&principal=1000000&has_tin=true&sort_by=risk_adjusted" \
   -H "X-API-Key: bdrip_demo_eval_2026"
 ```
 
@@ -158,7 +158,7 @@ curl -X GET "https://api.fardinanik.com/api/v1/rates/deposits?tenure=1_year&prin
 
 #### Sample Request:
 ```bash
-curl -X GET "https://api.fardinanik.com/api/v1/rates/banks/UCB" \
+curl -X GET "https://api.fardinanik.me/api/v1/rates/banks/UCB" \
   -H "X-API-Key: bdrip_demo_eval_2026"
 ```
 
@@ -189,7 +189,7 @@ curl -X GET "https://api.fardinanik.com/api/v1/rates/banks/UCB" \
 import axios from "axios";
 
 const API_KEY = process.env.BDRIP_COMMERCIAL_API_KEY || "bdrip_demo_eval_2026";
-const BASE_URL = "https://api.fardinanik.com";
+const BASE_URL = "https://api.fardinanik.me";
 
 async function fetchRates() {
   try {
@@ -227,7 +227,7 @@ import os
 import requests
 
 API_KEY = os.getenv("BDRIP_COMMERCIAL_API_KEY", "bdrip_demo_eval_2026")
-BASE_URL = "https://api.fardinanik.com"
+BASE_URL = "https://api.fardinanik.me"
 
 headers = {
     "X-API-Key": API_KEY,
@@ -275,5 +275,5 @@ For enterprise SLA agreements, high-volume dedicated endpoints, custom CBS integ
 
 - **Proprietor & Engine Architect:** Fardin Ahsan Anik
 - **Email:** `fardinahsananik@gmail.com`
-- **Licensing Portal:** `https://fardinanik.com`
+- **Licensing Portal:** `https://fardinanik.me`
 - **GitHub:** `https://github.com/crypticseven/bd-banks-rates-api`

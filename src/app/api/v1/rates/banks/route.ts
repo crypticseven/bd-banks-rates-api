@@ -1,5 +1,5 @@
 /**
- * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+ * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
  * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
  *
  * COMMERCIAL 61 SCHEDULED BANKS DIRECTORY ENDPOINT
@@ -93,7 +93,7 @@ export async function GET(req: NextRequest) {
     const response = NextResponse.json(
       {
         status: "success",
-        trademark: "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)",
+        trademark: "Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)",
         licensing: "Proprietary Commercial License - Fardin Ahsan Anik <fardinahsananik@gmail.com>",
         as_of_date: new Date().toISOString().split("T")[0],
         request_id: requestId,

@@ -1,5 +1,5 @@
 /**
- * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+ * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
  * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
  *
  * ANTI-HACKING, RATE-LIMITING & ABUSE MITIGATION SHIELD
@@ -109,8 +109,8 @@ export function rateLimitExceededResponse(resetSeconds: number): NextResponse {
       code: "RATE_LIMIT_EXCEEDED",
       message: `Commercial API quota exceeded. Automatic backoff required. Retry in ${resetSeconds} seconds.`,
       retry_after_seconds: resetSeconds,
-      trademark: "Anik FinTech Engine™ / BDRIP™",
-      licensing_portal: "https://fardinanik.com",
+      trademark: "HashCorp-FinTech Engine-TDRD Rates™ / BDRIP™",
+      licensing_portal: "https://fardinanik.me",
     },
     {
       status: 429,
@@ -132,7 +132,7 @@ export function securityBlockResponse(reason: string): NextResponse {
     {
       status: "error",
       code: "SECURITY_INTERCEPTION",
-      message: `Request blocked by Anik FinTech Engine™ Anti-Hacking Guard: ${reason}`,
+      message: `Request blocked by HashCorp-FinTech Engine-TDRD Rates™ Anti-Hacking Guard: ${reason}`,
       timestamp: new Date().toISOString(),
     },
     {

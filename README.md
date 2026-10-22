@@ -51,7 +51,7 @@ Query the repository's static deposit-rate snapshot with net-return estimates. R
 
 **Example Request:**
 ```bash
-curl -X GET "https://api.fardinanik.com/api/v1/rates/deposits?principal=1000000&tenure=1_year&has_tin=true"
+curl -X GET "https://api.fardinanik.me/api/v1/rates/deposits?principal=1000000&tenure=1_year&has_tin=true"
 ```
 
 **Example Response:**
@@ -125,4 +125,4 @@ python scripts/soc_crawler.py --audit
 ---
 
 ## 📄 License
-MIT License. Maintained by [Fardin Ahsan Anik](https://fardinanik.com). Data sourced from official bank circulars and Bangladesh Bank public benchmarks.
+MIT License. Maintained by [Fardin Ahsan Anik](https://fardinanik.me). Data sourced from official bank circulars and Bangladesh Bank public benchmarks.

@@ -1,4 +1,4 @@
-# Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / Anik FinTech Engine™)
+# Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
 # Comprehensive Architecture, Security, Protocol & AI-Readiness Manual
 
 **Intellectual Property Trademark**: Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™)  
@@ -145,7 +145,7 @@ The API is designed to function as an automated tool in autonomous AI agents (Ge
 ### Part 2: Request (Expected Input Structure)
 ```http
 GET /api/v1/rates/deposits?principal=1000000&tenure=1_year&has_tin=true&sort_by=risk_adjusted&limit=10 HTTP/1.1
-Host: api.fardinanik.com
+Host: api.fardinanik.me
 X-API-Key: bdrip_live_enterprise_example
 Accept: application/json
 ```
@@ -156,7 +156,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 X-Client-Tier: ENTERPRISE_COMMERCIAL
 X-RateLimit-Remaining: 4999
-X-Trademark: BDRIP-API(TM) / Anik FinTech Engine(TM)
+X-Trademark: BDRIP-API(TM) / HashCorp-FinTech Engine-TDRD Rates(TM)
 
 {
   "status": "success",
