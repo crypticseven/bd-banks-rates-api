@@ -1,0 +1,443 @@
+{
+  "info": {
+    "name": "BDRIP-API™ — Official UAT Acceptance Test Collection",
+    "_postman_id": "a93e5069-4509-4e08-9df2-51c39ea9bc10",
+    "description": "Comprehensive User Acceptance Testing (UAT) suite for the Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™). Designed for Central Bank auditors, institutional treasury desks, and commercial enterprise clients.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3009",
+      "type": "string"
+    },
+    {
+      "key": "apiKey",
+      "value": "bdrip_demo_eval_2026",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01. System Health & Governance",
+      "item": [
+        {
+          "name": "TC-01: Health & Uptime Liveness Probe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "health"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Health status is healthy', function () { const json = pm.response.json(); pm.expect(json.status).to.eql('healthy'); });",
+                  "pm.test('Dataset contains all 61 scheduled banks', function () { const json = pm.response.json(); pm.expect(json.dataset.total_banks).to.eql(61); pm.expect(json.dataset.verified_official_banks).to.eql(61); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-02: Public Benchmarks & Monetary Stance",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/benchmarks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "benchmarks"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Monetary policy benchmarks present', function () { const json = pm.response.json(); pm.expect(json.status).to.eql('success'); pm.expect(json.benchmarks).to.be.an('object'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "02. Bank Directory & Scheme Audits",
+      "item": [
+        {
+          "name": "TC-03: Full 61-Bank Directory Roster",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/banks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "banks"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Exactly 61 banks returned', function () { const json = pm.response.json(); pm.expect(json.data.length).to.eql(61); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-04: Single Bank Audit — UCB (Turnaround Leader)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/banks/UCB",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "banks", "UCB"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('UCB audit fields verified', function () { const json = pm.response.json(); pm.expect(json.data.short_code).to.eql('UCB'); pm.expect(json.data.npl_ratio_pct).to.eql(16.27); pm.expect(json.data.credit_rating).to.eql('A'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-05: Single Bank Audit — CBC (Pristine Prime AAA)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/banks/CBC",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "banks", "CBC"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('CBC verified with Bangladesh operations', function () { const json = pm.response.json(); pm.expect(json.data.short_code).to.eql('CBC'); pm.expect(json.data.credit_rating).to.eql('AAA'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "03. Deposit Matrix & Statutory Taxes",
+      "item": [
+        {
+          "name": "TC-06: 1-Year Baseline ৳500K with e-TIN (10% TDS)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=500000&tenure=1_year&category=ALL&has_tin=true&sort_by=risk_adjusted",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"],
+              "query": [
+                { "key": "principal", "value": "500000" },
+                { "key": "tenure", "value": "1_year" },
+                { "key": "category", "value": "ALL" },
+                { "key": "has_tin", "value": "true" },
+                { "key": "sort_by", "value": "risk_adjusted" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Tax is 10% TDS and Excise is ৳500', function () { const json = pm.response.json(); pm.expect(json.query_context.tds_rate_applied).to.eql('10.0%'); pm.expect(json.query_context.statutory_excise_duty_bdt).to.eql(500); });",
+                  "pm.test('Top ranked bank best matching scheme has positive net interest', function () { const json = pm.response.json(); pm.expect(json.top_ranked_bank.best_matching_scheme.net_interest_bdt).to.be.above(0); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-07: 1-Year Baseline ৳500K Non-TIN (15% TDS)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=500000&tenure=1_year&category=ALL&has_tin=false&sort_by=risk_adjusted",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"],
+              "query": [
+                { "key": "principal", "value": "500000" },
+                { "key": "tenure", "value": "1_year" },
+                { "key": "category", "value": "ALL" },
+                { "key": "has_tin", "value": "false" },
+                { "key": "sort_by", "value": "risk_adjusted" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Tax is 15% TDS for Non-TIN', function () { const json = pm.response.json(); pm.expect(json.query_context.tds_rate_applied).to.eql('15.0%'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-08: High-Value Bracket ৳1.5M (৳3,000 Excise Duty)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=1500000&tenure=1_year&has_tin=true",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"],
+              "query": [
+                { "key": "principal", "value": "1500000" },
+                { "key": "tenure", "value": "1_year" },
+                { "key": "has_tin", "value": "true" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Statutory excise duty is ৳3,000 for > 10 Lac balance', function () { const json = pm.response.json(); pm.expect(json.query_context.statutory_excise_duty_bdt).to.eql(3000); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-09: Corporate Tier ৳60M (৳50,000 Excise Duty)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=60000000&tenure=1_year&has_tin=true",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"],
+              "query": [
+                { "key": "principal", "value": "60000000" },
+                { "key": "tenure", "value": "1_year" },
+                { "key": "has_tin", "value": "true" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Statutory excise duty is ৳50,000 for > 5 Crore balance', function () { const json = pm.response.json(); pm.expect(json.query_context.statutory_excise_duty_bdt).to.eql(50000); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-10: Islamic Shariah Filter",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits?shariah=true",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"],
+              "query": [
+                { "key": "shariah", "value": "true" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('All returned banks are Islamic Shariah compliant', function () { const json = pm.response.json(); json.products.forEach(bank => { pm.expect(bank.is_shariah).to.eql(true); }); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "04. Security Gating & Error Resilience",
+      "item": [
+        {
+          "name": "TC-11: Security — Missing API Key Handshake (401)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 401 Unauthorized', function () { pm.response.to.have.status(401); });",
+                  "pm.test('Error code is UNAUTHORIZED_ACCESS', function () { const json = pm.response.json(); pm.expect(json.code).to.eql('UNAUTHORIZED_ACCESS'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-12: Security — Invalid Forged API Key (401)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "tampered_forged_key_xyz", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 401 Unauthorized', function () { pm.response.to.have.status(401); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-13: Validation — Malformed Input Schema (400)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=-50000&tenure=invalid_tenure_code",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "deposits"],
+              "query": [
+                { "key": "principal", "value": "-50000" },
+                { "key": "tenure", "value": "invalid_tenure_code" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 400 Bad Request', function () { pm.response.to.have.status(400); });",
+                  "pm.test('Error code is VALIDATION_ERROR', function () { const json = pm.response.json(); pm.expect(json.code).to.eql('VALIDATION_ERROR'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-14: Dedicated Calculator Math Verification",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/calculate?principal=500000&rate=10.5&tenure_months=12&has_tin=true",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "rates", "calculate"],
+              "query": [
+                { "key": "principal", "value": "500000" },
+                { "key": "rate", "value": "10.5" },
+                { "key": "tenure_months", "value": "12" },
+                { "key": "has_tin", "value": "true" }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Penny-perfect gross interest is ৳52,500', function () { const json = pm.response.json(); pm.expect(json.calculation.gross_interest_amount).to.eql(52500); });",
+                  "pm.test('NBR TDS deduction is ৳5,250', function () { const json = pm.response.json(); pm.expect(json.calculation.nbr_tax_deducted).to.eql(5250); });",
+                  "pm.test('Statutory excise duty is ৳500', function () { const json = pm.response.json(); pm.expect(json.calculation.statutory_excise_duty).to.eql(500); });",
+                  "pm.test('Net maturity payout is ৳546,750', function () { const json = pm.response.json(); pm.expect(json.calculation.net_maturity_amount).to.eql(546750); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
