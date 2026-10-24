@@ -802,12 +802,13 @@
     "hub_url": "https://www.hsbc.com.bd/rates/",
     "last_known_artifact_url": "https://www.hsbc.com.bd/rates/",
     "pattern_type": "Type B: Hub Page -> Dynamic PDF",
-    "handshake_status": "VERIFIED_ACTIVE",
+    "handshake_status": "RETAIL_DISCONTINUED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "schemes_count": 12,
-    "declared_rate_range": "5.25% – 8.00%",
+    "schemes_count": 0,
+    "declared_rate_range": "N/A (Retail Banking Discontinued / CIB Wholesale Only)",
     "soc_url": "https://www.hsbc.com.bd/national-integrity-strategy/",
-    "is_shariah": false
+    "is_shariah": false,
+    "verification_audit_status": "VERIFIED (RETAIL_DISCONTINUED)"
   },
   {
     "bank_id": "citi",

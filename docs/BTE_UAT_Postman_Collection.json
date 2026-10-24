@@ -28,8 +28,13 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/api/health",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "health"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "health"
+              ]
             }
           },
           "event": [
@@ -51,12 +56,23 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/benchmarks",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "benchmarks"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "benchmarks"
+              ]
             }
           },
           "event": [
@@ -82,12 +98,23 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/banks",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "banks"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "banks"
+              ]
             }
           },
           "event": [
@@ -108,12 +135,24 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/banks/UCB",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "banks", "UCB"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "banks",
+                "UCB"
+              ]
             }
           },
           "event": [
@@ -134,12 +173,24 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/banks/CBC",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "banks", "CBC"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "banks",
+                "CBC"
+              ]
             }
           },
           "event": [
@@ -149,6 +200,45 @@
                 "exec": [
                   "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
                   "pm.test('CBC verified with Bangladesh operations', function () { const json = pm.response.json(); pm.expect(json.data.short_code).to.eql('CBC'); pm.expect(json.data.credit_rating).to.eql('AAA'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TC-05B: Single Bank Audit — HSBC Bangladesh (Retail Discontinued / CIB Only)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/rates/banks/HSBC",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "banks",
+                "HSBC"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200 OK', function () { pm.response.to.have.status(200); });",
+                  "pm.test('HSBC retail products array is empty', function () { const json = pm.response.json(); pm.expect(json.data.short_code).to.eql('HSBC'); pm.expect(json.data.products.length).to.eql(0); pm.expect(json.data.schemes_count).to.eql(0); });",
+                  "pm.test('HSBC note mentions retail banking wind-down', function () { const json = pm.response.json(); pm.expect(json.data.verification_note).to.include('Retail Banking'); });"
                 ],
                 "type": "text/javascript"
               }
@@ -165,18 +255,44 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=500000&tenure=1_year&category=ALL&has_tin=true&sort_by=risk_adjusted",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ],
               "query": [
-                { "key": "principal", "value": "500000" },
-                { "key": "tenure", "value": "1_year" },
-                { "key": "category", "value": "ALL" },
-                { "key": "has_tin", "value": "true" },
-                { "key": "sort_by", "value": "risk_adjusted" }
+                {
+                  "key": "principal",
+                  "value": "500000"
+                },
+                {
+                  "key": "tenure",
+                  "value": "1_year"
+                },
+                {
+                  "key": "category",
+                  "value": "ALL"
+                },
+                {
+                  "key": "has_tin",
+                  "value": "true"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "risk_adjusted"
+                }
               ]
             }
           },
@@ -199,18 +315,44 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=500000&tenure=1_year&category=ALL&has_tin=false&sort_by=risk_adjusted",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ],
               "query": [
-                { "key": "principal", "value": "500000" },
-                { "key": "tenure", "value": "1_year" },
-                { "key": "category", "value": "ALL" },
-                { "key": "has_tin", "value": "false" },
-                { "key": "sort_by", "value": "risk_adjusted" }
+                {
+                  "key": "principal",
+                  "value": "500000"
+                },
+                {
+                  "key": "tenure",
+                  "value": "1_year"
+                },
+                {
+                  "key": "category",
+                  "value": "ALL"
+                },
+                {
+                  "key": "has_tin",
+                  "value": "false"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "risk_adjusted"
+                }
               ]
             }
           },
@@ -232,16 +374,36 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=1500000&tenure=1_year&has_tin=true",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ],
               "query": [
-                { "key": "principal", "value": "1500000" },
-                { "key": "tenure", "value": "1_year" },
-                { "key": "has_tin", "value": "true" }
+                {
+                  "key": "principal",
+                  "value": "1500000"
+                },
+                {
+                  "key": "tenure",
+                  "value": "1_year"
+                },
+                {
+                  "key": "has_tin",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -263,16 +425,36 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=60000000&tenure=1_year&has_tin=true",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ],
               "query": [
-                { "key": "principal", "value": "60000000" },
-                { "key": "tenure", "value": "1_year" },
-                { "key": "has_tin", "value": "true" }
+                {
+                  "key": "principal",
+                  "value": "60000000"
+                },
+                {
+                  "key": "tenure",
+                  "value": "1_year"
+                },
+                {
+                  "key": "has_tin",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -294,14 +476,28 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits?shariah=true",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ],
               "query": [
-                { "key": "shariah", "value": "true" }
+                {
+                  "key": "shariah",
+                  "value": "true"
+                }
               ]
             }
           },
@@ -330,8 +526,15 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ]
             }
           },
           "event": [
@@ -352,12 +555,23 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "tampered_forged_key_xyz", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "tampered_forged_key_xyz",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ]
             }
           },
           "event": [
@@ -377,15 +591,32 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/deposits?principal=-50000&tenure=invalid_tenure_code",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "deposits"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "deposits"
+              ],
               "query": [
-                { "key": "principal", "value": "-50000" },
-                { "key": "tenure", "value": "invalid_tenure_code" }
+                {
+                  "key": "principal",
+                  "value": "-50000"
+                },
+                {
+                  "key": "tenure",
+                  "value": "invalid_tenure_code"
+                }
               ]
             }
           },
@@ -407,17 +638,40 @@
           "request": {
             "method": "GET",
             "header": [
-              { "key": "X-API-Key", "value": "{{apiKey}}", "type": "text" }
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
             ],
             "url": {
               "raw": "{{baseUrl}}/api/v1/rates/calculate?principal=500000&rate=10.5&tenure_months=12&has_tin=true",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rates", "calculate"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rates",
+                "calculate"
+              ],
               "query": [
-                { "key": "principal", "value": "500000" },
-                { "key": "rate", "value": "10.5" },
-                { "key": "tenure_months", "value": "12" },
-                { "key": "has_tin", "value": "true" }
+                {
+                  "key": "principal",
+                  "value": "500000"
+                },
+                {
+                  "key": "rate",
+                  "value": "10.5"
+                },
+                {
+                  "key": "tenure_months",
+                  "value": "12"
+                },
+                {
+                  "key": "has_tin",
+                  "value": "true"
+                }
               ]
             }
           },

@@ -6424,22 +6424,22 @@
     "has_islamic_window": false,
     "minimum_deposit": 100000,
     "fdr_rates": {
-      "3_months": 8.75,
-      "6_months": 9.0,
-      "1_year": 8.75,
-      "2_years": 6.0,
-      "3_years": 6.0,
-      "5_years": 6.0
+      "3_months": 0.0,
+      "6_months": 0.0,
+      "1_year": 0.0,
+      "2_years": 0.0,
+      "3_years": 0.0,
+      "5_years": 0.0
     },
     "dps_rates": {
-      "3_years": 9.0,
-      "5_years": 9.25,
-      "10_years": 9.25
+      "3_years": 0.0,
+      "5_years": 0.0,
+      "10_years": 0.0
     },
     "instant_encashment": true,
     "soc_url": "https://www.hsbc.com.bd/national-integrity-strategy/",
     "headquarters": "Bir Uttam C R Dutta Road, Dhaka",
-    "source_url": "https://www.hsbc.com.bd/rates/",
+    "source_url": "https://www.hsbc.com.bd",
     "effective_date": "2026-09-01",
     "fetched_at": "2026-10-21T23:03:18.649285+00:00",
     "verification_status": "VERIFIED_OFFICIAL",
@@ -6451,73 +6451,30 @@
     "risk_label": "Lowest Systemic Default Risk in Bangladesh",
     "sovereign_backed": false,
     "rating_agency": "CRAB / CRISL (AAA Tier)",
-    "risk_adjusted_yield_score": 8.75,
-    "products": [
-      {
-        "product_id": "hsbc-standard-fdr",
-        "product_name": "HSBC Bangladesh Fixed Deposit Receipt",
-        "product_type": "FDR",
-        "headline_rate": 8.75,
-        "tenure_options": [
-          "3_months",
-          "6_months",
-          "1_year",
-          "3_years",
-          "5_years"
-        ],
-        "best_tenure": "1_year",
-        "minimum_amount": 100000,
-        "target_segment": "GENERAL_RETAIL",
-        "features": [
-          "Official Bangladesh Bank statutory reported rate: 8.75%",
-          "Regulatory filing window: 0.30-8.75%",
-          "Loan against deposit facility eligible"
-        ],
-        "instant_encashment": true,
-        "shariah_compliant": false
-      },
-      {
-        "product_id": "hsbc-monthly-dps",
-        "product_name": "HSBC Bangladesh Monthly Sanchay Scheme (DPS)",
-        "product_type": "DPS",
-        "headline_rate": 9.25,
-        "tenure_options": [
-          "3_years",
-          "5_years"
-        ],
-        "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "RETAIL_SAVINGS",
-        "features": [
-          "Monthly installment deposit yield: 9.25%",
-          "Compounded return upon tenure completion"
-        ],
-        "instant_encashment": false,
-        "shariah_compliant": false
-      }
-    ],
+    "risk_adjusted_yield_score": 0.0,
+    "products": [],
     "npl_ratio_pct": 1.45,
-    "verification_note": "Statutory regulatory return filed with Bangladesh Bank Department of Off-Site Supervision. 1-Year FD reported: 0.30-8.75%; 6-Month: 0.30-9.00%; Savings: 0.25-6.00%.",
+    "verification_note": "HSBC Bangladesh has officially exited and wound down its International Wealth and Retail Banking operations in Bangladesh to focus exclusively on Corporate and Institutional Banking (CIB). Retail Fixed Deposit (FDR) and DPS schemes are no longer offered to the public.",
     "official_provenance": {
       "primary_bank_domain": "https://www.hsbc.com.bd",
       "verified_soc_url": "https://www.hsbc.com.bd/national-integrity-strategy/",
       "audit_status": "DISCOVERED_HOMEPAGE_CRAWL",
-      "evidence_snippet": "Crawled link (National integrity strategy): 65928 bytes",
+      "evidence_snippet": "Retail and Wealth Management operations phased out; CIB wholesale banking active.",
       "last_audited_at": "2026-10-21T21:43:15.532976+00:00",
       "verification_tier": "PRIMARY_BANK_RATE_PORTAL",
       "hub_url": "https://www.hsbc.com.bd/rates/",
       "last_known_artifact_url": "https://www.hsbc.com.bd/rates/",
-      "handshake_status": "VERIFIED_ACTIVE",
+      "handshake_status": "RETAIL_DISCONTINUED",
       "pattern_type": "Type B: Hub Page -> Dynamic PDF"
     },
     "hub_url": "https://www.hsbc.com.bd/rates/",
     "last_known_artifact_url": "https://www.hsbc.com.bd/rates/",
     "discovered_active_path": "https://www.hsbc.com.bd/rates/",
-    "handshake_status": "VERIFIED_ACTIVE",
+    "handshake_status": "RETAIL_DISCONTINUED",
     "pattern_type": "Type B: Hub Page -> Dynamic PDF",
-    "schemes_count": 12,
-    "declared_rate_range": "5.25% – 8.00%",
-    "verification_audit_status": "VERIFIED (SHA-256)"
+    "schemes_count": 0,
+    "declared_rate_range": "N/A (Retail Banking Discontinued / CIB Wholesale Only)",
+    "verification_audit_status": "VERIFIED (RETAIL_DISCONTINUED)"
   },
   {
     "bank_id": "citi",

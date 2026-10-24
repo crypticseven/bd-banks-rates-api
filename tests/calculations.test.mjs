@@ -52,9 +52,22 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
       assert.ok(bank.rating_score >= 1.0 && bank.rating_score <= 5.0, `Rating out of bounds: ${bank.bank_name}`);
       assert.ok(bank.credit_rating, `Missing credit rating: ${bank.bank_name}`);
       assert.ok(bank.stability_tier, `Missing stability tier: ${bank.bank_name}`);
-      assert.ok(bank.products && bank.products.length > 0, `Missing branded products: ${bank.bank_name}`);
-      assert.ok(bank.risk_adjusted_yield_score > 0, `Missing risk-adjusted score: ${bank.bank_name}`);
+      if (bank.short_code === "HSBC") {
+        assert.equal(bank.products.length, 0, "HSBC retail banking is wound down, must have 0 retail products");
+      } else {
+        assert.ok(bank.products && bank.products.length > 0, `Missing branded products: ${bank.bank_name}`);
+      }
+      assert.ok(bank.risk_adjusted_yield_score >= 0, `Missing risk-adjusted score: ${bank.bank_name}`);
     }
+  });
+
+  await t.test("HSBC Bangladesh correctly verified with zero retail deposit products due to CIB wholesale focus", () => {
+    const hsbc = banksData.find((b) => b.short_code === "HSBC");
+    assert.ok(hsbc, "HSBC must exist in 61-bank scheduled roster");
+    assert.equal(hsbc.products.length, 0, "HSBC must have exactly 0 retail products");
+    assert.equal(hsbc.schemes_count, 0, "HSBC must have 0 retail schemes");
+    assert.equal(hsbc.fdr_rates["1_year"], 0.0, "HSBC retail FDR rate must be 0");
+    assert.match(hsbc.verification_note, /Retail Banking/i);
   });
 
   await t.test("UCB has verified circular 1634 rates (8.00% - 9.25%) and audited 16.27% NPL turnaround rating", () => {

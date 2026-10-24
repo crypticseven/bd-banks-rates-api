@@ -63,6 +63,7 @@ class UATTester:
         self.test_61_banks_directory()
         self.test_ucb_turnaround_audit()
         self.test_cbc_prime_audit()
+        self.test_hsbc_retail_discontinued_audit()
 
         # 03. Deposit Matrix & Statutory Taxes
         self.test_deposits_baseline_tin_10pct()
@@ -158,6 +159,25 @@ class UATTester:
         except Exception as e:
             dt = (time.time() - t0) * 1000
             self.record("TC-05", "Single Bank Deep Profile — Commercial Bank of Ceylon PLC", "Directory Audits", False, dt, str(e))
+
+    def test_hsbc_retail_discontinued_audit(self):
+        t0 = time.time()
+        try:
+            r = requests.get(f"{self.base_url}/api/v1/rates/banks/HSBC", headers={"X-API-Key": DEMO_KEY}, timeout=5)
+            dt = (time.time() - t0) * 1000
+            data = r.json().get("data", {})
+            prods = data.get("products", [])
+            ok = (
+                r.status_code == 200
+                and data.get("short_code") == "HSBC"
+                and len(prods) == 0
+                and data.get("schemes_count") == 0
+                and "Retail Banking" in data.get("verification_note", "")
+            )
+            self.record("TC-05B", "Single Bank Audit — HSBC Bangladesh (Retail Discontinued / CIB Only)", "Directory Audits", ok, dt, f"Code: {data.get('short_code')}, Retail Products: {len(prods)}, Status: {data.get('verification_audit_status')}")
+        except Exception as e:
+            dt = (time.time() - t0) * 1000
+            self.record("TC-05B", "Single Bank Audit — HSBC Bangladesh (Retail Discontinued / CIB Only)", "Directory Audits", False, dt, str(e))
 
     def test_deposits_baseline_tin_10pct(self):
         t0 = time.time()
