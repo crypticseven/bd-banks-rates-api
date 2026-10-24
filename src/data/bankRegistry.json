@@ -12,7 +12,9 @@
     "schemes_count": 18,
     "declared_rate_range": "6.50% – 10.00%",
     "soc_url": "https://www.sonalibank.com.bd/PDF_file/intt_rates.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "janata",
@@ -27,7 +29,9 @@
     "schemes_count": 15,
     "declared_rate_range": "7.00% – 9.75%",
     "soc_url": "https://www.jb.com.bd/products/rate_of_interest",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "agrani",
@@ -42,7 +46,9 @@
     "schemes_count": 16,
     "declared_rate_range": "7.25% – 9.75%",
     "soc_url": "https://www.agranibank.org/index.php/home/interest_rate/ql",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "rupali",
@@ -57,7 +63,9 @@
     "schemes_count": 14,
     "declared_rate_range": "6.75% – 9.50%",
     "soc_url": "https://www.rupalibank.com.bd/corporate_profile.php",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "basic",
@@ -72,7 +80,9 @@
     "schemes_count": 14,
     "declared_rate_range": "7.50% – 10.25%",
     "soc_url": "https://basicbankplc.com/en/rate-and-charge/rate-of-interest",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "RECONSTRUCTED_BOARD"
   },
   {
     "bank_id": "bdbl",
@@ -87,7 +97,9 @@
     "schemes_count": 12,
     "declared_rate_range": "7.25% – 9.75%",
     "soc_url": "https://www.bdbl.com.bd/pages/static-pages/interest-rate-29b598-6922e134933eb65569e2adb8",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "bkb",
@@ -102,7 +114,9 @@
     "schemes_count": 13,
     "declared_rate_range": "7.00% – 9.50%",
     "soc_url": "https://krishibank.org.bd/interest-rate/",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "rakub",
@@ -117,7 +131,9 @@
     "schemes_count": 12,
     "declared_rate_range": "7.00% – 9.25%",
     "soc_url": "https://rakub.org.bd/prodDetail.php?prodId=12",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "pkb",
@@ -132,7 +148,9 @@
     "schemes_count": 12,
     "declared_rate_range": "7.50% – 9.75%",
     "soc_url": "http://pkb.gov.bd",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "ucb",
@@ -147,7 +165,9 @@
     "schemes_count": 18,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://www.ucb.com.bd/reports/interest-rates/instruction-circular-no1634full-deposit-productsucb-websi.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "brac",
@@ -162,7 +182,9 @@
     "schemes_count": 24,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.bracbank.com/en/page/schedule-of-charges",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "city",
@@ -177,7 +199,9 @@
     "schemes_count": 22,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.citybankplc.com/gsi/conventional-banking-products",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "ebl",
@@ -192,7 +216,9 @@
     "schemes_count": 21,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.ebl.com.bd/retail/retail-deposit",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "dbbl",
@@ -207,7 +233,9 @@
     "schemes_count": 16,
     "declared_rate_range": "7.50% – 9.75%",
     "soc_url": "https://www.dutchbanglabank.com/schedule_charge/schedule-of-charges.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "prime",
@@ -222,7 +250,9 @@
     "schemes_count": 20,
     "declared_rate_range": "8.75% – 10.85%",
     "soc_url": "https://www.primebank.com.bd/assets/schedule-charge/sub/files/1783100859_Individual-Account-Conventional.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "mtb",
@@ -237,7 +267,9 @@
     "schemes_count": 19,
     "declared_rate_range": "8.50% – 10.90%",
     "soc_url": "https://www.mutualtrustbank.com/schedule-of-charges/",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "dhaka",
@@ -252,7 +284,9 @@
     "schemes_count": 17,
     "declared_rate_range": "8.75% – 10.75%",
     "soc_url": "https://dhakabank.com.bd/rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "pubali",
@@ -267,7 +301,9 @@
     "schemes_count": 16,
     "declared_rate_range": "8.25% – 10.50%",
     "soc_url": "https://www.pubalibangla.com/assets/Download/Rates/Deposit%20Interest%20Rate.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "mercantile",
@@ -282,7 +318,9 @@
     "schemes_count": 18,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.mblbd.com/interest-rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "southeast",
@@ -297,7 +335,9 @@
     "schemes_count": 17,
     "declared_rate_range": "8.75% – 10.85%",
     "soc_url": "https://www.southeastbank.com.bd/documents/deposit_rates/All_Deposit_list_of_SEBPLC.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "ncc",
@@ -312,7 +352,9 @@
     "schemes_count": 19,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.nccbank.com.bd/assets/files/rates_files/Deposit_Rate_chart_01.10.2026.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "premier",
@@ -327,7 +369,9 @@
     "schemes_count": 16,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://thepremierbankplc.com/schedule-of-charges",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "trust",
@@ -342,7 +386,9 @@
     "schemes_count": 15,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.tblbd.com/rates/",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "jamuna",
@@ -357,7 +403,9 @@
     "schemes_count": 16,
     "declared_rate_range": "8.75% – 10.85%",
     "soc_url": "https://jamunabankbd.com/interest-rates/",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "bank_asia",
@@ -372,7 +420,9 @@
     "schemes_count": 18,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.bankasia-bd.com/other/interestrates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "one_bank",
@@ -387,7 +437,9 @@
     "schemes_count": 15,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.onebank.com.bd/home/corporate-banking/deposit",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "ab_bank",
@@ -402,7 +454,9 @@
     "schemes_count": 16,
     "declared_rate_range": "9.00% – 11.50%",
     "soc_url": "https://abbl.com/schedule-of-charges",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "ific",
@@ -417,7 +471,9 @@
     "schemes_count": 15,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://www.ificbank.com.bd/interest-rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "uttara",
@@ -432,7 +488,9 @@
     "schemes_count": 14,
     "declared_rate_range": "8.25% – 10.25%",
     "soc_url": "https://www.uttarabank-bd.com/home/interestrate",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "nbl",
@@ -447,7 +505,9 @@
     "schemes_count": 13,
     "declared_rate_range": "9.00% – 11.50%",
     "soc_url": "https://www.nblbd.com/rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "RECONSTRUCTED_BOARD"
   },
   {
     "bank_id": "nrbc",
@@ -462,7 +522,9 @@
     "schemes_count": 15,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://www.nrbcommercialbank.com/interest-rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "nrb",
@@ -477,7 +539,9 @@
     "schemes_count": 15,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.nrbbankbd.com/forms-downloads/#interest-rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "meghna",
@@ -492,7 +556,9 @@
     "schemes_count": 14,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://www.meghnabank.com.bd/corporate",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "midland",
@@ -507,7 +573,9 @@
     "schemes_count": 16,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.midlandbankbd.net/schedule-of-charges/",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "modhumoti",
@@ -522,7 +590,9 @@
     "schemes_count": 14,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.modhumotibankplc.com/wp-content/uploads/2026/09/INT_RATE_DEPOSITS_OCT_2026-Upload.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "sbac",
@@ -537,7 +607,9 @@
     "schemes_count": 15,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://cdn.sbacbank.com/files/documents/deposit-interest-rates.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "shimanto",
@@ -552,7 +624,9 @@
     "schemes_count": 13,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://shimantobank.com/interest-rates/deposit",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "community",
@@ -567,7 +641,9 @@
     "schemes_count": 13,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.communitybankbd.com/wp-content/uploads/2026/09/Deposit-interest-rate-effective-from-01-10-2026.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "bengal",
@@ -582,7 +658,9 @@
     "schemes_count": 14,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.bengalbank.com/interest-rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "citizens",
@@ -597,7 +675,9 @@
     "schemes_count": 13,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.citizensbankbd.com/rates/deposit-rate",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "padma",
@@ -612,7 +692,9 @@
     "schemes_count": 12,
     "declared_rate_range": "9.25% – 11.50%",
     "soc_url": "https://www.padmabankbd.com/interest-rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "MERGER_IN_PROGRESS"
   },
   {
     "bank_id": "bcbl",
@@ -627,7 +709,9 @@
     "schemes_count": 12,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.bcblbd.com/interest_rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "RECONSTRUCTED_BOARD"
   },
   {
     "bank_id": "ibbl",
@@ -642,7 +726,9 @@
     "schemes_count": 18,
     "declared_rate_range": "8.00% – 10.25%",
     "soc_url": "https://www.islamibankbd.com/rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "al_arafah",
@@ -657,7 +743,9 @@
     "schemes_count": 16,
     "declared_rate_range": "8.25% – 10.50%",
     "soc_url": "https://www.aibl.com.bd/profit-rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "sibl",
@@ -672,7 +760,9 @@
     "schemes_count": 15,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.siblbd.com/profit-rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "RECONSTRUCTED_BOARD"
   },
   {
     "bank_id": "shahjalal",
@@ -687,7 +777,9 @@
     "schemes_count": 17,
     "declared_rate_range": "8.25% – 10.50%",
     "soc_url": "https://www.sjiblbd.com/rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "exim",
@@ -702,7 +794,9 @@
     "schemes_count": 16,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.eximbankbd.com/profit-rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "fsibl",
@@ -717,7 +811,9 @@
     "schemes_count": 14,
     "declared_rate_range": "8.75% – 11.00%",
     "soc_url": "https://www.fsiblbd.com/corporateInfo.php",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "RECONSTRUCTED_BOARD"
   },
   {
     "bank_id": "global_islami",
@@ -732,7 +828,9 @@
     "schemes_count": 13,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://www.globalislamibank.com/profit-rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "RECONSTRUCTED_BOARD"
   },
   {
     "bank_id": "union",
@@ -747,7 +845,9 @@
     "schemes_count": 13,
     "declared_rate_range": "9.00% – 11.25%",
     "soc_url": "https://www.unionbank.com.bd/corporate-strategy",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "RECONSTRUCTED_BOARD"
   },
   {
     "bank_id": "standard_islamic",
@@ -762,7 +862,9 @@
     "schemes_count": 15,
     "declared_rate_range": "8.50% – 10.75%",
     "soc_url": "https://www.standardbankbd.com/profit-rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "icb_islamic",
@@ -777,7 +879,9 @@
     "schemes_count": 12,
     "declared_rate_range": "8.50% – 10.50%",
     "soc_url": "https://www.icbislamic-bd.com/profit-rates",
-    "is_shariah": true
+    "is_shariah": true,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "scb",
@@ -792,7 +896,9 @@
     "schemes_count": 14,
     "declared_rate_range": "5.50% – 8.25%",
     "soc_url": "https://www.sc.com/bd/exchange-rates/",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "hsbc",
@@ -802,13 +908,15 @@
     "hub_url": "https://www.hsbc.com.bd/rates/",
     "last_known_artifact_url": "https://www.hsbc.com.bd/rates/",
     "pattern_type": "Type B: Hub Page -> Dynamic PDF",
-    "handshake_status": "RETAIL_DISCONTINUED",
+    "handshake_status": "WHOLESALE_ONLY",
     "verification_status": "VERIFIED_OFFICIAL",
     "schemes_count": 0,
-    "declared_rate_range": "N/A (Retail Banking Discontinued / CIB Wholesale Only)",
+    "declared_rate_range": "N/A (Wholesale CIB Only)",
     "soc_url": "https://www.hsbc.com.bd/national-integrity-strategy/",
     "is_shariah": false,
-    "verification_audit_status": "VERIFIED (RETAIL_DISCONTINUED)"
+    "verification_audit_status": "EXEMPT_WHOLESALE_ONLY",
+    "retail_banking_active": false,
+    "operating_model": "WHOLESALE_CORPORATE_INVESTMENT_BANKING"
   },
   {
     "bank_id": "citi",
@@ -818,12 +926,15 @@
     "hub_url": "DATA_UNAVAILABLE",
     "last_known_artifact_url": "DATA_UNAVAILABLE",
     "pattern_type": "Type A: Static HTML Matrix",
-    "handshake_status": "INSTITUTIONAL_ONLY",
+    "handshake_status": "WHOLESALE_ONLY",
     "verification_status": "VERIFIED_OFFICIAL",
     "schemes_count": 0,
-    "declared_rate_range": "N/A (Corporate Only)",
+    "declared_rate_range": "N/A (Wholesale CIB Only)",
     "soc_url": "https://www.citigroup.com/citi/about/countrypresence/bangladesh.html",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": false,
+    "operating_model": "WHOLESALE_CORPORATE_INVESTMENT_BANKING",
+    "verification_audit_status": "EXEMPT_WHOLESALE_ONLY"
   },
   {
     "bank_id": "ceylon",
@@ -838,7 +949,9 @@
     "schemes_count": 14,
     "declared_rate_range": "7.50% – 9.75%",
     "soc_url": "https://www.combank.net.bd/assets/documents/Schedule-of-Charges.pdf",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "woori",
@@ -848,12 +961,15 @@
     "hub_url": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
     "last_known_artifact_url": "https://spot.wooribank.com/pot/Dream?withyou=BDBD00001",
     "pattern_type": "Type A: Static HTML Matrix",
-    "handshake_status": "VERIFIED_ACTIVE",
+    "handshake_status": "WHOLESALE_ONLY",
     "verification_status": "VERIFIED_OFFICIAL",
-    "schemes_count": 12,
-    "declared_rate_range": "7.00% – 9.25%",
+    "schemes_count": 0,
+    "declared_rate_range": "N/A (Wholesale CIB Only)",
     "soc_url": "https://wooribank.com/rates",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": false,
+    "operating_model": "WHOLESALE_CORPORATE_INVESTMENT_BANKING",
+    "verification_audit_status": "EXEMPT_WHOLESALE_ONLY"
   },
   {
     "bank_id": "alfalah",
@@ -868,7 +984,9 @@
     "schemes_count": 13,
     "declared_rate_range": "7.50% – 9.75%",
     "soc_url": "https://www.bankalfalah.com/schedule-of-charges",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "sbi",
@@ -883,7 +1001,9 @@
     "schemes_count": 12,
     "declared_rate_range": "7.00% – 9.25%",
     "soc_url": "https://sbibd.com",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "habib",
@@ -898,7 +1018,9 @@
     "schemes_count": 12,
     "declared_rate_range": "7.25% – 9.50%",
     "soc_url": "https://www.hbl.com/bangladesh",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": true,
+    "regulatory_status": "NORMAL_OPERATION"
   },
   {
     "bank_id": "nbp",
@@ -908,11 +1030,14 @@
     "hub_url": "https://www.nbp.com.pk/bangladesh",
     "last_known_artifact_url": "https://www.nbp.com.pk/bangladesh",
     "pattern_type": "Type A: Static HTML Matrix",
-    "handshake_status": "FALLBACK_TO_REGULATORY_MIRROR",
+    "handshake_status": "WHOLESALE_ONLY",
     "verification_status": "VERIFIED_OFFICIAL",
-    "schemes_count": 12,
-    "declared_rate_range": "6.50% – 8.50%",
+    "schemes_count": 0,
+    "declared_rate_range": "N/A (Wholesale CIB Only)",
     "soc_url": "https://www.nbp.com.pk/bangladesh",
-    "is_shariah": false
+    "is_shariah": false,
+    "retail_banking_active": false,
+    "operating_model": "WHOLESALE_CORPORATE_INVESTMENT_BANKING",
+    "verification_audit_status": "EXEMPT_WHOLESALE_ONLY"
   }
 ]

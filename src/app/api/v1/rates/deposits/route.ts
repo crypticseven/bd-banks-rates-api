@@ -2,8 +2,9 @@
  * Bangladesh Bank Rates Intelligence Platform™ (BDRIP-API™ / HashCorp-FinTech Engine-TDRD Rates™)
  * Copyright (c) 2024-2026 Fardin Ahsan Anik <fardinahsananik@gmail.com>. All Rights Reserved.
  *
- * COMMERCIAL FIXED DEPOSIT & SAVINGS RATES ENGINE
- * Enterprise REST API with dynamic cross-bank intelligence, Zod schema gating & pagination.
+ * INSTITUTIONAL DEPOSIT & SAVINGS RATES TRUTH ENGINE
+ * Enterprise REST API with dynamic cross-bank intelligence, Zod schema gating, balance slab resolution,
+ * NBR 2023 PSR tax profiles, day-count accrual (Actual/360, Actual/365), and liquidity-gated risk ranking.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -11,28 +12,45 @@ import { ALL_61_BANKS, filterBanks, calculateFdrMaturity } from "@/lib/bankRates
 import { getActiveBanksServer } from "@/lib/serverRatesPersistence";
 import { validateCommercialHandshake, commercialUnauthorizedResponse, attachCommercialHeaders } from "@/lib/auth/commercialHandshake";
 import { enforceRateLimit, detectMaliciousPayload, rateLimitExceededResponse, securityBlockResponse } from "@/lib/security/antiHackingGuard";
-import { calculatePennyPerfectMaturity } from "@/services/maturityCalculator";
+import {
+  calculatePennyPerfectMaturity,
+  resolveApplicableRate,
+  resolveTdsRate,
+  TaxProfile,
+  DayCountConvention,
+  BalanceSlab,
+} from "@/services/maturityCalculator";
 import { z } from "zod";
 import crypto from "crypto";
 
 const querySchema = z.object({
   category: z
-    .enum(["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN"])
+    .enum(["ALL", "STATE_OWNED", "SPECIALIZED", "CONVENTIONAL_PCB", "ISLAMIC", "FOREIGN", "SOCB", "PCB"])
     .default("ALL"),
   tenure: z
-    .enum(["3_months", "6_months", "1_year", "3_years", "5_years"])
+    .enum(["1_month", "3_months", "6_months", "1_year", "2_years", "3_years", "5_years"])
     .default("1_year"),
   principal: z.coerce.number().finite().positive().max(100_000_000_000).optional(),
-  has_tin: z.enum(["true", "false"]).default("true"),
+  tax_profile: z.enum(["TIN_WITH_PSR", "TIN_WITHOUT_PSR", "NO_TIN"]).optional(),
+  has_tin: z.enum(["true", "false"]).optional(),
+  day_count: z.enum(["ACTUAL_360", "ACTUAL_365", "THIRTY_360"]).optional(),
+  gender: z.enum(["MALE", "FEMALE", "ALL"]).default("ALL"),
+  age: z.coerce.number().min(0).max(120).optional(),
+  include_distressed: z.enum(["true", "false"]).default("false"),
+  break_after_months: z.coerce.number().min(0).max(600).optional(),
+  deduct_amf: z.enum(["true", "false"]).default("false"),
   shariah: z.enum(["true", "false"]).optional(),
   instant_encashment: z.enum(["true", "false"]).optional(),
   min_rating: z.coerce.number().min(1).max(5).optional(),
-  sort_by: z.enum(["yield", "risk_adjusted", "rating"]).default("yield"),
+  sort_by: z.enum(["yield", "risk_adjusted", "rating", "rate_desc", "rate_asc", "npl_asc"]).default("risk_adjusted"),
   page: z.coerce.number().int().min(1).default(1),
   limit: z.coerce.number().int().min(1).max(100).default(61),
   q: z.string().trim().max(100).optional(),
   api_key: z.string().optional(),
 });
+
+const SHARIAH_MUDARABAH_DISCLOSURE =
+  "Provisional profit rate based on Mudarabah weightage. Final yield subject to year-end accounting adjustment per Shariah supervisory board.";
 
 export async function GET(req: NextRequest) {
   // 1. Anti-Hacking Guard: Intercept injection & malicious payload signatures
@@ -56,7 +74,6 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 
-    // Extract query parameters object for Zod validation
     const queryObj: Record<string, string> = {};
     searchParams.forEach((value, key) => {
       queryObj[key] = value;
@@ -80,7 +97,14 @@ export async function GET(req: NextRequest) {
       category,
       tenure,
       principal,
+      tax_profile,
       has_tin,
+      day_count,
+      gender,
+      age,
+      include_distressed,
+      break_after_months,
+      deduct_amf,
       shariah,
       instant_encashment,
       min_rating,
@@ -90,44 +114,121 @@ export async function GET(req: NextRequest) {
       q,
     } = parsedQuery.data;
 
+    // Normalizing Tax Profile per NBR Income Tax Act 2023
+    let effectiveTaxProfile: TaxProfile = "TIN_WITH_PSR";
+    if (tax_profile) {
+      effectiveTaxProfile = tax_profile;
+    } else if (has_tin === "false") {
+      effectiveTaxProfile = "NO_TIN";
+    }
+
+    const hasTinBool = effectiveTaxProfile === "TIN_WITH_PSR";
     const isShariah = shariah !== undefined ? shariah === "true" : undefined;
     const instantEncashmentOnly = instant_encashment === "true";
-    const hasTinBool = has_tin === "true";
+    const allowDistressed = include_distressed === "true";
+    const shouldDeductAmf = deduct_amf === "true";
 
-    // Filter and sort using active live dataset
+    // Active live dataset
     const activeBanks = getActiveBanksServer();
-    const filtered = filterBanks({
-      category,
+
+    // Map standardized category aliases (e.g. SOCB -> STATE_OWNED, PCB -> CONVENTIONAL_PCB)
+    let normalizedCategory = category;
+    if (category === "SOCB") normalizedCategory = "STATE_OWNED";
+    if (category === "PCB") normalizedCategory = "CONVENTIONAL_PCB";
+
+    let filtered = filterBanks({
+      category: normalizedCategory,
       isShariah,
       instantEncashmentOnly,
       searchQuery: q || "",
       sortByTenure: tenure,
       minRating: min_rating,
-      sortBy: sort_by,
+      sortBy: sort_by === "rate_desc" ? "yield" : sort_by === "rate_asc" ? "yield" : sort_by,
       customList: activeBanks,
     });
 
+    // Check if client searched for an institutional wholesale-only bank specifically
+    const isWholesaleSpecificQuery = q && ["CITI", "WOORI", "NBP", "HSBC"].includes(q.toUpperCase());
+    if (!isWholesaleSpecificQuery && normalizedCategory !== "ALL") {
+      // Exclude wholesale-only banks from general retail queries
+      filtered = filtered.filter((b) => b.retail_banking_active !== false);
+    }
+
     const tenureMonthsMap: Record<string, number> = {
+      "1_month": 1,
       "3_months": 3,
       "6_months": 6,
       "1_year": 12,
+      "2_years": 24,
       "3_years": 36,
       "5_years": 60,
     };
     const months = tenureMonthsMap[tenure] || 12;
+    const depositAmount = principal && principal > 0 ? principal : 500000;
 
     const enrichedData = filtered.map((bank) => {
-      const rate = bank.fdr_rates[tenure] || 0;
-      const calculation = principal && principal > 0
-        ? calculateFdrMaturity(principal, rate, months, hasTinBool)
-        : null;
+      // Evaluate balance slab if principal provided
+      let effectiveRate = bank.fdr_rates[tenure] || 0;
+      let matchedSlab: BalanceSlab | null = null;
+
+      if (bank.products && bank.products.length > 0 && principal && principal > 0) {
+        const primeProd = bank.products[0];
+        if (primeProd.balance_slabs && primeProd.balance_slabs.length > 0) {
+          try {
+            effectiveRate = resolveApplicableRate(primeProd.balance_slabs, principal);
+            matchedSlab = primeProd.balance_slabs.find(
+              (s: BalanceSlab) => principal >= s.min_bdt && (s.max_bdt === null || principal <= s.max_bdt)
+            ) || null;
+          } catch (e) {
+            effectiveRate = bank.fdr_rates[tenure] || 0;
+          }
+        }
+      }
+
+      // Demographic filtering on products
+      let eligibleProducts = bank.products || [];
+      if (gender !== "ALL" || age !== undefined) {
+        eligibleProducts = eligibleProducts.filter((p: any) => {
+          if (p.eligibility?.gender_restricted && p.eligibility.gender_restricted !== gender) return false;
+          if (p.eligibility?.min_age && age !== undefined && age < p.eligibility.min_age) return false;
+          return true;
+        });
+      }
+
+      const effectiveDayCount: DayCountConvention =
+        day_count || (bank.day_count_convention as DayCountConvention) || "ACTUAL_360";
+
+      // Penny-perfect maturity calculation
+      const calculation = bank.retail_banking_active === false
+        ? null
+        : calculatePennyPerfectMaturity({
+            principal: depositAmount,
+            annualRatePct: effectiveRate,
+            tenureMonths: months,
+            taxProfile: effectiveTaxProfile,
+            dayCount: effectiveDayCount,
+            breakAfterMonths: break_after_months,
+            deductAmf: shouldDeductAmf,
+          });
+
+      const isBankIslamic = isShariah ? (bank.is_shariah || bank.has_islamic_window || false) : (bank.is_shariah || false);
 
       return {
         ...bank,
+        retail_banking_active: bank.retail_banking_active !== false,
+        operating_model: bank.operating_model || (bank.retail_banking_active === false ? "WHOLESALE_CORPORATE_INVESTMENT_BANKING" : "RETAIL_AND_COMMERCIAL_BANKING"),
         selected_tenure: tenure,
-        current_rate: rate,
+        current_rate: effectiveRate,
+        matched_balance_slab: matchedSlab,
+        day_count_applied: effectiveDayCount,
+        tax_profile_applied: effectiveTaxProfile,
+        is_islamic: isBankIslamic,
+        provisional_profit_rate_pct: isBankIslamic ? effectiveRate : null,
+        shariah_disclosure: isBankIslamic ? SHARIAH_MUDARABAH_DISCLOSURE : null,
+        restricted_liquidity_warning: bank.restricted_liquidity_warning || bank.npl_ratio_pct > 15.0,
+        regulatory_status: bank.regulatory_status || "NORMAL_OPERATION",
         maturity_calculation: calculation,
-        // Privileged supervisory risk audit
+        eligible_products_count: eligibleProducts.length,
         commercial_supervisory_audit: {
           capital_adequacy: bank.capital_adequacy_ratio_car,
           npl_tier: bank.npl_category,
@@ -139,93 +240,94 @@ export async function GET(req: NextRequest) {
       };
     });
 
-    // =========================================================================
-    // FULLY ALGORITHMIC DYNAMIC MARKET INTELLIGENCE (Cross-Bank Autonomous Scorer)
-    // Evaluates all 61 banks dynamically based on live circular yields and balance sheets
-    // =========================================================================
-    
-    // 1. Prime Sweetspot: AAA/AA+ rating with lowest NPL and highest rate in its safety tier
-    const primeCandidates = [...activeBanks]
-      .filter((b) => b.rating_score >= 4.5)
-      .sort((a, b) => (b.fdr_rates["1_year"] || 0) - (a.fdr_rates["1_year"] || 0));
-    const primeSweetspot = primeCandidates[0] || activeBanks[0];
+    // Ranking Gating: Filter out distressed banks unless explicitly requested
+    let rankableBanks = enrichedData.filter((b) => b.retail_banking_active);
+    if (!allowDistressed) {
+      const nonDistressed = rankableBanks.filter((b) => !b.restricted_liquidity_warning);
+      if (nonDistressed.length > 0) {
+        rankableBanks = nonDistressed;
+      }
+    }
 
-    // 2. Turnaround Opportunity: Bank undergoing restructuring/recovery (10% <= NPL <= 30%)
-    // offering attractive yield to retain retail deposits while provisioning profits
-    const turnaroundCandidates = [...activeBanks]
-      .filter((b) => b.npl_ratio_pct && b.npl_ratio_pct >= 10.0 && b.npl_ratio_pct <= 30.0)
-      .sort((a, b) => (b.fdr_rates["1_year"] || 0) - (a.fdr_rates["1_year"] || 0));
-    const turnaroundCandidate = turnaroundCandidates[0] ||
-      activeBanks.find((b) => b.short_code === "UCB") ||
-      activeBanks[0];
+    // Top ranked bank
+    const topRankedBank = rankableBanks[0] || enrichedData[0] || null;
+    const topRate = topRankedBank ? topRankedBank.current_rate : 10.50;
+    const topProduct = topRankedBank?.products?.[0];
 
-    // 3. Distressed Watchlist: Institution with highest classified loan ratio (> 30% NPL)
-    const distressedCandidates = [...activeBanks]
-      .filter((b) => b.npl_ratio_pct !== null && b.npl_ratio_pct !== undefined)
-      .sort((a, b) => (b.npl_ratio_pct || 0) - (a.npl_ratio_pct || 0));
-    const distressedAlert = distressedCandidates[0] || activeBanks[0];
-
-    // Top ranked in current filter view
-    const topRankedBank = enrichedData[0] || null;
-
-    // Penny-Perfect Maturity Calculation for Top Ranked Bank Scheme
-    const calcPrincipal = principal && principal > 0 ? principal : 500000;
-    const topRate = topRankedBank ? (topRankedBank.current_rate || topRankedBank.fdr_rates["1_year"] || 10.50) : 10.50;
     const maturityCalc = calculatePennyPerfectMaturity({
-      principal: calcPrincipal,
+      principal: depositAmount,
       annualRatePct: topRate,
       tenureMonths: months,
-      hasTin: hasTinBool,
-      compounding: "MATURITY",
+      taxProfile: effectiveTaxProfile,
+      dayCount: day_count || (topRankedBank?.day_count_convention as DayCountConvention) || "ACTUAL_360",
+      breakAfterMonths: break_after_months,
+      deductAmf: shouldDeductAmf,
     });
 
-    const topProduct = topRankedBank?.products?.[0];
-    const bestMatchingScheme = topRankedBank ? {
-      scheme_code: `${topRankedBank.short_code}_FDR_RETAIL_GEN_1Y`,
-      scheme_name: `${topProduct?.product_name || (topProduct as any)?.name || "Retail Fixed Deposit (General)"} - ${tenure === "1_year" ? "12 Months" : tenure} (< 25 Lac Slab)`,
-      declared_rate_pct: topRate,
-      gross_interest_bdt: maturityCalc.grossInterest,
-      nbr_tds_deduction_bdt: maturityCalc.tdsAmount,
-      bb_excise_duty_bdt: maturityCalc.exciseDuty,
-      net_interest_bdt: maturityCalc.netInterest,
-      net_maturity_payout_bdt: maturityCalc.netMaturityPayout,
-      effective_net_yield_pct: maturityCalc.effectiveYieldPct,
-    } : null;
+    const isTopBankIslamic = isShariah
+      ? (topRankedBank?.is_shariah || topRankedBank?.has_islamic_window || false)
+      : (topRankedBank?.is_shariah || false);
 
-    const queryContext = {
-      principal_bdt: calcPrincipal,
-      tenure,
-      category,
-      has_tin: hasTinBool,
-      tds_rate_applied: `${maturityCalc.tdsRatePct}.0%`,
-      statutory_excise_duty_bdt: maturityCalc.exciseDuty,
-      sort_by,
-    };
+    const bestMatchingScheme = topRankedBank
+      ? {
+          scheme_code: `${topRankedBank.short_code}_FDR_RETAIL_GEN_1Y`,
+          scheme_name: topProduct?.product_name || `${topRankedBank.bank_name} Regular Fixed Deposit - 12 Months`,
+          declared_rate_pct: topRate,
+          is_islamic: isTopBankIslamic,
+          provisional_profit_rate_pct: isTopBankIslamic ? topRate : null,
+          shariah_disclosure: isTopBankIslamic ? SHARIAH_MUDARABAH_DISCLOSURE : null,
+          day_count_applied: maturityCalc.dayCountApplied,
+          gross_interest_bdt: maturityCalc.grossInterest,
+          nbr_tds_deduction_bdt: maturityCalc.tdsAmount,
+          bb_excise_duty_bdt: maturityCalc.exciseDuty,
+          amf_deductions_bdt: maturityCalc.accountMaintenanceFee,
+          net_interest_bdt: maturityCalc.netInterest,
+          net_maturity_payout_bdt: maturityCalc.netMaturityPayout,
+          effective_net_yield_pct: maturityCalc.effectiveYieldPct,
+          net_in_pocket_yield_pct: maturityCalc.netInPocketYieldPct,
+          real_inflation_adjusted_yield_pct: maturityCalc.realInflationAdjustedYieldPct,
+          premature_penalty: maturityCalc.prematurePenalty || null,
+        }
+      : null;
 
-    const topRankedBankPayload = topRankedBank ? {
-      bank_id: (topRankedBank as any).id || (topRankedBank.short_code === "UCB" ? 10 : (topRankedBank as any).bank_id || 1),
-      bank_code: topRankedBank.short_code,
-      bank_name: topRankedBank.bank_name,
-      credit_rating: topRankedBank.credit_rating,
-      confidence_score: (topRankedBank as any).confidence_score || 0.99,
-      verified_source: topRankedBank.source_url,
-      evidence_sha256: (topRankedBank as any).source_pdf_sha256 || "8f94e2c17b6a4d0e5a2b3c9d1e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
-      total_schemes_count: (topRankedBank as any).schemes_count || (topRankedBank.products ? topRankedBank.products.length : 18),
-      best_matching_scheme: bestMatchingScheme,
-      products: topRankedBank.products,
-    } : null;
+    const topRankedBankPayload = topRankedBank
+      ? {
+          bank_id: (topRankedBank as any).id || (topRankedBank.short_code === "UCB" ? 10 : (topRankedBank as any).bank_id || 1),
+          bank_code: topRankedBank.short_code,
+          bank_name: topRankedBank.bank_name,
+          credit_rating: topRankedBank.credit_rating,
+          confidence_score: (topRankedBank as any).confidence_score || 0.99,
+          verified_source: topRankedBank.source_url,
+          evidence_sha256: (topRankedBank as any).source_pdf_sha256 || "8f94e2c17b6a4d0e5a2b3c9d1e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
+          total_schemes_count: topRankedBank.products ? topRankedBank.products.length : 0,
+          best_matching_scheme: bestMatchingScheme,
+          products: topRankedBank.products,
+        }
+      : null;
 
-    // =========================================================================
-    // ENTERPRISE PAGINATION
-    // =========================================================================
+    // Pagination
     const totalRecords = enrichedData.length;
-    const totalPages = Math.ceil(totalRecords / limit) || 1;
-    const offset = (page - 1) * limit;
-    const paginatedRecords = enrichedData.slice(offset, offset + limit);
+    const totalPages = Math.ceil(totalRecords / limit);
+    const startIndex = (page - 1) * limit;
+    const paginatedRecords = enrichedData.slice(startIndex, startIndex + limit);
 
     const requestId = crypto.randomUUID();
 
-    const response = NextResponse.json(
+    const queryContext = {
+      principal_bdt: depositAmount,
+      tenure,
+      category,
+      tax_profile: effectiveTaxProfile,
+      has_tin: hasTinBool,
+      tds_rate_applied: `${maturityCalc.tdsRatePct}.0%`,
+      statutory_excise_duty_bdt: maturityCalc.exciseDuty,
+      day_count_convention: maturityCalc.dayCountApplied,
+      cpi_inflation_benchmark_pct: 9.80,
+      include_distressed: allowDistressed,
+      sort_by,
+    };
+
+    return NextResponse.json(
       {
         status: "success",
         timestamp: new Date().toISOString(),
@@ -235,7 +337,7 @@ export async function GET(req: NextRequest) {
         request_id: requestId,
         query_context: queryContext,
         top_ranked_bank: topRankedBankPayload,
-        top_product: bestMatchingScheme,
+        top_product: topProduct || null,
         client_context: {
           client_id: client.clientId,
           tier: client.tier,
@@ -243,59 +345,13 @@ export async function GET(req: NextRequest) {
         },
         pagination: {
           total_records: totalRecords,
-          page,
-          limit,
           total_pages: totalPages,
+          current_page: page,
+          limit,
           has_next_page: page < totalPages,
           has_prev_page: page > 1,
         },
         sort_mode: sort_by,
-        central_bank_benchmarks: {
-          policy_repo_rate: "10.00%",
-          standing_lending_facility_slf: "11.50%",
-          standing_deposit_facility_sdf: "8.50%",
-          interbank_call_money_rate_avg: "9.85%",
-          nbr_withholding_tax_tin: "10%",
-          nbr_withholding_tax_no_tin: "15%",
-        },
-        dynamic_market_intelligence: {
-          safest_highest_yield_sweetspot: {
-            bank_name: primeSweetspot.bank_name,
-            short_code: primeSweetspot.short_code,
-            rate_1_year: primeSweetspot.fdr_rates["1_year"],
-            rating_score: primeSweetspot.rating_score,
-            credit_rating: primeSweetspot.credit_rating,
-            npl_ratio_pct: primeSweetspot.npl_ratio_pct,
-            verdict: `Safest Yield Sweetspot: ${primeSweetspot.bank_name} offers verified ${primeSweetspot.fdr_rates["1_year"]}% with ${primeSweetspot.credit_rating} stability (${primeSweetspot.npl_ratio_pct}% NPL, CAR ${primeSweetspot.capital_adequacy_ratio_car}). Optimal capital safety.`,
-          },
-          turnaround_candidate: {
-            bank_name: turnaroundCandidate.bank_name,
-            short_code: turnaroundCandidate.short_code,
-            rate_1_year: turnaroundCandidate.fdr_rates["1_year"],
-            rating_score: turnaroundCandidate.rating_score,
-            credit_rating: turnaroundCandidate.credit_rating,
-            npl_ratio_pct: turnaroundCandidate.npl_ratio_pct,
-            verdict: `Algorithmic Turnaround Leader: ${turnaroundCandidate.bank_name} (${turnaroundCandidate.short_code}) offers ${turnaroundCandidate.fdr_rates["1_year"]}% with ${turnaroundCandidate.npl_ratio_pct}% NPL. Higher yield compensates for balance sheet transition under capital recovery plan.`,
-          },
-          distressed_watchlist: {
-            bank_name: distressedAlert.bank_name,
-            short_code: distressedAlert.short_code,
-            rate_1_year: distressedAlert.fdr_rates["1_year"],
-            rating_score: distressedAlert.rating_score,
-            credit_rating: distressedAlert.credit_rating,
-            npl_ratio_pct: distressedAlert.npl_ratio_pct,
-            verdict: `Distressed Alert: ${distressedAlert.bank_name} carries acute classified loans (${distressedAlert.npl_ratio_pct}% NPL). Nominal interest reflects liquidity deficit rather than balance sheet strength.`,
-          },
-          top_ranked_bank: topRankedBank ? {
-            bank_name: topRankedBank.bank_name,
-            short_code: topRankedBank.short_code,
-            rate: topRankedBank.current_rate,
-            rating_score: topRankedBank.rating_score,
-            credit_rating: topRankedBank.credit_rating,
-            tenure,
-            category: topRankedBank.category,
-          } : null,
-        },
         products: paginatedRecords,
         data: paginatedRecords,
       },
@@ -308,12 +364,13 @@ export async function GET(req: NextRequest) {
         },
       }
     );
-
-    return attachCommercialHeaders(response, client);
-  } catch (error) {
-    console.error("Error serving commercial 61 banks rates API:", error);
+  } catch (err: any) {
     return NextResponse.json(
-      { status: "error", code: "INTERNAL_ERROR", message: "Failed to fetch bank rates dataset." },
+      {
+        status: "error",
+        code: "INTERNAL_SERVER_ERROR",
+        message: err.message || "Failed to process deposit rates query.",
+      },
       { status: 500 }
     );
   }

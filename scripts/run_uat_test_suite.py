@@ -79,6 +79,13 @@ class UATTester:
         self.test_calculator_penny_perfect_math()
         self.test_openapi_spec_availability()
 
+        # 05. Institutional Precision & 15 Systemic Deficiencies
+        self.test_citi_wholesale_only_audit()
+        self.test_tax_profile_psr_differentiation()
+        self.test_finacle_day_count_accrual()
+        self.test_premature_encashment_penalty()
+        self.test_islamic_mudarabah_weightage_disclosure()
+
         self.generate_report()
 
     def test_health_probe(self):
@@ -344,6 +351,102 @@ class UATTester:
         except Exception as e:
             dt = (time.time() - t0) * 1000
             self.record("TC-15", "OpenAPI 3.1 Specification JSON Schema Delivery", "System Governance", False, dt, str(e))
+
+    def test_citi_wholesale_only_audit(self):
+        t0 = time.time()
+        try:
+            r = requests.get(f"{self.base_url}/api/v1/rates/banks/CITI", headers={"X-API-Key": DEMO_KEY}, timeout=5)
+            dt = (time.time() - t0) * 1000
+            data = r.json().get("data", {})
+            prods = data.get("products", [])
+            ok = (
+                r.status_code == 200
+                and data.get("short_code") == "CITI"
+                and len(prods) == 0
+                and data.get("retail_banking_active") is False
+                and data.get("operating_model") == "WHOLESALE_CORPORATE_INVESTMENT_BANKING"
+            )
+            self.record("TC-16", "Wholesale Gating — Citibank N.A. (0 Retail Products / CIB Only)", "Institutional Audits", ok, dt, f"Code: {data.get('short_code')}, Retail Products: {len(prods)}, Active: {data.get('retail_banking_active')}")
+        except Exception as e:
+            dt = (time.time() - t0) * 1000
+            self.record("TC-16", "Wholesale Gating — Citibank N.A. (0 Retail Products / CIB Only)", "Institutional Audits", False, dt, str(e))
+
+    def test_tax_profile_psr_differentiation(self):
+        t0 = time.time()
+        try:
+            url_no_psr = f"{self.base_url}/api/v1/rates/deposits?principal=500000&tenure=1_year&tax_profile=TIN_WITHOUT_PSR"
+            r = requests.get(url_no_psr, headers={"X-API-Key": DEMO_KEY}, timeout=5)
+            dt = (time.time() - t0) * 1000
+            data = r.json()
+            qctx = data.get("query_context", {})
+            ok = (
+                r.status_code == 200
+                and qctx.get("tax_profile") == "TIN_WITHOUT_PSR"
+                and qctx.get("tds_rate_applied") == "15.0%"
+            )
+            self.record("TC-17", "NBR 2023 Tax Code — TIN Without PSR Proof (15% Statutory TDS)", "Statutory Mathematics", ok, dt, f"Tax Profile: {qctx.get('tax_profile')}, TDS Applied: {qctx.get('tds_rate_applied')}")
+        except Exception as e:
+            dt = (time.time() - t0) * 1000
+            self.record("TC-17", "NBR 2023 Tax Code — TIN Without PSR Proof (15% Statutory TDS)", "Statutory Mathematics", False, dt, str(e))
+
+    def test_finacle_day_count_accrual(self):
+        t0 = time.time()
+        try:
+            url = f"{self.base_url}/api/v1/rates/deposits?principal=10000000&tenure=1_year&day_count=ACTUAL_360"
+            r = requests.get(url, headers={"X-API-Key": DEMO_KEY}, timeout=5)
+            dt = (time.time() - t0) * 1000
+            data = r.json()
+            qctx = data.get("query_context", {})
+            best = data.get("top_ranked_bank", {}).get("best_matching_scheme", {})
+            ok = (
+                r.status_code == 200
+                and qctx.get("day_count_convention") == "ACTUAL_360"
+                and best.get("day_count_applied") == "ACTUAL_360"
+            )
+            self.record("TC-18", "Day-Count Accrual — Finacle Actual/360 Convention", "Statutory Mathematics", ok, dt, f"Convention: {best.get('day_count_applied')}, Gross: ৳{best.get('gross_interest_bdt')}")
+        except Exception as e:
+            dt = (time.time() - t0) * 1000
+            self.record("TC-18", "Day-Count Accrual — Finacle Actual/360 Convention", "Statutory Mathematics", False, dt, str(e))
+
+    def test_premature_encashment_penalty(self):
+        t0 = time.time()
+        try:
+            url = f"{self.base_url}/api/v1/rates/deposits?principal=500000&tenure=1_year&break_after_months=7"
+            r = requests.get(url, headers={"X-API-Key": DEMO_KEY}, timeout=5)
+            dt = (time.time() - t0) * 1000
+            data = r.json()
+            best = data.get("top_ranked_bank", {}).get("best_matching_scheme", {})
+            pen = best.get("premature_penalty") or {}
+            ok = (
+                r.status_code == 200
+                and pen.get("breakAfterMonths") == 7
+                and pen.get("paidRatePct") == 3.50
+                and pen.get("penaltyLostBdt") > 0
+            )
+            self.record("TC-19", "Premature Encashment Penalty — 7-Month Early Break Forfeiture", "Statutory Mathematics", ok, dt, f"Break Month: {pen.get('breakAfterMonths')}, Fallback Rate: {pen.get('paidRatePct')}%, Lost: ৳{pen.get('penaltyLostBdt')}")
+        except Exception as e:
+            dt = (time.time() - t0) * 1000
+            self.record("TC-19", "Premature Encashment Penalty — 7-Month Early Break Forfeiture", "Statutory Mathematics", False, dt, str(e))
+
+    def test_islamic_mudarabah_weightage_disclosure(self):
+        t0 = time.time()
+        try:
+            url = f"{self.base_url}/api/v1/rates/deposits?shariah=true"
+            r = requests.get(url, headers={"X-API-Key": DEMO_KEY}, timeout=5)
+            dt = (time.time() - t0) * 1000
+            data = r.json()
+            top = data.get("top_ranked_bank", {})
+            best = top.get("best_matching_scheme", {})
+            ok = (
+                r.status_code == 200
+                and best.get("is_islamic") is True
+                and best.get("provisional_profit_rate_pct") is not None
+                and "Mudarabah" in (best.get("shariah_disclosure") or "")
+            )
+            self.record("TC-20", "Islamic Shariah — Mudarabah Weightage Disclosure (BRPD 02/2009)", "Statutory Mathematics", ok, dt, f"Provisional Rate: {best.get('provisional_profit_rate_pct')}%, Disclosure: Verified")
+        except Exception as e:
+            dt = (time.time() - t0) * 1000
+            self.record("TC-20", "Islamic Shariah — Mudarabah Weightage Disclosure (BRPD 02/2009)", "Statutory Mathematics", False, dt, str(e))
 
     def generate_report(self):
         total = self.passed_count + self.failed_count

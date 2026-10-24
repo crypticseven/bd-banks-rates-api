@@ -52,8 +52,8 @@ test("Bangladesh 61 Banks Dataset Invariants", async (t) => {
       assert.ok(bank.rating_score >= 1.0 && bank.rating_score <= 5.0, `Rating out of bounds: ${bank.bank_name}`);
       assert.ok(bank.credit_rating, `Missing credit rating: ${bank.bank_name}`);
       assert.ok(bank.stability_tier, `Missing stability tier: ${bank.bank_name}`);
-      if (bank.short_code === "HSBC") {
-        assert.equal(bank.products.length, 0, "HSBC retail banking is wound down, must have 0 retail products");
+      if (bank.retail_banking_active === false) {
+        assert.equal(bank.products.length, 0, `${bank.bank_name} is wholesale-only, must have 0 retail products`);
       } else {
         assert.ok(bank.products && bank.products.length > 0, `Missing branded products: ${bank.bank_name}`);
       }
@@ -382,5 +382,112 @@ test("Section 6 & 9 Penny-Perfect Maturity & Hub-and-Spoke Invariants", async (t
     const ucbReg = registry.find((b) => b.bank_code === "UCB");
     assert.ok(ucbReg, "UCB must exist in registry");
     assert.equal(ucbReg.schemes_count, 18, "UCB schemes count must be 18");
+  });
+});
+
+test("15 Systemic Deficiencies & Institutional Precision Invariants", async (t) => {
+  const {
+    calculatePennyPerfectMaturity,
+    calculateEncashmentPenalty,
+    calculateDpsAnnuityMaturity,
+    resolveApplicableRate,
+  } = await import("../src/services/maturityCalculator.ts");
+
+  await t.test("Day-Count Accrual: Finacle Actual/360 computes exact ৳14,583.33 corporate yield delta", () => {
+    const finacle360 = calculatePennyPerfectMaturity({
+      principal: 10000000,
+      annualRatePct: 10.50,
+      tenureMonths: 12,
+      taxProfile: "TIN_WITH_PSR",
+      dayCount: "ACTUAL_360",
+    });
+
+    const standard365 = calculatePennyPerfectMaturity({
+      principal: 10000000,
+      annualRatePct: 10.50,
+      tenureMonths: 12,
+      taxProfile: "TIN_WITH_PSR",
+      dayCount: "ACTUAL_365",
+    });
+
+    assert.equal(finacle360.grossInterest, 1064583.33, "Finacle Actual/360 gross interest must be 1,064,583.33 BDT");
+    assert.equal(standard365.grossInterest, 1050000.00, "Standard 365 gross interest must be 1,050,000.00 BDT");
+    const delta = Number((finacle360.grossInterest - standard365.grossInterest).toFixed(2));
+    assert.equal(delta, 14583.33, "Finacle day-count distortion must equal exactly ৳14,583.33 per Crore");
+  });
+
+  await t.test("NBR Income Tax Act 2023: TIN without PSR is statutorily penalised at 15% TDS", () => {
+    const withPsr = calculatePennyPerfectMaturity({
+      principal: 500000,
+      annualRatePct: 10.50,
+      tenureMonths: 12,
+      taxProfile: "TIN_WITH_PSR",
+    });
+
+    const withoutPsr = calculatePennyPerfectMaturity({
+      principal: 500000,
+      annualRatePct: 10.50,
+      tenureMonths: 12,
+      taxProfile: "TIN_WITHOUT_PSR",
+    });
+
+    const noTin = calculatePennyPerfectMaturity({
+      principal: 500000,
+      annualRatePct: 10.50,
+      tenureMonths: 12,
+      taxProfile: "NO_TIN",
+    });
+
+    assert.equal(withPsr.tdsRatePct, 10, "TIN with PSR must receive 10% TDS");
+    assert.equal(withoutPsr.tdsRatePct, 15, "TIN without PSR must be deducted at 15% TDS per Section 102/264");
+    assert.equal(noTin.tdsRatePct, 15, "No TIN must be deducted at 15% TDS");
+  });
+
+  await t.test("Premature Encashment: < 3 months breaks forfeit 100% interest; >= 3 months reverts to savings rate", () => {
+    const twoMonthsBreak = calculateEncashmentPenalty(500000, 10.50, 3.50, 12, 2);
+    assert.equal(twoMonthsBreak.paidRatePct, 0, "Early break < 3 months must pay 0% rate");
+    assert.equal(twoMonthsBreak.actualInterestBdt, 0, "Actual interest paid must be 0 BDT");
+    assert.equal(twoMonthsBreak.forfeitedEarly, true);
+
+    const sevenMonthsBreak = calculateEncashmentPenalty(500000, 10.50, 3.50, 12, 7);
+    assert.equal(sevenMonthsBreak.paidRatePct, 3.50, "Break at 7 months must revert to savings floor 3.50%");
+    assert.equal(sevenMonthsBreak.actualInterestBdt, 10208.33, "Actual interest at 3.5% for 7 months must be 10,208.33 BDT");
+    assert.equal(sevenMonthsBreak.penaltyLostBdt, 20416.67, "Penalty lost must be 20,416.67 BDT");
+  });
+
+  await t.test("DPS Continuous Monthly Annuity computes true IRR accumulation", () => {
+    const dps = calculateDpsAnnuityMaturity(5000, 10.25, 60, "TIN_WITH_PSR");
+    assert.equal(dps.monthlyInstallment, 5000);
+    assert.equal(dps.totalDepositPrincipal, 300000, "5 years of 5000/mo is 300,000 principal");
+    assert.ok(dps.grossMaturityAmount > 385000, "Gross maturity must exceed 385,000 BDT under annuity compounding");
+    assert.ok(dps.grossInterestEarned > 85000, "Gross interest earned must exceed 85,000 BDT");
+  });
+
+  await t.test("Multi-Tier Balance Slab Resolution accurately matches deposit brackets", () => {
+    const slabs = [
+      { min_bdt: 10000, max_bdt: 1000000, rate_pct: 8.50 },
+      { min_bdt: 1000001, max_bdt: 5000000, rate_pct: 9.50 },
+      { min_bdt: 5000001, max_bdt: 10000000, rate_pct: 10.25 },
+      { min_bdt: 10000001, max_bdt: null, rate_pct: 11.25 },
+    ];
+
+    assert.equal(resolveApplicableRate(slabs, 500000), 8.50, "500K BDT must match Slab 1 (8.50%)");
+    assert.equal(resolveApplicableRate(slabs, 2500000), 9.50, "2.5M BDT must match Slab 2 (9.50%)");
+    assert.equal(resolveApplicableRate(slabs, 7500000), 10.25, "7.5M BDT must match Slab 3 (10.25%)");
+    assert.equal(resolveApplicableRate(slabs, 25000000), 11.25, "25M BDT must match Slab 4 (11.25%)");
+  });
+
+  await t.test("Wholesale-Only Gating: CITI, WOORI, NBP, and HSBC are verified with 0 retail products", async () => {
+    const fs = await import("fs");
+    const banks = JSON.parse(fs.readFileSync("src/data/bangladesh_61_banks.json", "utf-8"));
+    const wholesaleCodes = ["CITI", "WOORI", "NBP", "HSBC"];
+
+    for (const code of wholesaleCodes) {
+      const b = banks.find((x) => x.short_code === code);
+      assert.ok(b, `${code} must exist in scheduled banks`);
+      assert.equal(b.retail_banking_active, false, `${code} must be flagged retail_banking_active: false`);
+      assert.equal(b.products.length, 0, `${code} products array must be empty`);
+      assert.equal(b.operating_model, "WHOLESALE_CORPORATE_INVESTMENT_BANKING");
+    }
   });
 });
