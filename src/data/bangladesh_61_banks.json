@@ -13583,7 +13583,7 @@
   },
   {
     "bank_id": "shimanto",
-    "bank_name": "Shimanto Bank Limited",
+    "bank_name": "Shimanto Bank PLC",
     "short_code": "SHIMANTO",
     "category": "CONVENTIONAL_PCB",
     "is_shariah": false,
@@ -13621,10 +13621,150 @@
     "risk_adjusted_yield_score": 9.2,
     "products": [
       {
-        "product_id": "shimanto-retail-fdr",
-        "product_name": "Shimanto Fixed Deposit (Retail <= 1 Crore)",
+        "product_id": "shimanto-special-360-fd",
+        "product_name": "Shimanto Bank PLC Special Fixed Deposit (360 Days)",
         "product_type": "FDR",
+        "archetype": "SPECIAL_BENEFIT_FDR",
+        "headline_rate": 10.25,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "1_year"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 50000,
+        "target_segment": "MAXIMUM_YIELD_SEEKERS",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 10000,
+            "max_bdt": 10000000,
+            "annual_rate_pct": 10.25
+          },
+          {
+            "min_bdt": 10000001,
+            "max_bdt": null,
+            "annual_rate_pct": 10.0
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 3,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Special 360-Day tenor: Highest fixed yield at 10.25% for balance up to 1 Crore",
+          "Loan facility up to 90% against deposit value",
+          "Auto-renewal option available"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-special-182-fd",
+        "product_name": "Shimanto Bank PLC Special Fixed Deposit (182 Days)",
+        "product_type": "FDR",
+        "archetype": "SPECIAL_BENEFIT_FDR",
+        "headline_rate": 9.25,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "6_months"
+        ],
+        "best_tenure": "6_months",
+        "minimum_amount": 50000,
+        "target_segment": "SHORT_TERM_YIELD",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 10000,
+            "max_bdt": 10000000,
+            "annual_rate_pct": 9.25
+          },
+          {
+            "min_bdt": 10000001,
+            "max_bdt": null,
+            "annual_rate_pct": 10.0
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 3,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Special 182-Day semi-annual tenor: 9.25% (up to 1 Cr) / 10.00% (1 Cr and above)",
+          "Secured credit line option available"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-special-89-fd",
+        "product_name": "Shimanto Bank PLC Special Fixed Deposit (89 Days)",
+        "product_type": "FDR",
+        "archetype": "SPECIAL_BENEFIT_FDR",
+        "headline_rate": 9.0,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "3_months"
+        ],
+        "best_tenure": "3_months",
+        "minimum_amount": 50000,
+        "target_segment": "QUARTERLY_PARKING",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 10000,
+            "max_bdt": 10000000,
+            "annual_rate_pct": 9.0
+          },
+          {
+            "min_bdt": 10000001,
+            "max_bdt": null,
+            "annual_rate_pct": 9.5
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 1,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Special 89-Day quarterly parking: 9.00% (up to 1 Cr) / 9.50% (> 1 Cr)",
+          "Optimal short-term liquidity yield"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-retail-fdr-1y",
+        "product_name": "Shimanto Bank PLC Regular Fixed Deposit (Retail 1 Year)",
+        "product_type": "FDR",
+        "archetype": "RETAIL_FDR_GENERAL",
         "headline_rate": 9.75,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
         "tenure_options": [
           "1_month",
           "3_months",
@@ -13634,95 +13774,48 @@
           "3_years"
         ],
         "best_tenure": "1_year",
-        "minimum_amount": 50000,
+        "minimum_amount": 25000,
         "target_segment": "GENERAL_RETAIL",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 10000,
+            "max_bdt": 10000000,
+            "annual_rate_pct": 9.75
+          },
+          {
+            "min_bdt": 10000001,
+            "max_bdt": null,
+            "annual_rate_pct": 10.0
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 3,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
         "features": [
-          "1M: 4.00%",
-          "3M: 8.50%",
-          "6M: 9.00%",
-          "1Y: 9.75% (10.00% for balance > 1 Crore)",
+          "Standard 1-Year deposit: 9.75% (< 1 Cr) / 10.00% (>= 1 Cr)",
+          "Available in 1M (4.0%), 3M (8.5%), 6M (9.0%), 1Y (9.75%), 2Y/3Y (8.0%)",
           "Loan up to 90% against FDR"
         ],
-        "instant_encashment": true,
-        "shariah_compliant": false,
-        "balance_slabs": [
-          {
-            "min_bdt": 10000,
-            "max_bdt": 1000000,
-            "annual_rate_pct": 9.25
-          },
-          {
-            "min_bdt": 1000001,
-            "max_bdt": 5000000,
-            "annual_rate_pct": 9.75
-          },
-          {
-            "min_bdt": 5000001,
-            "max_bdt": 10000000,
-            "annual_rate_pct": 10.0
-          },
-          {
-            "min_bdt": 10000001,
-            "max_bdt": null,
-            "annual_rate_pct": 10.25
-          }
-        ],
-        "premature_encashment_terms": {
-          "min_holding_months": 3,
-          "fallback_rate_type": "SAVINGS_RATE",
-          "fallback_rate_pct": 3.5
-        }
-      },
-      {
-        "product_id": "shimanto-special-360-fd",
-        "product_name": "Shimanto Special Fixed Deposit (360 Days)",
-        "product_type": "FDR",
-        "headline_rate": 10.25,
-        "tenure_options": [
-          "1_year"
-        ],
-        "best_tenure": "1_year",
-        "minimum_amount": 100000,
-        "target_segment": "MAXIMUM_YIELD_SEEKERS",
-        "features": [
-          "10.25% top-tier annual yield on 360-day tenor for balance <= 1 Crore",
-          "Highest standard tenor FDR rate"
-        ],
-        "instant_encashment": true,
-        "shariah_compliant": false,
-        "balance_slabs": [
-          {
-            "min_bdt": 10000,
-            "max_bdt": 1000000,
-            "annual_rate_pct": 9.75
-          },
-          {
-            "min_bdt": 1000001,
-            "max_bdt": 5000000,
-            "annual_rate_pct": 10.25
-          },
-          {
-            "min_bdt": 5000001,
-            "max_bdt": 10000000,
-            "annual_rate_pct": 10.5
-          },
-          {
-            "min_bdt": 10000001,
-            "max_bdt": null,
-            "annual_rate_pct": 10.75
-          }
-        ],
-        "premature_encashment_terms": {
-          "min_holding_months": 3,
-          "fallback_rate_type": "SAVINGS_RATE",
-          "fallback_rate_pct": 3.5
-        }
+        "instant_encashment": false,
+        "shariah_compliant": false
       },
       {
         "product_id": "shimanto-monthly-benefit-fdr",
-        "product_name": "Shimanto Monthly Benefit FDR",
+        "product_name": "Shimanto Bank PLC Monthly Benefit FDR / Asthai Obsor",
         "product_type": "FDR",
+        "archetype": "MONTHLY_PROFIT_FDR",
         "headline_rate": 10.75,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
         "tenure_options": [
           "1_year",
           "2_years",
@@ -13731,131 +13824,414 @@
         "best_tenure": "1_year",
         "minimum_amount": 100000,
         "target_segment": "MONTHLY_INCOME_RETIREES",
-        "features": [
-          "BDT 895.83 per month per lac payout",
-          "10.75% headline return credited monthly"
-        ],
-        "instant_encashment": true,
-        "shariah_compliant": false,
+        "payout_frequency": "MONTHLY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
         "balance_slabs": [
           {
-            "min_bdt": 10000,
-            "max_bdt": 1000000,
-            "annual_rate_pct": 10.25
-          },
-          {
-            "min_bdt": 1000001,
-            "max_bdt": 5000000,
-            "annual_rate_pct": 10.75
-          },
-          {
-            "min_bdt": 5000001,
-            "max_bdt": 10000000,
-            "annual_rate_pct": 11.0
-          },
-          {
-            "min_bdt": 10000001,
+            "min_bdt": 100000,
             "max_bdt": null,
-            "annual_rate_pct": 11.25
+            "annual_rate_pct": 10.75
           }
         ],
         "premature_encashment_terms": {
           "min_holding_months": 3,
           "fallback_rate_type": "SAVINGS_RATE",
-          "fallback_rate_pct": 3.5
-        }
-      },
-      {
-        "product_id": "shimanto-double-benefit",
-        "product_name": "Shimanto Double Benefit Scheme (7 Years)",
-        "product_type": "DPS",
-        "headline_rate": 10.41,
-        "tenure_options": [
-          "7_years"
-        ],
-        "best_tenure": "7_years",
-        "minimum_amount": 50000,
-        "target_segment": "LONG_TERM_COMPOUNDING",
+          "fallback_rate_pct": 2.0
+        },
         "features": [
-          "10.41% effective rate",
-          "Doubles initial deposit at 7-year maturity (6Y 8M for BGB personnel @ 10.67%)"
+          "BDT 895.83 per month per lac payout (10.75% annual return)",
+          "Direct monthly cash transfer to linked savings account",
+          "Designed for pensioners, retirees, and fixed monthly cashflow requirements"
         ],
         "instant_encashment": false,
-        "shariah_compliant": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-connect-fd-12m",
+        "product_name": "Shimanto Bank PLC Connect Fixed Deposit (Digital App / 12 Months)",
+        "product_type": "FDR",
+        "archetype": "SPECIAL_BENEFIT_FDR",
+        "headline_rate": 10.0,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "3_months",
+          "6_months",
+          "1_year",
+          "2_years",
+          "3_years"
+        ],
+        "best_tenure": "1_year",
+        "minimum_amount": 10000,
+        "target_segment": "DIGITAL_APP_USERS",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
         "balance_slabs": [
           {
             "min_bdt": 10000,
-            "max_bdt": 1000000,
-            "annual_rate_pct": 9.91
-          },
-          {
-            "min_bdt": 1000001,
-            "max_bdt": 5000000,
-            "annual_rate_pct": 10.41
-          },
-          {
-            "min_bdt": 5000001,
-            "max_bdt": 10000000,
-            "annual_rate_pct": 10.66
-          },
-          {
-            "min_bdt": 10000001,
             "max_bdt": null,
-            "annual_rate_pct": 10.91
+            "annual_rate_pct": 10.0
           }
         ],
         "premature_encashment_terms": {
           "min_holding_months": 3,
           "fallback_rate_type": "SAVINGS_RATE",
-          "fallback_rate_pct": 3.5
-        }
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Exclusively booked via Shimanto Connect App / Internet Banking",
+          "10.00% yield for 12 months on any amount",
+          "Zero paperwork branch-free digital opening"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
       },
       {
-        "product_id": "shimanto-dps",
-        "product_name": "Shimanto Sanchay DPS",
+        "product_id": "shimanto-regular-dps",
+        "product_name": "Shimanto Bank PLC Shimanto DPS (Regular Savings)",
         "product_type": "DPS",
+        "archetype": "REGULAR_DPS",
         "headline_rate": 10.0,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
         "tenure_options": [
           "3_years",
           "5_years",
           "10_years"
         ],
         "best_tenure": "5_years",
-        "minimum_amount": 1000,
-        "target_segment": "MONTHLY_SAVERS",
-        "features": [
-          "Flat 10.00% across all monthly installment tenors",
-          "Available for general public and student savers"
-        ],
-        "instant_encashment": false,
-        "shariah_compliant": false,
+        "minimum_amount": 500,
+        "target_segment": "GENERAL_RETAIL",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
         "balance_slabs": [
           {
-            "min_bdt": 10000,
-            "max_bdt": 1000000,
-            "annual_rate_pct": 9.5
-          },
-          {
-            "min_bdt": 1000001,
-            "max_bdt": 5000000,
+            "min_bdt": 500,
+            "max_bdt": 50000,
             "annual_rate_pct": 10.0
-          },
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 12,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Flat 10.00% compounding monthly annuity yield across 3, 5, and 10 year tenures",
+          "Installments from ৳500 to ৳50,000 per month",
+          "Auto-debit from Shimanto Shanchay savings account"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-nari-money-savers",
+        "product_name": "Shimanto Bank PLC SMBL Nari Money Savers DPS",
+        "product_type": "DPS",
+        "archetype": "SPECIAL_BENEFIT_FDR",
+        "headline_rate": 10.5,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1000,
+        "target_segment": "WOMEN_ENTREPRENEURS",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": "FEMALE_ONLY",
+          "requires_psr": false
+        },
+        "balance_slabs": [
           {
-            "min_bdt": 5000001,
-            "max_bdt": 10000000,
-            "annual_rate_pct": 10.25
-          },
-          {
-            "min_bdt": 10000001,
-            "max_bdt": null,
+            "min_bdt": 1000,
+            "max_bdt": 50000,
             "annual_rate_pct": 10.5
           }
         ],
         "premature_encashment_terms": {
-          "min_holding_months": 3,
+          "min_holding_months": 12,
           "fallback_rate_type": "SAVINGS_RATE",
-          "fallback_rate_pct": 3.5
-        }
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "0.50% premium bonus rate for female savers (10.50% per annum)",
+          "Special insurance and medical discount tie-ups",
+          "Exclusive to female retail applicants"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-kotipoti-scheme-dps",
+        "product_name": "Shimanto Bank PLC SMBL Kotipoti Scheme (Target 1 Crore DPS)",
+        "product_type": "DPS",
+        "archetype": "TARGET_MILLIONAIRE_DPS",
+        "headline_rate": 10.0,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "5_years",
+          "7_years",
+          "10_years"
+        ],
+        "best_tenure": "10_years",
+        "minimum_amount": 2500,
+        "target_segment": "TARGET_SAVINGS",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 2500,
+            "max_bdt": 100000,
+            "annual_rate_pct": 10.0
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 24,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Structured installment roadmap to accumulate ৳1 Crore upon maturity",
+          "10.00% continuous compounding yield",
+          "Loan against accumulated value up to 90%"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-millionaire-scheme-dps",
+        "product_name": "Shimanto Bank PLC SMBL Millionaire Scheme (Target 10 Lac DPS)",
+        "product_type": "DPS",
+        "archetype": "TARGET_MILLIONAIRE_DPS",
+        "headline_rate": 10.0,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "3_years",
+          "5_years",
+          "7_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 1500,
+        "target_segment": "TARGET_SAVINGS",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 1500,
+            "max_bdt": 50000,
+            "annual_rate_pct": 10.0
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 12,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Target ৳10 Lac accumulation scheme with monthly fixed installments",
+          "10.00% annuity yield",
+          "Ideal for medium-term capital goal building"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-double-benefit-7y",
+        "product_name": "Shimanto Bank PLC Double Benefit Scheme for General Retail (7 Years)",
+        "product_type": "FDR",
+        "archetype": "SPECIAL_BENEFIT_FDR",
+        "headline_rate": 10.41,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "7_years"
+        ],
+        "best_tenure": "7_years",
+        "minimum_amount": 50000,
+        "target_segment": "LONG_TERM_COMPOUNDING",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 50000,
+            "max_bdt": null,
+            "annual_rate_pct": 10.41
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 12,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Doubles deposited principal exactly at 7-year maturity (10.41% effective yield)",
+          "Lump-sum single deposit growth scheme",
+          "Loan facility up to 90%"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-shoinik-bhabishwat",
+        "product_name": "Shimanto Bank PLC Shoinik Bhabishwat (Double Benefit for BGB Personnel)",
+        "product_type": "FDR",
+        "archetype": "SPECIAL_BENEFIT_FDR",
+        "headline_rate": 10.67,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "6_years_8_months"
+        ],
+        "best_tenure": "6_years_8_months",
+        "minimum_amount": 25000,
+        "target_segment": "DEFENSE_BGB_PERSONNEL",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 25000,
+            "max_bdt": null,
+            "annual_rate_pct": 10.67
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 12,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.5
+        },
+        "features": [
+          "Exclusive to active and retired Border Guard Bangladesh (BGB) members & families",
+          "Fastest doubling period: Doubles in 6 Years 8 Months at 10.67% yield",
+          "Backed by Border Guard Bangladesh Welfare Trust governance"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-bgb-dps",
+        "product_name": "Shimanto Bank PLC BGB DPS (Dedicated Defense Recurring Deposit)",
+        "product_type": "DPS",
+        "archetype": "REGULAR_DPS",
+        "headline_rate": 10.0,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "3_years",
+          "5_years",
+          "10_years"
+        ],
+        "best_tenure": "5_years",
+        "minimum_amount": 500,
+        "target_segment": "DEFENSE_BGB_PERSONNEL",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 18,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 500,
+            "max_bdt": 50000,
+            "annual_rate_pct": 10.0
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 12,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.5
+        },
+        "features": [
+          "Integrated payroll auto-debit with BGB salary account",
+          "10.00% compounding interest rate",
+          "Special welfare loan linkage for member personnel"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
+      },
+      {
+        "product_id": "shimanto-student-dps",
+        "product_name": "Shimanto Bank PLC SMBL Student DPS",
+        "product_type": "DPS",
+        "archetype": "REGULAR_DPS",
+        "headline_rate": 10.0,
+        "is_islamic": false,
+        "provisional_profit_rate_pct": null,
+        "shariah_disclosure": null,
+        "tenure_options": [
+          "3_years",
+          "5_years"
+        ],
+        "best_tenure": "3_years",
+        "minimum_amount": 250,
+        "target_segment": "STUDENT_YOUTH",
+        "payout_frequency": "MATURITY",
+        "eligibility": {
+          "min_age": 12,
+          "gender_restricted": null,
+          "requires_psr": false
+        },
+        "balance_slabs": [
+          {
+            "min_bdt": 250,
+            "max_bdt": 10000,
+            "annual_rate_pct": 10.0
+          }
+        ],
+        "premature_encashment_terms": {
+          "min_holding_months": 6,
+          "fallback_rate_type": "SAVINGS_RATE",
+          "fallback_rate_pct": 2.0
+        },
+        "features": [
+          "Accessible entry barrier: Installments starting from just ৳250/month",
+          "10.00% rate encourages early financial discipline among youth and scholars",
+          "Linked with Shimanto Student Savings Account"
+        ],
+        "instant_encashment": false,
+        "shariah_compliant": false
       }
     ],
     "npl_ratio_pct": 2.45,
@@ -13877,8 +14253,8 @@
     "discovered_active_path": "https://shimantobank.com/interest-rates/deposit",
     "handshake_status": "VERIFIED_ACTIVE",
     "pattern_type": "Type A: Static HTML Matrix",
-    "schemes_count": 5,
-    "declared_rate_range": "8.50% – 10.75%",
+    "schemes_count": 14,
+    "declared_rate_range": "8.00% – 10.75%",
     "verification_audit_status": "VERIFIED (SHA-256)",
     "day_count_convention": "ACTUAL_360",
     "regulatory_status": "NORMAL_OPERATION",
