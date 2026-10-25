@@ -6773,7 +6773,8 @@
         "features": [
           "Official tiered rate: 8.25% on standard retail slab",
           "Auto-renewal facility on maturity",
-          "Loan against deposit up to 90%"
+          "Loan against deposit up to 90%",
+          "Instant 24/7 FDR liquidation via Pubali PI Banking app directly to linked savings account"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -6831,9 +6832,10 @@
         "features": [
           "0.50% Senior demographic bonus yield (8.75%)",
           "Eligible for individuals aged 60 and above",
-          "Free medical insurance consultation or wellness voucher"
+          "Free medical insurance consultation or wellness voucher",
+          "Instant 24/7 FDR liquidation via Pubali PI Banking app directly to linked savings account"
         ],
-        "instant_encashment": false,
+        "instant_encashment": true,
         "shariah_compliant": false
       },
       {
@@ -6888,7 +6890,8 @@
         },
         "features": [
           "Monthly cash payout: 8.0% per annum credited directly to transaction account",
-          "Designed for pensioners and monthly cashflow management"
+          "Designed for pensioners and monthly cashflow management",
+          "Instant 24/7 FDR liquidation via Pubali PI Banking app directly to linked savings account"
         ],
         "instant_encashment": true,
         "shariah_compliant": false
@@ -6931,9 +6934,10 @@
         "features": [
           "Continuous compounding monthly annuity yield: 8.75%",
           "Flexible monthly installments from ৳500 to ৳50,000",
-          "Auto-debit from salary or savings account"
+          "Auto-debit from salary or savings account",
+          "Instant 24/7 digital DPS closure & premature encashment via Pubali PI Banking (immediate account credit, zero waiting)"
         ],
-        "instant_encashment": false,
+        "instant_encashment": true,
         "shariah_compliant": false
       },
       {
@@ -6973,9 +6977,10 @@
         },
         "features": [
           "Fixed installment target accumulation of ৳10 Lac or ৳1 Crore",
-          "Premium bonus yield of 9.0% for disciplined 10-year savers"
+          "Premium bonus yield of 9.0% for disciplined 10-year savers",
+          "Instant 24/7 digital DPS closure & premature encashment via Pubali PI Banking (immediate account credit, zero waiting)"
         ],
-        "instant_encashment": false,
+        "instant_encashment": true,
         "shariah_compliant": false
       },
       {
@@ -7033,7 +7038,8 @@
         "features": [
           "Provisional Profit Rate: 8.35% based on Mudarabah weightages",
           "100% Shariah compliant under Bangladesh Bank BRPD 02/2009",
-          "Investment in halal corporate and retail asset portfolios"
+          "Investment in halal corporate and retail asset portfolios",
+          "Instant 24/7 FDR liquidation via Pubali PI Banking app directly to linked savings account"
         ],
         "instant_encashment": true,
         "shariah_compliant": true
